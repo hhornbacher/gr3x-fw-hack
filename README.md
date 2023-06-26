@@ -53,7 +53,7 @@ The camera runs a custom Poky (Yocto Project Reference Distro) 2.2 operating sys
 
 I have made significant progress in my exploration of the Ricoh GR3(x) firmware. Here are some notable achievements and ongoing tasks:
 
-- Extracted the firmware image using [gr_unpack](https://github.com/yeahnope/gr_unpack) (Big thanks goes out to: @yeahnope)
+- Extracted the firmware image using [gr_unpack](https://github.com/yeahnope/gr_unpack) (Big thanks goes out to: [@yeahnope]!)
 - Analyzed the firmware image contents using `binwalk` and identified files of interest.
 - Extracted the kernel configuration.
 - Built the kernel from the source code provided by [RICOH IMAGING](https://www.ricoh-imaging.co.jp/english/products/oss/).
