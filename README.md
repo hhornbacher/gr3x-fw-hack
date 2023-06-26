@@ -25,12 +25,12 @@ The repository includes:
 ## Getting started
 
 - You need to clone the repository with submodules (`git clone --recursive ...`)
-- First you need to obtain a firmware file from: [https://www.ricoh-imaging.co.jp/english/support/digital/gr3x_s.html]
+- First you need to obtain a firmware file from: https://www.ricoh-imaging.co.jp/english/support/digital/gr3x_s.html
 - I prefer to put it in a directory called firmware and append the firmware version to the filename, e.g.: `firmware/fwdc243b-v121.bin`
 - The next step is to extract the firmware: `tools/extract-firmware.sh firmware/fwdc243b-v121.bin`
 - Now you can try to run the system in a docker container: `tools/run-system-docker.sh firmware/fwdc243b-v121.bin`
   - At the moment the system will not fully boot, since the shared memory (hardware access) and IPC are not working, so the camctld daemon will fail to fully initialize.
-  - If you're interested into the startup script, please have a look at [docker/system/start.sh], this is a slightly modified version of the original `/etc/rc.local`
+  - If you're interested into the startup script, please have a look at [start.sh](docker/system/start.sh), this is a slightly modified version of the original `/etc/rc.local`
 - Now you can try to compile and install the mocks for shmem and IPCU related functions:
   - `tools/build-mocks.sh firmware/fwdc243b-v121.bin`
   - `tools/install-mocks.sh firmware/fwdc243b-v121.bin`
