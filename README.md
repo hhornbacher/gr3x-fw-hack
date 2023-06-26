@@ -22,6 +22,24 @@ The repository includes:
 - python3
 - curl
 
+## Getting started
+
+- You need to clone the repository with submodules (`git clone --recursive ...`)
+- First you need to obtain a firmware file from: [https://www.ricoh-imaging.co.jp/english/support/digital/gr3x_s.html]
+- I prefer to put it in a directory called firmware and append the firmware version to the filename, e.g.: `firmware/fwdc243b-v121.bin`
+- The next step is to extract the firmware: `tools/extract-firmware.sh firmware/fwdc243b-v121.bin`
+- Now you can try to run the system in a docker container: `tools/run-system-docker.sh firmware/fwdc243b-v121.bin`
+  - At the moment the system will not fully boot, since the shared memory (hardware access) and IPC are not working, so the camctld daemon will fail to fully initialize.
+  - If you're interested into the startup script, please have a look at [docker/system/start.sh], this is a slightly modified version of the original `/etc/rc.local`
+- Now you can try to compile and install the mocks for shmem and IPCU related functions:
+  - `tools/build-mocks.sh firmware/fwdc243b-v121.bin`
+  - `tools/install-mocks.sh firmware/fwdc243b-v121.bin`
+  - In order to rebuild the docker system image you need to remove the old docker image before:
+    `docker image rm gr3x-system-fwdc243b-v121`
+  - Now you can run `tools/run-system-docker.sh firmware/fwdc243b-v121.bin` again and the system will start with the mocked libraries.
+- Building the kernel is possible with: `tools/build-kernel.sh firmware/fwdc243b-v121.bin`
+  - I was, until now, not able to run the kernel in QEMU, so any support with that is highly welcome
+
 ## Hardware
 
 The Ricoh GR3(x) camera is equipped with the following hardware:
