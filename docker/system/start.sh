@@ -16,7 +16,7 @@ CAMCTLD_LOG=trace camctld -w &
 # wait for camctld ready
 until [ -f "/tmp/camctld_ready" ]; do usleep 100000 ; done
 
-# usbd &
+usbd &
 SYSMGRD_LOG=info sysmgrd &
 
 MODE=`cat /tmp/startup_mode`
@@ -27,17 +27,17 @@ fi
 
 while true; do sleep 5 ; done
 
-# NETMGRD_LOG=info netmgrd &
-# BLESRVD_LOG=info bled &
+NETMGRD_LOG=info netmgrd &
+BLESRVD_LOG=info bled &
 
-# # wait for storage mounted
-# until [ -f "/tmp/mounted" ]; do usleep 100000; done
+# wait for storage mounted
+until [ -f "/tmp/mounted" ]; do usleep 100000; done
 
-# WEBAPID_LOG_LEVEL=info webapid &
+WEBAPID_LOG_LEVEL=info webapid &
 
-# until [ -e "/dev/mtp_usb" ]; do usleep 100000; done
-# MTPD_LOG_LEVEL=info mtpd &
+until [ -e "/dev/mtp_usb" ]; do usleep 100000; done
+MTPD_LOG_LEVEL=info mtpd &
 
-# echo "rc.local(normal) complete"
+echo "rc.local(normal) complete"
 
-# exit 0
+exit 0
