@@ -1,115 +1,94 @@
-# Ricoh GRIII(x)
+# Ricoh GRIII(x) Firmware Exploration and Custom Application Development
 
-## Goal
+## Ricoh GR3(x)
 
-Finding a way to run custom applications without altering the firmware itself (like MagicLantern)
+The Ricoh GR3(x) is a camera with firmware that I am exploring to find ways to run custom applications without altering the firmware itself, similar to projects like MagicLantern.
 
-## Hardware
+## Motivation
 
-- CPU: Milbeaut SC2000 (Quad Core ARM CORTEX-A7)
-  (best guess based on kernel config, still to be confirmed!)
+My motivation is to discover methods for running custom applications on the Ricoh GR3(x) camera while keeping the firmware intact. This would allow to extend the camera's functionality and explore new possibilities.
 
-## Project requirements
+## Contents
+
+The repository includes:
+
+- Tools specifically tailored for analyzing and working with Ricoh GR3(x) firmware.
+- Docker environments configured with the necessary dependencies for firmware analysis.
+
+## Dependencies
 
 - cpio
 - binwalk
 - python3
 - curl
 
+## Hardware
+
+The Ricoh GR3(x) camera is equipped with the following hardware:
+
+- CPU: Milbeaut SC2000 (Quad Core ARM CORTEX-A7)
+  (_Please note that this is my best guess based on kernel config and is yet to be confirmed_)
+
 ## Software
 
-The camera is running a custom Poky (Yocto Project Reference Distro) 2.2 on a linux kernel v4.4. It has several system daemons to control the camera and a few custom libraries.
-The whole startup process of all these daemons take place in the `/etc/rc.local` script.
+The camera runs a custom Poky (Yocto Project Reference Distro) 2.2 operating system on a Linux kernel v4.4. It utilizes several system daemons, custom libraries, and the `/etc/rc.local` script for the startup process.
 
 ### Daemons
 
-#### camctld (C++)
-
-The camera controller daemon.
-
-#### sysmgrd (C++)
-
-Still Unknown
-
-#### netmgrd (C++)
-
-Still Unknown
-
-#### bled (C++)
-
-This daemon serves the BLE interface.
-
-#### webapid (C++)
-
-This daemon serves the camera remote control and image download web API.
-It's using [CrowCpp](https://crowcpp.org/master/) as webserver library.
-
-#### usbd (C++)
-
-This daemon sets up the USB device configuration.
-
-#### mtpd (C++)
-
-This daemon serves the MTP interface.
+- `camctld` (C++): The camera controller daemon.
+- `sysmgrd` (C++): Functionality not analyzed yet.
+- `netmgrd` (C++): Functionality not analyzed yet.
+- `bled` (C++): Serves the BLE (Bluetooth Low Energy) interface.
+- `webapid` (C++): Serves the camera's remote control and image download web API. Utilizes the [CrowCpp](https://crowcpp.org/master/) web server library.
+- `usbd` (C++): Sets up the USB device configuration.
+- `mtpd` (C++): Serves the MTP (Media Transfer Protocol) interface.
 
 ### Libraries
 
-#### libshmem_manager.so (C)
+- `libshmem_manager.so` (C): Provides functions to manage and utilize shared memory for IPC (Inter-Process Communication) and potentially hardware communication.
+- `libcmfwk.so` (C): Offers functions for managing IPCU, mmaped memory, and shmem.
+- `libcamera-controller.so` (C++): Serves as the interface to the camera functionality.
 
-Functions to manage and use the shared memory for IPC (and hardware communication?).
+## Project Progress
 
-#### libcmfwk.so (C)
+I have made significant progress in my exploration of the Ricoh GR3(x) firmware. Here are some notable achievements and ongoing tasks:
 
-Functions to manage IPCU, mmaped memory, and shmem.
+- Extracted the firmware image using [gr_unpack](https://github.com/yeahnope/gr_unpack) (Big thanks goes out to: @yeahnope)
+- Analyzed the firmware image contents using `binwalk` and identified files of interest.
+- Extracted the kernel configuration.
+- Built the kernel from the source code provided by [RICOH IMAGING](https://www.ricoh-imaging.co.jp/english/products/oss/).
+- Extracted the rootfs from the firmware image.
+- Created a Docker container to:
+  - Run the entire system.
+  - Run and debug single applications.
+- Initiated reverse engineering efforts on various components, including:
+  - `webapid`
+  - `sysmgrd`
+  - `camctrld`
+  - `libcamera-controller.so`
+  - `libcmfwk.so`
+  - `libshmem_manager.so`
+- Started writing mocks for:
+  - `libcmfwk.so`
+  - `libshmem_manager.so`
+- Explored running the system in QEMU.
 
-#### libcamera-controller.so (C++)
+## Next Tasks
 
-Interface to the camera functionality.
+Moving forward, my focus will be on the following tasks:
 
-## Log
-
-- Extracted firmware image (Big thanks to @yeahnope for [gr_unpack](https://github.com/yeahnope/gr_unpack)!)
-- Analyzed firmware image contents with binwalk and identified files of interest
-- Extracted kernel config
-- Built kernel from source code supplied by [RICOH IMAGING](https://www.ricoh-imaging.co.jp/english/products/oss/)
-- Extracted rootfs from firmware image
-- Created docker container to:
-  - Run whole system
-  - Run/Debug single application
-- Started reverse engineering of:
-  - webapid
-  - sysmgrd
-  - camctrld
-  - libcamera-controller.so
-  - libcmfwk.so
-  - libshmem_manager.so
-- Started to write mocks for:
-  - libcmfwk.so
-  - libshmem_manager.so
-- Started to figure out how to run the system in qemu
-
-## Next tasks / Help welcome!
-
-- Get system fully running with mocked shmem/IPCU related stuff
-- Analyze how the firmware update process works
-- Analyze how the display output works
-- Find vulnerabilities to get remote shell access to the camera. This is a list of potential attack surfaces.
+- Document all findings
+- Running the system with fully mocked shmem/IPCU related functionality.
+- Analyzing the firmware update process.
+- Investigating the display output mechanism.
+- Identifying potential attack surfaces and vulnerabilities for achieving remote shell access to the camera. These daemons could be the most interesting:
   - FW update process
   - webapid
   - bled
   - usbd / mtpd
-- Create docker containers for:
-  - Building kernel and mocks
-  - QEMU
 
+## Contributing
 
+I encourage contributions from the community to enhance the repository's content and improve the tools and utilities provided. If you have valuable insights, additional tools, or improvements to share, please submit a pull request or open an issue.
 
-## Interesting repositories:
-
-These repos are all implementing clients for the web API to control the camera over WiFi.
-
-- [GRsync](https://github.com/clyang/GRsync)
-- [photo-sync](https://github.com/JohnMaguire/photo_sync)
-- [ricoh-gr-iii-tools](https://github.com/mneumann/ricoh-gr-iii-tools)
-- [ricoh-download](https://github.com/dkogan/ricoh-download)
-- [ricoh-wireless-protocol](https://github.com/CursedHardware/ricoh-wireless-protocol)
+Happy reverse engineering!
