@@ -1,0 +1,6 @@
+/assets
+/kernel
+/rootfs
+/mocks/*/*.o
+/mocks/*/*.so
+/docker/system/rootfs
