@@ -63,7 +63,7 @@ The camera runs a custom Poky (Yocto Project Reference Distro) 2.2 operating sys
 
 ### Libraries
 
-- `libshmem_manager.so` (C): Provides functions to manage and utilize shared memory for IPC (Inter-Process Communication) and potentially hardware communication.  [[Mock](mocks/libshmem_manager/shmem_manager.h)]
+- `libshmem_manager.so` (C): Provides functions to manage and utilize shared memory for IPC (Inter-Process Communication) and potentially hardware communication. [[Mock](mocks/libshmem_manager/shmem_manager.h)]
 - `libcmfwk.so` (C): Offers functions for managing IPCU, mmaped memory, and shmem. [[Mock](mocks/libcmfwk/cmfwk.h)]
 - `libcamera-controller.so` (C++): Serves as the interface to the camera functionality.
 
@@ -90,6 +90,7 @@ I have made significant progress in my exploration of the Ricoh GR3(x) firmware.
   - `libcmfwk.so`
   - `libshmem_manager.so`
 - Explored running the system in QEMU.
+- Analyze firmware with: [cwe_checker](analysis/cwe_checker), [EMBA](analysis/emba/default-scan-unpacked-fw/html-report) and [firmwalker](analysis/firmwalker.txt)
 
 ## Next Tasks
 
