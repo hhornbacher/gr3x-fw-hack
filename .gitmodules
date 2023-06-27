@@ -1,3 +1,6 @@
 [submodule "tools/ext/gr_unpack"]
 	path = tools/ext/gr_unpack
 	url = https://github.com/yeahnope/gr_unpack.git
+[submodule "tools/ext/firmwalker"]
+	path = tools/ext/firmwalker
+	url = https://github.com/craigz28/firmwalker.git
