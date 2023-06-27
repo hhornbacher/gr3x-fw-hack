@@ -1,0 +1,2090 @@
+<!-- 
+EMBA - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2023 Siemens AG
+Copyright 2020-2023 Siemens Energy AG
+
+EMBA comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+EMBA is licensed under GPLv3
+
+Author(s): Pascal Eckmann
+Contributor(s): Michael Messner, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div id="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" id="logoImage" src="./../style/emba.svg" alt="logo"></a>
+  </div>
+  <div id="nav">
+      <a id="embark" class="hidden" href="{{ embarkBackUrl }}">&laquo; Back to EMBArk</a> <!-- nosem -->
+      <a class="backButton" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s15_radare_decompile_checks.html" title="./../s15_radare_decompile_checks.html" >&laquo; Back to s15_radare_decompile_checks</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">libnsl-2.24.so</span></pre>
+<br />
+<pre>  </pre>
+<pre>  	<span class="orange">Partial RELRO</span>  <span class="red">No Canary found</span>   <span class="green">NX enabled</span>   <span class="orange">DSO</span>          <span class="green">No RPATH</span>     <span class="green">No RUNPATH</span>   <span class="green">No Symbols</pre>
+<br />
+<pre></span></pre>
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">printf</span> tear down of </span><span class="orange">libnsl-2.24.so</span></pre>
+<br />
+<pre>    ; assembly                                               | /* r2dec pseudo code output */</pre>
+<pre>                                                             | /* /logs/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/lib/libnsl-2.24.so &commat; 0x602c */</pre>
+<pre>                                                             | #include &lt;stdint.h&gt;</pre>
+<pre>                                                             |  </pre>
+<pre>    ; (fcn) sym.nis_print_directory ()                       | void nis_print_directory (int32_t arg_0h, int32_t arg_4h, int32_t arg_8h, int32_t arg_ch, int32_t arg_10h, int32_t arg_14h, int32_t arg_18h, int32_t arg1) {</pre>
+<pre>                                                             |     char * format;</pre>
+<pre>                                                             |     int32_t var_4h;</pre>
+<pre>                                                             |     int32_t var_8h;</pre>
+<pre>                                                             |     int32_t var_ch;</pre>
+<pre>                                                             |     int32_t var_14h;</pre>
+<pre>                                                             |     r0 = arg1;</pre>
+<pre>    0x0000602c push {r4, r5, r6, r7, r8, sb, sl, fp, lr}     |     </pre>
+<pre>    0x00006030 mov r2, 5                                     |     r2 = 5;</pre>
+<pre>    0x00006034 ldr r4, [pc, 0x41c]                           |     r4 = *(0x6454);</pre>
+<pre>    0x00006038 sub sp, sp, 0x14                              |     </pre>
+<pre>    0x0000603c ldr r3, [pc, 0x418]                           |     r3 = *(0x6458);</pre>
+<pre>    0x00006040 mov fp, r0                                    |     </pre>
+<pre>    0x00006044 add r4, pc, r4                                |     r4 = pc + r4;</pre>
+<pre>    0x00006048 ldr r1, [pc, 0x410]                           |     r1 = *(0x645c);</pre>
+<pre>    0x0000604c ldr r8, [r4, r3]                              |     r8 = *(0x6454);</pre>
+<pre>    0x00006050 add r1, pc, r1                                |     r1 = pc + r1;</pre>
+<pre>    0x00006054 mov r0, r8                                    |     r0 = r8;</pre>
+<pre>    0x00006058 bl 0x2a88                                     |     dcgettext (r0, r1);</pre>
+<pre>    0x0000605c ldr r1, [fp]                                  |     r1 = *(fp);</pre>
+<pre><span class="red">    0x00006060 bl 0x2a4c                                     |     printf (r0, r1)</span></span></pre>
+<pre>    0x00006064 ldr r1, [pc, 0x3f8]                           |     r1 = *(0x6460);</pre>
+<pre>    0x00006068 mov r2, 5                                     |     r2 = 5;</pre>
+<pre>    0x0000606c mov r0, r8                                    |     r0 = r8;</pre>
+<pre>    0x00006070 add r1, pc, r1                                |     r1 = pc + r1;</pre>
+<pre>    0x00006074 bl 0x2a88                                     |     r0 = dcgettext (r0, r1);</pre>
+<pre>    0x00006078 mov r3, r0                                    |     r3 = r0;</pre>
+<pre>    0x0000607c ldr r0, [fp, 4]                               |     r0 = *(arg_4h);</pre>
+<pre>    0x00006080 bl 0x5de0                                     |     r0 = fcn_00005de0 (r0);</pre>
+<pre>    0x00006084 mov r1, r0                                    |     r1 = r0;</pre>
+<pre>    0x00006088 mov r0, r3                                    |     r0 = r3;</pre>
+<pre><span class="red">    0x0000608c bl 0x2a4c                                     |     printf (r0, r1)</span></span></pre>
+<pre>    0x00006090 ldr r3, [fp, 8]                               |     r3 = *(arg_8h);</pre>
+<pre>    0x00006094 ldr r6, [fp, 0xc]                             |     r6 = *(arg_ch);</pre>
+<pre>    0x00006098 cmp r3, 0                                     |     </pre>
+<pre>    0x0000609c ldr r3, [pc, 0x3c4]                           |     r3 = *(0x6464);</pre>
+<pre>                                                             |     if (r3 == 0) {</pre>
+<pre>    0x000060a0 beq 0x6450                                    |         goto label_9;</pre>
+<pre>                                                             |     }</pre>
+<pre>    0x000060a4 ldr r2, [pc, 0x3c0]                           |     r2 = *(0x6468);</pre>
+<pre>    0x000060a8 add r6, r6, 0x18                              |     r6 += 0x18;</pre>
+<pre>    0x000060ac mov sb, 0                                     |     sb = 0;</pre>
+<pre>    0x000060b0 add r2, pc, r2                                |     r2 = pc + r2;</pre>
+<pre>    0x000060b4 str r2, [sp, 4]                               |     var_4h = r2;</pre>
+<pre>    0x000060b8 ldr r2, [pc, 0x3b0]                           |     r2 = *(0x646c);</pre>
+<pre>    0x000060bc add r2, pc, r2                                |     r2 = pc + r2;</pre>
+<pre>    0x000060c0 str r2, [sp, 0xc]                             |     var_ch = r2;</pre>
+<pre>    0x000060c4 ldr r7, [r4, r3]                              |     r7 = *((r4 + r3));</pre>
+<pre>    0x000060c8 ldr r3, [pc, 0x3a4]                           |     r3 = *(0x6470);</pre>
+<pre>    0x000060cc add r3, pc, r3                                |     r3 = pc + r3;</pre>
+<pre>    0x000060d0 str r3, [sp]                                  |     *(sp) = r3;</pre>
+<pre>                                                             |     do {</pre>
+<pre>    0x000060d4 cmp sb, 0                                     |         </pre>
+<pre>    0x000060d8 mov r2, 5                                     |         r2 = 5;</pre>
+<pre>                                                             |         if (sb != 0) {</pre>
+<pre>    0x000060dc bne 0x63e4                                    |             goto label_10;</pre>
+<pre>                                                             |         }</pre>
+<pre>    0x000060e0 ldr r1, [pc, 0x390]                           |         r1 = *(0x6474);</pre>
+<pre>    0x000060e4 mov r0, r8                                    |         r0 = r8;</pre>
+<pre>    0x000060e8 add r1, pc, r1                                |         r1 = pc + r1;</pre>
+<pre>    0x000060ec bl 0x2a88                                     |         dcgettext (r0, r1);</pre>
+<pre>    0x000060f0 ldr r1, [r7]                                  |         r1 = *(r7);</pre>
+<pre>    0x000060f4 bl 0x2e48                                     |         fputs (r0, r1);</pre>
+<pre>                                                             | label_5:</pre>
+<pre>    0x000060f8 ldr r1, [pc, 0x37c]                           |         r1 = *(0x6478);</pre>
+<pre>    0x000060fc mov r2, 5                                     |         r2 = 5;</pre>
+<pre>    0x00006100 mov r0, r8                                    |         r0 = r8;</pre>
+<pre>    0x00006104 add r1, pc, r1                                |         r1 = pc + r1;</pre>
+<pre>    0x00006108 bl 0x2a88                                     |         dcgettext (r0, r1);</pre>
+<pre>    0x0000610c ldr r1, [r6, -0x18]                           |         r1 = *((r6 - 0x18));</pre>
+<pre><span class="red">    0x00006110 bl 0x2a4c                                     |         printf (r0, r1)</span></span></pre>
+<pre>    0x00006114 ldr r1, [pc, 0x364]                           |         r1 = *(0x647c);</pre>
+<pre>    0x00006118 mov r2, 5                                     |         r2 = 5;</pre>
+<pre>    0x0000611c mov r0, r8                                    |         r0 = r8;</pre>
+<pre>    0x00006120 add r1, pc, r1                                |         r1 = pc + r1;</pre>
+<pre>    0x00006124 bl 0x2a88                                     |         dcgettext (r0, r1);</pre>
+<pre>    0x00006128 ldr r1, [r7]                                  |         r1 = *(r7);</pre>
+<pre>    0x0000612c bl 0x2e48                                     |         fputs (r0, r1);</pre>
+<pre>    0x00006130 ldr r3, [r6, -0xc]                            |         r3 = *((r6 - 0xc));</pre>
+<pre>    0x00006134 mov r2, 5                                     |         r2 = 5;</pre>
+<pre>    0x00006138 cmp r3, 3                                     |         </pre>
+<pre>                                                             |         if (r3 &gt; 3) {</pre>
+<pre>                                                             |             /* switch table (4 cases) at 0x6144 */</pre>
+<pre>    0x0000613c addls pc, pc, r3, lsl 2                       |             pc += (r3 &lt;&lt; 2);</pre>
+<pre>                                                             |         }</pre>
+<pre>    0x00006140 b 0x6428                                      |         goto label_11;</pre>
+<pre>    0x00006144 b 0x63c8                                      |         goto label_12;</pre>
+<pre>    0x00006148 b 0x63bc                                      |         goto label_13;</pre>
+<pre>    0x0000614c b 0x62a8                                      |         goto label_14;</pre>
+<pre>    0x00006150 b 0x6154                                      |         </pre>
+<pre>    0x00006154 ldr r1, [pc, 0x328]                           |         r1 = *(0x6480);</pre>
+<pre>    0x00006158 mov r0, r8                                    |         r0 = r8;</pre>
+<pre>    0x0000615c add r1, pc, r1                                |         r1 = pc + r1;</pre>
+<pre>    0x00006160 bl 0x2a88                                     |         dcgettext (r0, r1);</pre>
+<pre>    0x00006164 ldr r1, [r7]                                  |         r1 = *(r7);</pre>
+<pre>    0x00006168 bl 0x2e48                                     |         fputs (r0, r1);</pre>
+<pre>                                                             | label_4:</pre>
+<pre>    0x0000616c ldr r3, [r6, -0x14]                           |         r3 = *((r6 - 0x14));</pre>
+<pre>    0x00006170 cmp r3, 0                                     |         </pre>
+<pre>                                                             |         if (r3 != 0) {</pre>
+<pre>    0x00006174 bne 0x62d4                                    |             goto label_15;</pre>
+<pre>                                                             |         }</pre>
+<pre>                                                             | label_0:</pre>
+<pre>    0x00006178 ldr r3, [fp, 8]                               |         r3 = *(arg_8h);</pre>
+<pre>    0x0000617c add sb, sb, 1                                 |         sb++;</pre>
+<pre>    0x00006180 add r6, r6, 0x18                              |         r6 += 0x18;</pre>
+<pre>    0x00006184 cmp r3, sb                                    |         </pre>
+<pre>    0x00006188 bhi 0x60d4                                    |         </pre>
+<pre>                                                             |     } while (r3 &gt; sb);</pre>
+<pre>                                                             | label_8:</pre>
+<pre>    0x0000618c ldr r1, [pc, 0x2f4]                           |     r1 = *(0x6484);</pre>
+<pre>    0x00006190 mov r2, 5                                     |     r2 = 5;</pre>
+<pre>    0x00006194 mov r0, r8                                    |     r0 = r8;</pre>
+<pre>    0x00006198 mov r4, 0xe10                                 |     r4 = 0xe10;</pre>
+<pre>    0x0000619c add r1, pc, r1                                |     r1 = pc + r1;</pre>
+<pre>    0x000061a0 bl 0x2a88                                     |     dcgettext (r0, r1);</pre>
+<pre>    0x000061a4 ldr r1, [r7]                                  |     r1 = *(r7);</pre>
+<pre>    0x000061a8 bl 0x2e48                                     |     fputs (r0, r1);</pre>
+<pre>    0x000061ac ldr ip, [fp, 0x10]                            |     ip = *(arg_10h);</pre>
+<pre>    0x000061b0 movw r0, 0xb3c5                               |     </pre>
+<pre>    0x000061b4 movt r0, 0x91a2                               |     r0 = 0x91a2b3c5;</pre>
+<pre>    0x000061b8 movw r2, 0x8889                               |     </pre>
+<pre>                                                             |     /* if there is a right shift of 8, then it's a division by 1/480 */</pre>
+<pre>    0x000061bc movt r2, 0x8888                               |     r2 = 0x88888889;</pre>
+<pre>    0x000061c0 umull r0, r1, ip, r0                          |     r0:r1 = ip * r0;</pre>
+<pre>    0x000061c4 ldr r0, [pc, 0x2c0]                           |     r0 = *(0x6488);</pre>
+<pre>    0x000061c8 mov lr, 0x3c                                  |     lr = 0x3c;</pre>
+<pre>    0x000061cc add r0, pc, r0                                |     r0 = pc + r0;</pre>
+<pre>    0x000061d0 lsr r3, r1, 0xb                               |     r3 = r1 &gt;&gt; 0xb;</pre>
+<pre>    0x000061d4 mov r1, r3                                    |     r1 = r3;</pre>
+<pre>    0x000061d8 mls r3, r4, r3, ip                            |     __asm ("mls r3, r4, r3, ip");</pre>
+<pre>    0x000061dc umull r4, r5, r3, r2                          |     r4:r5 = r3 * r2;</pre>
+<pre>    0x000061e0 lsr r2, r5, 5                                 |     r2 = r5 &gt;&gt; 5;</pre>
+<pre>    0x000061e4 mls r3, lr, r2, r3                            |     __asm ("mls r3, lr, r2, r3");</pre>
+<pre><span class="red">    0x000061e8 bl 0x2a4c                                     |     printf (r0, r1, r2, r3)</span></span></pre>
+<pre>    0x000061ec ldr r1, [pc, 0x29c]                           |     r1 = *(0x648c);</pre>
+<pre>    0x000061f0 mov r2, 5                                     |     r2 = 5;</pre>
+<pre>    0x000061f4 mov r0, r8                                    |     r0 = r8;</pre>
+<pre>    0x000061f8 add r1, pc, r1                                |     r1 = pc + r1;</pre>
+<pre>    0x000061fc bl 0x2a88                                     |     dcgettext (r0, r1);</pre>
+<pre>    0x00006200 ldr r1, [r7]                                  |     r1 = *(r7);</pre>
+<pre>    0x00006204 bl 0x2e48                                     |     fputs (r0, r1);</pre>
+<pre>    0x00006208 ldr r3, [fp, 0x14]                            |     r3 = *(arg_14h);</pre>
+<pre>    0x0000620c cmp r3, 0                                     |     </pre>
+<pre>                                                             |     if (r3 == 0) {</pre>
+<pre>    0x00006210 beq 0x62a0                                    |         goto label_16;</pre>
+<pre>                                                             |     }</pre>
+<pre>    0x00006214 ldr r4, [fp, 0x18]                            |     r4 = *(arg_18h);</pre>
+<pre>    0x00006218 mov r5, 0                                     |     r5 = 0;</pre>
+<pre>    0x0000621c ldr sb, [pc, 0x270]                           |     sb = *(0x6490);</pre>
+<pre>    0x00006220 ldr r6, [pc, 0x270]                           |     r6 = *(0x6494);</pre>
+<pre>    0x00006224 add r4, r4, 8                                 |     r4 += 8;</pre>
+<pre>    0x00006228 add sb, pc, sb                                |     sb = pc + sb;</pre>
+<pre>    0x0000622c add r6, pc, r6                                |     r6 = pc + r6;</pre>
+<pre>                                                             |     do {</pre>
+<pre>    0x00006230 ldr r0, [r4, -8]                              |         r0 = *((r4 - 8));</pre>
+<pre>    0x00006234 add r5, r5, 1                                 |         r5++;</pre>
+<pre>    0x00006238 bl 0x5f94                                     |         nis_print_rights ();</pre>
+<pre>    0x0000623c mov r2, 5                                     |         r2 = 5;</pre>
+<pre>    0x00006240 mov r1, sb                                    |         r1 = sb;</pre>
+<pre>    0x00006244 mov r0, r8                                    |         r0 = r8;</pre>
+<pre>    0x00006248 bl 0x2a88                                     |         dcgettext (r0, r1);</pre>
+<pre>    0x0000624c add r4, r4, 8                                 |         r4 += 8;</pre>
+<pre>    0x00006250 mov r3, r0                                    |         r3 = r0;</pre>
+<pre>    0x00006254 ldr r0, [r4, -0xc]                            |         r0 = *((r4 - 0xc));</pre>
+<pre>    0x00006258 bl 0x5de0                                     |         r0 = fcn_00005de0 (r0);</pre>
+<pre>    0x0000625c mov r1, r0                                    |         r1 = r0;</pre>
+<pre>    0x00006260 mov r0, r3                                    |         r0 = r3;</pre>
+<pre><span class="red">    0x00006264 bl 0x2a4c                                     |         printf (r0, r1)</span></span></pre>
+<pre>    0x00006268 mov r2, 5                                     |         r2 = 5;</pre>
+<pre>    0x0000626c mov r1, r6                                    |         r1 = r6;</pre>
+<pre>    0x00006270 mov r0, r8                                    |         r0 = r8;</pre>
+<pre>    0x00006274 bl 0x2a88                                     |         dcgettext (r0, r1);</pre>
+<pre>    0x00006278 ldr r1, [r7]                                  |         r1 = *(r7);</pre>
+<pre>    0x0000627c bl 0x2e48                                     |         fputs (r0, r1);</pre>
+<pre>    0x00006280 ldr r0, [r4, -0x10]                           |         r0 = *((r4 - 0x10));</pre>
+<pre>    0x00006284 bl 0x5f94                                     |         nis_print_rights ();</pre>
+<pre>    0x00006288 ldr r1, [r7]                                  |         r1 = *(r7);</pre>
+<pre>    0x0000628c mov r0, 0xa                                   |         r0 = 0xa;</pre>
+<pre>    0x00006290 bl 0x2d88                                     |         fputc (r0, r1);</pre>
+<pre>    0x00006294 ldr r3, [fp, 0x14]                            |         r3 = *(arg_14h);</pre>
+<pre>    0x00006298 cmp r3, r5                                    |         </pre>
+<pre>    0x0000629c bhi 0x6230                                    |         </pre>
+<pre>                                                             |     } while (r3 &gt; r5);</pre>
+<pre>                                                             | label_16:</pre>
+<pre>    0x000062a0 add sp, sp, 0x14                              |     </pre>
+<pre>    0x000062a4 pop {r4, r5, r6, r7, r8, sb, sl, fp, pc}      |     </pre>
+<pre>                                                             | label_14:</pre>
+<pre>    0x000062a8 ldr r1, [pc, 0x1ec]                           |     r1 = *(0x6498);</pre>
+<pre>    0x000062ac add r1, pc, r1                                |     r1 = pc + r1;</pre>
+<pre>                                                             | label_3:</pre>
+<pre>    0x000062b0 mov r0, r8                                    |     r0 = r8;</pre>
+<pre>    0x000062b4 bl 0x2a88                                     |     dcgettext (r0, r1);</pre>
+<pre>    0x000062b8 ldr r1, [r6, -8]                              |     r1 = *((r6 - 8));</pre>
+<pre>    0x000062bc sub r1, r1, 0xc0000001                        |     r1 -= 0xc0000001;</pre>
+<pre>    0x000062c0 lsl r1, r1, 2                                 |     r1 &lt;&lt;= 2;</pre>
+<pre><span class="red">    0x000062c4 bl 0x2a4c                                     |     printf (r0, r1)</span></span></pre>
+<pre>    0x000062c8 ldr r3, [r6, -0x14]                           |     r3 = *((r6 - 0x14));</pre>
+<pre>    0x000062cc cmp r3, 0                                     |     </pre>
+<pre>                                                             |     if (r3 == 0) {</pre>
+<pre>    0x000062d0 beq 0x6178                                    |         goto label_0;</pre>
+<pre>                                                             |     }</pre>
+<pre>                                                             | label_15:</pre>
+<pre>    0x000062d4 ldr r1, [pc, 0x1c4]                           |     r1 = *(0x649c);</pre>
+<pre>    0x000062d8 mov r2, 5                                     |     r2 = 5;</pre>
+<pre>    0x000062dc mov r0, r8                                    |     r0 = r8;</pre>
+<pre>    0x000062e0 ldr r4, [r6, -0x10]                           |     r4 = *((r6 - 0x10));</pre>
+<pre>    0x000062e4 add r1, pc, r1                                |     r1 = pc + r1;</pre>
+<pre>    0x000062e8 bl 0x2a88                                     |     dcgettext (r0, r1);</pre>
+<pre>    0x000062ec ldr r1, [r6, -0x14]                           |     r1 = *((r6 - 0x14));</pre>
+<pre><span class="red">    0x000062f0 bl 0x2a4c                                     |     printf (r0, r1)</span></span></pre>
+<pre>    0x000062f4 ldr r3, [r6, -0x14]                           |     r3 = *((r6 - 0x14));</pre>
+<pre>    0x000062f8 cmp r3, 0                                     |     </pre>
+<pre>                                                             |     if (r3 == 0) {</pre>
+<pre>    0x000062fc beq 0x6178                                    |         goto label_0;</pre>
+<pre>                                                             |     }</pre>
+<pre>    0x00006300 ldr sl, [pc, 0x19c]                           |     sl = *(0x64a0);</pre>
+<pre>    0x00006304 add r4, r4, 0xc                               |     r4 += 0xc;</pre>
+<pre>    0x00006308 str sb, [sp, 8]                               |     var_8h = sb;</pre>
+<pre>    0x0000630c mov r5, 0                                     |     r5 = 0;</pre>
+<pre>    0x00006310 add sl, pc, sl                                |     sl = pc + sl;</pre>
+<pre>    0x00006314 ldr sb, [sp, 0xc]                             |     sb = var_ch;</pre>
+<pre>    0x00006318 b 0x6388                                      |     </pre>
+<pre>                                                             |     while (r1 == 0) {</pre>
+<pre>                                                             | label_1:</pre>
+<pre>    0x0000631c mov r0, sb                                    |         r0 = sb;</pre>
+<pre><span class="red">    0x00006320 bl 0x2a4c                                     |         printf (r0)</span></span></pre>
+<pre>                                                             | label_2:</pre>
+<pre>    0x00006324 ldr r1, [r4, -8]                              |         r1 = *((r4 - 8));</pre>
+<pre>    0x00006328 cmp r1, 0                                     |         </pre>
+<pre>                                                             |         if (r1 != 0) {</pre>
+<pre>    0x0000632c beq 0x633c                                    |             </pre>
+<pre>    0x00006330 ldrb r3, [r1]                                 |             r3 = *(r1);</pre>
+<pre>    0x00006334 cmp r3, 0                                     |             </pre>
+<pre>                                                             |             if (r3 != 0) {</pre>
+<pre>    0x00006338 bne 0x63fc                                    |                 goto label_17;</pre>
+<pre>                                                             |             }</pre>
+<pre>                                                             |         }</pre>
+<pre>    0x0000633c ldr r0, [pc, 0x164]                           |         r0 = *(0x64a4);</pre>
+<pre>    0x00006340 add r0, pc, r0                                |         r0 = pc + r0;</pre>
+<pre><span class="red">    0x00006344 bl 0x2a4c                                     |         printf (r0)</span></span></pre>
+<pre>                                                             | label_6:</pre>
+<pre>    0x00006348 ldr r0, [r4, -0xc]                            |         r0 = *((r4 - 0xc));</pre>
+<pre>    0x0000634c cmp r0, 0                                     |         </pre>
+<pre>                                                             |         if (r0 != 0) {</pre>
+<pre>    0x00006350 beq 0x6360                                    |             </pre>
+<pre>    0x00006354 ldrb r3, [r0]                                 |             r3 = *(r0);</pre>
+<pre>    0x00006358 cmp r3, 0                                     |             </pre>
+<pre>                                                             |             if (r3 != 0) {</pre>
+<pre>    0x0000635c bne 0x640c                                    |                 goto label_18;</pre>
+<pre>                                                             |             }</pre>
+<pre>                                                             |         }</pre>
+<pre>    0x00006360 ldr r0, [pc, 0x144]                           |         r0 = *(0x64a8);</pre>
+<pre>    0x00006364 mov r2, 2                                     |         r2 = 2;</pre>
+<pre>    0x00006368 ldr r3, [r7]                                  |         r3 = *(r7);</pre>
+<pre>    0x0000636c mov r1, 1                                     |         r1 = 1;</pre>
+<pre>    0x00006370 add r0, pc, r0                                |         r0 = pc + r0;</pre>
+<pre>    0x00006374 add r4, r4, 0xc                               |         r4 += 0xc;</pre>
+<pre>    0x00006378 bl 0x2b9c                                     |         fwrite (r0, r1, r2, r3);</pre>
+<pre>    0x0000637c ldr r3, [r6, -0x14]                           |         r3 = *((r6 - 0x14));</pre>
+<pre>    0x00006380 cmp r3, r5                                    |         </pre>
+<pre>                                                             |         if (r3 &lt; r5) {</pre>
+<pre>    0x00006384 bls 0x6420                                    |             goto label_19;</pre>
+<pre>                                                             |         }</pre>
+<pre>                                                             | label_7:</pre>
+<pre>    0x00006388 add r5, r5, 1                                 |         r5++;</pre>
+<pre>    0x0000638c mov r0, sl                                    |         r0 = sl;</pre>
+<pre>    0x00006390 mov r1, r5                                    |         r1 = r5;</pre>
+<pre><span class="red">    0x00006394 bl 0x2a4c                                     |         printf (r0, r1, r2, r3, r4, r5)</span></span></pre>
+<pre>    0x00006398 ldr r1, [r4, -4]                              |         r1 = *((r4 - 4));</pre>
+<pre>    0x0000639c cmp r1, 0                                     |         </pre>
+<pre>    0x000063a0 beq 0x631c                                    |         </pre>
+<pre>                                                             |     }</pre>
+<pre>    0x000063a4 ldrb r3, [r1]                                 |     r3 = *(r1);</pre>
+<pre>    0x000063a8 cmp r3, 0                                     |     </pre>
+<pre>                                                             |     if (r3 == 0) {</pre>
+<pre>    0x000063ac beq 0x631c                                    |         goto label_1;</pre>
+<pre>                                                             |     }</pre>
+<pre>    0x000063b0 ldr r0, [sp]                                  |     r0 = *(sp);</pre>
+<pre><span class="red">    0x000063b4 bl 0x2a4c                                     |     printf (r0)</span></span></pre>
+<pre>    0x000063b8 b 0x6324                                      |     goto label_2;</pre>
+<pre>                                                             | label_13:</pre>
+<pre>    0x000063bc ldr r1, [pc, 0xec]                            |     r1 = *(0x64ac);</pre>
+<pre>    0x000063c0 add r1, pc, r1                                |     r1 = pc + r1;</pre>
+<pre>    0x000063c4 b 0x62b0                                      |     goto label_3;</pre>
+<pre>                                                             | label_12:</pre>
+<pre>    0x000063c8 ldr r1, [pc, 0xe4]                            |     r1 = *(0x64b0);</pre>
+<pre>    0x000063cc mov r0, r8                                    |     r0 = r8;</pre>
+<pre>    0x000063d0 add r1, pc, r1                                |     r1 = pc + r1;</pre>
+<pre>    0x000063d4 bl 0x2a88                                     |     dcgettext (r0, r1);</pre>
+<pre>    0x000063d8 ldr r1, [r7]                                  |     r1 = *(r7);</pre>
+<pre>    0x000063dc bl 0x2e48                                     |     fputs (r0, r1);</pre>
+<pre>    0x000063e0 b 0x616c                                      |     goto label_4;</pre>
+<pre>                                                             | label_10:</pre>
+<pre>    0x000063e4 ldr r1, [sp, 4]                               |     r1 = var_4h;</pre>
+<pre>    0x000063e8 mov r0, r8                                    |     r0 = r8;</pre>
+<pre>    0x000063ec bl 0x2a88                                     |     dcgettext (r0, r1);</pre>
+<pre>    0x000063f0 ldr r1, [r7]                                  |     r1 = *(r7);</pre>
+<pre>    0x000063f4 bl 0x2e48                                     |     fputs (r0, r1);</pre>
+<pre>    0x000063f8 b 0x60f8                                      |     goto label_5;</pre>
+<pre>                                                             | label_17:</pre>
+<pre>    0x000063fc ldr r0, [pc, 0xb4]                            |     r0 = *(0x64b4);</pre>
+<pre>    0x00006400 add r0, pc, r0                                |     r0 = pc + r0;</pre>
+<pre><span class="red">    0x00006404 bl 0x2a4c                                     |     printf (r0)</span></span></pre>
+<pre>    0x00006408 b 0x6348                                      |     goto label_6;</pre>
+<pre>                                                             | label_18:</pre>
+<pre>    0x0000640c bl 0x2c20                                     |     puts (r0);</pre>
+<pre>    0x00006410 ldr r3, [r6, -0x14]                           |     r3 = *((r6 - 0x14));</pre>
+<pre>    0x00006414 add r4, r4, 0xc                               |     r4 += 0xc;</pre>
+<pre>    0x00006418 cmp r3, r5                                    |     </pre>
+<pre>                                                             |     if (r3 &gt; r5) {</pre>
+<pre>    0x0000641c bhi 0x6388                                    |         goto label_7;</pre>
+<pre>                                                             |     }</pre>
+<pre>                                                             | label_19:</pre>
+<pre>    0x00006420 ldr sb, [sp, 8]                               |     sb = var_8h;</pre>
+<pre>    0x00006424 b 0x6178                                      |     goto label_0;</pre>
+<pre>                                                             | label_11:</pre>
+<pre>    0x00006428 ldr r1, [pc, 0x8c]                            |     r1 = *(0x64b8);</pre>
+<pre>    0x0000642c mov r0, r8                                    |     r0 = r8;</pre>
+<pre>    0x00006430 add r1, pc, r1                                |     r1 = pc + r1;</pre>
+<pre>    0x00006434 bl 0x2a88                                     |     dcgettext (r0, r1);</pre>
+<pre>    0x00006438 ldr r2, [r6, -8]                              |     r2 = *((r6 - 8));</pre>
+<pre>    0x0000643c ldr r1, [r6, -0xc]                            |     r1 = *((r6 - 0xc));</pre>
+<pre>    0x00006440 sub r2, r2, 0xc0000001                        |     r2 -= 0xc0000001;</pre>
+<pre>    0x00006444 lsl r2, r2, 2                                 |     r2 &lt;&lt;= 2;</pre>
+<pre><span class="red">    0x00006448 bl 0x2a4c                                     |     printf (r0, r1, r2)</span></span></pre>
+<pre>    0x0000644c b 0x616c                                      |     goto label_4;</pre>
+<pre>                                                             | label_9:</pre>
+<pre>    0x00006450 ldr r7, [r4, r3]                              |     r7 = *((r4 + r3));</pre>
+<pre>    0x00006454 b 0x618c                                      |     goto label_8;</pre>
+<pre>                                                             | }</pre>
+<pre>    ; assembly                                                   | /* r2dec pseudo code output */</pre>
+<pre>                                                                 | /* /logs/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/lib/libnsl-2.24.so &commat; 0x690c */</pre>
+<pre>                                                                 | #include &lt;stdint.h&gt;</pre>
+<pre>                                                                 |  </pre>
+<pre>    ; (fcn) sym.nis_print_entry ()                               | void nis_print_entry (int32_t arg1) {</pre>
+<pre>                                                                 |     r0 = arg1;</pre>
+<pre>    0x0000690c push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}     |     </pre>
+<pre>    0x00006910 mov r2, 5                                         |     r2 = 5;</pre>
+<pre>    0x00006914 ldr sb, [pc, 0x120]                               |     sb = *(0x00006a3c);</pre>
+<pre>    0x00006918 mov r6, r0                                        |     r6 = r0;</pre>
+<pre>    0x0000691c ldr r3, [pc, 0x11c]                               |     r3 = *(0x6a3c);</pre>
+<pre>    0x00006920 add sb, pc, sb                                    |     sb = pc + sb;</pre>
+<pre>    0x00006924 ldr r1, [pc, 0x118]                               |     r1 = *(0x6a40);</pre>
+<pre>    0x00006928 ldr r7, [sb, r3]                                  |     r7 = *((sb + r3));</pre>
+<pre>    0x0000692c add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x00006930 mov r0, r7                                        |     r0 = r7;</pre>
+<pre>    0x00006934 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x00006938 ldr r1, [r6]                                      |     r1 = *(r6);</pre>
+<pre><span class="red">    0x0000693c bl 0x2a4c                                         |     printf (r0, r1)</span></span></pre>
+<pre>    0x00006940 ldr r3, [r6, 4]                                   |     r3 = *((r6 + 4));</pre>
+<pre>    0x00006944 cmp r3, 0                                         |     </pre>
+<pre>    0x00006948 popeq {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}    |     </pre>
+<pre>    0x0000694c ldr r8, [pc, 0xf4]                                |     r8 = *(0x6a44);</pre>
+<pre>    0x00006950 mov r4, 0                                         |     r4 = 0;</pre>
+<pre>    0x00006954 ldr sl, [pc, 0xf0]                                |     sl = *(0x6a48);</pre>
+<pre>    0x00006958 mov r5, r4                                        |     r5 = r4;</pre>
+<pre>    0x0000695c ldr fp, [pc, 0xec]                                |     fp = *(0x6a4c);</pre>
+<pre>    0x00006960 add r8, pc, r8                                    |     r8 = pc + r8;</pre>
+<pre>    0x00006964 add sl, pc, sl                                    |     sl = pc + sl;</pre>
+<pre>    0x00006968 add fp, pc, fp                                    |     </pre>
+<pre>    0x0000696c b 0x69b8                                          |     </pre>
+<pre>                                                                 |     while ((r3 &amp; 2) == 0) {</pre>
+<pre>    0x00006970 tst r3, 1                                         |         </pre>
+<pre>                                                                 |         if ((r3 &amp; 1) != 0) {</pre>
+<pre>    0x00006974 bne 0x6a28                                        |             goto label_1;</pre>
+<pre>                                                                 |         }</pre>
+<pre>    0x00006978 ldr r3, [ip, 4]                                   |         r3 = *((ip + 4));</pre>
+<pre>    0x0000697c mov r0, sl                                        |         r0 = sl;</pre>
+<pre>    0x00006980 ldr lr, [pc, 0xcc]                                |         lr = *(0x6a50);</pre>
+<pre>    0x00006984 mov r2, 8                                         |         r2 = 8;</pre>
+<pre>    0x00006988 cmp r3, 0                                         |         </pre>
+<pre>    0x0000698c mov r1, 1                                         |         r1 = 1;</pre>
+<pre>                                                                 |         if (r3 != 0) {</pre>
+<pre>    0x00006990 bne 0x6a18                                        |             goto label_2;</pre>
+<pre>                                                                 |         }</pre>
+<pre>    0x00006994 ldr r3, [sb, lr]                                  |         r3 = *((sb + lr));</pre>
+<pre>    0x00006998 mov r0, fp                                        |         r0 = fp;</pre>
+<pre>    0x0000699c ldr r3, [r3]                                      |         r3 = *(r3);</pre>
+<pre>    0x000069a0 bl 0x2b9c                                         |         fwrite (r0, r1, r2, r3);</pre>
+<pre>                                                                 | label_0:</pre>
+<pre>    0x000069a4 ldr r3, [r6, 4]                                   |         r3 = *((r6 + 4));</pre>
+<pre>    0x000069a8 add r5, r5, 1                                     |         r5++;</pre>
+<pre>    0x000069ac add r4, r4, 0xc                                   |         r4 += 0xc;</pre>
+<pre>    0x000069b0 cmp r3, r5                                        |         </pre>
+<pre>                                                                 |         if (r3 &lt; r5) {</pre>
+<pre>    0x000069b4 bls 0x6a38                                        |             goto label_3;</pre>
+<pre>                                                                 |         }</pre>
+<pre>    0x000069b8 mov r2, 5                                         |         r2 = 5;</pre>
+<pre>    0x000069bc mov r1, r8                                        |         r1 = r8;</pre>
+<pre>    0x000069c0 mov r0, r7                                        |         r0 = r7;</pre>
+<pre>    0x000069c4 bl 0x2a88                                         |         dcgettext (r0, r1);</pre>
+<pre>    0x000069c8 ldr r3, [r6, 8]                                   |         r3 = *((r6 + 8));</pre>
+<pre>    0x000069cc mov r1, r5                                        |         r1 = r5;</pre>
+<pre>    0x000069d0 add r3, r3, r4                                    |         r3 += r4;</pre>
+<pre>    0x000069d4 ldr r2, [r3, 4]                                   |         r2 = *((r3 + 4));</pre>
+<pre><span class="red">    0x000069d8 bl 0x2a4c                                         |         printf (r0, r1, r2, r3)</span></span></pre>
+<pre>    0x000069dc ldr r3, [r6, 8]                                   |         r3 = *((r6 + 8));</pre>
+<pre>    0x000069e0 add ip, r3, r4                                    |         </pre>
+<pre>    0x000069e4 ldr r3, [r3, r4]                                  |         r3 = *((r3 + r4));</pre>
+<pre>    0x000069e8 tst r3, 2                                         |         </pre>
+<pre>    0x000069ec beq 0x6970                                        |         </pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x000069f0 ldr r1, [pc, 0x60]                                |     r1 = *(0x6a54);</pre>
+<pre>    0x000069f4 mov r2, 5                                         |     r2 = 5;</pre>
+<pre>    0x000069f8 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>                                                                 |     do {</pre>
+<pre>    0x000069fc mov r0, r7                                        |         r0 = r7;</pre>
+<pre>    0x00006a00 bl 0x2a88                                         |         dcgettext (r0, r1);</pre>
+<pre>    0x00006a04 ldr r3, [pc, 0x48]                                |         r3 = *(0x6a50);</pre>
+<pre>    0x00006a08 ldr r3, [sb, r3]                                  |         r3 = *((sb + r3));</pre>
+<pre>    0x00006a0c ldr r1, [r3]                                      |         r1 = *(0x6a50);</pre>
+<pre>    0x00006a10 bl 0x2e48                                         |         fputs (r0, r1);</pre>
+<pre>    0x00006a14 b 0x69a4                                          |         goto label_0;</pre>
+<pre>                                                                 | label_2:</pre>
+<pre>    0x00006a18 ldr r2, [ip, 8]                                   |         r2 = *((ip + 8));</pre>
+<pre>    0x00006a1c mov r1, r3                                        |         r1 = r3;</pre>
+<pre><span class="red">    0x00006a20 bl 0x2a4c                                         |         printf (r0, r1, r2)</span></span></pre>
+<pre>    0x00006a24 b 0x69a4                                          |         goto label_0;</pre>
+<pre>                                                                 | label_1:</pre>
+<pre>    0x00006a28 ldr r1, [pc, 0x2c]                                |         r1 = *(0x6a58);</pre>
+<pre>    0x00006a2c mov r2, 5                                         |         r2 = 5;</pre>
+<pre>    0x00006a30 add r1, pc, r1                                    |         r1 = pc + r1;</pre>
+<pre>    0x00006a34 b 0x69fc                                          |         </pre>
+<pre>                                                                 |     } while (1);</pre>
+<pre>                                                                 | label_3:</pre>
+<pre>    0x00006a38 pop {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}      |     </pre>
+<pre>                                                                 | }</pre>
+<pre>    ; assembly                               | /* r2dec pseudo code output */</pre>
+<pre>                                             | /* /logs/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/lib/libnsl-2.24.so &commat; 0x64c0 */</pre>
+<pre>                                             | #include &lt;stdint.h&gt;</pre>
+<pre>                                             |  </pre>
+<pre>    ; (fcn) sym.nis_print_group ()           | void nis_print_group (int32_t arg1) {</pre>
+<pre>                                             |     r0 = arg1;</pre>
+<pre>    0x000064c0 push {r4, r5, r6, lr}         |     </pre>
+<pre>    0x000064c4 mov r2, 5                     |     r2 = 5;</pre>
+<pre>    0x000064c8 ldr r4, [pc, 0xa0]            |     </pre>
+<pre>    0x000064cc mov r5, r0                    |     r5 = r0;</pre>
+<pre>    0x000064d0 ldr r3, [pc, 0x9c]            |     r3 = *(0x6570);</pre>
+<pre>    0x000064d4 add r4, pc, r4                |     r4 = pc + r4;</pre>
+<pre>    0x000064d8 ldr r1, [pc, 0x98]            |     r1 = *(0x6574);</pre>
+<pre>    0x000064dc ldr r6, [r4, r3]              |     r6 = *(0x656c);</pre>
+<pre>    0x000064e0 add r1, pc, r1                |     r1 = pc + r1;</pre>
+<pre>    0x000064e4 mov r0, r6                    |     r0 = r6;</pre>
+<pre>    0x000064e8 bl 0x2a88                     |     dcgettext (r0, r1);</pre>
+<pre>    0x000064ec ldr r3, [pc, 0x88]            |     r3 = *(0x6578);</pre>
+<pre>    0x000064f0 ldr r4, [r4, r3]              |     r4 = *(0x656c);</pre>
+<pre>    0x000064f4 ldr r1, [r4]                  |     r1 = *(0x656c);</pre>
+<pre>    0x000064f8 bl 0x2e48                     |     fputs (r0, r1);</pre>
+<pre>    0x000064fc ldr r1, [r5]                  |     r1 = *(r5);</pre>
+<pre>    0x00006500 cmp r1, 0                     |     </pre>
+<pre>                                             |     if (r1 != 0) {</pre>
+<pre>    0x00006504 bne 0x6560                    |         goto label_1;</pre>
+<pre>                                             |     }</pre>
+<pre>                                             | label_0:</pre>
+<pre>    0x00006508 ldr r1, [pc, 0x70]            |     r1 = *(0x657c);</pre>
+<pre>    0x0000650c mov r2, 5                     |     r2 = 5;</pre>
+<pre>    0x00006510 mov r0, r6                    |     r0 = r6;</pre>
+<pre>    0x00006514 add r1, pc, r1                |     r1 = pc + r1;</pre>
+<pre>    0x00006518 bl 0x2a88                     |     dcgettext (r0, r1);</pre>
+<pre>    0x0000651c ldr r1, [r4]                  |     r1 = *(r4);</pre>
+<pre>    0x00006520 bl 0x2e48                     |     fputs (r0, r1);</pre>
+<pre>    0x00006524 ldr r3, [r5, 4]               |     r3 = *((r5 + 4));</pre>
+<pre>    0x00006528 cmp r3, 0                     |     </pre>
+<pre>    0x0000652c popeq {r4, r5, r6, pc}        |     </pre>
+<pre>    0x00006530 ldr r6, [pc, 0x4c]            |     r6 = *(0x6580);</pre>
+<pre>    0x00006534 mov r4, 0                     |     r4 = 0;</pre>
+<pre>    0x00006538 add r6, pc, r6                |     r6 = pc + r6;</pre>
+<pre>                                             |     do {</pre>
+<pre>    0x0000653c ldr r3, [r5, 8]               |         r3 = *((r5 + 8));</pre>
+<pre>    0x00006540 mov r0, r6                    |         r0 = r6;</pre>
+<pre>    0x00006544 ldr r1, [r3, r4, lsl 2]       |         offset_0 = r4 &lt;&lt; 2;</pre>
+<pre>                                             |         r1 = *((r3 + offset_0));</pre>
+<pre>    0x00006548 add r4, r4, 1                 |         r4++;</pre>
+<pre><span class="red">    0x0000654c bl 0x2a4c                     |         printf (r0, r1, r2, r3, r4, r5, r6)</span></span></pre>
+<pre>    0x00006550 ldr r3, [r5, 4]               |         r3 = *((r5 + 4));</pre>
+<pre>    0x00006554 cmp r3, r4                    |         </pre>
+<pre>    0x00006558 bhi 0x653c                    |         </pre>
+<pre>                                             |     } while (r3 &gt; r4);</pre>
+<pre>    0x0000655c pop {r4, r5, r6, pc}          |     </pre>
+<pre>                                             | label_1:</pre>
+<pre>    0x00006560 ldr r0, [pc, 0x20]            |     r0 = *(0x6584);</pre>
+<pre>    0x00006564 add r0, pc, r0                |     r0 = pc + r0;</pre>
+<pre><span class="red">    0x00006568 bl 0x2a4c                     |     printf (r0)</span></span></pre>
+<pre>    0x0000656c b 0x6508                      |     goto label_0;</pre>
+<pre>                                             | }</pre>
+<pre>    ; assembly                                                   | /* r2dec pseudo code output */</pre>
+<pre>                                                                 | /* /logs/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/lib/libnsl-2.24.so &commat; 0xb944 */</pre>
+<pre>                                                                 | #include &lt;stdint.h&gt;</pre>
+<pre>                                                                 |  </pre>
+<pre>                                                                 | #define BIT_MASK(t,v) ((t)(-((v)!= 0)))&amp;(((t)-1)&gt;&gt;((sizeof(t)*CHAR_BIT)-(v)))</pre>
+<pre>                                                                 |  </pre>
+<pre>    ; (fcn) sym.nis_print_group_entry ()                         | void nis_print_group_entry (int32_t arg1) {</pre>
+<pre>                                                                 |     int32_t var_58h;</pre>
+<pre>                                                                 |     int32_t var_54h;</pre>
+<pre>                                                                 |     char * format;</pre>
+<pre>                                                                 |     int32_t var_4ch;</pre>
+<pre>                                                                 |     int32_t var_48h;</pre>
+<pre>                                                                 |     int32_t var_44h;</pre>
+<pre>                                                                 |     int32_t var_40h;</pre>
+<pre>                                                                 |     int32_t var_3ch;</pre>
+<pre>                                                                 |     int32_t var_38h;</pre>
+<pre>                                                                 |     int32_t var_34h;</pre>
+<pre>                                                                 |     int32_t var_30h;</pre>
+<pre>                                                                 |     int32_t var_2ch;</pre>
+<pre>                                                                 |     int32_t var_28h;</pre>
+<pre>                                                                 |     int32_t var_24h;</pre>
+<pre>                                                                 |     int32_t var_0h;</pre>
+<pre>                                                                 |     int32_t var_20h_2;</pre>
+<pre>                                                                 |     int32_t var_20h;</pre>
+<pre>                                                                 |     r0 = arg1;</pre>
+<pre>    0x0000b944 push {r4, r5, r6, r7, r8, sb, sl, fp, lr}         |     </pre>
+<pre>    0x0000b948 subs r3, r0, 0                                    |     r3 = r0 - 0;</pre>
+<pre>    0x0000b94c ldr r4, [pc, 0x5c8]                               |     r4 = *(0xbf18);</pre>
+<pre>    0x0000b950 add fp, sp, 0x20                                  |     </pre>
+<pre>    0x0000b954 sub sp, sp, 0x3c                                  |     </pre>
+<pre>    0x0000b958 add r4, pc, r4                                    |     r4 = pc + r4;</pre>
+<pre>                                                                 |     if (r3 != r0) {</pre>
+<pre>    0x0000b95c beq 0xb96c                                        |         </pre>
+<pre>    0x0000b960 ldrb r2, [r3]                                     |         r2 = *(r3);</pre>
+<pre>    0x0000b964 cmp r2, 0                                         |         </pre>
+<pre>                                                                 |         if (r2 != 0) {</pre>
+<pre>    0x0000b968 bne 0xb974                                        |             goto label_9;</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 | label_2:</pre>
+<pre>    0x0000b96c sub sp, fp, 0x20                                  |     </pre>
+<pre>    0x0000b970 pop {r4, r5, r6, r7, r8, sb, sl, fp, pc}          |     </pre>
+<pre>                                                                 | label_9:</pre>
+<pre>    0x0000b974 mov r5, r3                                        |     r5 = r3;</pre>
+<pre>    0x0000b978 bl 0x2c80                                         |     strlen (r0);</pre>
+<pre>    0x0000b97c mov r7, sp                                        |     r7 = sp;</pre>
+<pre>    0x0000b980 add r2, r0, 0x39                                  |     r2 = r0 + 0x39;</pre>
+<pre>    0x0000b984 add r3, r0, 0xa                                   |     r3 = r0 + 0xa;</pre>
+<pre>    0x0000b988 bic r2, r2, 7                                     |     r2 = BIT_MASK (r2, 7);</pre>
+<pre>    0x0000b98c bic r3, r3, 7                                     |     r3 = BIT_MASK (r3, 7);</pre>
+<pre>    0x0000b990 sub sp, sp, r2                                    |     </pre>
+<pre>    0x0000b994 add sb, r0, 2                                     |     sb = r0 + 2;</pre>
+<pre>    0x0000b998 mov r0, r5                                        |     r0 = r5;</pre>
+<pre>    0x0000b99c mov r8, sp                                        |     r8 = sp;</pre>
+<pre>    0x0000b9a0 sub sp, sp, r3                                    |     </pre>
+<pre>    0x0000b9a4 mov r2, sb                                        |     r2 = sb;</pre>
+<pre>    0x0000b9a8 mov r1, sp                                        |     r1 = sp;</pre>
+<pre>    0x0000b9ac sub sp, sp, r3                                    |     </pre>
+<pre>    0x0000b9b0 bl 0x4fc4                                         |     r0 = nis_leaf_of_r ();</pre>
+<pre>    0x0000b9b4 mov r1, r0                                        |     r1 = r0;</pre>
+<pre>    0x0000b9b8 mov r0, r8                                        |     r0 = r8;</pre>
+<pre>    0x0000b9bc bl 0x2e18                                         |     stpcpy ();</pre>
+<pre>    0x0000b9c0 ldr r3, [pc, 0x558]                               |     r3 = *(0xbf1c);</pre>
+<pre>    0x0000b9c4 add r3, pc, r3                                    |     r3 = pc + r3;</pre>
+<pre>    0x0000b9c8 mov r6, r0                                        |     r6 = r0;</pre>
+<pre>    0x0000b9cc ldm r3!, {r0, r1, r2}                             |     r0 = *(r3!);</pre>
+<pre>                                                                 |     r1 = *((r3! + 4));</pre>
+<pre>                                                                 |     r2 = *((r3! + 8));</pre>
+<pre>    0x0000b9d0 str r0, [r6]                                      |     *(r6) = r0;</pre>
+<pre>    0x0000b9d4 mov r0, r5                                        |     r0 = r5;</pre>
+<pre>    0x0000b9d8 str r1, [r6, 4]                                   |     *((r6 + 4)) = r1;</pre>
+<pre>    0x0000b9dc mov r1, sp                                        |     r1 = sp;</pre>
+<pre>    0x0000b9e0 str r2, [r6, 8]                                   |     *((r6 + 8)) = r2;</pre>
+<pre>    0x0000b9e4 mov r2, sb                                        |     r2 = sb;</pre>
+<pre>    0x0000b9e8 bl 0xbfd4                                         |     r0 = nis_domain_of_r ();</pre>
+<pre>    0x0000b9ec subs r1, r0, 0                                    |     r1 = r0 - 0;</pre>
+<pre>                                                                 |     if (r1 != r0) {</pre>
+<pre>    0x0000b9f0 beq 0xba00                                        |         </pre>
+<pre>    0x0000b9f4 ldrb r3, [r1]                                     |         r3 = *(r1);</pre>
+<pre>    0x0000b9f8 cmp r3, 0                                         |         </pre>
+<pre>                                                                 |         if (r3 != 0) {</pre>
+<pre>    0x0000b9fc bne 0xbaec                                        |             goto label_10;</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 | label_1:</pre>
+<pre>    0x0000ba00 mov r0, r8                                        |     r0 = r8;</pre>
+<pre>    0x0000ba04 mov r1, 0x41                                      |     r1 = 0x41;</pre>
+<pre>    0x0000ba08 bl 0x844c                                         |     r0 = nis_lookup ();</pre>
+<pre>    0x0000ba0c subs r5, r0, 0                                    |     r5 = r0 - 0;</pre>
+<pre>                                                                 |     if (r5 == r0) {</pre>
+<pre>    0x0000ba10 beq 0xba34                                        |         goto label_11;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000ba14 ldr r6, [r5]                                      |     r6 = *(r5);</pre>
+<pre>    0x0000ba18 cmp r6, 0                                         |     </pre>
+<pre>                                                                 |     if (r6 != 0) {</pre>
+<pre>    0x0000ba1c bne 0xba2c                                        |         goto label_12;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000ba20 ldr r3, [r5, 4]                                   |     r3 = *((r5 + 4));</pre>
+<pre>    0x0000ba24 cmp r3, 1                                         |     </pre>
+<pre>    0x0000ba28 beq 0xba40                                        |     </pre>
+<pre>                                                                 |     while (r3 != 3) {</pre>
+<pre>                                                                 | label_12:</pre>
+<pre>    0x0000ba2c mov r0, r5                                        |         r0 = r5;</pre>
+<pre>    0x0000ba30 bl 0x5c14                                         |         nis_freeresult ();</pre>
+<pre>                                                                 | label_11:</pre>
+<pre>    0x0000ba34 mov sp, r7                                        |         </pre>
+<pre>    0x0000ba38 sub sp, fp, 0x20                                  |         </pre>
+<pre>    0x0000ba3c pop {r4, r5, r6, r7, r8, sb, sl, fp, pc}          |         </pre>
+<pre>    0x0000ba40 ldr ip, [r5, 8]                                   |         ip = *((r5 + 8));</pre>
+<pre>    0x0000ba44 ldr r3, [ip, 0x20]                                |         r3 = *((ip + 0x20));</pre>
+<pre>    0x0000ba48 cmp r3, 3                                         |         </pre>
+<pre>    0x0000ba4c bne 0xba2c                                        |         </pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000ba50 ldr lr, [ip, 0x28]                                |     </pre>
+<pre>    0x0000ba54 cmp lr, 0                                         |     </pre>
+<pre>                                                                 |     if (lr == 0) {</pre>
+<pre>    0x0000ba58 beq 0xbf00                                        |         goto label_13;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000ba5c ldr r2, [ip, 0x2c]                                |     r2 = *((ip + 0x2c));</pre>
+<pre>    0x0000ba60 mov sl, r6                                        |     sl = r6;</pre>
+<pre>    0x0000ba64 str r6, [fp, -0x48]                               |     var_48h = r6;</pre>
+<pre>    0x0000ba68 mov sb, r6                                        |     sb = r6;</pre>
+<pre>    0x0000ba6c str r6, [fp, -0x44]                               |     var_44h = r6;</pre>
+<pre>    0x0000ba70 add lr, r2, lr, lsl 2                             |     lr = r2 + (lr &lt;&lt; 2);</pre>
+<pre>    0x0000ba74 mov r8, r6                                        |     r8 = r6;</pre>
+<pre>    0x0000ba78 str ip, [fp, -0x40]                               |     var_40h = ip;</pre>
+<pre>    0x0000ba7c b 0xbab0                                          |     </pre>
+<pre>                                                                 |     while (r0 != 0x2a) {</pre>
+<pre>    0x0000ba80 cmp r0, 0x40                                      |         </pre>
+<pre>                                                                 |         if (r0 != 0x40) {</pre>
+<pre>    0x0000ba84 bne 0xbb00                                        |             goto label_14;</pre>
+<pre>                                                                 |         }</pre>
+<pre>    0x0000ba88 cmp r1, 0x2d                                      |         </pre>
+<pre>    0x0000ba8c sub r1, fp, 0x24                                  |         r1 -= var_24h;</pre>
+<pre>                                                                 |         if (r1 != 0x2d) {</pre>
+<pre>    0x0000ba90 addeq r1, r1, r6, lsl 2                           |             r1 += (r6 &lt;&lt; 2);</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 |         if (r1 == 0x2d) {</pre>
+<pre>    0x0000ba94 addne r1, r1, sl, lsl 2                           |             r1 += (sl &lt;&lt; 2);</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 |         if (r1 != 0x2d) {</pre>
+<pre>    0x0000ba98 addeq r6, r6, 1                                   |             r6++;</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 |         if (r1 == 0x2d) {</pre>
+<pre>    0x0000ba9c addne sl, sl, 1                                   |             sl++;</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 |         if (r1 != 0x2d) {</pre>
+<pre>    0x0000baa0 streq r3, [r1, -4]                                |             *((r1 - 4)) = r3;</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 |         if (r1 == 0x2d) {</pre>
+<pre>    0x0000baa4 strne r3, [r1, -0x10]                             |             var_34h = r3;</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 | label_0:</pre>
+<pre>    0x0000baa8 cmp lr, r2                                        |         </pre>
+<pre>                                                                 |         if (lr == r2) {</pre>
+<pre>    0x0000baac beq 0xbb54                                        |             goto label_15;</pre>
+<pre>                                                                 |         }</pre>
+<pre>    0x0000bab0 ldr r3, [r2], 4                                   |         r3 = *(r2);</pre>
+<pre>                                                                 |         r2 += 4;</pre>
+<pre>    0x0000bab4 ldrb r1, [r3]                                     |         r1 = *(r3);</pre>
+<pre>    0x0000bab8 sub r0, r1, 0x2d                                  |         r0 = r1 - 0x2d;</pre>
+<pre>    0x0000babc clz r0, r0                                        |         r0 &amp;= r0;</pre>
+<pre>    0x0000bac0 lsr r0, r0, 5                                     |         r0 &gt;&gt;= 5;</pre>
+<pre>    0x0000bac4 ldrb r0, [r3, r0]                                 |         r0 = *((r3 + r0));</pre>
+<pre>    0x0000bac8 cmp r0, 0x2a                                      |         </pre>
+<pre>    0x0000bacc bne 0xba80                                        |         </pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000bad0 cmp r1, 0x2d                                      |     </pre>
+<pre>                                                                 |     if (r1 != 0x2d) {</pre>
+<pre>    0x0000bad4 beq 0xbb1c                                        |         </pre>
+<pre>    0x0000bad8 sub r1, fp, 0x24                                  |         r1 -= var_24h;</pre>
+<pre>    0x0000badc add r1, r1, sb, lsl 2                             |         r1 += (sb &lt;&lt; 2);</pre>
+<pre>    0x0000bae0 add sb, sb, 1                                     |         sb++;</pre>
+<pre>    0x0000bae4 str r3, [r1, -0x14]                               |         var_38h = r3;</pre>
+<pre>    0x0000bae8 b 0xbaa8                                          |         goto label_0;</pre>
+<pre>                                                                 | label_10:</pre>
+<pre>    0x0000baec mov r3, 0x2e                                      |         r3 = 0x2e;</pre>
+<pre>    0x0000baf0 add r0, r6, 0xc                                   |         r0 = r6 + 0xc;</pre>
+<pre>    0x0000baf4 strb r3, [r6, 0xb]                                |         *((r6 + 0xb)) = r3;</pre>
+<pre>    0x0000baf8 bl 0x2bc0                                         |         strcpy (r0, r1);</pre>
+<pre>    0x0000bafc b 0xba00                                          |         goto label_1;</pre>
+<pre>                                                                 | label_14:</pre>
+<pre>    0x0000bb00 cmp r1, 0x2d                                      |         </pre>
+<pre>                                                                 |         if (r1 == 0x2d) {</pre>
+<pre>    0x0000bb04 beq 0xbb38                                        |             goto label_16;</pre>
+<pre>                                                                 |         }</pre>
+<pre>    0x0000bb08 sub r1, fp, 0x24                                  |         r1 -= var_24h;</pre>
+<pre>    0x0000bb0c add r1, r1, r8, lsl 2                             |         r1 += (r8 &lt;&lt; 2);</pre>
+<pre>    0x0000bb10 add r8, r8, 1                                     |         r8++;</pre>
+<pre>    0x0000bb14 str r3, [r1, -0x18]                               |         var_3ch = r3;</pre>
+<pre>    0x0000bb18 b 0xbaa8                                          |         goto label_0;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000bb1c ldr r0, [fp, -0x48]                               |     r0 = var_48h;</pre>
+<pre>    0x0000bb20 sub ip, fp, 0x24                                  |     </pre>
+<pre>    0x0000bb24 add r1, ip, r0, lsl 2                             |     r1 = ip + (r0 &lt;&lt; 2);</pre>
+<pre>    0x0000bb28 str r3, [r1, -8]                                  |     var_2ch = r3;</pre>
+<pre>    0x0000bb2c add r3, r0, 1                                     |     r3 = r0 + 1;</pre>
+<pre>    0x0000bb30 str r3, [fp, -0x48]                               |     var_48h = r3;</pre>
+<pre>    0x0000bb34 b 0xbaa8                                          |     goto label_0;</pre>
+<pre>                                                                 | label_16:</pre>
+<pre>    0x0000bb38 ldr r0, [fp, -0x44]                               |     r0 = var_44h;</pre>
+<pre>    0x0000bb3c sub ip, fp, 0x24                                  |     </pre>
+<pre>    0x0000bb40 add r1, ip, r0, lsl 2                             |     r1 = ip + (r0 &lt;&lt; 2);</pre>
+<pre>    0x0000bb44 str r3, [r1, -0xc]                                |     var_30h = r3;</pre>
+<pre>    0x0000bb48 add r3, r0, 1                                     |     r3 = r0 + 1;</pre>
+<pre>    0x0000bb4c str r3, [fp, -0x44]                               |     var_44h = r3;</pre>
+<pre>    0x0000bb50 b 0xbaa8                                          |     goto label_0;</pre>
+<pre>                                                                 | label_15:</pre>
+<pre>    0x0000bb54 ldr ip, [fp, -0x40]                               |     ip = var_40h;</pre>
+<pre>    0x0000bb58 str sl, [fp, -0x4c]                               |     var_4ch = sl;</pre>
+<pre>                                                                 | label_8:</pre>
+<pre>    0x0000bb5c ldr r0, [ip, 0x14]                                |     r0 = *((ip + 0x14));</pre>
+<pre>    0x0000bb60 str sp, [fp, -0x54]                               |     var_54h = sp;</pre>
+<pre>    0x0000bb64 bl 0x2c80                                         |     strlen (r0);</pre>
+<pre>    0x0000bb68 ldr r3, [pc, 0x3b4]                               |     </pre>
+<pre>    0x0000bb6c mov r2, 5                                         |     r2 = 5;</pre>
+<pre>    0x0000bb70 ldr r1, [pc, 0x3b0]                               |     r1 = *(0xbf24);</pre>
+<pre>    0x0000bb74 ldr r3, [r4, r3]                                  |     r3 = *((r4 + r3));</pre>
+<pre>    0x0000bb78 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000bb7c mov ip, r3                                        |     </pre>
+<pre>    0x0000bb80 str ip, [fp, -0x40]                               |     var_40h = ip;</pre>
+<pre>    0x0000bb84 add r3, r0, 0x11                                  |     r3 = r0 + 0x11;</pre>
+<pre>    0x0000bb88 mov r0, ip                                        |     r0 = ip;</pre>
+<pre>    0x0000bb8c bic r3, r3, 7                                     |     r3 = BIT_MASK (r3, 7);</pre>
+<pre>    0x0000bb90 sub sp, sp, r3                                    |     </pre>
+<pre>    0x0000bb94 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000bb98 ldr r3, [r5, 8]                                   |     r3 = *((r5 + 8));</pre>
+<pre>    0x0000bb9c ldr sl, [r3, 0x14]                                |     sl = *(0xbf34);</pre>
+<pre>    0x0000bba0 ldr r3, [r3, 8]                                   |     r3 = *(0xbf28);</pre>
+<pre>    0x0000bba4 str r3, [fp, -0x58]                               |     var_58h = r3;</pre>
+<pre>    0x0000bba8 str r0, [fp, -0x50]                               |     format = r0;</pre>
+<pre>    0x0000bbac mov r0, sl                                        |     r0 = sl;</pre>
+<pre>    0x0000bbb0 bl 0x2c80                                         |     strlen (r0);</pre>
+<pre>    0x0000bbb4 mov r1, sp                                        |     r1 = sp;</pre>
+<pre>    0x0000bbb8 add r2, r0, 0xa                                   |     r2 = r0 + 0xa;</pre>
+<pre>    0x0000bbbc mov r0, sl                                        |     r0 = sl;</pre>
+<pre>    0x0000bbc0 bl 0xbfd4                                         |     nis_domain_of_r ();</pre>
+<pre>    0x0000bbc4 ldr r3, [fp, -0x58]                               |     r3 = var_58h;</pre>
+<pre>    0x0000bbc8 mov r1, r3                                        |     r1 = r3;</pre>
+<pre>    0x0000bbcc mov r2, r0                                        |     r2 = r0;</pre>
+<pre>    0x0000bbd0 ldr r0, [fp, -0x50]                               |     r0 = format;</pre>
+<pre><span class="red">    0x0000bbd4 bl 0x2a4c                                         |     printf (r0, r1, r2, r3)</span></span></pre>
+<pre>    0x0000bbd8 cmp r8, 0                                         |     </pre>
+<pre>    0x0000bbdc mov r2, 5                                         |     r2 = 5;</pre>
+<pre>    0x0000bbe0 ldr sp, [fp, -0x54]                               |     sp = var_54h;</pre>
+<pre>                                                                 |     if (r8 == 0) {</pre>
+<pre>    0x0000bbe4 beq 0xbedc                                        |         goto label_17;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000bbe8 ldr r1, [pc, 0x33c]                               |     r1 = *(0xbf28);</pre>
+<pre>    0x0000bbec mov sl, 0                                         |     sl = 0;</pre>
+<pre>    0x0000bbf0 ldr r3, [pc, 0x338]                               |     r3 = *(0xbf2c);</pre>
+<pre>    0x0000bbf4 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000bbf8 ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000bbfc add r3, pc, r3                                    |     r3 = pc + r3;</pre>
+<pre>    0x0000bc00 str r3, [fp, -0x50]                               |     format = r3;</pre>
+<pre>    0x0000bc04 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000bc08 ldr r2, [pc, 0x324]                               |     r2 = *(0xbf30);</pre>
+<pre>    0x0000bc0c sub r1, fp, 0x3c                                  |     r1 -= var_3ch;</pre>
+<pre>    0x0000bc10 str r1, [fp, -0x54]                               |     var_54h = r1;</pre>
+<pre>    0x0000bc14 ldr r4, [r4, r2]                                  |     r4 = *((r4 + r2));</pre>
+<pre>    0x0000bc18 ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000bc1c bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000bc20 str sb, [fp, -0x58]                               |     var_58h = sb;</pre>
+<pre>    0x0000bc24 ldr sb, [fp, -0x50]                               |     sb = format;</pre>
+<pre>    0x0000bc28 str r4, [fp, -0x50]                               |     format = r4;</pre>
+<pre>    0x0000bc2c mov r4, sl                                        |     r4 = sl;</pre>
+<pre>    0x0000bc30 ldr sl, [fp, -0x54]                               |     sl = var_54h;</pre>
+<pre>                                                                 |     do {</pre>
+<pre>    0x0000bc34 ldr r1, [sl, r4, lsl 2]                           |         offset_0 = r4 &lt;&lt; 2;</pre>
+<pre>                                                                 |         r1 = *((sl + offset_0));</pre>
+<pre>    0x0000bc38 mov r0, sb                                        |         r0 = sb;</pre>
+<pre>    0x0000bc3c add r4, r4, 1                                     |         r4++;</pre>
+<pre><span class="red">    0x0000bc40 bl 0x2a4c                                         |         printf (r0, r1, r2, r3, r4)</span></span></pre>
+<pre>    0x0000bc44 cmp r4, r8                                        |         </pre>
+<pre>    0x0000bc48 bne 0xbc34                                        |         </pre>
+<pre>                                                                 |     } while (r4 != r8);</pre>
+<pre>    0x0000bc4c ldr sb, [fp, -0x58]                               |     sb = var_58h;</pre>
+<pre>    0x0000bc50 ldr r4, [fp, -0x50]                               |     r4 = format;</pre>
+<pre>                                                                 | label_7:</pre>
+<pre>    0x0000bc54 cmp sb, 0                                         |     </pre>
+<pre>    0x0000bc58 mov r2, 5                                         |     r2 = 5;</pre>
+<pre>                                                                 |     if (sb == 0) {</pre>
+<pre>    0x0000bc5c beq 0xbec0                                        |         goto label_18;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000bc60 ldr r1, [pc, 0x2d0]                               |     r1 = *(0xbf34);</pre>
+<pre>    0x0000bc64 sub r8, fp, 0x38                                  |     r8 -= var_38h;</pre>
+<pre>    0x0000bc68 ldr r3, [pc, 0x2cc]                               |     r3 = *(0xbf38);</pre>
+<pre>    0x0000bc6c mov sl, 0                                         |     sl = 0;</pre>
+<pre>    0x0000bc70 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000bc74 ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000bc78 add r3, pc, r3                                    |     r3 = pc + r3;</pre>
+<pre>    0x0000bc7c str r3, [fp, -0x50]                               |     format = r3;</pre>
+<pre>    0x0000bc80 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000bc84 ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000bc88 bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000bc8c str r4, [fp, -0x54]                               |     var_54h = r4;</pre>
+<pre>    0x0000bc90 mov r4, sl                                        |     r4 = sl;</pre>
+<pre>    0x0000bc94 mov sl, r8                                        |     sl = r8;</pre>
+<pre>    0x0000bc98 ldr r8, [fp, -0x50]                               |     r8 = format;</pre>
+<pre>                                                                 |     do {</pre>
+<pre>    0x0000bc9c ldr r1, [sl, r4, lsl 2]                           |         offset_1 = r4 &lt;&lt; 2;</pre>
+<pre>                                                                 |         r1 = *((sl + offset_1));</pre>
+<pre>    0x0000bca0 mov r0, r8                                        |         r0 = r8;</pre>
+<pre>    0x0000bca4 add r4, r4, 1                                     |         r4++;</pre>
+<pre>    0x0000bca8 add r1, r1, 2                                     |         r1 += 2;</pre>
+<pre><span class="red">    0x0000bcac bl 0x2a4c                                         |         printf (r0, r1, r2, r3, r4)</span></span></pre>
+<pre>    0x0000bcb0 cmp r4, sb                                        |         </pre>
+<pre>    0x0000bcb4 bne 0xbc9c                                        |         </pre>
+<pre>                                                                 |     } while (r4 != sb);</pre>
+<pre>    0x0000bcb8 ldr r4, [fp, -0x54]                               |     r4 = var_54h;</pre>
+<pre>                                                                 | label_6:</pre>
+<pre>    0x0000bcbc ldr r3, [fp, -0x4c]                               |     r3 = var_4ch;</pre>
+<pre>    0x0000bcc0 mov r2, 5                                         |     r2 = 5;</pre>
+<pre>    0x0000bcc4 cmp r3, 0                                         |     </pre>
+<pre>                                                                 |     if (r3 == 0) {</pre>
+<pre>    0x0000bcc8 beq 0xbea4                                        |         goto label_19;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000bccc ldr r1, [pc, 0x26c]                               |     r1 = *(0xbf3c);</pre>
+<pre>    0x0000bcd0 sub r8, fp, 0x34                                  |     r8 -= var_34h;</pre>
+<pre>    0x0000bcd4 ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000bcd8 mov sl, 0                                         |     sl = 0;</pre>
+<pre>    0x0000bcdc add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000bce0 ldr sb, [pc, 0x25c]                               |     sb = *(0xbf40);</pre>
+<pre>    0x0000bce4 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000bce8 ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000bcec bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000bcf0 str r4, [fp, -0x50]                               |     format = r4;</pre>
+<pre>    0x0000bcf4 mov r4, sl                                        |     r4 = sl;</pre>
+<pre>    0x0000bcf8 mov sl, r8                                        |     sl = r8;</pre>
+<pre>    0x0000bcfc ldr r8, [fp, -0x4c]                               |     r8 = var_4ch;</pre>
+<pre>    0x0000bd00 add sb, pc, sb                                    |     sb = pc + sb;</pre>
+<pre>                                                                 |     do {</pre>
+<pre>    0x0000bd04 ldr r1, [sl, r4, lsl 2]                           |         offset_2 = r4 &lt;&lt; 2;</pre>
+<pre>                                                                 |         r1 = *((sl + offset_2));</pre>
+<pre>    0x0000bd08 mov r0, sb                                        |         r0 = sb;</pre>
+<pre>    0x0000bd0c add r4, r4, 1                                     |         r4++;</pre>
+<pre>    0x0000bd10 add r1, r1, 1                                     |         r1++;</pre>
+<pre><span class="red">    0x0000bd14 bl 0x2a4c                                         |         printf (r0, r1, r2, r3, r4)</span></span></pre>
+<pre>    0x0000bd18 cmp r4, r8                                        |         </pre>
+<pre>    0x0000bd1c bne 0xbd04                                        |         </pre>
+<pre>                                                                 |     } while (r4 != r8);</pre>
+<pre>    0x0000bd20 ldr r4, [fp, -0x50]                               |     r4 = format;</pre>
+<pre>                                                                 | label_5:</pre>
+<pre>    0x0000bd24 ldr r3, [fp, -0x44]                               |     r3 = var_44h;</pre>
+<pre>    0x0000bd28 mov r2, 5                                         |     r2 = 5;</pre>
+<pre>    0x0000bd2c cmp r3, 0                                         |     </pre>
+<pre>                                                                 |     if (r3 == 0) {</pre>
+<pre>    0x0000bd30 beq 0xbe88                                        |         goto label_20;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000bd34 ldr r1, [pc, 0x20c]                               |     r1 = *(0xbf44);</pre>
+<pre>    0x0000bd38 sub r8, fp, 0x30                                  |     r8 -= var_30h;</pre>
+<pre>    0x0000bd3c ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000bd40 mov sl, 0                                         |     sl = 0;</pre>
+<pre>    0x0000bd44 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000bd48 ldr sb, [pc, 0x1fc]                               |     sb = *(0xbf48);</pre>
+<pre>    0x0000bd4c bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000bd50 ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000bd54 bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000bd58 str r4, [fp, -0x4c]                               |     var_4ch = r4;</pre>
+<pre>    0x0000bd5c mov r4, sl                                        |     r4 = sl;</pre>
+<pre>    0x0000bd60 mov sl, r8                                        |     sl = r8;</pre>
+<pre>    0x0000bd64 ldr r8, [fp, -0x44]                               |     r8 = var_44h;</pre>
+<pre>    0x0000bd68 add sb, pc, sb                                    |     sb = pc + sb;</pre>
+<pre>                                                                 |     do {</pre>
+<pre>    0x0000bd6c ldr r1, [sl, r4, lsl 2]                           |         offset_3 = r4 &lt;&lt; 2;</pre>
+<pre>                                                                 |         r1 = *((sl + offset_3));</pre>
+<pre>    0x0000bd70 mov r0, sb                                        |         r0 = sb;</pre>
+<pre>    0x0000bd74 add r4, r4, 1                                     |         r4++;</pre>
+<pre>    0x0000bd78 add r1, r1, 1                                     |         r1++;</pre>
+<pre><span class="red">    0x0000bd7c bl 0x2a4c                                         |         printf (r0, r1, r2, r3, r4)</span></span></pre>
+<pre>    0x0000bd80 cmp r4, r8                                        |         </pre>
+<pre>    0x0000bd84 bne 0xbd6c                                        |         </pre>
+<pre>                                                                 |     } while (r4 != r8);</pre>
+<pre>    0x0000bd88 ldr r4, [fp, -0x4c]                               |     r4 = var_4ch;</pre>
+<pre>                                                                 | label_4:</pre>
+<pre>    0x0000bd8c ldr r3, [fp, -0x48]                               |     r3 = var_48h;</pre>
+<pre>    0x0000bd90 mov r2, 5                                         |     r2 = 5;</pre>
+<pre>    0x0000bd94 cmp r3, 0                                         |     </pre>
+<pre>                                                                 |     if (r3 == 0) {</pre>
+<pre>    0x0000bd98 beq 0xbe6c                                        |         goto label_21;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000bd9c ldr r1, [pc, 0x1ac]                               |     r1 = *(0xbf4c);</pre>
+<pre>    0x0000bda0 sub r8, fp, 0x2c                                  |     r8 -= var_2ch;</pre>
+<pre>    0x0000bda4 ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000bda8 mov sl, 0                                         |     sl = 0;</pre>
+<pre>    0x0000bdac add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000bdb0 ldr sb, [pc, 0x19c]                               |     sb = sym.imp.xdr_pointer;</pre>
+<pre>    0x0000bdb4 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000bdb8 ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000bdbc bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000bdc0 str r4, [fp, -0x44]                               |     var_44h = r4;</pre>
+<pre>    0x0000bdc4 mov r4, sl                                        |     r4 = sl;</pre>
+<pre>    0x0000bdc8 mov sl, r8                                        |     sl = r8;</pre>
+<pre>    0x0000bdcc ldr r8, [fp, -0x48]                               |     r8 = var_48h;</pre>
+<pre>    0x0000bdd0 add sb, pc, sb                                    |     sb = pc + sb;</pre>
+<pre>                                                                 |     do {</pre>
+<pre>    0x0000bdd4 ldr r1, [sl, r4, lsl 2]                           |         offset_4 = r4 &lt;&lt; 2;</pre>
+<pre>                                                                 |         r1 = *((sl + offset_4));</pre>
+<pre>    0x0000bdd8 mov r0, sb                                        |         r0 = sb;</pre>
+<pre>    0x0000bddc add r4, r4, 1                                     |         r4++;</pre>
+<pre>    0x0000bde0 add r1, r1, 3                                     |         r1 += 3;</pre>
+<pre><span class="red">    0x0000bde4 bl 0x2a4c                                         |         printf (r0, r1, r2, r3, r4)</span></span></pre>
+<pre>    0x0000bde8 cmp r4, r8                                        |         </pre>
+<pre>    0x0000bdec bne 0xbdd4                                        |         </pre>
+<pre>                                                                 |     } while (r4 != r8);</pre>
+<pre>    0x0000bdf0 ldr r4, [fp, -0x44]                               |     r4 = var_44h;</pre>
+<pre>                                                                 | label_3:</pre>
+<pre>    0x0000bdf4 cmp r6, 0                                         |     </pre>
+<pre>    0x0000bdf8 ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000bdfc mov r2, 5                                         |     r2 = 5;</pre>
+<pre>                                                                 |     if (r6 == 0) {</pre>
+<pre>    0x0000be00 beq 0xbe54                                        |         goto label_22;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000be04 ldr r1, [pc, 0x14c]                               |     r1 = *(0xbf54);</pre>
+<pre>    0x0000be08 sub r8, fp, 0x28                                  |     r8 -= var_28h;</pre>
+<pre>    0x0000be0c ldr sb, [pc, 0x148]                               |     sb = *(0xbf58);</pre>
+<pre>    0x0000be10 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000be14 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000be18 ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000be1c bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000be20 add sb, pc, sb                                    |     sb = pc + sb;</pre>
+<pre>    0x0000be24 mov r4, 0                                         |     r4 = 0;</pre>
+<pre>                                                                 |     do {</pre>
+<pre>    0x0000be28 ldr r1, [r8, r4, lsl 2]                           |         offset_5 = r4 &lt;&lt; 2;</pre>
+<pre>                                                                 |         r1 = *((r8 + offset_5));</pre>
+<pre>    0x0000be2c mov r0, sb                                        |         r0 = sb;</pre>
+<pre>    0x0000be30 add r4, r4, 1                                     |         r4++;</pre>
+<pre>    0x0000be34 add r1, r1, 2                                     |         r1 += 2;</pre>
+<pre><span class="red">    0x0000be38 bl 0x2a4c                                         |         printf (r0, r1, r2, r3, r4)</span></span></pre>
+<pre>    0x0000be3c cmp r4, r6                                        |         </pre>
+<pre>    0x0000be40 bne 0xbe28                                        |         </pre>
+<pre>                                                                 |     } while (r4 != r6);</pre>
+<pre>                                                                 |     do {</pre>
+<pre>    0x0000be44 mov r0, r5                                        |         r0 = r5;</pre>
+<pre>    0x0000be48 bl 0x5c14                                         |         nis_freeresult ();</pre>
+<pre>    0x0000be4c mov sp, r7                                        |         </pre>
+<pre>    0x0000be50 b 0xb96c                                          |         goto label_2;</pre>
+<pre>                                                                 | label_22:</pre>
+<pre>    0x0000be54 ldr r1, [pc, 0x104]                               |         r1 = *(0xbf5c);</pre>
+<pre>    0x0000be58 add r1, pc, r1                                    |         r1 = pc + r1;</pre>
+<pre>    0x0000be5c bl 0x2a88                                         |         dcgettext (r0, r1);</pre>
+<pre>    0x0000be60 ldr r1, [r4]                                      |         r1 = *(r4);</pre>
+<pre>    0x0000be64 bl 0x2e48                                         |         fputs (r0, r1);</pre>
+<pre>    0x0000be68 b 0xbe44                                          |         </pre>
+<pre>                                                                 |     } while (1);</pre>
+<pre>                                                                 | label_21:</pre>
+<pre>    0x0000be6c ldr r1, [pc, 0xf0]                                |     r1 = *(0xbf60);</pre>
+<pre>    0x0000be70 ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000be74 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000be78 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000be7c ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000be80 bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000be84 b 0xbdf4                                          |     goto label_3;</pre>
+<pre>                                                                 | label_20:</pre>
+<pre>    0x0000be88 ldr r1, [pc, 0xd8]                                |     r1 = *(0xbf64);</pre>
+<pre>    0x0000be8c ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000be90 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000be94 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000be98 ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000be9c bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000bea0 b 0xbd8c                                          |     goto label_4;</pre>
+<pre>                                                                 | label_19:</pre>
+<pre>    0x0000bea4 ldr r1, [pc, 0xc0]                                |     r1 = *(0xbf68);</pre>
+<pre>    0x0000bea8 ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000beac add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000beb0 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000beb4 ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000beb8 bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000bebc b 0xbd24                                          |     goto label_5;</pre>
+<pre>                                                                 | label_18:</pre>
+<pre>    0x0000bec0 ldr r1, [pc, 0xa8]                                |     r1 = *(0xbf6c);</pre>
+<pre>    0x0000bec4 ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000bec8 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000becc bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000bed0 ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000bed4 bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000bed8 b 0xbcbc                                          |     goto label_6;</pre>
+<pre>                                                                 | label_17:</pre>
+<pre>    0x0000bedc ldr r1, [pc, 0x90]                                |     r1 = *(0xbf70);</pre>
+<pre>    0x0000bee0 ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000bee4 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000bee8 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000beec ldr r3, [pc, 0x40]                                |     r3 = *(0xbf30);</pre>
+<pre>    0x0000bef0 ldr r4, [r4, r3]                                  |     r4 = *((r4 + r3));</pre>
+<pre>    0x0000bef4 ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000bef8 bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000befc b 0xbc54                                          |     goto label_7;</pre>
+<pre>                                                                 | label_13:</pre>
+<pre>    0x0000bf00 mov r6, lr                                        |     r6 = lr;</pre>
+<pre>    0x0000bf04 str lr, [fp, -0x48]                               |     var_48h = lr;</pre>
+<pre>    0x0000bf08 str lr, [fp, -0x44]                               |     var_44h = lr;</pre>
+<pre>    0x0000bf0c mov sb, lr                                        |     sb = lr;</pre>
+<pre>    0x0000bf10 str lr, [fp, -0x4c]                               |     var_4ch = lr;</pre>
+<pre>    0x0000bf14 mov r8, lr                                        |     r8 = lr;</pre>
+<pre>    0x0000bf18 b 0xbb5c                                          |     goto label_8;</pre>
+<pre>                                                                 | }</pre>
+<pre>    ; assembly                                                   | /* r2dec pseudo code output */</pre>
+<pre>                                                                 | /* /logs/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/lib/libnsl-2.24.so &commat; 0xb944 */</pre>
+<pre>                                                                 | #include &lt;stdint.h&gt;</pre>
+<pre>                                                                 |  </pre>
+<pre>                                                                 | #define BIT_MASK(t,v) ((t)(-((v)!= 0)))&amp;(((t)-1)&gt;&gt;((sizeof(t)*CHAR_BIT)-(v)))</pre>
+<pre>                                                                 |  </pre>
+<pre>    ; (fcn) sym.nis_print_group_entry ()                         | void nis_print_group_entry (int32_t arg1) {</pre>
+<pre>                                                                 |     int32_t var_58h;</pre>
+<pre>                                                                 |     int32_t var_54h;</pre>
+<pre>                                                                 |     char * format;</pre>
+<pre>                                                                 |     int32_t var_4ch;</pre>
+<pre>                                                                 |     int32_t var_48h;</pre>
+<pre>                                                                 |     int32_t var_44h;</pre>
+<pre>                                                                 |     int32_t var_40h;</pre>
+<pre>                                                                 |     int32_t var_3ch;</pre>
+<pre>                                                                 |     int32_t var_38h;</pre>
+<pre>                                                                 |     int32_t var_34h;</pre>
+<pre>                                                                 |     int32_t var_30h;</pre>
+<pre>                                                                 |     int32_t var_2ch;</pre>
+<pre>                                                                 |     int32_t var_28h;</pre>
+<pre>                                                                 |     int32_t var_24h;</pre>
+<pre>                                                                 |     int32_t var_0h;</pre>
+<pre>                                                                 |     int32_t var_20h_2;</pre>
+<pre>                                                                 |     int32_t var_20h;</pre>
+<pre>                                                                 |     r0 = arg1;</pre>
+<pre>    0x0000b944 push {r4, r5, r6, r7, r8, sb, sl, fp, lr}         |     </pre>
+<pre>    0x0000b948 subs r3, r0, 0                                    |     r3 = r0 - 0;</pre>
+<pre>    0x0000b94c ldr r4, [pc, 0x5c8]                               |     r4 = *(0xbf18);</pre>
+<pre>    0x0000b950 add fp, sp, 0x20                                  |     </pre>
+<pre>    0x0000b954 sub sp, sp, 0x3c                                  |     </pre>
+<pre>    0x0000b958 add r4, pc, r4                                    |     r4 = pc + r4;</pre>
+<pre>                                                                 |     if (r3 != r0) {</pre>
+<pre>    0x0000b95c beq 0xb96c                                        |         </pre>
+<pre>    0x0000b960 ldrb r2, [r3]                                     |         r2 = *(r3);</pre>
+<pre>    0x0000b964 cmp r2, 0                                         |         </pre>
+<pre>                                                                 |         if (r2 != 0) {</pre>
+<pre>    0x0000b968 bne 0xb974                                        |             goto label_9;</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 | label_2:</pre>
+<pre>    0x0000b96c sub sp, fp, 0x20                                  |     </pre>
+<pre>    0x0000b970 pop {r4, r5, r6, r7, r8, sb, sl, fp, pc}          |     </pre>
+<pre>                                                                 | label_9:</pre>
+<pre>    0x0000b974 mov r5, r3                                        |     r5 = r3;</pre>
+<pre>    0x0000b978 bl 0x2c80                                         |     strlen (r0);</pre>
+<pre>    0x0000b97c mov r7, sp                                        |     r7 = sp;</pre>
+<pre>    0x0000b980 add r2, r0, 0x39                                  |     r2 = r0 + 0x39;</pre>
+<pre>    0x0000b984 add r3, r0, 0xa                                   |     r3 = r0 + 0xa;</pre>
+<pre>    0x0000b988 bic r2, r2, 7                                     |     r2 = BIT_MASK (r2, 7);</pre>
+<pre>    0x0000b98c bic r3, r3, 7                                     |     r3 = BIT_MASK (r3, 7);</pre>
+<pre>    0x0000b990 sub sp, sp, r2                                    |     </pre>
+<pre>    0x0000b994 add sb, r0, 2                                     |     sb = r0 + 2;</pre>
+<pre>    0x0000b998 mov r0, r5                                        |     r0 = r5;</pre>
+<pre>    0x0000b99c mov r8, sp                                        |     r8 = sp;</pre>
+<pre>    0x0000b9a0 sub sp, sp, r3                                    |     </pre>
+<pre>    0x0000b9a4 mov r2, sb                                        |     r2 = sb;</pre>
+<pre>    0x0000b9a8 mov r1, sp                                        |     r1 = sp;</pre>
+<pre>    0x0000b9ac sub sp, sp, r3                                    |     </pre>
+<pre>    0x0000b9b0 bl 0x4fc4                                         |     r0 = nis_leaf_of_r ();</pre>
+<pre>    0x0000b9b4 mov r1, r0                                        |     r1 = r0;</pre>
+<pre>    0x0000b9b8 mov r0, r8                                        |     r0 = r8;</pre>
+<pre>    0x0000b9bc bl 0x2e18                                         |     stpcpy ();</pre>
+<pre>    0x0000b9c0 ldr r3, [pc, 0x558]                               |     r3 = *(0xbf1c);</pre>
+<pre>    0x0000b9c4 add r3, pc, r3                                    |     r3 = pc + r3;</pre>
+<pre>    0x0000b9c8 mov r6, r0                                        |     r6 = r0;</pre>
+<pre>    0x0000b9cc ldm r3!, {r0, r1, r2}                             |     r0 = *(r3!);</pre>
+<pre>                                                                 |     r1 = *((r3! + 4));</pre>
+<pre>                                                                 |     r2 = *((r3! + 8));</pre>
+<pre>    0x0000b9d0 str r0, [r6]                                      |     *(r6) = r0;</pre>
+<pre>    0x0000b9d4 mov r0, r5                                        |     r0 = r5;</pre>
+<pre>    0x0000b9d8 str r1, [r6, 4]                                   |     *((r6 + 4)) = r1;</pre>
+<pre>    0x0000b9dc mov r1, sp                                        |     r1 = sp;</pre>
+<pre>    0x0000b9e0 str r2, [r6, 8]                                   |     *((r6 + 8)) = r2;</pre>
+<pre>    0x0000b9e4 mov r2, sb                                        |     r2 = sb;</pre>
+<pre>    0x0000b9e8 bl 0xbfd4                                         |     r0 = nis_domain_of_r ();</pre>
+<pre>    0x0000b9ec subs r1, r0, 0                                    |     r1 = r0 - 0;</pre>
+<pre>                                                                 |     if (r1 != r0) {</pre>
+<pre>    0x0000b9f0 beq 0xba00                                        |         </pre>
+<pre>    0x0000b9f4 ldrb r3, [r1]                                     |         r3 = *(r1);</pre>
+<pre>    0x0000b9f8 cmp r3, 0                                         |         </pre>
+<pre>                                                                 |         if (r3 != 0) {</pre>
+<pre>    0x0000b9fc bne 0xbaec                                        |             goto label_10;</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 | label_1:</pre>
+<pre>    0x0000ba00 mov r0, r8                                        |     r0 = r8;</pre>
+<pre>    0x0000ba04 mov r1, 0x41                                      |     r1 = 0x41;</pre>
+<pre>    0x0000ba08 bl 0x844c                                         |     r0 = nis_lookup ();</pre>
+<pre>    0x0000ba0c subs r5, r0, 0                                    |     r5 = r0 - 0;</pre>
+<pre>                                                                 |     if (r5 == r0) {</pre>
+<pre>    0x0000ba10 beq 0xba34                                        |         goto label_11;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000ba14 ldr r6, [r5]                                      |     r6 = *(r5);</pre>
+<pre>    0x0000ba18 cmp r6, 0                                         |     </pre>
+<pre>                                                                 |     if (r6 != 0) {</pre>
+<pre>    0x0000ba1c bne 0xba2c                                        |         goto label_12;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000ba20 ldr r3, [r5, 4]                                   |     r3 = *((r5 + 4));</pre>
+<pre>    0x0000ba24 cmp r3, 1                                         |     </pre>
+<pre>    0x0000ba28 beq 0xba40                                        |     </pre>
+<pre>                                                                 |     while (r3 != 3) {</pre>
+<pre>                                                                 | label_12:</pre>
+<pre>    0x0000ba2c mov r0, r5                                        |         r0 = r5;</pre>
+<pre>    0x0000ba30 bl 0x5c14                                         |         nis_freeresult ();</pre>
+<pre>                                                                 | label_11:</pre>
+<pre>    0x0000ba34 mov sp, r7                                        |         </pre>
+<pre>    0x0000ba38 sub sp, fp, 0x20                                  |         </pre>
+<pre>    0x0000ba3c pop {r4, r5, r6, r7, r8, sb, sl, fp, pc}          |         </pre>
+<pre>    0x0000ba40 ldr ip, [r5, 8]                                   |         ip = *((r5 + 8));</pre>
+<pre>    0x0000ba44 ldr r3, [ip, 0x20]                                |         r3 = *((ip + 0x20));</pre>
+<pre>    0x0000ba48 cmp r3, 3                                         |         </pre>
+<pre>    0x0000ba4c bne 0xba2c                                        |         </pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000ba50 ldr lr, [ip, 0x28]                                |     </pre>
+<pre>    0x0000ba54 cmp lr, 0                                         |     </pre>
+<pre>                                                                 |     if (lr == 0) {</pre>
+<pre>    0x0000ba58 beq 0xbf00                                        |         goto label_13;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000ba5c ldr r2, [ip, 0x2c]                                |     r2 = *((ip + 0x2c));</pre>
+<pre>    0x0000ba60 mov sl, r6                                        |     sl = r6;</pre>
+<pre>    0x0000ba64 str r6, [fp, -0x48]                               |     var_48h = r6;</pre>
+<pre>    0x0000ba68 mov sb, r6                                        |     sb = r6;</pre>
+<pre>    0x0000ba6c str r6, [fp, -0x44]                               |     var_44h = r6;</pre>
+<pre>    0x0000ba70 add lr, r2, lr, lsl 2                             |     lr = r2 + (lr &lt;&lt; 2);</pre>
+<pre>    0x0000ba74 mov r8, r6                                        |     r8 = r6;</pre>
+<pre>    0x0000ba78 str ip, [fp, -0x40]                               |     var_40h = ip;</pre>
+<pre>    0x0000ba7c b 0xbab0                                          |     </pre>
+<pre>                                                                 |     while (r0 != 0x2a) {</pre>
+<pre>    0x0000ba80 cmp r0, 0x40                                      |         </pre>
+<pre>                                                                 |         if (r0 != 0x40) {</pre>
+<pre>    0x0000ba84 bne 0xbb00                                        |             goto label_14;</pre>
+<pre>                                                                 |         }</pre>
+<pre>    0x0000ba88 cmp r1, 0x2d                                      |         </pre>
+<pre>    0x0000ba8c sub r1, fp, 0x24                                  |         r1 -= var_24h;</pre>
+<pre>                                                                 |         if (r1 != 0x2d) {</pre>
+<pre>    0x0000ba90 addeq r1, r1, r6, lsl 2                           |             r1 += (r6 &lt;&lt; 2);</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 |         if (r1 == 0x2d) {</pre>
+<pre>    0x0000ba94 addne r1, r1, sl, lsl 2                           |             r1 += (sl &lt;&lt; 2);</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 |         if (r1 != 0x2d) {</pre>
+<pre>    0x0000ba98 addeq r6, r6, 1                                   |             r6++;</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 |         if (r1 == 0x2d) {</pre>
+<pre>    0x0000ba9c addne sl, sl, 1                                   |             sl++;</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 |         if (r1 != 0x2d) {</pre>
+<pre>    0x0000baa0 streq r3, [r1, -4]                                |             *((r1 - 4)) = r3;</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 |         if (r1 == 0x2d) {</pre>
+<pre>    0x0000baa4 strne r3, [r1, -0x10]                             |             var_34h = r3;</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 | label_0:</pre>
+<pre>    0x0000baa8 cmp lr, r2                                        |         </pre>
+<pre>                                                                 |         if (lr == r2) {</pre>
+<pre>    0x0000baac beq 0xbb54                                        |             goto label_15;</pre>
+<pre>                                                                 |         }</pre>
+<pre>    0x0000bab0 ldr r3, [r2], 4                                   |         r3 = *(r2);</pre>
+<pre>                                                                 |         r2 += 4;</pre>
+<pre>    0x0000bab4 ldrb r1, [r3]                                     |         r1 = *(r3);</pre>
+<pre>    0x0000bab8 sub r0, r1, 0x2d                                  |         r0 = r1 - 0x2d;</pre>
+<pre>    0x0000babc clz r0, r0                                        |         r0 &amp;= r0;</pre>
+<pre>    0x0000bac0 lsr r0, r0, 5                                     |         r0 &gt;&gt;= 5;</pre>
+<pre>    0x0000bac4 ldrb r0, [r3, r0]                                 |         r0 = *((r3 + r0));</pre>
+<pre>    0x0000bac8 cmp r0, 0x2a                                      |         </pre>
+<pre>    0x0000bacc bne 0xba80                                        |         </pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000bad0 cmp r1, 0x2d                                      |     </pre>
+<pre>                                                                 |     if (r1 != 0x2d) {</pre>
+<pre>    0x0000bad4 beq 0xbb1c                                        |         </pre>
+<pre>    0x0000bad8 sub r1, fp, 0x24                                  |         r1 -= var_24h;</pre>
+<pre>    0x0000badc add r1, r1, sb, lsl 2                             |         r1 += (sb &lt;&lt; 2);</pre>
+<pre>    0x0000bae0 add sb, sb, 1                                     |         sb++;</pre>
+<pre>    0x0000bae4 str r3, [r1, -0x14]                               |         var_38h = r3;</pre>
+<pre>    0x0000bae8 b 0xbaa8                                          |         goto label_0;</pre>
+<pre>                                                                 | label_10:</pre>
+<pre>    0x0000baec mov r3, 0x2e                                      |         r3 = 0x2e;</pre>
+<pre>    0x0000baf0 add r0, r6, 0xc                                   |         r0 = r6 + 0xc;</pre>
+<pre>    0x0000baf4 strb r3, [r6, 0xb]                                |         *((r6 + 0xb)) = r3;</pre>
+<pre>    0x0000baf8 bl 0x2bc0                                         |         strcpy (r0, r1);</pre>
+<pre>    0x0000bafc b 0xba00                                          |         goto label_1;</pre>
+<pre>                                                                 | label_14:</pre>
+<pre>    0x0000bb00 cmp r1, 0x2d                                      |         </pre>
+<pre>                                                                 |         if (r1 == 0x2d) {</pre>
+<pre>    0x0000bb04 beq 0xbb38                                        |             goto label_16;</pre>
+<pre>                                                                 |         }</pre>
+<pre>    0x0000bb08 sub r1, fp, 0x24                                  |         r1 -= var_24h;</pre>
+<pre>    0x0000bb0c add r1, r1, r8, lsl 2                             |         r1 += (r8 &lt;&lt; 2);</pre>
+<pre>    0x0000bb10 add r8, r8, 1                                     |         r8++;</pre>
+<pre>    0x0000bb14 str r3, [r1, -0x18]                               |         var_3ch = r3;</pre>
+<pre>    0x0000bb18 b 0xbaa8                                          |         goto label_0;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000bb1c ldr r0, [fp, -0x48]                               |     r0 = var_48h;</pre>
+<pre>    0x0000bb20 sub ip, fp, 0x24                                  |     </pre>
+<pre>    0x0000bb24 add r1, ip, r0, lsl 2                             |     r1 = ip + (r0 &lt;&lt; 2);</pre>
+<pre>    0x0000bb28 str r3, [r1, -8]                                  |     var_2ch = r3;</pre>
+<pre>    0x0000bb2c add r3, r0, 1                                     |     r3 = r0 + 1;</pre>
+<pre>    0x0000bb30 str r3, [fp, -0x48]                               |     var_48h = r3;</pre>
+<pre>    0x0000bb34 b 0xbaa8                                          |     goto label_0;</pre>
+<pre>                                                                 | label_16:</pre>
+<pre>    0x0000bb38 ldr r0, [fp, -0x44]                               |     r0 = var_44h;</pre>
+<pre>    0x0000bb3c sub ip, fp, 0x24                                  |     </pre>
+<pre>    0x0000bb40 add r1, ip, r0, lsl 2                             |     r1 = ip + (r0 &lt;&lt; 2);</pre>
+<pre>    0x0000bb44 str r3, [r1, -0xc]                                |     var_30h = r3;</pre>
+<pre>    0x0000bb48 add r3, r0, 1                                     |     r3 = r0 + 1;</pre>
+<pre>    0x0000bb4c str r3, [fp, -0x44]                               |     var_44h = r3;</pre>
+<pre>    0x0000bb50 b 0xbaa8                                          |     goto label_0;</pre>
+<pre>                                                                 | label_15:</pre>
+<pre>    0x0000bb54 ldr ip, [fp, -0x40]                               |     ip = var_40h;</pre>
+<pre>    0x0000bb58 str sl, [fp, -0x4c]                               |     var_4ch = sl;</pre>
+<pre>                                                                 | label_8:</pre>
+<pre>    0x0000bb5c ldr r0, [ip, 0x14]                                |     r0 = *((ip + 0x14));</pre>
+<pre>    0x0000bb60 str sp, [fp, -0x54]                               |     var_54h = sp;</pre>
+<pre>    0x0000bb64 bl 0x2c80                                         |     strlen (r0);</pre>
+<pre>    0x0000bb68 ldr r3, [pc, 0x3b4]                               |     </pre>
+<pre>    0x0000bb6c mov r2, 5                                         |     r2 = 5;</pre>
+<pre>    0x0000bb70 ldr r1, [pc, 0x3b0]                               |     r1 = *(0xbf24);</pre>
+<pre>    0x0000bb74 ldr r3, [r4, r3]                                  |     r3 = *((r4 + r3));</pre>
+<pre>    0x0000bb78 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000bb7c mov ip, r3                                        |     </pre>
+<pre>    0x0000bb80 str ip, [fp, -0x40]                               |     var_40h = ip;</pre>
+<pre>    0x0000bb84 add r3, r0, 0x11                                  |     r3 = r0 + 0x11;</pre>
+<pre>    0x0000bb88 mov r0, ip                                        |     r0 = ip;</pre>
+<pre>    0x0000bb8c bic r3, r3, 7                                     |     r3 = BIT_MASK (r3, 7);</pre>
+<pre>    0x0000bb90 sub sp, sp, r3                                    |     </pre>
+<pre>    0x0000bb94 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000bb98 ldr r3, [r5, 8]                                   |     r3 = *((r5 + 8));</pre>
+<pre>    0x0000bb9c ldr sl, [r3, 0x14]                                |     sl = *(0xbf34);</pre>
+<pre>    0x0000bba0 ldr r3, [r3, 8]                                   |     r3 = *(0xbf28);</pre>
+<pre>    0x0000bba4 str r3, [fp, -0x58]                               |     var_58h = r3;</pre>
+<pre>    0x0000bba8 str r0, [fp, -0x50]                               |     format = r0;</pre>
+<pre>    0x0000bbac mov r0, sl                                        |     r0 = sl;</pre>
+<pre>    0x0000bbb0 bl 0x2c80                                         |     strlen (r0);</pre>
+<pre>    0x0000bbb4 mov r1, sp                                        |     r1 = sp;</pre>
+<pre>    0x0000bbb8 add r2, r0, 0xa                                   |     r2 = r0 + 0xa;</pre>
+<pre>    0x0000bbbc mov r0, sl                                        |     r0 = sl;</pre>
+<pre>    0x0000bbc0 bl 0xbfd4                                         |     nis_domain_of_r ();</pre>
+<pre>    0x0000bbc4 ldr r3, [fp, -0x58]                               |     r3 = var_58h;</pre>
+<pre>    0x0000bbc8 mov r1, r3                                        |     r1 = r3;</pre>
+<pre>    0x0000bbcc mov r2, r0                                        |     r2 = r0;</pre>
+<pre>    0x0000bbd0 ldr r0, [fp, -0x50]                               |     r0 = format;</pre>
+<pre><span class="red">    0x0000bbd4 bl 0x2a4c                                         |     printf (r0, r1, r2, r3)</span></span></pre>
+<pre>    0x0000bbd8 cmp r8, 0                                         |     </pre>
+<pre>    0x0000bbdc mov r2, 5                                         |     r2 = 5;</pre>
+<pre>    0x0000bbe0 ldr sp, [fp, -0x54]                               |     sp = var_54h;</pre>
+<pre>                                                                 |     if (r8 == 0) {</pre>
+<pre>    0x0000bbe4 beq 0xbedc                                        |         goto label_17;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000bbe8 ldr r1, [pc, 0x33c]                               |     r1 = *(0xbf28);</pre>
+<pre>    0x0000bbec mov sl, 0                                         |     sl = 0;</pre>
+<pre>    0x0000bbf0 ldr r3, [pc, 0x338]                               |     r3 = *(0xbf2c);</pre>
+<pre>    0x0000bbf4 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000bbf8 ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000bbfc add r3, pc, r3                                    |     r3 = pc + r3;</pre>
+<pre>    0x0000bc00 str r3, [fp, -0x50]                               |     format = r3;</pre>
+<pre>    0x0000bc04 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000bc08 ldr r2, [pc, 0x324]                               |     r2 = *(0xbf30);</pre>
+<pre>    0x0000bc0c sub r1, fp, 0x3c                                  |     r1 -= var_3ch;</pre>
+<pre>    0x0000bc10 str r1, [fp, -0x54]                               |     var_54h = r1;</pre>
+<pre>    0x0000bc14 ldr r4, [r4, r2]                                  |     r4 = *((r4 + r2));</pre>
+<pre>    0x0000bc18 ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000bc1c bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000bc20 str sb, [fp, -0x58]                               |     var_58h = sb;</pre>
+<pre>    0x0000bc24 ldr sb, [fp, -0x50]                               |     sb = format;</pre>
+<pre>    0x0000bc28 str r4, [fp, -0x50]                               |     format = r4;</pre>
+<pre>    0x0000bc2c mov r4, sl                                        |     r4 = sl;</pre>
+<pre>    0x0000bc30 ldr sl, [fp, -0x54]                               |     sl = var_54h;</pre>
+<pre>                                                                 |     do {</pre>
+<pre>    0x0000bc34 ldr r1, [sl, r4, lsl 2]                           |         offset_0 = r4 &lt;&lt; 2;</pre>
+<pre>                                                                 |         r1 = *((sl + offset_0));</pre>
+<pre>    0x0000bc38 mov r0, sb                                        |         r0 = sb;</pre>
+<pre>    0x0000bc3c add r4, r4, 1                                     |         r4++;</pre>
+<pre><span class="red">    0x0000bc40 bl 0x2a4c                                         |         printf (r0, r1, r2, r3, r4)</span></span></pre>
+<pre>    0x0000bc44 cmp r4, r8                                        |         </pre>
+<pre>    0x0000bc48 bne 0xbc34                                        |         </pre>
+<pre>                                                                 |     } while (r4 != r8);</pre>
+<pre>    0x0000bc4c ldr sb, [fp, -0x58]                               |     sb = var_58h;</pre>
+<pre>    0x0000bc50 ldr r4, [fp, -0x50]                               |     r4 = format;</pre>
+<pre>                                                                 | label_7:</pre>
+<pre>    0x0000bc54 cmp sb, 0                                         |     </pre>
+<pre>    0x0000bc58 mov r2, 5                                         |     r2 = 5;</pre>
+<pre>                                                                 |     if (sb == 0) {</pre>
+<pre>    0x0000bc5c beq 0xbec0                                        |         goto label_18;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000bc60 ldr r1, [pc, 0x2d0]                               |     r1 = *(0xbf34);</pre>
+<pre>    0x0000bc64 sub r8, fp, 0x38                                  |     r8 -= var_38h;</pre>
+<pre>    0x0000bc68 ldr r3, [pc, 0x2cc]                               |     r3 = *(0xbf38);</pre>
+<pre>    0x0000bc6c mov sl, 0                                         |     sl = 0;</pre>
+<pre>    0x0000bc70 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000bc74 ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000bc78 add r3, pc, r3                                    |     r3 = pc + r3;</pre>
+<pre>    0x0000bc7c str r3, [fp, -0x50]                               |     format = r3;</pre>
+<pre>    0x0000bc80 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000bc84 ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000bc88 bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000bc8c str r4, [fp, -0x54]                               |     var_54h = r4;</pre>
+<pre>    0x0000bc90 mov r4, sl                                        |     r4 = sl;</pre>
+<pre>    0x0000bc94 mov sl, r8                                        |     sl = r8;</pre>
+<pre>    0x0000bc98 ldr r8, [fp, -0x50]                               |     r8 = format;</pre>
+<pre>                                                                 |     do {</pre>
+<pre>    0x0000bc9c ldr r1, [sl, r4, lsl 2]                           |         offset_1 = r4 &lt;&lt; 2;</pre>
+<pre>                                                                 |         r1 = *((sl + offset_1));</pre>
+<pre>    0x0000bca0 mov r0, r8                                        |         r0 = r8;</pre>
+<pre>    0x0000bca4 add r4, r4, 1                                     |         r4++;</pre>
+<pre>    0x0000bca8 add r1, r1, 2                                     |         r1 += 2;</pre>
+<pre><span class="red">    0x0000bcac bl 0x2a4c                                         |         printf (r0, r1, r2, r3, r4)</span></span></pre>
+<pre>    0x0000bcb0 cmp r4, sb                                        |         </pre>
+<pre>    0x0000bcb4 bne 0xbc9c                                        |         </pre>
+<pre>                                                                 |     } while (r4 != sb);</pre>
+<pre>    0x0000bcb8 ldr r4, [fp, -0x54]                               |     r4 = var_54h;</pre>
+<pre>                                                                 | label_6:</pre>
+<pre>    0x0000bcbc ldr r3, [fp, -0x4c]                               |     r3 = var_4ch;</pre>
+<pre>    0x0000bcc0 mov r2, 5                                         |     r2 = 5;</pre>
+<pre>    0x0000bcc4 cmp r3, 0                                         |     </pre>
+<pre>                                                                 |     if (r3 == 0) {</pre>
+<pre>    0x0000bcc8 beq 0xbea4                                        |         goto label_19;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000bccc ldr r1, [pc, 0x26c]                               |     r1 = *(0xbf3c);</pre>
+<pre>    0x0000bcd0 sub r8, fp, 0x34                                  |     r8 -= var_34h;</pre>
+<pre>    0x0000bcd4 ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000bcd8 mov sl, 0                                         |     sl = 0;</pre>
+<pre>    0x0000bcdc add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000bce0 ldr sb, [pc, 0x25c]                               |     sb = *(0xbf40);</pre>
+<pre>    0x0000bce4 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000bce8 ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000bcec bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000bcf0 str r4, [fp, -0x50]                               |     format = r4;</pre>
+<pre>    0x0000bcf4 mov r4, sl                                        |     r4 = sl;</pre>
+<pre>    0x0000bcf8 mov sl, r8                                        |     sl = r8;</pre>
+<pre>    0x0000bcfc ldr r8, [fp, -0x4c]                               |     r8 = var_4ch;</pre>
+<pre>    0x0000bd00 add sb, pc, sb                                    |     sb = pc + sb;</pre>
+<pre>                                                                 |     do {</pre>
+<pre>    0x0000bd04 ldr r1, [sl, r4, lsl 2]                           |         offset_2 = r4 &lt;&lt; 2;</pre>
+<pre>                                                                 |         r1 = *((sl + offset_2));</pre>
+<pre>    0x0000bd08 mov r0, sb                                        |         r0 = sb;</pre>
+<pre>    0x0000bd0c add r4, r4, 1                                     |         r4++;</pre>
+<pre>    0x0000bd10 add r1, r1, 1                                     |         r1++;</pre>
+<pre><span class="red">    0x0000bd14 bl 0x2a4c                                         |         printf (r0, r1, r2, r3, r4)</span></span></pre>
+<pre>    0x0000bd18 cmp r4, r8                                        |         </pre>
+<pre>    0x0000bd1c bne 0xbd04                                        |         </pre>
+<pre>                                                                 |     } while (r4 != r8);</pre>
+<pre>    0x0000bd20 ldr r4, [fp, -0x50]                               |     r4 = format;</pre>
+<pre>                                                                 | label_5:</pre>
+<pre>    0x0000bd24 ldr r3, [fp, -0x44]                               |     r3 = var_44h;</pre>
+<pre>    0x0000bd28 mov r2, 5                                         |     r2 = 5;</pre>
+<pre>    0x0000bd2c cmp r3, 0                                         |     </pre>
+<pre>                                                                 |     if (r3 == 0) {</pre>
+<pre>    0x0000bd30 beq 0xbe88                                        |         goto label_20;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000bd34 ldr r1, [pc, 0x20c]                               |     r1 = *(0xbf44);</pre>
+<pre>    0x0000bd38 sub r8, fp, 0x30                                  |     r8 -= var_30h;</pre>
+<pre>    0x0000bd3c ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000bd40 mov sl, 0                                         |     sl = 0;</pre>
+<pre>    0x0000bd44 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000bd48 ldr sb, [pc, 0x1fc]                               |     sb = *(0xbf48);</pre>
+<pre>    0x0000bd4c bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000bd50 ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000bd54 bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000bd58 str r4, [fp, -0x4c]                               |     var_4ch = r4;</pre>
+<pre>    0x0000bd5c mov r4, sl                                        |     r4 = sl;</pre>
+<pre>    0x0000bd60 mov sl, r8                                        |     sl = r8;</pre>
+<pre>    0x0000bd64 ldr r8, [fp, -0x44]                               |     r8 = var_44h;</pre>
+<pre>    0x0000bd68 add sb, pc, sb                                    |     sb = pc + sb;</pre>
+<pre>                                                                 |     do {</pre>
+<pre>    0x0000bd6c ldr r1, [sl, r4, lsl 2]                           |         offset_3 = r4 &lt;&lt; 2;</pre>
+<pre>                                                                 |         r1 = *((sl + offset_3));</pre>
+<pre>    0x0000bd70 mov r0, sb                                        |         r0 = sb;</pre>
+<pre>    0x0000bd74 add r4, r4, 1                                     |         r4++;</pre>
+<pre>    0x0000bd78 add r1, r1, 1                                     |         r1++;</pre>
+<pre><span class="red">    0x0000bd7c bl 0x2a4c                                         |         printf (r0, r1, r2, r3, r4)</span></span></pre>
+<pre>    0x0000bd80 cmp r4, r8                                        |         </pre>
+<pre>    0x0000bd84 bne 0xbd6c                                        |         </pre>
+<pre>                                                                 |     } while (r4 != r8);</pre>
+<pre>    0x0000bd88 ldr r4, [fp, -0x4c]                               |     r4 = var_4ch;</pre>
+<pre>                                                                 | label_4:</pre>
+<pre>    0x0000bd8c ldr r3, [fp, -0x48]                               |     r3 = var_48h;</pre>
+<pre>    0x0000bd90 mov r2, 5                                         |     r2 = 5;</pre>
+<pre>    0x0000bd94 cmp r3, 0                                         |     </pre>
+<pre>                                                                 |     if (r3 == 0) {</pre>
+<pre>    0x0000bd98 beq 0xbe6c                                        |         goto label_21;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000bd9c ldr r1, [pc, 0x1ac]                               |     r1 = *(0xbf4c);</pre>
+<pre>    0x0000bda0 sub r8, fp, 0x2c                                  |     r8 -= var_2ch;</pre>
+<pre>    0x0000bda4 ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000bda8 mov sl, 0                                         |     sl = 0;</pre>
+<pre>    0x0000bdac add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000bdb0 ldr sb, [pc, 0x19c]                               |     sb = sym.imp.xdr_pointer;</pre>
+<pre>    0x0000bdb4 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000bdb8 ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000bdbc bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000bdc0 str r4, [fp, -0x44]                               |     var_44h = r4;</pre>
+<pre>    0x0000bdc4 mov r4, sl                                        |     r4 = sl;</pre>
+<pre>    0x0000bdc8 mov sl, r8                                        |     sl = r8;</pre>
+<pre>    0x0000bdcc ldr r8, [fp, -0x48]                               |     r8 = var_48h;</pre>
+<pre>    0x0000bdd0 add sb, pc, sb                                    |     sb = pc + sb;</pre>
+<pre>                                                                 |     do {</pre>
+<pre>    0x0000bdd4 ldr r1, [sl, r4, lsl 2]                           |         offset_4 = r4 &lt;&lt; 2;</pre>
+<pre>                                                                 |         r1 = *((sl + offset_4));</pre>
+<pre>    0x0000bdd8 mov r0, sb                                        |         r0 = sb;</pre>
+<pre>    0x0000bddc add r4, r4, 1                                     |         r4++;</pre>
+<pre>    0x0000bde0 add r1, r1, 3                                     |         r1 += 3;</pre>
+<pre><span class="red">    0x0000bde4 bl 0x2a4c                                         |         printf (r0, r1, r2, r3, r4)</span></span></pre>
+<pre>    0x0000bde8 cmp r4, r8                                        |         </pre>
+<pre>    0x0000bdec bne 0xbdd4                                        |         </pre>
+<pre>                                                                 |     } while (r4 != r8);</pre>
+<pre>    0x0000bdf0 ldr r4, [fp, -0x44]                               |     r4 = var_44h;</pre>
+<pre>                                                                 | label_3:</pre>
+<pre>    0x0000bdf4 cmp r6, 0                                         |     </pre>
+<pre>    0x0000bdf8 ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000bdfc mov r2, 5                                         |     r2 = 5;</pre>
+<pre>                                                                 |     if (r6 == 0) {</pre>
+<pre>    0x0000be00 beq 0xbe54                                        |         goto label_22;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0000be04 ldr r1, [pc, 0x14c]                               |     r1 = *(0xbf54);</pre>
+<pre>    0x0000be08 sub r8, fp, 0x28                                  |     r8 -= var_28h;</pre>
+<pre>    0x0000be0c ldr sb, [pc, 0x148]                               |     sb = *(0xbf58);</pre>
+<pre>    0x0000be10 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000be14 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000be18 ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000be1c bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000be20 add sb, pc, sb                                    |     sb = pc + sb;</pre>
+<pre>    0x0000be24 mov r4, 0                                         |     r4 = 0;</pre>
+<pre>                                                                 |     do {</pre>
+<pre>    0x0000be28 ldr r1, [r8, r4, lsl 2]                           |         offset_5 = r4 &lt;&lt; 2;</pre>
+<pre>                                                                 |         r1 = *((r8 + offset_5));</pre>
+<pre>    0x0000be2c mov r0, sb                                        |         r0 = sb;</pre>
+<pre>    0x0000be30 add r4, r4, 1                                     |         r4++;</pre>
+<pre>    0x0000be34 add r1, r1, 2                                     |         r1 += 2;</pre>
+<pre><span class="red">    0x0000be38 bl 0x2a4c                                         |         printf (r0, r1, r2, r3, r4)</span></span></pre>
+<pre>    0x0000be3c cmp r4, r6                                        |         </pre>
+<pre>    0x0000be40 bne 0xbe28                                        |         </pre>
+<pre>                                                                 |     } while (r4 != r6);</pre>
+<pre>                                                                 |     do {</pre>
+<pre>    0x0000be44 mov r0, r5                                        |         r0 = r5;</pre>
+<pre>    0x0000be48 bl 0x5c14                                         |         nis_freeresult ();</pre>
+<pre>    0x0000be4c mov sp, r7                                        |         </pre>
+<pre>    0x0000be50 b 0xb96c                                          |         goto label_2;</pre>
+<pre>                                                                 | label_22:</pre>
+<pre>    0x0000be54 ldr r1, [pc, 0x104]                               |         r1 = *(0xbf5c);</pre>
+<pre>    0x0000be58 add r1, pc, r1                                    |         r1 = pc + r1;</pre>
+<pre>    0x0000be5c bl 0x2a88                                         |         dcgettext (r0, r1);</pre>
+<pre>    0x0000be60 ldr r1, [r4]                                      |         r1 = *(r4);</pre>
+<pre>    0x0000be64 bl 0x2e48                                         |         fputs (r0, r1);</pre>
+<pre>    0x0000be68 b 0xbe44                                          |         </pre>
+<pre>                                                                 |     } while (1);</pre>
+<pre>                                                                 | label_21:</pre>
+<pre>    0x0000be6c ldr r1, [pc, 0xf0]                                |     r1 = *(0xbf60);</pre>
+<pre>    0x0000be70 ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000be74 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000be78 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000be7c ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000be80 bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000be84 b 0xbdf4                                          |     goto label_3;</pre>
+<pre>                                                                 | label_20:</pre>
+<pre>    0x0000be88 ldr r1, [pc, 0xd8]                                |     r1 = *(0xbf64);</pre>
+<pre>    0x0000be8c ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000be90 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000be94 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000be98 ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000be9c bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000bea0 b 0xbd8c                                          |     goto label_4;</pre>
+<pre>                                                                 | label_19:</pre>
+<pre>    0x0000bea4 ldr r1, [pc, 0xc0]                                |     r1 = *(0xbf68);</pre>
+<pre>    0x0000bea8 ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000beac add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000beb0 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000beb4 ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000beb8 bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000bebc b 0xbd24                                          |     goto label_5;</pre>
+<pre>                                                                 | label_18:</pre>
+<pre>    0x0000bec0 ldr r1, [pc, 0xa8]                                |     r1 = *(0xbf6c);</pre>
+<pre>    0x0000bec4 ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000bec8 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000becc bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000bed0 ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000bed4 bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000bed8 b 0xbcbc                                          |     goto label_6;</pre>
+<pre>                                                                 | label_17:</pre>
+<pre>    0x0000bedc ldr r1, [pc, 0x90]                                |     r1 = *(0xbf70);</pre>
+<pre>    0x0000bee0 ldr r0, [fp, -0x40]                               |     r0 = var_40h;</pre>
+<pre>    0x0000bee4 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x0000bee8 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000beec ldr r3, [pc, 0x40]                                |     r3 = *(0xbf30);</pre>
+<pre>    0x0000bef0 ldr r4, [r4, r3]                                  |     r4 = *((r4 + r3));</pre>
+<pre>    0x0000bef4 ldr r1, [r4]                                      |     r1 = *(r4);</pre>
+<pre>    0x0000bef8 bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x0000befc b 0xbc54                                          |     goto label_7;</pre>
+<pre>                                                                 | label_13:</pre>
+<pre>    0x0000bf00 mov r6, lr                                        |     r6 = lr;</pre>
+<pre>    0x0000bf04 str lr, [fp, -0x48]                               |     var_48h = lr;</pre>
+<pre>    0x0000bf08 str lr, [fp, -0x44]                               |     var_44h = lr;</pre>
+<pre>    0x0000bf0c mov sb, lr                                        |     sb = lr;</pre>
+<pre>    0x0000bf10 str lr, [fp, -0x4c]                               |     var_4ch = lr;</pre>
+<pre>    0x0000bf14 mov r8, lr                                        |     r8 = lr;</pre>
+<pre>    0x0000bf18 b 0xbb5c                                          |     goto label_8;</pre>
+<pre>                                                                 | }</pre>
+<pre>    ; assembly                           | /* r2dec pseudo code output */</pre>
+<pre>                                         | /* /logs/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/lib/libnsl-2.24.so &commat; 0x6894 */</pre>
+<pre>                                         | #include &lt;stdint.h&gt;</pre>
+<pre>                                         |  </pre>
+<pre>    ; (fcn) sym.nis_print_link ()        | void nis_print_link (int32_t arg1) {</pre>
+<pre>                                         |     r0 = arg1;</pre>
+<pre>    0x00006894 push {r4, r5, r6, lr}     |     </pre>
+<pre>    0x00006898 mov r2, 5                 |     r2 = 5;</pre>
+<pre>    0x0000689c ldr r4, [pc, 0x54]        |     r4 = *(0x68f4);</pre>
+<pre>    0x000068a0 mov r5, r0                |     r5 = r0;</pre>
+<pre>    0x000068a4 ldr r3, [pc, 0x50]        |     r3 = *(0x68f8);</pre>
+<pre>    0x000068a8 add r4, pc, r4            |     r4 = pc + r4;</pre>
+<pre>    0x000068ac ldr r1, [pc, 0x4c]        |     r1 = *(0x68fc);</pre>
+<pre>    0x000068b0 ldr r6, [r4, r3]          |     r6 = *(0x68f4);</pre>
+<pre>    0x000068b4 add r1, pc, r1            |     r1 = pc + r1;</pre>
+<pre>    0x000068b8 mov r0, r6                |     r0 = r6;</pre>
+<pre>    0x000068bc bl 0x2a88                 |     dcgettext (r0, r1);</pre>
+<pre>    0x000068c0 ldr r3, [pc, 0x3c]        |     r3 = *(0x6900);</pre>
+<pre>    0x000068c4 ldr r3, [r4, r3]          |     r3 = *(0x68f4);</pre>
+<pre>    0x000068c8 ldr r1, [r3]              |     r1 = *(0x68f4);</pre>
+<pre>    0x000068cc bl 0x2e48                 |     fputs (r0, r1);</pre>
+<pre>    0x000068d0 ldr r0, [r5]              |     r0 = *(r5);</pre>
+<pre>    0x000068d4 bl 0x5ea0                 |     fcn_00005ea0 (r0);</pre>
+<pre>    0x000068d8 ldr r1, [pc, 0x28]        |     r1 = *(0x6904);</pre>
+<pre>    0x000068dc mov r0, r6                |     r0 = r6;</pre>
+<pre>    0x000068e0 mov r2, 5                 |     r2 = 5;</pre>
+<pre>    0x000068e4 add r1, pc, r1            |     r1 = pc + r1;</pre>
+<pre>    0x000068e8 bl 0x2a88                 |     dcgettext (r0, r1);</pre>
+<pre>    0x000068ec ldr r1, [r5, 0xc]         |     r1 = *((r5 + 0xc));</pre>
+<pre>    0x000068f0 pop {r4, r5, r6, lr}      |     </pre>
+<pre>    0x000068f4 b 0x2a4c                  |     return void (*0x2a4c)() ();</pre>
+<pre>                                         | }</pre>
+<pre>    ; assembly                                       | /* r2dec pseudo code output */</pre>
+<pre>                                                     | /* /logs/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/lib/libnsl-2.24.so &commat; 0x6a60 */</pre>
+<pre>                                                     | #include &lt;stdint.h&gt;</pre>
+<pre>                                                     |  </pre>
+<pre>    ; (fcn) sym.nis_print_object ()                  | void nis_print_object (int32_t arg1) {</pre>
+<pre>                                                     |     time_t * timer;</pre>
+<pre>                                                     |     int32_t var_8h;</pre>
+<pre>                                                     |     r0 = arg1;</pre>
+<pre>    0x00006a60 push {r4, r5, r6, r7, r8, lr}         |     </pre>
+<pre>    0x00006a64 mov r2, 5                             |     r2 = 5;</pre>
+<pre>    0x00006a68 ldr r6, [pc, 0x234]                   |     </pre>
+<pre>    0x00006a6c sub sp, sp, 8                         |     </pre>
+<pre>    0x00006a70 ldr r3, [pc, 0x230]                   |     r3 = *(0x6ca4);</pre>
+<pre>    0x00006a74 mov r4, r0                            |     r4 = r0;</pre>
+<pre>    0x00006a78 add r6, pc, r6                        |     r6 = pc + r6;</pre>
+<pre>    0x00006a7c ldr r1, [pc, 0x228]                   |     r1 = *(0x6ca8);</pre>
+<pre>    0x00006a80 add r7, sp, 8                         |     r7 += var_8h;</pre>
+<pre>    0x00006a84 ldr r5, [r6, r3]                      |     r5 = *(0x6ca0);</pre>
+<pre>    0x00006a88 add r1, pc, r1                        |     r1 = pc + r1;</pre>
+<pre>    0x00006a8c mov r0, r5                            |     r0 = r5;</pre>
+<pre>    0x00006a90 bl 0x2a88                             |     dcgettext (r0, r1);</pre>
+<pre>    0x00006a94 ldr r1, [r4, 8]                       |     r1 = *((r4 + 8));</pre>
+<pre><span class="red">    0x00006a98 bl 0x2a4c                             |     printf (r0, r1)</span></span></pre>
+<pre>    0x00006a9c ldr r1, [pc, 0x20c]                   |     r1 = *(0x6cac);</pre>
+<pre>    0x00006aa0 mov r2, 5                             |     r2 = 5;</pre>
+<pre>    0x00006aa4 mov r0, r5                            |     r0 = r5;</pre>
+<pre>    0x00006aa8 add r1, pc, r1                        |     r1 = pc + r1;</pre>
+<pre>    0x00006aac bl 0x2a88                             |     dcgettext (r0, r1);</pre>
+<pre>    0x00006ab0 ldr r1, [r4, 0x14]                    |     r1 = *((r4 + 0x14));</pre>
+<pre><span class="red">    0x00006ab4 bl 0x2a4c                             |     printf (r0, r1)</span></span></pre>
+<pre>    0x00006ab8 ldr r1, [pc, 0x1f4]                   |     r1 = *(0x6cb0);</pre>
+<pre>    0x00006abc mov r2, 5                             |     r2 = 5;</pre>
+<pre>    0x00006ac0 mov r0, r5                            |     r0 = r5;</pre>
+<pre>    0x00006ac4 add r1, pc, r1                        |     r1 = pc + r1;</pre>
+<pre>    0x00006ac8 bl 0x2a88                             |     dcgettext (r0, r1);</pre>
+<pre>    0x00006acc ldr r1, [r4, 0xc]                     |     r1 = *((r4 + 0xc));</pre>
+<pre><span class="red">    0x00006ad0 bl 0x2a4c                             |     printf (r0, r1)</span></span></pre>
+<pre>    0x00006ad4 ldr r1, [pc, 0x1dc]                   |     r1 = *(0x6cb4);</pre>
+<pre>    0x00006ad8 mov r2, 5                             |     r2 = 5;</pre>
+<pre>    0x00006adc mov r0, r5                            |     r0 = r5;</pre>
+<pre>    0x00006ae0 add r1, pc, r1                        |     r1 = pc + r1;</pre>
+<pre>    0x00006ae4 bl 0x2a88                             |     dcgettext (r0, r1);</pre>
+<pre>    0x00006ae8 ldr r1, [r4, 0x10]                    |     r1 = *((r4 + 0x10));</pre>
+<pre><span class="red">    0x00006aec bl 0x2a4c                             |     printf (r0, r1)</span></span></pre>
+<pre>    0x00006af0 ldr r1, [pc, 0x1c4]                   |     r1 = *(0x6cb8);</pre>
+<pre>    0x00006af4 mov r2, 5                             |     r2 = 5;</pre>
+<pre>    0x00006af8 mov r0, r5                            |     r0 = r5;</pre>
+<pre>    0x00006afc add r1, pc, r1                        |     r1 = pc + r1;</pre>
+<pre>    0x00006b00 bl 0x2a88                             |     dcgettext (r0, r1);</pre>
+<pre>    0x00006b04 ldr r3, [pc, 0x1b4]                   |     r3 = *(0x6cbc);</pre>
+<pre>    0x00006b08 ldr r6, [r6, r3]                      |     r6 = *(0x6ca0);</pre>
+<pre>    0x00006b0c ldr r1, [r6]                          |     r1 = *(0x6ca0);</pre>
+<pre>    0x00006b10 bl 0x2e48                             |     fputs (r0, r1);</pre>
+<pre>    0x00006b14 ldr r0, [r4, 0x18]                    |     r0 = *((r4 + 0x18));</pre>
+<pre>    0x00006b18 bl 0x5f94                             |     nis_print_rights ();</pre>
+<pre>    0x00006b1c ldr r1, [pc, 0x1a0]                   |     r1 = *(0x6cc0);</pre>
+<pre>    0x00006b20 mov r2, 5                             |     r2 = 5;</pre>
+<pre>    0x00006b24 mov r0, r5                            |     r0 = r5;</pre>
+<pre>    0x00006b28 add r1, pc, r1                        |     r1 = pc + r1;</pre>
+<pre>    0x00006b2c bl 0x2a88                             |     r0 = dcgettext (r0, r1);</pre>
+<pre><span class="red">    0x00006b30 bl 0x2a4c                             |     printf (r0)</span></span></pre>
+<pre>    0x00006b34 ldr r3, [r4, 0x1c]                    |     r3 = *((r4 + 0x1c));</pre>
+<pre>    0x00006b38 movw r0, 0xb3c5                       |     </pre>
+<pre>    0x00006b3c movt r0, 0x91a2                       |     r0 = 0x91a2b3c5;</pre>
+<pre>    0x00006b40 movw r2, 0x8889                       |     </pre>
+<pre>                                                     |     /* if there is a right shift of 8, then it's a division by 1/480 */</pre>
+<pre>    0x00006b44 movt r2, 0x8888                       |     r2 = 0x88888889;</pre>
+<pre>    0x00006b48 umull r0, r1, r3, r0                  |     r0:r1 = r3 * r0;</pre>
+<pre>    0x00006b4c mov r0, 0xe10                         |     r0 = 0xe10;</pre>
+<pre>    0x00006b50 mov lr, 0x3c                          |     lr = 0x3c;</pre>
+<pre>    0x00006b54 lsr ip, r1, 0xb                       |     </pre>
+<pre>    0x00006b58 mov r1, ip                            |     r1 = ip;</pre>
+<pre>    0x00006b5c mls ip, r0, ip, r3                    |     __asm ("mls ip, r0, ip, r3");</pre>
+<pre>    0x00006b60 ldr r0, [pc, 0x160]                   |     r0 = *(0x6cc4);</pre>
+<pre>    0x00006b64 add r0, pc, r0                        |     r0 = pc + r0;</pre>
+<pre>    0x00006b68 umull r2, r3, ip, r2                  |     r2:r3 = ip * r2;</pre>
+<pre>    0x00006b6c lsr r2, r3, 5                         |     r2 = r3 &gt;&gt; 5;</pre>
+<pre>    0x00006b70 mls r3, lr, r2, ip                    |     __asm ("mls r3, lr, r2, ip");</pre>
+<pre><span class="red">    0x00006b74 bl 0x2a4c                             |     printf (r0, r1, r2, r3)</span></span></pre>
+<pre>    0x00006b78 ldr r3, [r4]                          |     r3 = *(r4);</pre>
+<pre>    0x00006b7c ldr r1, [pc, 0x148]                   |     r1 = *(0x6cc8);</pre>
+<pre>    0x00006b80 mov r2, 5                             |     r2 = 5;</pre>
+<pre>    0x00006b84 mov r0, r5                            |     r0 = r5;</pre>
+<pre>    0x00006b88 add r1, pc, r1                        |     r1 = pc + r1;</pre>
+<pre>    0x00006b8c str r3, [r7, -4]!                     |     *((r7 -= 4)) = r3;</pre>
+<pre>    0x00006b90 bl 0x2a88                             |     r0 = dcgettext (r0, r1);</pre>
+<pre>    0x00006b94 mov r8, r0                            |     r8 = r0;</pre>
+<pre>    0x00006b98 mov r0, r7                            |     r0 = r7;</pre>
+<pre>    0x00006b9c bl 0x2b18                             |     r0 = ctime (r0);</pre>
+<pre>    0x00006ba0 mov r1, r0                            |     r1 = r0;</pre>
+<pre>    0x00006ba4 mov r0, r8                            |     r0 = r8;</pre>
+<pre><span class="red">    0x00006ba8 bl 0x2a4c                             |     printf (r0, r1)</span></span></pre>
+<pre>    0x00006bac ldr r3, [r4, 4]                       |     r3 = *((r4 + 4));</pre>
+<pre>    0x00006bb0 ldr r1, [pc, 0x118]                   |     r1 = *(0x6ccc);</pre>
+<pre>    0x00006bb4 mov r2, 5                             |     r2 = 5;</pre>
+<pre>    0x00006bb8 mov r0, r5                            |     r0 = r5;</pre>
+<pre>    0x00006bbc add r1, pc, r1                        |     r1 = pc + r1;</pre>
+<pre>    0x00006bc0 str r3, [sp, 4]                       |     timer = r3;</pre>
+<pre>    0x00006bc4 bl 0x2a88                             |     r0 = dcgettext (r0, r1);</pre>
+<pre>    0x00006bc8 mov r8, r0                            |     r8 = r0;</pre>
+<pre>    0x00006bcc mov r0, r7                            |     r0 = r7;</pre>
+<pre>    0x00006bd0 bl 0x2b18                             |     r0 = ctime (r0);</pre>
+<pre>    0x00006bd4 mov r1, r0                            |     r1 = r0;</pre>
+<pre>    0x00006bd8 mov r0, r8                            |     r0 = r8;</pre>
+<pre><span class="red">    0x00006bdc bl 0x2a4c                             |     printf (r0, r1)</span></span></pre>
+<pre>    0x00006be0 ldr r1, [pc, 0xec]                    |     r1 = *(0x6cd0);</pre>
+<pre>    0x00006be4 mov r2, 5                             |     r2 = 5;</pre>
+<pre>    0x00006be8 mov r0, r5                            |     r0 = r5;</pre>
+<pre>    0x00006bec add r1, pc, r1                        |     r1 = pc + r1;</pre>
+<pre>    0x00006bf0 bl 0x2a88                             |     dcgettext (r0, r1);</pre>
+<pre>    0x00006bf4 ldr r1, [r6]                          |     r1 = *(0x6ca0);</pre>
+<pre>    0x00006bf8 bl 0x2e48                             |     fputs (r0, r1);</pre>
+<pre>    0x00006bfc ldr r0, [r4, 0x20]                    |     r0 = *((r4 + 0x20));</pre>
+<pre>    0x00006c00 bl 0x5ea0                             |     fcn_00005ea0 (r0);</pre>
+<pre>    0x00006c04 ldr r3, [r4, 0x20]                    |     r3 = *((r4 + 0x20));</pre>
+<pre>    0x00006c08 sub r3, r3, 2                         |     r3 -= 2;</pre>
+<pre>    0x00006c0c cmp r3, 5                             |     </pre>
+<pre>                                                     |     if (r3 &gt; 5) {</pre>
+<pre>                                                     |         /* switch table (6 cases) at 0x6c18 */</pre>
+<pre>    0x00006c10 addls pc, pc, r3, lsl 2               |         pc += (r3 &lt;&lt; 2);</pre>
+<pre>                                                     |     }</pre>
+<pre>    0x00006c14 b 0x6c4c                              |     goto label_0;</pre>
+<pre>    0x00006c18 b 0x6c54                              |     goto label_1;</pre>
+<pre>    0x00006c1c b 0x6c64                              |     goto label_2;</pre>
+<pre>    0x00006c20 b 0x6c74                              |     goto label_3;</pre>
+<pre>    0x00006c24 b 0x6c84                              |     goto label_4;</pre>
+<pre>    0x00006c28 b 0x6c94                              |     goto label_5;</pre>
+<pre>    0x00006c2c b 0x6c30                              |     </pre>
+<pre>    0x00006c30 ldr r1, [pc, 0xa0]                    |     r1 = *(0x6cd4);</pre>
+<pre>    0x00006c34 mov r0, r5                            |     r0 = r5;</pre>
+<pre>    0x00006c38 mov r2, 5                             |     r2 = 5;</pre>
+<pre>    0x00006c3c add r1, pc, r1                        |     r1 = pc + r1;</pre>
+<pre>    0x00006c40 bl 0x2a88                             |     dcgettext (r0, r1);</pre>
+<pre>    0x00006c44 ldr r1, [r4, 0x24]                    |     r1 = *((r4 + 0x24));</pre>
+<pre><span class="red">    0x00006c48 bl 0x2a4c                             |     printf (r0, r1)</span></span></pre>
+<pre>                                                     | label_0:</pre>
+<pre>    0x00006c4c add sp, sp, 8                         |     </pre>
+<pre>    0x00006c50 pop {r4, r5, r6, r7, r8, pc}          |     </pre>
+<pre>                                                     | label_1:</pre>
+<pre>    0x00006c54 add r0, r4, 0x24                      |     r0 = r4 + 0x24;</pre>
+<pre>    0x00006c58 bl 0x602c                             |     nis_print_directory ();</pre>
+<pre>    0x00006c5c add sp, sp, 8                         |     </pre>
+<pre>    0x00006c60 pop {r4, r5, r6, r7, r8, pc}          |     </pre>
+<pre>                                                     | label_2:</pre>
+<pre>    0x00006c64 add r0, r4, 0x24                      |     r0 = r4 + 0x24;</pre>
+<pre>    0x00006c68 bl 0x64c0                             |     nis_print_group ();</pre>
+<pre>    0x00006c6c add sp, sp, 8                         |     </pre>
+<pre>    0x00006c70 pop {r4, r5, r6, r7, r8, pc}          |     </pre>
+<pre>                                                     | label_3:</pre>
+<pre>    0x00006c74 add r0, r4, 0x24                      |     r0 = r4 + 0x24;</pre>
+<pre>    0x00006c78 bl 0x658c                             |     nis_print_table ();</pre>
+<pre>    0x00006c7c add sp, sp, 8                         |     </pre>
+<pre>    0x00006c80 pop {r4, r5, r6, r7, r8, pc}          |     </pre>
+<pre>                                                     | label_4:</pre>
+<pre>    0x00006c84 add r0, r4, 0x24                      |     r0 = r4 + 0x24;</pre>
+<pre>    0x00006c88 bl 0x690c                             |     nis_print_entry ();</pre>
+<pre>    0x00006c8c add sp, sp, 8                         |     </pre>
+<pre>    0x00006c90 pop {r4, r5, r6, r7, r8, pc}          |     </pre>
+<pre>                                                     | label_5:</pre>
+<pre>    0x00006c94 add r0, r4, 0x24                      |     r0 = r4 + 0x24;</pre>
+<pre>    0x00006c98 bl 0x6894                             |     nis_print_link ();</pre>
+<pre>    0x00006c9c add sp, sp, 8                         |     </pre>
+<pre>    0x00006ca0 pop {r4, r5, r6, r7, r8, pc}          |     </pre>
+<pre>                                                     | }</pre>
+<pre>    ; assembly                                       | /* r2dec pseudo code output */</pre>
+<pre>                                                     | /* /logs/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/lib/libnsl-2.24.so &commat; 0x6cdc */</pre>
+<pre>                                                     | #include &lt;stdint.h&gt;</pre>
+<pre>                                                     |  </pre>
+<pre>    ; (fcn) sym.nis_print_result ()                  | void nis_print_result (int32_t arg1) {</pre>
+<pre>                                                     |     r0 = arg1;</pre>
+<pre>    0x00006cdc ldr r3, [pc, 0xa8]                    |     r3 = *(0x6d88);</pre>
+<pre>    0x00006ce0 mov r2, 5                             |     r2 = 5;</pre>
+<pre>    0x00006ce4 push {r4, r5, r6, r7, r8, lr}         |     </pre>
+<pre>    0x00006ce8 mov r5, r0                            |     r5 = r0;</pre>
+<pre>    0x00006cec ldr r0, [pc, 0x9c]                    |     r0 = *(0x6d8c);</pre>
+<pre>    0x00006cf0 add r3, pc, r3                        |     r3 = pc + r3;</pre>
+<pre>    0x00006cf4 ldr r1, [pc, 0x98]                    |     r1 = *(0x6d90);</pre>
+<pre>    0x00006cf8 ldr r6, [r3, r0]                      |     r6 = *(0x6d88);</pre>
+<pre>    0x00006cfc add r1, pc, r1                        |     r1 = pc + r1;</pre>
+<pre>    0x00006d00 mov r0, r6                            |     r0 = r6;</pre>
+<pre>    0x00006d04 bl 0x2a88                             |     r0 = dcgettext (r0, r1);</pre>
+<pre>    0x00006d08 mov r4, r0                            |     r4 = r0;</pre>
+<pre>    0x00006d0c ldr r0, [r5]                          |     r0 = *(r5);</pre>
+<pre>    0x00006d10 bl 0x6dcc                             |     r0 = nis_sperrno ();</pre>
+<pre>    0x00006d14 mov r1, r0                            |     r1 = r0;</pre>
+<pre>    0x00006d18 mov r0, r4                            |     r0 = r4;</pre>
+<pre><span class="red">    0x00006d1c bl 0x2a4c                             |     printf (r0, r1)</span></span></pre>
+<pre>    0x00006d20 ldr r1, [pc, 0x70]                    |     r1 = *(0x6d94);</pre>
+<pre>    0x00006d24 mov r2, 5                             |     r2 = 5;</pre>
+<pre>    0x00006d28 mov r0, r6                            |     r0 = r6;</pre>
+<pre>    0x00006d2c add r1, pc, r1                        |     r1 = pc + r1;</pre>
+<pre>    0x00006d30 bl 0x2a88                             |     dcgettext (r0, r1);</pre>
+<pre>    0x00006d34 ldr r1, [r5, 4]                       |     r1 = *((r5 + 4));</pre>
+<pre><span class="red">    0x00006d38 bl 0x2a4c                             |     printf (r0, r1)</span></span></pre>
+<pre>    0x00006d3c ldr r3, [r5, 4]                       |     r3 = *((r5 + 4));</pre>
+<pre>    0x00006d40 cmp r3, 0                             |     </pre>
+<pre>    0x00006d44 popeq {r4, r5, r6, r7, r8, pc}        |     </pre>
+<pre>    0x00006d48 ldr r7, [pc, 0x4c]                    |     r7 = *(0x6d98);</pre>
+<pre>    0x00006d4c mov r4, 0                             |     r4 = 0;</pre>
+<pre>    0x00006d50 add r7, pc, r7                        |     r7 = pc + r7;</pre>
+<pre>                                                     |     do {</pre>
+<pre>    0x00006d54 mov r2, 5                             |         r2 = 5;</pre>
+<pre>    0x00006d58 mov r1, r7                            |         r1 = r7;</pre>
+<pre>    0x00006d5c mov r0, r6                            |         r0 = r6;</pre>
+<pre>    0x00006d60 bl 0x2a88                             |         dcgettext (r0, r1);</pre>
+<pre>    0x00006d64 mov r1, r4                            |         r1 = r4;</pre>
+<pre><span class="red">    0x00006d68 bl 0x2a4c                             |         printf (r0, r1)</span></span></pre>
+<pre>    0x00006d6c ldr r0, [r5, 8]                       |         r0 = *((r5 + 8));</pre>
+<pre>    0x00006d70 add r0, r0, r4, lsl 6                 |         r0 += (r4 &lt;&lt; 6);</pre>
+<pre>    0x00006d74 add r4, r4, 1                         |         r4++;</pre>
+<pre>    0x00006d78 bl 0x6a60                             |         nis_print_object ();</pre>
+<pre>    0x00006d7c ldr r3, [r5, 4]                       |         r3 = *((r5 + 4));</pre>
+<pre>    0x00006d80 cmp r3, r4                            |         </pre>
+<pre>    0x00006d84 bhi 0x6d54                            |         </pre>
+<pre>                                                     |     } while (r3 &gt; r4);</pre>
+<pre>    0x00006d88 pop {r4, r5, r6, r7, r8, pc}          |     </pre>
+<pre>                                                     | }</pre>
+<pre>    ; assembly                                                   | /* r2dec pseudo code output */</pre>
+<pre>                                                                 | /* /logs/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/lib/libnsl-2.24.so &commat; 0x658c */</pre>
+<pre>                                                                 | #include &lt;stdint.h&gt;</pre>
+<pre>                                                                 |  </pre>
+<pre>    ; (fcn) sym.nis_print_table ()                               | void nis_print_table (int32_t arg1) {</pre>
+<pre>                                                                 |     r0 = arg1;</pre>
+<pre>    0x0000658c push {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}     |     </pre>
+<pre>    0x00006590 mov r2, 5                                         |     r2 = 5;</pre>
+<pre>    0x00006594 ldr r4, [pc, 0x2a4]                               |     </pre>
+<pre>    0x00006598 mov r7, r0                                        |     r7 = r0;</pre>
+<pre>    0x0000659c ldr r3, [pc, 0x2a0]                               |     r3 = *(0x6840);</pre>
+<pre>    0x000065a0 add r4, pc, r4                                    |     r4 = pc + r4;</pre>
+<pre>    0x000065a4 ldr r1, [pc, 0x29c]                               |     r1 = *(0x6844);</pre>
+<pre>    0x000065a8 ldr sb, [r4, r3]                                  |     sb = *(0x683c);</pre>
+<pre>    0x000065ac add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x000065b0 mov r0, sb                                        |     r0 = sb;</pre>
+<pre>    0x000065b4 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x000065b8 ldr r1, [r7]                                      |     r1 = *(r7);</pre>
+<pre><span class="red">    0x000065bc bl 0x2a4c                                         |     printf (r0, r1)</span></span></pre>
+<pre>    0x000065c0 ldr r1, [pc, 0x284]                               |     r1 = *(0x6848);</pre>
+<pre>    0x000065c4 mov r2, 5                                         |     r2 = 5;</pre>
+<pre>    0x000065c8 mov r0, sb                                        |     r0 = sb;</pre>
+<pre>    0x000065cc add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x000065d0 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x000065d4 ldr r1, [r7, 4]                                   |     r1 = *((r7 + 4));</pre>
+<pre><span class="red">    0x000065d8 bl 0x2a4c                                         |     printf (r0, r1)</span></span></pre>
+<pre>    0x000065dc ldr r1, [pc, 0x26c]                               |     r1 = *(0x684c);</pre>
+<pre>    0x000065e0 mov r2, 5                                         |     r2 = 5;</pre>
+<pre>    0x000065e4 mov r0, sb                                        |     r0 = sb;</pre>
+<pre>    0x000065e8 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x000065ec bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x000065f0 ldrb r1, [r7, 8]                                  |     r1 = *((r7 + 8));</pre>
+<pre><span class="red">    0x000065f4 bl 0x2a4c                                         |     printf (r0, r1)</span></span></pre>
+<pre>    0x000065f8 ldr r1, [pc, 0x254]                               |     r1 = *(0x6850);</pre>
+<pre>    0x000065fc mov r2, 5                                         |     r2 = 5;</pre>
+<pre>    0x00006600 mov r0, sb                                        |     r0 = sb;</pre>
+<pre>    0x00006604 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x00006608 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x0000660c ldr r1, [r7, 0x14]                                |     r1 = *((r7 + 0x14));</pre>
+<pre><span class="red">    0x00006610 bl 0x2a4c                                         |     printf (r0, r1)</span></span></pre>
+<pre>    0x00006614 ldr r1, [pc, 0x23c]                               |     r1 = *(0x6854);</pre>
+<pre>    0x00006618 mov r2, 5                                         |     r2 = 5;</pre>
+<pre>    0x0000661c mov r0, sb                                        |     r0 = sb;</pre>
+<pre>    0x00006620 add r1, pc, r1                                    |     r1 = pc + r1;</pre>
+<pre>    0x00006624 bl 0x2a88                                         |     dcgettext (r0, r1);</pre>
+<pre>    0x00006628 ldr r3, [pc, 0x22c]                               |     r3 = *(0x6858);</pre>
+<pre>    0x0000662c ldr r4, [r4, r3]                                  |     r4 = *(0x683c);</pre>
+<pre>    0x00006630 ldr r1, [r4]                                      |     r1 = *(0x683c);</pre>
+<pre>    0x00006634 bl 0x2e48                                         |     fputs (r0, r1);</pre>
+<pre>    0x00006638 ldr r3, [r7, 0xc]                                 |     r3 = *((r7 + 0xc));</pre>
+<pre>    0x0000663c cmp r3, 0                                         |     </pre>
+<pre>    0x00006640 popeq {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}    |     </pre>
+<pre>    0x00006644 ldr fp, [pc, 0x214]                               |     fp = *(0x685c);</pre>
+<pre>    0x00006648 mov r5, 0                                         |     r5 = 0;</pre>
+<pre>    0x0000664c ldr sl, [pc, 0x210]                               |     sl = *(0x6860);</pre>
+<pre>    0x00006650 mov r8, r5                                        |     r8 = r5;</pre>
+<pre>    0x00006654 add fp, pc, fp                                    |     </pre>
+<pre>    0x00006658 add sl, pc, sl                                    |     sl = pc + sl;</pre>
+<pre>    0x0000665c b 0x66fc                                          |     </pre>
+<pre>                                                                 |     while ((r6 &amp; 8) == 0) {</pre>
+<pre>    0x00006660 tst r6, 1                                         |         </pre>
+<pre>                                                                 |         if ((r6 &amp; 1) == 0) {</pre>
+<pre>    0x00006664 beq 0x67b0                                        |             goto label_4;</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 | label_0:</pre>
+<pre>    0x00006668 ldr r0, [pc, 0x1f8]                               |         r0 = *(0x6864);</pre>
+<pre>    0x0000666c mov r2, 0xb                                       |         r2 = 0xb;</pre>
+<pre>    0x00006670 ldr r3, [r4]                                      |         r3 = *(r4);</pre>
+<pre>    0x00006674 mov r1, 1                                         |         r1 = 1;</pre>
+<pre>    0x00006678 add r0, pc, r0                                    |         r0 = pc + r0;</pre>
+<pre>    0x0000667c bl 0x2b9c                                         |         fwrite (r0, r1, r2, r3);</pre>
+<pre>    0x00006680 tst r6, 4                                         |         </pre>
+<pre>                                                                 |         if ((r6 &amp; 4) != 0) {</pre>
+<pre>    0x00006684 bne 0x6804                                        |             goto label_5;</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 | label_3:</pre>
+<pre>    0x00006688 tst r6, 0x40                                      |         </pre>
+<pre>                                                                 |         if ((r6 &amp; 0x40) != 0) {</pre>
+<pre>    0x0000668c bne 0x67e8                                        |             goto label_6;</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 | label_2:</pre>
+<pre>    0x00006690 tst r6, 2                                         |         </pre>
+<pre>                                                                 |         if ((r6 &amp; 2) != 0) {</pre>
+<pre>    0x00006694 bne 0x67cc                                        |             goto label_7;</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 | label_1:</pre>
+<pre>    0x00006698 ldr r0, [pc, 0x1cc]                               |         r0 = *(0x6868);</pre>
+<pre>    0x0000669c mov r2, 2                                         |         r2 = 2;</pre>
+<pre>    0x000066a0 ldr r3, [r4]                                      |         r3 = *(r4);</pre>
+<pre>    0x000066a4 mov r1, 1                                         |         r1 = 1;</pre>
+<pre>    0x000066a8 add r0, pc, r0                                    |         r0 = pc + r0;</pre>
+<pre>    0x000066ac add r8, r8, 1                                     |         r8++;</pre>
+<pre>    0x000066b0 bl 0x2b9c                                         |         fwrite (r0, r1, r2, r3);</pre>
+<pre>    0x000066b4 ldr r1, [pc, 0x1b4]                               |         r1 = *(0x686c);</pre>
+<pre>    0x000066b8 mov r2, 5                                         |         r2 = 5;</pre>
+<pre>    0x000066bc mov r0, sb                                        |         r0 = sb;</pre>
+<pre>    0x000066c0 add r1, pc, r1                                    |         r1 = pc + r1;</pre>
+<pre>    0x000066c4 bl 0x2a88                                         |         dcgettext (r0, r1);</pre>
+<pre>    0x000066c8 ldr r1, [r4]                                      |         r1 = *(r4);</pre>
+<pre>    0x000066cc bl 0x2e48                                         |         fputs (r0, r1);</pre>
+<pre>    0x000066d0 ldr r3, [r7, 0x10]                                |         r3 = *((r7 + 0x10));</pre>
+<pre>    0x000066d4 add r3, r3, r5                                    |         r3 += r5;</pre>
+<pre>    0x000066d8 add r5, r5, 0xc                                   |         r5 += 0xc;</pre>
+<pre>    0x000066dc ldr r0, [r3, 8]                                   |         r0 = *((r3 + 8));</pre>
+<pre>    0x000066e0 bl 0x5f94                                         |         nis_print_rights ();</pre>
+<pre>    0x000066e4 ldr r1, [r4]                                      |         r1 = *(r4);</pre>
+<pre>    0x000066e8 mov r0, 0xa                                       |         r0 = 0xa;</pre>
+<pre>    0x000066ec bl 0x2d88                                         |         fputc (r0, r1);</pre>
+<pre>    0x000066f0 ldr r3, [r7, 0xc]                                 |         r3 = *((r7 + 0xc));</pre>
+<pre>    0x000066f4 cmp r3, r8                                        |         </pre>
+<pre>                                                                 |         if (r3 &lt; r8) {</pre>
+<pre>    0x000066f8 bls 0x683c                                        |             goto label_8;</pre>
+<pre>                                                                 |         }</pre>
+<pre>    0x000066fc mov r2, 5                                         |         r2 = 5;</pre>
+<pre>    0x00006700 mov r1, fp                                        |         r1 = fp;</pre>
+<pre>    0x00006704 mov r0, sb                                        |         r0 = sb;</pre>
+<pre>    0x00006708 bl 0x2a88                                         |         dcgettext (r0, r1);</pre>
+<pre>    0x0000670c ldr r3, [r7, 0x10]                                |         r3 = *((r7 + 0x10));</pre>
+<pre>    0x00006710 mov r1, r8                                        |         r1 = r8;</pre>
+<pre>    0x00006714 ldr r2, [r3, r5]                                  |         r2 = *((r3 + r5));</pre>
+<pre><span class="red">    0x00006718 bl 0x2a4c                                         |         printf (r0, r1, r2, r3)</span></span></pre>
+<pre>    0x0000671c mov r2, 5                                         |         r2 = 5;</pre>
+<pre>    0x00006720 mov r1, sl                                        |         r1 = sl;</pre>
+<pre>    0x00006724 mov r0, sb                                        |         r0 = sb;</pre>
+<pre>    0x00006728 bl 0x2a88                                         |         dcgettext (r0, r1);</pre>
+<pre>    0x0000672c ldr r1, [r4]                                      |         r1 = *(r4);</pre>
+<pre>    0x00006730 bl 0x2e48                                         |         fputs (r0, r1);</pre>
+<pre>    0x00006734 ldr r3, [r7, 0x10]                                |         r3 = *((r7 + 0x10));</pre>
+<pre>    0x00006738 ldr r1, [r4]                                      |         r1 = *(r4);</pre>
+<pre>    0x0000673c mov r0, 0x28                                      |         r0 = 0x28;</pre>
+<pre>    0x00006740 add r3, r3, r5                                    |         r3 += r5;</pre>
+<pre>    0x00006744 ldr r6, [r3, 4]                                   |         r6 = *((r3 + 4));</pre>
+<pre>    0x00006748 bl 0x2d88                                         |         fputc (r0, r1);</pre>
+<pre>    0x0000674c tst r6, 8                                         |         </pre>
+<pre>    0x00006750 beq 0x6660                                        |         </pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x00006754 ldr r0, [pc, 0x118]                               |     r0 = *(0x6870);</pre>
+<pre>    0x00006758 mov r2, 0xc                                       |     r2 = 0xc;</pre>
+<pre>    0x0000675c ldr r3, [r4]                                      |     r3 = *(r4);</pre>
+<pre>    0x00006760 mov r1, 1                                         |     r1 = 1;</pre>
+<pre>    0x00006764 add r0, pc, r0                                    |     r0 = pc + r0;</pre>
+<pre>    0x00006768 bl 0x2b9c                                         |     fwrite (r0, r1, r2, r3);</pre>
+<pre>    0x0000676c tst r6, 1                                         |     </pre>
+<pre>                                                                 |     if ((r6 &amp; 1) != 0) {</pre>
+<pre>    0x00006770 bne 0x6668                                        |         goto label_0;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x00006774 ldr r0, [pc, 0xfc]                                |     r0 = *(0x6874);</pre>
+<pre>    0x00006778 mov r2, 0xc                                       |     r2 = 0xc;</pre>
+<pre>    0x0000677c ldr r3, [r4]                                      |     r3 = *(r4);</pre>
+<pre>    0x00006780 mov r1, 1                                         |     r1 = 1;</pre>
+<pre>    0x00006784 add r0, pc, r0                                    |     r0 = pc + r0;</pre>
+<pre>    0x00006788 bl 0x2b9c                                         |     fwrite (r0, r1, r2, r3);</pre>
+<pre>    0x0000678c tst r6, 0x10                                      |     </pre>
+<pre>                                                                 |     if ((r6 &amp; 0x10) == 0) {</pre>
+<pre>    0x00006790 bne 0x6820                                        |         </pre>
+<pre>    0x00006794 ldr r0, [pc, 0xe0]                                |         r0 = *(0x6878);</pre>
+<pre>    0x00006798 mov r2, 0x10                                      |         r2 = 0x10;</pre>
+<pre>    0x0000679c ldr r3, [r4]                                      |         r3 = *(r4);</pre>
+<pre>    0x000067a0 mov r1, 1                                         |         r1 = 1;</pre>
+<pre>    0x000067a4 add r0, pc, r0                                    |         r0 = pc + r0;</pre>
+<pre>    0x000067a8 bl 0x2b9c                                         |         fwrite (r0, r1, r2, r3);</pre>
+<pre>    0x000067ac b 0x6698                                          |         goto label_1;</pre>
+<pre>                                                                 | label_4:</pre>
+<pre>    0x000067b0 ldr r0, [pc, 0xc8]                                |         r0 = *(0x687c);</pre>
+<pre>    0x000067b4 mov r2, 0xc                                       |         r2 = 0xc;</pre>
+<pre>    0x000067b8 ldr r3, [r4]                                      |         r3 = *(r4);</pre>
+<pre>    0x000067bc mov r1, 1                                         |         r1 = 1;</pre>
+<pre>    0x000067c0 add r0, pc, r0                                    |         r0 = pc + r0;</pre>
+<pre>    0x000067c4 bl 0x2b9c                                         |         fwrite (r0, r1, r2, r3);</pre>
+<pre>    0x000067c8 b 0x6698                                          |         goto label_1;</pre>
+<pre>                                                                 | label_7:</pre>
+<pre>    0x000067cc ldr r0, [pc, 0xb0]                                |         r0 = *(0x6880);</pre>
+<pre>    0x000067d0 mov r2, 0xb                                       |         r2 = 0xb;</pre>
+<pre>    0x000067d4 ldr r3, [r4]                                      |         r3 = *(r4);</pre>
+<pre>    0x000067d8 mov r1, 1                                         |         r1 = 1;</pre>
+<pre>    0x000067dc add r0, pc, r0                                    |         r0 = pc + r0;</pre>
+<pre>    0x000067e0 bl 0x2b9c                                         |         fwrite (r0, r1, r2, r3);</pre>
+<pre>    0x000067e4 b 0x6698                                          |         goto label_1;</pre>
+<pre>                                                                 | label_6:</pre>
+<pre>    0x000067e8 ldr r0, [pc, 0x98]                                |         r0 = *(0x6884);</pre>
+<pre>    0x000067ec mov r2, 0xf                                       |         r2 = 0xf;</pre>
+<pre>    0x000067f0 ldr r3, [r4]                                      |         r3 = *(r4);</pre>
+<pre>    0x000067f4 mov r1, 1                                         |         r1 = 1;</pre>
+<pre>    0x000067f8 add r0, pc, r0                                    |         r0 = pc + r0;</pre>
+<pre>    0x000067fc bl 0x2b9c                                         |         fwrite (r0, r1, r2, r3);</pre>
+<pre>    0x00006800 b 0x6690                                          |         goto label_2;</pre>
+<pre>                                                                 | label_5:</pre>
+<pre>    0x00006804 ldr r0, [pc, 0x80]                                |         r0 = *(0x6888);</pre>
+<pre>    0x00006808 mov r2, 0xd                                       |         r2 = 0xd;</pre>
+<pre>    0x0000680c ldr r3, [r4]                                      |         r3 = *(r4);</pre>
+<pre>    0x00006810 mov r1, 1                                         |         r1 = 1;</pre>
+<pre>    0x00006814 add r0, pc, r0                                    |         r0 = pc + r0;</pre>
+<pre>    0x00006818 bl 0x2b9c                                         |         fwrite (r0, r1, r2, r3);</pre>
+<pre>    0x0000681c b 0x6688                                          |         goto label_3;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x00006820 ldr r0, [pc, 0x68]                                |     r0 = *(0x688c);</pre>
+<pre>    0x00006824 mov r2, 0x12                                      |     r2 = 0x12;</pre>
+<pre>    0x00006828 ldr r3, [r4]                                      |     r3 = *(r4);</pre>
+<pre>    0x0000682c mov r1, 1                                         |     r1 = 1;</pre>
+<pre>    0x00006830 add r0, pc, r0                                    |     r0 = pc + r0;</pre>
+<pre>    0x00006834 bl 0x2b9c                                         |     fwrite (r0, r1, r2, r3);</pre>
+<pre>    0x00006838 b 0x6698                                          |     goto label_1;</pre>
+<pre>                                                                 | label_8:</pre>
+<pre>    0x0000683c pop {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}      |     </pre>
+<pre>                                                                 | }</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">printf</span> used </span><span class="orange">50</span> times </span><span class="orange">libnsl-2.24.so</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+  var embarkButton = document.getElementById("embark");
+  if ( !(embarkButton.href.includes("embarkBackUrl")) ) {
+    embarkButton.classList.remove('hidden');
+    document.getElementById("logoImage").src = "./../style/embark.svg";
+    document.getElementById("logo").style.background = "#2d2d2d";
+  }
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!-- 
+EMBA - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2023 Siemens AG
+Copyright 2020-2023 Siemens Energy AG
+
+EMBA comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+EMBA is licensed under GPLv3
+
+Author(s): Pascal Eckmann
+Contributor(s): Michael Messner, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div id="logo">
+    <a class="inherit" href="./index.html"><img class="inherit" id="logoImage" src="./style/emba.svg" alt="logo"></a>
+  </div>
+  <div id="nav">
+      <a id="embark" class="hidden" href="{{ embarkBackUrl }}">&laquo; Back to EMBArk</a> <!-- nosem -->
+      <a class="backButton hidden" href="./index.html">&laquo; Back to main</a>
+      <!-- navigation start -->
+<a class="modul p" data="p02" href="./p02_firmware_bin_file_check.html" title="./p02_firmware_bin_file_check.html">Binary firmware file analyzer</a>
+<a class="modul p" data="p55" href="./p55_unblob_extractor.html" title="./p55_unblob_extractor.html">Unblob binary firmware extractor</a>
+<a class="modul p" data="p99" href="./p99_prepare_analyzer.html" title="./p99_prepare_analyzer.html">Analysis preparation</a>
+<a class="modul s" data="s03" href="./s03_firmware_bin_base_analyzer.html" title="./s03_firmware_bin_base_analyzer.html">Binary firmware basic analyzer</a>
+<a class="modul s" data="s05" href="./s05_firmware_details.html" title="./s05_firmware_details.html">Firmware and testing details</a>
+<a class="modul s" data="s07" href="./s07_bootloader_check.html" title="./s07_bootloader_check.html">Check bootloader and system startup</a>
+<a class="modul s" data="s09" href="./s09_firmware_base_version_check.html" title="./s09_firmware_base_version_check.html">Static binary firmware versions detection</a>
+<a class="modul s" data="s10" href="./s10_binaries_basic_check.html" title="./s10_binaries_basic_check.html">Check binaries for critical functions</a>
+<a class="modul s" data="s12" href="./s12_binary_protection.html" title="./s12_binary_protection.html">Check binary protection mechanisms</a>
+<a class="modul s" data="s13" href="./s13_weak_func_check.html" title="./s13_weak_func_check.html">Check binaries for weak functions (intense)</a>
+<a class="modul s" data="s14" href="./s14_weak_func_radare_check.html" title="./s14_weak_func_radare_check.html">Check binaries for weak functions (radare mode)</a>
+<a class="modul s" data="s15" href="./s15_radare_decompile_checks.html" title="./s15_radare_decompile_checks.html">Create and analyze decompilation of binaries</a>
+<a class="modul s" data="s20" href="./s20_shell_check.html" title="./s20_shell_check.html">Check scripts with shellcheck and semgrep</a>
+<a class="modul s" data="s24" href="./s24_kernel_bin_identifier.html" title="./s24_kernel_bin_identifier.html">Kernel Binary and Configuration Identifier</a>
+<a class="modul s" data="s25" href="./s25_kernel_check.html" title="./s25_kernel_check.html">Identify and analyze kernel version</a>
+<a class="modul s" data="s35" href="./s35_http_file_check.html" title="./s35_http_file_check.html">Check HTTP files</a>
+<a class="modul s" data="s45" href="./s45_pass_file_check.html" title="./s45_pass_file_check.html">Search password files</a>
+<a class="modul s" data="s65" href="./s65_config_file_check.html" title="./s65_config_file_check.html">Search/scan config files</a>
+<a class="modul s" data="s108" href="./s108_stacs_password_search.html" title="./s108_stacs_password_search.html">Stacs analysis of firmware for password hashes</a>
+<a class="modul s" data="s115" href="./s115_usermode_emulator.html" title="./s115_usermode_emulator.html">Qemu user-mode emulation</a>
+<a class="modul s" data="s116" href="./s116_qemu_version_detection.html" title="./s116_qemu_version_detection.html">Identified software components - via usermode emulation.</a>
+<a class="modul f" data="f10" href="./f10_license_summary.html" title="./f10_license_summary.html">License inventory</a>
+<a class="modul f" data="f20" href="./f20_vul_aggregator.html" title="./f20_vul_aggregator.html">Final vulnerability aggregator</a>
+<a class="modul f" data="f21" href="./f21_cyclonedx_sbom.html" title="./f21_cyclonedx_sbom.html">CycloneDX SBOM converter</a>
+<a class="modul f" data="f50" href="./f50_base_aggregator.html" title="./f50_base_aggregator.html">Final aggregator</a>
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+<a class="etc" href=".//etc/stacs_pw_hashes.html" title=".//etc/stacs_pw_hashes.html">stacs_pw_hashes</a>
+<a class="etc" href=".//etc/common_linux_files.html" title=".//etc/common_linux_files.html">common_linux_files</a>
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="./emba.html"><div id="buttonTime" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="blue">+</span>] </span><span class="cyan"><span class="bold"><a id="final_aggregator">Final aggregator</a></span></pre>
+<pre><span class="bold"><hr class="double" /></span></pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> Tested Firmware vendor: </span><span class="orange">Ricoh</span></span></pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> Tested Firmware version: </span><span class="orange">121</span></span></pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> Tested Firmware from device: </span><span class="orange">GRIIIx</span></span></pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> Tested firmware:</span><span class="orange"> /home/harry/Development/reversing/gr3x-fw-hack/assets/fwdc243b-v121/unpackedFW</span></span></pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> EMBA start command:</span><span class="orange"> ./emba -a ARM -l /home/harry/Development/reversing/gr3x-fw-hack/analysis/emba/default-scan-unpacked-fw -f /home/harry/Development/reversing/gr3x-fw-hack/assets/fwdc243b-v121/unpackedFW -X 121 -Z GRIIIx -Y Ricoh -p ./scan-profiles/default-scan.emba</span></span></pre>
+<a class="refmodul" href="./p99_prepare_analyzer.html" title="LINK" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Detected architecture and endianness (</span><span class="orange">verified</span><span class="green">):</span><span class="orange"> ARM / EL</span></span></pre></a>
+
+<a class="refmodul" href="./s25_kernel_check.html" title="LINK" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Operating system detected (</span><span class="orange">verified</span><span class="green">): </span><span class="orange">Linux / v4.4.15</span></span></pre></a>
+
+<br />
+<pre><hr class="mono" /></pre>
+<br />
+<a class="refmodul" href="./s05_firmware_details.html" title="LINK" ><pre>[</span><span class="green">+</span>]</span><span class="green"> </span><span class="orange">437</span><span class="green"> files and </span><span class="orange">161 </span><span class="green">directories detected.</span></pre></a>
+
+<a class="refmodul" href="./p02_firmware_bin_file_check.html" title="LINK" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Entropy analysis of binary firmware is: </span><span class="orange">6.529005 bits per byte.</span></pre></a>
+
+<pre>[</span><span class="green">+</span>]</span><span class="green"> Entropy analysis of binary firmware is available:</span><span class="orange"> /logs/firmware_entropy.png</span></pre>
+<img class="image" src="./style/firmware_entropy.png">
+<a class="refmodul" href="./s20_shell_check.html" title="LINK" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">6 issues</span><span class="green"> in </span><span class="orange">8</span><span class="green"> shell scripts.</span></span></pre></a>
+
+<a class="refmodul" href="./s116_qemu_version_detection.html" title="LINK" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">25</span><span class="green"> successful emulated processes </span><span class="orange">(</span><span class="green">user mode emulation</span><span class="orange">)</span><span class="green">.</span></span></pre></a>
+
+<br />
+<pre><hr class="mono" /></pre>
+<br />
+<pre>[</span><span class="green">+</span>]</span><span class="green"> Found the following configuration issues:</span></pre>
+<a class="refmodul" href="./s108_stacs_password_search.html" title="LINK" ><pre>    </span><span class="green">Found </span><span class="orange">6</span><span class="green"> password related details via STACS.</span></pre></a>
+
+<a class="refmodul" href="./s25_kernel_check.html#anchor_kernel_modules" title="LINK" ><pre>    </span><span class="green">Found </span><span class="orange">8</span><span class="green"> kernel modules with </span><span class="orange">0</span><span class="green"> licensing issues.</span></pre></a>
+
+<a class="refmodul" href="./s24_kernel_bin_identifier.html" title="LINK" ><pre>    </span><span class="green">Found </span><span class="orange">81</span><span class="green"> security related kernel settings for review.</span></pre></a>
+
+<br />
+<pre><hr class="mono" /></pre>
+<br />
+<a class="refmodul" href="./s12_binary_protection.html" title="LINK" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">76 (66%)</span><span class="green"> binaries without enabled RELRO in </span><span class="orange">115</span><span class="green"> binaries.</span></pre></a>
+
+<a class="refmodul" href="./s12_binary_protection.html" title="LINK" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">9 (8%)</span><span class="green"> binaries without enabled NX in </span><span class="orange">115</span><span class="green"> binaries.</span></pre></a>
+
+<a class="refmodul" href="./s12_binary_protection.html" title="LINK" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">36 (31%)</span><span class="green"> binaries without enabled PIE in </span><span class="orange">115</span><span class="green"> binaries.</span></pre></a>
+
+<a class="refmodul" href="./s12_binary_protection.html" title="LINK" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">107 (93%)</span><span class="green"> stripped binaries without symbols in </span><span class="orange">115</span><span class="green"> binaries.</span></pre></a>
+
+<br />
+<pre><hr class="mono" /></pre>
+<br />
+<a class="refmodul" href="./s14_weak_func_radare_check.html" title="LINK" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found </span><span class="orange">267</span><span class="green"> usages of strcpy in </span><span class="orange">115</span><span class="green"> binaries.</span></span></pre></a>
+
+<br />
+<br />
+<a class="refmodul" href="./s13_weak_func_check.html#anchor_strcpysummary" title="LINK" ><pre>[</span><span class="green">+</span>]</span><span class="green"> STRCPY - top 10 results:</span></pre></a>
+
+<a class="reference" href="./f50_base_aggregator/vul_func_39_strcpy-busybox.nosuid.html" title="./f50_base_aggregator/vul_func_39_strcpy-busybox.nosuid.html" ><pre><span class="green">	39    : busybox.nosuid  : common linux file: yes |  <span class="red">No RELRO  |  <span class="green">Canary     |  <span class="green">NX enabled   |  <span class="green">No Symbols  |  <span class="green">No Networking |</span></pre></a>
+
+<a class="reference" href="./f50_base_aggregator/vul_func_1_strcpy-systemd-escape.html" title="./f50_base_aggregator/vul_func_1_strcpy-systemd-escape.html" ><pre><span class="green">	23    : systemd         : common linux file: yes |  <span class="green">RELRO     |  <span class="green">Canary     |  <span class="green">NX enabled   |  <span class="green">No Symbols  |  <span class="green">No Networking |</span></pre></a>
+
+<a class="reference" href="./f50_base_aggregator/vul_func_15_strcpy-systemctl.html" title="./f50_base_aggregator/vul_func_15_strcpy-systemctl.html" ><pre><span class="green">	15    : systemctl       : common linux file: yes |  <span class="green">RELRO     |  <span class="green">Canary     |  <span class="green">NX enabled   |  <span class="green">No Symbols  |  <span class="green">No Networking |</span></pre></a>
+
+<a class="reference" href="./f50_base_aggregator/vul_func_14_strcpy-loginctl.html" title="./f50_base_aggregator/vul_func_14_strcpy-loginctl.html" ><pre><span class="green">	14    : loginctl        : common linux file: yes |  <span class="green">RELRO     |  <span class="green">Canary     |  <span class="green">NX enabled   |  <span class="green">No Symbols  |  <span class="green">No Networking |</span></pre></a>
+
+<a class="reference" href="./f50_base_aggregator/vul_func_14_strcpy-libnsl-2.24.so.html" title="./f50_base_aggregator/vul_func_14_strcpy-libnsl-2.24.so.html" ><pre><span class="orange">	14    : libnsl-2.24.so  : common linux file: no  |  <span class="green">RELRO     |  <span class="green">Canary     |  <span class="green">NX enabled   |  <span class="green">No Symbols  |  <span class="green">No Networking |</span></pre></a>
+
+<a class="reference" href="./f50_base_aggregator/vul_func_14_strcpy-libc-2.24.so.html" title="./f50_base_aggregator/vul_func_14_strcpy-libc-2.24.so.html" ><pre><span class="orange">	14    : libc-2.24.so    : common linux file: no  |  <span class="green">RELRO     |  <span class="green">Canary     |  <span class="green">NX enabled   |  <span class="green">No Symbols  |  <span class="green">No Networking |</span></pre></a>
+
+<a class="reference" href="./f50_base_aggregator/vul_func_14_strcpy-journalctl.html" title="./f50_base_aggregator/vul_func_14_strcpy-journalctl.html" ><pre><span class="green">	14    : journalctl      : common linux file: yes |  <span class="green">RELRO     |  <span class="green">Canary     |  <span class="green">NX enabled   |  <span class="green">No Symbols  |  <span class="green">No Networking |</span></pre></a>
+
+<a class="reference" href="./f50_base_aggregator/vul_func_14_strcpy-bcmdhd.ko.html" title="./f50_base_aggregator/vul_func_14_strcpy-bcmdhd.ko.html" ><pre><span class="orange">	14    : bcmdhd.ko       : common linux file: no  |  <span class="red">No RELRO  |  <span class="green">Canary     |  <span class="red">NX disabled  |  <span class="red">Symbols     |  <span class="green">No Networking |</span></pre></a>
+
+<a class="reference" href="./f50_base_aggregator/vul_func_10_strcpy-udevadm.html" title="./f50_base_aggregator/vul_func_10_strcpy-udevadm.html" ><pre><span class="green">	10    : udevadm         : common linux file: yes |  <span class="green">RELRO     |  <span class="green">Canary     |  <span class="green">NX enabled   |  <span class="green">No Symbols  |  <span class="green">No Networking |</span></pre></a>
+
+<a class="reference" href="./f50_base_aggregator/vul_func_9_strcpy-systemd-udevd.html" title="./f50_base_aggregator/vul_func_9_strcpy-systemd-udevd.html" ><pre><span class="green">	9     : systemd-udevd   : common linux file: yes |  <span class="green">RELRO     |  <span class="green">Canary     |  <span class="green">NX enabled   |  <span class="green">No Symbols  |  <span class="green">No Networking |</span></pre></a>
+
+<pre></span></pre>
+<br />
+<a class="refmodul" href="./s13_weak_func_check.html#anchor_systemsummary" title="LINK" ><pre>[</span><span class="green">+</span>]</span><span class="green"> SYSTEM - top 10 results:</span></pre></a>
+
+<a class="reference" href="./f50_base_aggregator/vul_func_3_system-busybox.nosuid.html" title="./f50_base_aggregator/vul_func_3_system-busybox.nosuid.html" ><pre><span class="green">	3     : busybox.nosuid  : common linux file: yes |  <span class="red">No RELRO  |  <span class="green">Canary     |  <span class="green">NX enabled   |  <span class="green">No Symbols  |  <span class="green">No Networking |</span></pre></a>
+
+<a class="reference" href="./f50_base_aggregator/vul_func_2_system-kmod.html" title="./f50_base_aggregator/vul_func_2_system-kmod.html" ><pre><span class="green">	2     : kmod            : common linux file: yes |  <span class="red">No RELRO  |  <span class="green">Canary     |  <span class="green">NX enabled   |  <span class="green">No Symbols  |  <span class="green">No Networking |</span></pre></a>
+
+<a class="reference" href="./f50_base_aggregator/vul_func_1_system-vipw.shadow.html" title="./f50_base_aggregator/vul_func_1_system-vipw.shadow.html" ><pre><span class="orange">	1     : vipw.shadow     : common linux file: no  |  <span class="red">No RELRO  |  <span class="green">Canary     |  <span class="green">NX enabled   |  <span class="green">No Symbols  |  <span class="green">No Networking |</span></pre></a>
+
+<a class="reference" href="./f50_base_aggregator/vul_func_1_system-sysmgrd.html" title="./f50_base_aggregator/vul_func_1_system-sysmgrd.html" ><pre><span class="orange">	1     : sysmgrd         : common linux file: no  |  <span class="red">No RELRO  |  <span class="green">Canary     |  <span class="green">NX enabled   |  <span class="green">No Symbols  |  <span class="green">No Networking |</span></pre></a>
+
+<a class="reference" href="./f50_base_aggregator/vul_func_1_system-libkmod.so.2.3.1.html" title="./f50_base_aggregator/vul_func_1_system-libkmod.so.2.3.1.html" ><pre><span class="orange">	1     : libkmod.so.2.3. : common linux file: no  |  <span class="red">No RELRO  |  <span class="green">Canary     |  <span class="green">NX enabled   |  <span class="green">No Symbols  |  <span class="green">No Networking |</span></pre></a>
+
+<a class="reference" href="./f50_base_aggregator/vul_func_1_system-bled.html" title="./f50_base_aggregator/vul_func_1_system-bled.html" ><pre><span class="orange">	1     : bled            : common linux file: no  |  <span class="red">No RELRO  |  <span class="green">Canary     |  <span class="red">NX disabled  |  <span class="green">No Symbols  |  <span class="green">No Networking |</span></pre></a>
+
+<a class="reference" href="./f50_base_aggregator/vul_func_0_system-wl.html" title="./f50_base_aggregator/vul_func_0_system-wl.html" ><pre><span class="orange">	0     : wl              : common linux file: no  |  <span class="red">No RELRO  |  <span class="green">Canary     |  <span class="green">NX enabled   |  <span class="green">No Symbols  |  <span class="orange">Networking un |</span></pre></a>
+
+<a class="reference" href="./f50_base_aggregator/vul_func_0_system-v4l_id.html" title="./f50_base_aggregator/vul_func_0_system-v4l_id.html" ><pre><span class="green">	0     : v4l_id          : common linux file: yes |  <span class="green">RELRO     |  <span class="green">Canary     |  <span class="green">NX enabled   |  <span class="green">No Symbols  |  <span class="green">No Networking |</span></pre></a>
+
+<a class="reference" href="./f50_base_aggregator/vul_func_0_system-usbd.html" title="./f50_base_aggregator/vul_func_0_system-usbd.html" ><pre><span class="orange">	0     : usbd            : common linux file: no  |  <span class="red">No RELRO  |  <span class="green">Canary     |  <span class="green">NX enabled   |  <span class="green">No Symbols  |  <span class="orange">Networking un |</span></pre></a>
+
+<a class="reference" href="./f50_base_aggregator/vul_func_0_system-usb_f_mtp.ko.html" title="./f50_base_aggregator/vul_func_0_system-usb_f_mtp.ko.html" ><pre><span class="orange">	0     : usb_f_mtp.ko    : common linux file: no  |  <span class="red">No RELRO  |  <span class="green">Canary     |  <span class="red">NX disabled  |  <span class="red">Symbols     |  <span class="orange">Networking un |</span></pre></a>
+
+<pre></span></pre>
+<br />
+<pre><hr class="mono" /></pre>
+<br />
+<a class="refmodul" href="./f20_vul_aggregator.html#anchor_collectcveandexploitdetails" title="LINK" ><pre>[</span><span class="orange">*</span>] Identified the following software inventory, vulnerabilities and exploits:</pre></a>
+
+<a class="refmodul" href="./f20_vul_aggregator.html#anchor_cve_sed" title="LINK" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found version details: 	sed                 :   4.0            :   CVEs: 0         :   Exploits: 0    :   Source: STAT           </span></pre></a>
+
+<a class="refmodul" href="./f20_vul_aggregator.html#anchor_cve_e2fsprogs" title="LINK" ><pre>[</span><span class="magenta">+</span>]</span><span class="magenta"> Found version details: 	e2fsprogs           :   1.43           :   CVEs: 2         :   Exploits: 1    :   Source: STAT/UEMU      </span></pre></a>
+
+<a class="refmodul" href="./f20_vul_aggregator.html#anchor_cve_kmod" title="LINK" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found version details: 	kmod                :   23             :   CVEs: 0         :   Exploits: 0    :   Source: STAT/UEMU      </span></pre></a>
+
+<a class="refmodul" href="./f20_vul_aggregator.html#anchor_cve_dbus" title="LINK" ><pre>[</span><span class="magenta">+</span>]</span><span class="magenta"> Found version details: 	dbus                :   1.10.10        :   CVEs: 2         :   Exploits: 2    :   Source: UEMU           </span></pre></a>
+
+<a class="refmodul" href="./f20_vul_aggregator.html#anchor_cve_busybox" title="LINK" ><pre>[</span><span class="magenta">+</span>]</span><span class="magenta"> Found version details: 	busybox             :   1.24.1         :   CVEs: 17        :   Exploits: 9    :   Source: STAT/UEMU      </span></pre></a>
+
+<a class="refmodul" href="./f20_vul_aggregator.html#anchor_cve_expat" title="LINK" ><pre>[</span><span class="magenta">+</span>]</span><span class="magenta"> Found version details: 	expat               :   2.2.0          :   CVEs: 21        :   Exploits: 17   :   Source: STAT           </span></pre></a>
+
+<a class="refmodul" href="./f20_vul_aggregator.html#anchor_cve_hostapd" title="LINK" ><pre>[</span><span class="magenta">+</span>]</span><span class="magenta"> Found version details: 	hostapd             :   2.6            :   CVEs: 23        :   Exploits: 12   :   Source: STAT/UEMU      </span></pre></a>
+
+<a class="refmodul" href="./f20_vul_aggregator.html#anchor_cve_openssl" title="LINK" ><pre>[</span><span class="magenta">+</span>]</span><span class="magenta"> Found version details: 	openssl             :   1.0.2j         :   CVEs: 32        :   Exploits: 32   :   Source: STAT           </span></pre></a>
+
+<a class="refmodul" href="./f20_vul_aggregator.html#anchor_cve_glibc" title="LINK" ><pre>[</span><span class="magenta">+</span>]</span><span class="magenta"> Found version details: 	glibc               :   2.24           :   CVEs: 36        :   Exploits: 32   :   Source: STAT/UEMU      </span></pre></a>
+
+<a class="refmodul" href="./f20_vul_aggregator.html#anchor_cve_udhcp" title="LINK" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found version details: 	udhcp               :   1.24.1         :   CVEs: 0         :   Exploits: 0    :   Source: STAT           </span></pre></a>
+
+<a class="refmodul" href="./f20_vul_aggregator.html#anchor_cve_util-linux" title="LINK" ><pre>[</span><span class="magenta">+</span>]</span><span class="magenta"> Found version details: 	util-linux          :   2.28.1         :   CVEs: 3         :   Exploits: 2    :   Source: STAT/UEMU      </span></pre></a>
+
+<a class="refmodul" href="./f20_vul_aggregator.html#anchor_cve_systemd" title="LINK" ><pre>[</span><span class="magenta">+</span>]</span><span class="magenta"> Found version details: 	systemd             :   230            :   CVEs: 24        :   Exploits: 22   :   Source: STAT/UEMU      </span></pre></a>
+
+<a class="refmodul" href="./f20_vul_aggregator.html#anchor_cve_zlib" title="LINK" ><pre>[</span><span class="magenta">+</span>]</span><span class="magenta"> Found version details: 	zlib                :   1.2.8          :   CVEs: 6         :   Exploits: 6    :   Source: STAT           </span></pre></a>
+
+<a class="refmodul" href="./f20_vul_aggregator.html#anchor_cve_kernel" title="LINK" ><pre>[</span><span class="magenta">+</span>]</span><span class="magenta"> Found version details: 	kernel              :   4.4.15         :   CVEs: 1107      :   Exploits: 272  :   Source: STAT           </span></pre></a>
+
+<br />
+<a class="refmodul" href="./f20_vul_aggregator.html#anchor_softwareinventoryinitialoverview" title="LINK" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Identified </span><span class="orange">14</span><span class="green"> software components with version details.</pre></a>
+<pre></span></pre>
+
+<br />
+<br />
+<a class="refmodul" href="./f20_vul_aggregator.html#anchor_collectcveandexploitdetails" title="LINK" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Identified </span><span class="orange">1273</span><span class="green"> CVE entries.</span></pre></a>
+
+<pre>    </span><span class="green">Identified </span><span class="red"><span class="bold">497</span></span><span class="green"> High rated CVE entries / Exploits: </span><span class="orange">210</span></span></pre>
+<pre>    </span><span class="green">Identified </span><span class="orange"><span class="bold">733</span></span><span class="green"> Medium rated CVE entries / Exploits: </span><span class="orange">175</span></span></pre>
+<pre>    </span><span class="green">Identified </span><span class="green"><span class="bold">43</span></span><span class="green"> Low rated CVE entries /Exploits: </span><span class="orange">14</span></span></pre>
+<a class="refmodul" href="./f20_vul_aggregator.html#anchor_minimalreportofexploitsandcves" title="LINK" ><pre>    </span><span class="green"></span><span class="magenta"><span class="bold">399</span></span><span class="green"> possible exploits available (</span><span class="magenta">9</span><span class="green"> Metasploit modules).</span></pre></a>
+
+<pre>    </span><span class="green">Remote exploits: </span><span class="magenta"><span class="bold">0</span></span><span class="green"> / Local exploits: </span><span class="magenta"><span class="bold">16</span></span><span class="green"> / DoS exploits: </span><span class="magenta"><span class="bold">4</span></span><span class="green"> / Github PoCs: </span><span class="magenta"><span class="bold">360</span></span><span class="green"> / Known exploited vulnerabilities: </span><span class="magenta"><span class="bold">2</span><span class="green"> / Verified Exploits: </span><span class="magenta"><span class="bold">0</span></span></pre>
+<br />
+<pre><hr class="mono" /></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<a href="./p02_firmware_bin_file_check.html" title="./p02_firmware_bin_file_check.html" ><div id="buttonBack" class="rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+  var embarkButton = document.getElementById("embark");
+  if ( !(embarkButton.href.includes("embarkBackUrl")) ) {
+    embarkButton.classList.remove('hidden');
+    document.getElementById("logoImage").src = "./style/embark.svg";
+    document.getElementById("logo").style.background = "#2d2d2d";
+  }
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

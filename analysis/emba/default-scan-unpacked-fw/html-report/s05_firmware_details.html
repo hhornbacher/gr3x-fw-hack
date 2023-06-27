@@ -1,0 +1,926 @@
+<!-- 
+EMBA - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2023 Siemens AG
+Copyright 2020-2023 Siemens Energy AG
+
+EMBA comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+EMBA is licensed under GPLv3
+
+Author(s): Pascal Eckmann
+Contributor(s): Michael Messner, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div id="logo">
+    <a class="inherit" href="./index.html"><img class="inherit" id="logoImage" src="./style/emba.svg" alt="logo"></a>
+  </div>
+  <div id="nav">
+      <a id="embark" class="hidden" href="{{ embarkBackUrl }}">&laquo; Back to EMBArk</a> <!-- nosem -->
+      <a class="backButton" href="./index.html">&laquo; Back to main</a>
+      <!-- navigation start --><a class="modul" href="#firmware_and_testing_details" title="#firmware_and_testing_details" >Firmware and testing details</a><a class="submodul" href="#releaseversioninformation" title="#releaseversioninformation" >Release/Version information</a><a class="submodul" href="#filesysteminformation" title="#filesysteminformation" >Filesystem information</a>
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="blue">+</span>] </span><span class="cyan"><span class="bold"><a id="firmware_and_testing_details">Firmware and testing details</a></span></pre>
+<pre><span class="bold"><hr class="double" /></span></pre>
+<br />
+<pre>[</span><span class="orange">*</span>] </span><span class="orange">437</span> files and </span><span class="orange">161</span> directories detected.</pre>
+<br />
+<pre></span><span class="blue">==&gt</span></span> </span><span class="cyan"><a id="releaseversioninformation">Release/Version information</a></span></pre>
+<pre><hr class="mono" /></pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> Specific release/version information of target:</span></pre>
+<br />
+<pre>/etc/issue (-rw-r--r-- root root)</pre>
+<br />
+<pre>    </span><span class="magenta">Poky (Yocto Project Reference Distro) 2.2 </pre>
+<pre>     \l</span></pre>
+<br />
+<pre>/etc/issue.net (-rw-r--r-- root root)</pre>
+<br />
+<pre>    </span><span class="magenta">Poky (Yocto Project Reference Distro) 2.2 %h</span></pre>
+<br />
+<pre>/etc/os-release (-rw-r--r-- root root)</pre>
+<br />
+<pre>    </span><span class="magenta">ID="poky"</span></pre>
+<pre>    </span><span class="magenta">NAME="Poky (Yocto Project Reference Distro)"</span></pre>
+<pre>    </span><span class="magenta">VERSION="2.2 (morty)"</span></pre>
+<pre>    </span><span class="magenta">VERSION_ID="2.2"</span></pre>
+<pre>    </span><span class="magenta">PRETTY_NAME="Poky (Yocto Project Reference Distro) 2.2 (morty)"</span></pre>
+<br />
+<pre>/etc/version (-rw-r--r-- root root)</pre>
+<br />
+<pre>    </span><span class="magenta">20220215051858</span></pre>
+<br />
+<pre></span><span class="magenta">Directory:</span> /license/os-release (drwxrwxr-x root root)</pre>
+<br />
+<br />
+<pre></span><span class="blue">==&gt</span></span> </span><span class="cyan"><a id="filesysteminformation">Filesystem information</a></span></pre>
+<pre><hr class="mono" /></pre>
+<a class="anc" id="anchor_file_dirs"></a>
+<pre>[drwxr-xr-x        4096]  <span class="bold"><span class="blue">/logs/firmware</span></pre>
+<pre>└── [drwxr-xr-x        4096]  <span class="bold"><span class="blue">unblob_extracted</span></pre>
+<pre>    └── [drwxr-xr-x        4096]  <span class="bold"><span class="blue">firmware_extract</span></pre>
+<pre>        ├── [-rw-r--r--    17226528]  </span>0-17226528.unknown</span></pre>
+<pre>        ├── [-rw-r--r--     3030017]  </span>17226528-20256545.romfs</span></pre>
+<pre>        ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">17226528-20256545.romfs_extract</span></pre>
+<pre>        │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">boot</span></pre>
+<pre>        │       ├── [-rw-r--r--     2993056]  </span>Image-nolpae</span></pre>
+<pre>        │       ├── [drwxr-xr-x        4096]  <span class="bold"><span class="blue">Image-nolpae_extract</span></pre>
+<pre>        │       │   ├── [-rw-r--r--       12751]  </span>0-12751.unknown</span></pre>
+<pre>        │       │   ├── [-rw-r--r--     2980243]  </span>12751-2992994.gzip</span></pre>
+<pre>        │       │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">12751-2992994.gzip_extract</span></pre>
+<pre>        │       │   │   ├── [-rw-r--r--     5140480]  </span>gzip.uncompressed</span></pre>
+<pre>        │       │   │   └── [drwxr-xr-x        4096]  <span class="bold"><span class="blue">gzip.uncompressed_extract</span></pre>
+<pre>        │       │   │       ├── [-rw-r--r--     2732856]  </span>0-2732856.unknown</span></pre>
+<pre>        │       │   │       ├── [-rw-r--r--       14998]  </span>2732856-2747854.gzip</span></pre>
+<pre>        │       │   │       ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">2732856-2747854.gzip_extract</span></pre>
+<pre>        │       │   │       │   └── [-rw-r--r--       61785]  </span>gzip.uncompressed</span></pre>
+<pre>        │       │   │       ├── [-rw-r--r--     1700402]  </span>2747854-4448256.unknown</span></pre>
+<pre>        │       │   │       ├── [-rw-r--r--        2320]  </span>4448256-4450576.elf32</span></pre>
+<pre>        │       │   │       ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">4448256-4450576.elf32_extract</span></pre>
+<pre>        │       │   │       │   └── [-rw-r--r--        2320]  </span>carved.elf</span></pre>
+<pre>        │       │   │       ├── [-rw-r--r--      499116]  </span>4450576-4949692.unknown</span></pre>
+<pre>        │       │   │       ├── [-rw-r--r--         134]  </span>4949692-4949826.gzip</span></pre>
+<pre>        │       │   │       ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">4949692-4949826.gzip_extract</span></pre>
+<pre>        │       │   │       │   ├── [-rw-r--r--         512]  </span>gzip.uncompressed</span></pre>
+<pre>        │       │   │       │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">gzip.uncompressed_extract</span></pre>
+<pre>        │       │   │       │       ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">dev</span></pre>
+<pre>        │       │   │       │       │   └── [-rw-r--r--           0]  </span>console</span></pre>
+<pre>        │       │   │       │       └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">root</span></pre>
+<pre>        │       │   │       └── [-rw-r--r--      190654]  </span>4949826-5140480.unknown</span></pre>
+<pre>        │       │   └── [-rw-r--r--          62]  </span>2992994-2993056.unknown</span></pre>
+<pre>        │       └── [-rw-r--r--       32694]  </span>sc2000.dtb</span></pre>
+<pre>        ├── [-rw-r--r--          15]  </span>20256545-20256560.unknown</span></pre>
+<pre>        ├── [-rw-r--r--    13856769]  </span>20256560-34113329.romfs</span></pre>
+<pre>        ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">20256560-34113329.romfs_extract</span></pre>
+<pre>        │   ├── [-rw-r--r--    13856214]  </span>initramfs</span></pre>
+<pre>        │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">initramfs_extract</span></pre>
+<pre>        │       ├── [-rw-r--r--    32697344]  </span>gzip.uncompressed</span></pre>
+<pre>        │       └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">gzip.uncompressed_extract</span></pre>
+<pre>        │           ├── [drwxrwxr-x       16384]  <span class="bold"><span class="blue">bin</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>ash</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          14]  </span>busybox</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      568756]  </span>busybox.nosuid</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       52468]  </span>busybox.suid</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>cat</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>chattr</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>chgrp</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>chmod</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>chown</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>cp</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>cpio</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>date</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>dd</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>df</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>dmesg</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>dnsdomainname</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>dumpkmap</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>echo</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>egrep</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>false</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>fgrep</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>getopt</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>grep</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>gunzip</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>gzip</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>hostname</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      444836]  </span>journalctl</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>kill</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      109820]  </span>kmod</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>ln</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          17]  </span>login</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       53724]  </span>login.shadow</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      403892]  </span>loginctl</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>ls</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          15]  </span>lsmod</span></pre>
+<pre>        │           │   ├── [-rw-r--r--           4]  </span>lsmod.kmod</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      436676]  </span>machinectl</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>mkdir</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>mknod</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>mktemp</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>more</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          21]  </span>mount</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       35172]  </span>mount.util-linux</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>mv</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>netstat</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>pidof</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          17]  </span>ping</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          17]  </span>ping6</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>ps</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>pwd</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>rm</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>rmdir</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>run-parts</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>sed</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>sh</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>sleep</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>stat</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>stty</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          14]  </span>su</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       45536]  </span>su.shadow</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>sync</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      609500]  </span>systemctl</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       42772]  </span>systemd-ask-password</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       34564]  </span>systemd-escape</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       75692]  </span>systemd-firstboot</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       59288]  </span>systemd-hwdb</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      244088]  </span>systemd-inhibit</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       46928]  </span>systemd-machine-id-setup</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       30456]  </span>systemd-notify</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       83868]  </span>systemd-sysusers</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      116688]  </span>systemd-tmpfiles</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       59224]  </span>systemd-tty-ask-password-agent</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>tar</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>touch</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>true</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      374800]  </span>udevadm</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>umount</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>uname</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>usleep</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>vi</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>watch</span></pre>
+<pre>        │           │   └── [-rw-r--r--          19]  </span>zcat</span></pre>
+<pre>        │           ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">boot</span></pre>
+<pre>        │           ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">dev</span></pre>
+<pre>        │           ├── [drwxrwxr-x       12288]  <span class="bold"><span class="blue">etc</span></pre>
+<pre>        │           │   ├── [-rw-r--r--        2149]  </span>bootchartd.conf</span></pre>
+<pre>        │           │   ├── [-rw-r--r--        2340]  </span>busybox.links.nosuid</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          91]  </span>busybox.links.suid</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">dbus-1</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--         838]  </span>session.conf</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--         833]  </span>system.conf</span></pre>
+<pre>        │           │   │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">system.d</span></pre>
+<pre>        │           │   │       ├── [-rw-r--r--         947]  </span>org.freedesktop.hostname1.conf</span></pre>
+<pre>        │           │   │       ├── [-rw-r--r--         937]  </span>org.freedesktop.locale1.conf</span></pre>
+<pre>        │           │   │       ├── [-rw-r--r--       12499]  </span>org.freedesktop.login1.conf</span></pre>
+<pre>        │           │   │       ├── [-rw-r--r--        8916]  </span>org.freedesktop.machine1.conf</span></pre>
+<pre>        │           │   │       ├── [-rw-r--r--       10714]  </span>org.freedesktop.systemd1.conf</span></pre>
+<pre>        │           │   │       └── [-rw-r--r--         947]  </span>org.freedesktop.timedate1.conf</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">default</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1056]  </span>busybox-syslog</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          52]  </span>postinst</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--           0]  </span>usbd</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--         117]  </span>useradd</span></pre>
+<pre>        │           │   │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">volatiles</span></pre>
+<pre>        │           │   │       └── [-rw-r--r--          48]  </span>99_dbus</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">depmod.d</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          38]  </span>filesystems</span></pre>
+<pre>        │           │   ├── [-rw-r--r--         637]  </span>fstab</span></pre>
+<pre>        │           │   ├── [-rw-r--r--         589]  </span>group</span></pre>
+<pre>        │           │   ├── [-rw-r--r--         565]  </span>group-</span></pre>
+<pre>        │           │   ├── [-rw-r--r--         495]  </span>gshadow</span></pre>
+<pre>        │           │   ├── [-rw-r--r--         474]  </span>gshadow-</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          26]  </span>host.conf</span></pre>
+<pre>        │           │   ├── [-rw-r--r--         453]  </span>hostapd-open.conf</span></pre>
+<pre>        │           │   ├── [-rw-r--r--         348]  </span>hostapd-wpa2psk.conf</span></pre>
+<pre>        │           │   ├── [-rw-r--r--           5]  </span>hostname</span></pre>
+<pre>        │           │   ├── [-rw-r--r--         237]  </span>hosts</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">init.d</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--         643]  </span>rc.local</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          49]  </span>issue</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          46]  </span>issue.net</span></pre>
+<pre>        │           │   ├── [-rw-r--r--        8108]  </span>ld.so.cache</span></pre>
+<pre>        │           │   ├── [-rw-r--r--           0]  </span>ld.so.conf</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">libnl</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1130]  </span>classid</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--        1532]  </span>pktloc</span></pre>
+<pre>        │           │   ├── [-rw-r--r--         827]  </span>limits</span></pre>
+<pre>        │           │   ├── [-rw-r--r--        2006]  </span>login.access</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       10929]  </span>login.defs</span></pre>
+<pre>        │           │   ├── [-rw-r--r--           0]  </span>machine-id</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">modprobe.d</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">modules-load.d</span></pre>
+<pre>        │           │   ├── [-rw-r--r--           0]  </span>motd</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          12]  </span>mtab</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">network</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--         125]  </span>interfaces</span></pre>
+<pre>        │           │   ├── [-rw-r--r--         477]  </span>nsswitch.conf</span></pre>
+<pre>        │           │   ├── [-rw-r--r--         158]  </span>os-release</span></pre>
+<pre>        │           │   ├── [-rw-r--r--         854]  </span>passwd</span></pre>
+<pre>        │           │   ├── [-rw-r--r--         811]  </span>passwd-</span></pre>
+<pre>        │           │   ├── [-rw-r--r--         973]  </span>profile</span></pre>
+<pre>        │           │   ├── [-rw-r--r--        2932]  </span>protocols</span></pre>
+<pre>        │           │   ├── [-rw-r--r--        1066]  </span>rc.local</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          18]  </span>resolv.conf</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">revisions</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          38]  </span>bleapi-server</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          42]  </span>camera-controller</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          41]  </span>camera-ipcu-spec</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          31]  </span>kernel</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          35]  </span>mtp-server</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          40]  </span>network-manager</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          38]  </span>shmem-manager</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          39]  </span>system-manager</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--          38]  </span>webapi-server</span></pre>
+<pre>        │           │   ├── [-rw-r--r--         895]  </span>rpc</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">rpm</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--         598]  </span>platform</span></pre>
+<pre>        │           │   │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">sysinfo</span></pre>
+<pre>        │           │   │       └── [-rw-r--r--           2]  </span>Dirnames</span></pre>
+<pre>        │           │   ├── [-rw-r--r--        1856]  </span>securetty</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       19621]  </span>services</span></pre>
+<pre>        │           │   ├── [-rw-r--r--         562]  </span>shadow</span></pre>
+<pre>        │           │   ├── [-rw-r--r--         531]  </span>shadow-</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          42]  </span>shells</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">skel</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">ssl</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       10835]  </span>openssl.cnf</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">sysctl.d</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          24]  </span>syslog.conf</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          69]  </span>syslog.conf.busybox</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">systemd</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1015]  </span>journald.conf</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1025]  </span>logind.conf</span></pre>
+<pre>        │           │   │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">network</span></pre>
+<pre>        │           │   │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">system</span></pre>
+<pre>        │           │   │   │   ├── [-rw-r--r--          37]  </span>default.target</span></pre>
+<pre>        │           │   │   │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">getty.target.wants</span></pre>
+<pre>        │           │   │   │   │   ├── [-rw-r--r--          45]  </span>getty&commat;tty1.service</span></pre>
+<pre>        │           │   │   │   │   └── [-rw-r--r--          41]  </span>serial-getty&commat;ttyUSI0.service</span></pre>
+<pre>        │           │   │   │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">local-fs.target.wants</span></pre>
+<pre>        │           │   │   │   │   └── [-rw-r--r--          44]  </span>var-volatile-lib.service</span></pre>
+<pre>        │           │   │   │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">multi-user.target.wants</span></pre>
+<pre>        │           │   │   │   │   ├── [-rw-r--r--          41]  </span>busybox-klogd.service</span></pre>
+<pre>        │           │   │   │   │   ├── [-rw-r--r--          42]  </span>busybox-syslog.service</span></pre>
+<pre>        │           │   │   │   │   └── [-rw-r--r--          47]  </span>remote-fs.target</span></pre>
+<pre>        │           │   │   │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">sysinit.target.wants</span></pre>
+<pre>        │           │   │   │   │   ├── [-rw-r--r--          41]  </span>run-postinsts.service</span></pre>
+<pre>        │           │   │   │   │   └── [-rw-r--r--          56]  </span>systemd-timesyncd.service</span></pre>
+<pre>        │           │   │   │   ├── [-rw-r--r--          42]  </span>syslog.service</span></pre>
+<pre>        │           │   │   │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">systemd-random-seed.service.wants</span></pre>
+<pre>        │           │   │   │       └── [-rw-r--r--          44]  </span>var-volatile-lib.service</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1568]  </span>system.conf</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--         587]  </span>timesyncd.conf</span></pre>
+<pre>        │           │   │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">user</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--        1130]  </span>user.conf</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          15]  </span>timestamp</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">tmpfiles.d</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--         225]  </span>00-create-volatile.conf</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">udev</span></pre>
+<pre>        │           │   │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">hwdb.d</span></pre>
+<pre>        │           │   │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">rules.d</span></pre>
+<pre>        │           │   │   │   ├── [-rw-r--r--         303]  </span>sd.rules</span></pre>
+<pre>        │           │   │   │   └── [-rw-r--r--         855]  </span>touchscreen.rules</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--          49]  </span>udev.conf</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">udhcpc.d</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--        2634]  </span>50default</span></pre>
+<pre>        │           │   ├── [-rw-r--r--        2856]  </span>udhcpd.conf</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          15]  </span>version</span></pre>
+<pre>        │           │   ├── [-rw-r--r--         292]  </span>wpa_supplicant.conf</span></pre>
+<pre>        │           │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">xdg</span></pre>
+<pre>        │           │       └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">systemd</span></pre>
+<pre>        │           │           └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">user</span></pre>
+<pre>        │           ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">home</span></pre>
+<pre>        │           │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">root</span></pre>
+<pre>        │           │       ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">ble-driver</span></pre>
+<pre>        │           │       │   └── [-rw-r--r--       60976]  </span>BCM4345C0_003.001.025.0144.0268.hcd</span></pre>
+<pre>        │           │       └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">murata-driver</span></pre>
+<pre>        │           │           ├── [-rw-r--r--        7815]  </span>43455_ricoh.clm_blob</span></pre>
+<pre>        │           │           ├── [-rw-r--r--        2331]  </span>bcm943455wlsagb_Type1MW_170408.txt</span></pre>
+<pre>        │           │           ├── [-rw-r--r--        2580]  </span>bcm943455wlsagb_Type1MW_Common_MP_170704.txt</span></pre>
+<pre>        │           │           ├── [-rw-r--r--        2468]  </span>bcm943455wlsagb_Type1MW_Common_MP_170921_US26.txt</span></pre>
+<pre>        │           │           ├── [-rw-r--r--      645476]  </span>bcmdhd.ko</span></pre>
+<pre>        │           │           ├── [-rw-r--r--      518347]  </span>cyw43455_mfg.bin</span></pre>
+<pre>        │           │           ├── [-rw-r--r--      484610]  </span>cyw43455_softap.bin</span></pre>
+<pre>        │           │           ├── [-rw-r--r--      496759]  </span>cyw43455_sta.bin</span></pre>
+<pre>        │           │           └── [-rw-r--r--          27]  </span>insmod.sh</span></pre>
+<pre>        │           ├── [-rw-r--r--          11]  </span>init</span></pre>
+<pre>        │           ├── [drwxrwxr-x       12288]  <span class="bold"><span class="blue">lib</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      135532]  </span>ld-2.24.so</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          10]  </span>ld-linux.so.3</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          15]  </span>libacl.so.1</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       25184]  </span>libacl.so.1.1.0</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          16]  </span>libattr.so.1</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       13616]  </span>libattr.so.1.1.0</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          17]  </span>libblkid.so.1</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      216024]  </span>libblkid.so.1.1.0</span></pre>
+<pre>        │           │   ├── [-rw-r--r--     1239116]  </span>libc-2.24.so</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          12]  </span>libc.so.6</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          14]  </span>libcap.so.2</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       16492]  </span>libcap.so.2.25</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          17]  </span>libcom_err.so.2</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       10536]  </span>libcom_err.so.2.1</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       31756]  </span>libcrypt-2.24.so</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          16]  </span>libcrypt.so.1</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       11228]  </span>libdl-2.24.so</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          13]  </span>libdl.so.2</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          13]  </span>libe2p.so.2</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       28748]  </span>libe2p.so.2.3</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          16]  </span>libext2fs.so.2</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      274372]  </span>libext2fs.so.2.4</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      120512]  </span>libgcc_s.so.1</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      674840]  </span>libm-2.24.so</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          12]  </span>libm.so.6</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          17]  </span>libmount.so.1</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      244728]  </span>libmount.so.1.1.0</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       71512]  </span>libnsl-2.24.so</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          14]  </span>libnsl.so.1</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       26372]  </span>libnss_compat-2.24.so</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          21]  </span>libnss_compat.so.2</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       17924]  </span>libnss_dns-2.24.so</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          18]  </span>libnss_dns.so.2</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       38476]  </span>libnss_files-2.24.so</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          20]  </span>libnss_files.so.2</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       90868]  </span>libpthread-2.24.so</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          18]  </span>libpthread.so.0</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       73712]  </span>libresolv-2.24.so</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          17]  </span>libresolv.so.2</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       28368]  </span>librt-2.24.so</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          13]  </span>librt.so.1</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          20]  </span>libsystemd.so.0</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      467692]  </span>libsystemd.so.0.15.0</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          16]  </span>libuuid.so.1</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       13452]  </span>libuuid.so.1.3.0</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          13]  </span>libz.so.1</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       75980]  </span>libz.so.1.2.8</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">modules</span></pre>
+<pre>        │           │   │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">4.4.15</span></pre>
+<pre>        │           │   │       ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">kernel</span></pre>
+<pre>        │           │   │       │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">drivers</span></pre>
+<pre>        │           │   │       │   │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">usb</span></pre>
+<pre>        │           │   │       │   │       └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">gadget</span></pre>
+<pre>        │           │   │       │   │           ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">function</span></pre>
+<pre>        │           │   │       │   │           │   └── [-rw-r--r--       24324]  </span>usb_f_mtp.ko</span></pre>
+<pre>        │           │   │       │   │           └── [-rw-r--r--       51756]  </span>libcomposite.ko</span></pre>
+<pre>        │           │   │       │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">fs</span></pre>
+<pre>        │           │   │       │   │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">configfs</span></pre>
+<pre>        │           │   │       │   │       └── [-rw-r--r--       33396]  </span>configfs.ko</span></pre>
+<pre>        │           │   │       │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">kernel</span></pre>
+<pre>        │           │   │       │   │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">rcu</span></pre>
+<pre>        │           │   │       │   │   │   └── [-rw-r--r--       44352]  </span>rcutorture.ko</span></pre>
+<pre>        │           │   │       │   │   └── [-rw-r--r--       16156]  </span>torture.ko</span></pre>
+<pre>        │           │   │       │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">net</span></pre>
+<pre>        │           │   │       │       ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">ipv4</span></pre>
+<pre>        │           │   │       │       │   └── [-rw-r--r--        5056]  </span>tcp_westwood.ko</span></pre>
+<pre>        │           │   │       │       └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">packet</span></pre>
+<pre>        │           │   │       │           └── [-rw-r--r--        5848]  </span>af_packet_diag.ko</span></pre>
+<pre>        │           │   │       ├── [-rw-r--r--         147]  </span>modules.alias</span></pre>
+<pre>        │           │   │       ├── [-rw-r--r--         183]  </span>modules.alias.bin</span></pre>
+<pre>        │           │   │       ├── [-rw-r--r--        4740]  </span>modules.builtin</span></pre>
+<pre>        │           │   │       ├── [-rw-r--r--        6110]  </span>modules.builtin.bin</span></pre>
+<pre>        │           │   │       ├── [-rw-r--r--         382]  </span>modules.dep</span></pre>
+<pre>        │           │   │       ├── [-rw-r--r--         660]  </span>modules.dep.bin</span></pre>
+<pre>        │           │   │       ├── [-rw-r--r--          52]  </span>modules.devname</span></pre>
+<pre>        │           │   │       ├── [-rw-r--r--         246]  </span>modules.order</span></pre>
+<pre>        │           │   │       ├── [-rw-r--r--         131]  </span>modules.softdep</span></pre>
+<pre>        │           │   │       ├── [-rw-r--r--        3532]  </span>modules.symbols</span></pre>
+<pre>        │           │   │       └── [-rw-r--r--        3918]  </span>modules.symbols.bin</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">systemd</span></pre>
+<pre>        │           │   │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">system</span></pre>
+<pre>        │           │   │   │   ├── [-rw-r--r--         116]  </span>busybox-klogd.service</span></pre>
+<pre>        │           │   │   │   ├── [-rw-r--r--         270]  </span>busybox-syslog.service</span></pre>
+<pre>        │           │   │   │   ├── [-rw-r--r--        1536]  </span>getty&commat;.service</span></pre>
+<pre>        │           │   │   │   ├── [-rw-r--r--         492]  </span>multi-user.target</span></pre>
+<pre>        │           │   │   │   ├── [-rw-r--r--         482]  </span>remote-fs.target</span></pre>
+<pre>        │           │   │   │   ├── [-rw-r--r--         385]  </span>run-postinsts.service</span></pre>
+<pre>        │           │   │   │   ├── [-rw-r--r--        1059]  </span>serial-getty&commat;.service</span></pre>
+<pre>        │           │   │   │   ├── [-rw-r--r--        1032]  </span>systemd-timesyncd.service</span></pre>
+<pre>        │           │   │   │   └── [-rw-r--r--         496]  </span>var-volatile-lib.service</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--     1334552]  </span>systemd</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--      387124]  </span>systemd-udevd</span></pre>
+<pre>        │           │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">udev</span></pre>
+<pre>        │           │       ├── [-rw-r--r--       34544]  </span>ata_id</span></pre>
+<pre>        │           │       ├── [-rw-r--r--       46836]  </span>cdrom_id</span></pre>
+<pre>        │           │       ├── [-rw-r--r--       18100]  </span>collect</span></pre>
+<pre>        │           │       ├── [-rw-r--r--        5744]  </span>mtd_probe</span></pre>
+<pre>        │           │       ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">rules.d</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--         121]  </span>50-firmware.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--        3310]  </span>50-udev-default.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--         606]  </span>60-block.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--         910]  </span>60-cdrom_id.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--         153]  </span>60-drm.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--         738]  </span>60-evdev.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--         616]  </span>60-persistent-alsa.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--        2464]  </span>60-persistent-input.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--        1420]  </span>60-persistent-storage-tape.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--        5095]  </span>60-persistent-storage.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--         769]  </span>60-persistent-v4l.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--        1190]  </span>60-serial.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--         418]  </span>64-btrfs.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--         734]  </span>70-mouse.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--         942]  </span>70-power-switch.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--        2765]  </span>70-uaccess.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--        2710]  </span>71-seat.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--         596]  </span>73-seat-late.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--         452]  </span>75-net-description.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--         174]  </span>75-probe_mtd.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--        4505]  </span>78-sound-card.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--         618]  </span>80-drivers.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--         292]  </span>80-net-setup-link.rules</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--         437]  </span>90-vconsole.rules</span></pre>
+<pre>        │           │       │   └── [-rw-r--r--        3896]  </span>99-systemd.rules</span></pre>
+<pre>        │           │       ├── [-rw-r--r--       43252]  </span>scsi_id</span></pre>
+<pre>        │           │       ├── [-rw-r--r--        1007]  </span>storage.sh</span></pre>
+<pre>        │           │       └── [-rw-r--r--        9900]  </span>v4l_id</span></pre>
+<pre>        │           ├── [drwxrwxr-x       12288]  <span class="bold"><span class="blue">license</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">acl</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       26762]  </span>COPYING.LGPL.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       18311]  </span>COPYING.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">attr</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       26763]  </span>COPYING.LGPL.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       18312]  </span>COPYING.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">base-files</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       17992]  </span>GPL-2.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       17611]  </span>generic_GPLv2.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">base-passwd</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       18011]  </span>COPYING.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       17611]  </span>generic_GPLv2.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">boost</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1338]  </span>LICENSE_1_0.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1340]  </span>generic_BSL-1.0.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1080]  </span>generic_MIT.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--        9795]  </span>generic_Python-2.0.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">brcm_patchram_plus</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--         783]  </span>COPYING.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       11360]  </span>generic_Apache-2.0.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">busybox</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       18348]  </span>LICENSE.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       17611]  </span>generic_GPLv2.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--        1895]  </span>generic_bzip2.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">bzip2</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--        1901]  </span>LICENSE.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">c-ares</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--         766]  </span>LICENSE.md.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--        1080]  </span>generic_MIT.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">cmsis</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       16191]  </span>CMSIS.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">crow</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1472]  </span>LICENSE.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--        6208]  </span>README.md.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">dbus</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       29176]  </span>COPYING.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--         311]  </span>RICOH_License_Option.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        3955]  </span>dbus.h.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        9014]  </span>generic_AFL-2.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       17611]  </span>generic_GPLv2.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">e2fsprogs</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       44569]  </span>NOTICE.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">expat</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1144]  </span>COPYING.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--        1080]  </span>generic_MIT.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">free-rtos</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       20208]  </span>FreeRTOS.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">glibc</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       26530]  </span>COPYING.LIB.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       18092]  </span>COPYING.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--         956]  </span>COPYRIGHT.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       22359]  </span>LICENSES.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       17611]  </span>generic_GPLv2.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       25878]  </span>generic_LGPLv2.1.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">grpc</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       11358]  </span>LICENSE.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--         554]  </span>NOTICE.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       11360]  </span>generic_Apache-2.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">hostapd</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       16745]  </span>README.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">icu</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       19658]  </span>LICENSE.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">kbd</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1994]  </span>COPYING.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       17611]  </span>generic_GPLv2.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">kmod</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       26432]  </span>COPYING.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       17611]  </span>generic_GPL-2.0.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       25878]  </span>generic_LGPL-2.1.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">libcap</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       20240]  </span>License.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--         513]  </span>RICOH_License_Option.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1499]  </span>generic_BSD.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       17611]  </span>generic_GPLv2.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">libgcc</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       26527]  </span>COPYING.LIB.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        3324]  </span>COPYING.RUNTIME.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       18002]  </span>COPYING.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        7639]  </span>COPYING3.LIB.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       35147]  </span>COPYING3.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        3406]  </span>generic_GPL-3.0-with-GCC-exception.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       34694]  </span>generic_GPLv3.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">libnl</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       26530]  </span>COPYING.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       25878]  </span>generic_LGPLv2.1.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">linux-kernel</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       18693]  </span>COPYING.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">mbedtls</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--         135]  </span>LICENSE.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       11358]  </span>apache-2.0.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--         782]  </span>copyright.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">mtp</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       10695]  </span>NOTICE.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">netbase</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--         535]  </span>copyright.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       17611]  </span>generic_GPLv2.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">openssl</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--        6279]  </span>LICENSE.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">os-release</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1035]  </span>COPYING.MIT.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--        1080]  </span>generic_MIT.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">protobuf</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        2133]  </span>LICENSE.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--        1468]  </span>generic_BSD-3-Clause.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">run-postinsts</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1035]  </span>COPYING.MIT.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--         515]  </span>LICENSE.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1080]  </span>generic_MIT.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--        1773]  </span>run-postinsts.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">shadow</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        4993]  </span>COPYING.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--         294]  </span>RICOH_License_Option.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        4785]  </span>generic_Artistic-1.0.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1499]  </span>generic_BSD.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       32202]  </span>passwd.c.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">shadow-securetty</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1035]  </span>COPYING.MIT.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--        1080]  </span>generic_MIT.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">spdlog</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--        1142]  </span>LICENSE.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">stubby</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       18012]  </span>LICENSE.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">systemd</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       17987]  </span>LICENSE.GPL2.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       26530]  </span>LICENSE.LGPL2.1.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       10337]  </span>README.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       17611]  </span>generic_GPLv2.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       25878]  </span>generic_LGPLv2.1.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">systemd-compat-units</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--         515]  </span>LICENSE.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--        1080]  </span>generic_MIT.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">systemd-serialgetty</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       17611]  </span>GPL-2.0.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--       17611]  </span>generic_GPLv2.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">tbb</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       11357]  </span>LICENSE.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       11360]  </span>generic_Apache-2.0.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--         713]  </span>index.html.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">tera-term</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--        1470]  </span>TeraTerm.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">update-rc.d</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       17611]  </span>generic_GPLv2.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--        4816]  </span>update-rc.d.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">util-linux</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       18092]  </span>COPYING.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--         555]  </span>README.licensing.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">volatile-binds</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1023]  </span>COPYING.MIT.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--        1080]  </span>generic_MIT.txt</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">xz</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       18092]  </span>COPYING.GPLv2.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       35147]  </span>COPYING.GPLv3.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       26530]  </span>COPYING.LGPLv2.1.txt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        2774]  </span>COPYING.txt</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--         266]  </span>RICOH_License_Option.txt</span></pre>
+<pre>        │           │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">zlib</span></pre>
+<pre>        │           │       ├── [-rw-r--r--         863]  </span>generic_Zlib.txt</span></pre>
+<pre>        │           │       └── [-rw-r--r--       87883]  </span>zlib.h.txt</span></pre>
+<pre>        │           ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">media</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">root</span></pre>
+<pre>        │           │   │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">test_mtp_sd</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">storage0</span></pre>
+<pre>        │           │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">storage1</span></pre>
+<pre>        │           ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">mnt</span></pre>
+<pre>        │           ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">proc</span></pre>
+<pre>        │           ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">run</span></pre>
+<pre>        │           │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">SD</span></pre>
+<pre>        │           ├── [drwxrwxr-x       12288]  <span class="bold"><span class="blue">sbin</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       46236]  </span>agetty</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>blkid</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          17]  </span>depmod</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          11]  </span>depmod.kmod</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      269552]  </span>e2fsck</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>fdisk</span></pre>
+<pre>        │           │   ├── [-rw-r--r--        8972]  </span>finit</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          21]  </span>fsck</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      269552]  </span>fsck.ext2</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      269552]  </span>fsck.ext3</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      269552]  </span>fsck.ext4</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      269552]  </span>fsck.ext4dev</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       40144]  </span>fsck.util-linux</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>fstrim</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          12]  </span>getty</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          14]  </span>halt</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>hwclock</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>ifconfig</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>ifdown</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>ifup</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          20]  </span>init</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          17]  </span>insmod</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          11]  </span>insmod.kmod</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>ip</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>klogd</span></pre>
+<pre>        │           │   ├── [-rw-r--r--      599564]  </span>ldconfig</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>loadkmap</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>logread</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>losetup</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          15]  </span>lsmod</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>mkswap</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          18]  </span>modinfo</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          11]  </span>modinfo.kmod</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>modprobe</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          11]  </span>modprobe.kmod</span></pre>
+<pre>        │           │   ├── [-rw-r--r--         649]  </span>mount-copybind</span></pre>
+<pre>        │           │   ├── [-rw-r--r--        5332]  </span>nologin</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>pivot_root</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          14]  </span>poweroff</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          14]  </span>reboot</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          16]  </span>rmmod</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          11]  </span>rmmod.kmod</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>route</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          14]  </span>runlevel</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>setconsole</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          14]  </span>shutdown</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>start-stop-daemon</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          24]  </span>sulogin</span></pre>
+<pre>        │           │   ├── [-rw-r--r--       37692]  </span>sulogin.util-linux</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>swapoff</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>swapon</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>switch_root</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>sysctl</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>syslogd</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          26]  </span>udevd</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          19]  </span>udhcpc</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          17]  </span>vigr</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          11]  </span>vigr.shadow</span></pre>
+<pre>        │           │   ├── [-rw-r--r--          17]  </span>vipw</span></pre>
+<pre>        │           │   └── [-rw-r--r--       43564]  </span>vipw.shadow</span></pre>
+<pre>        │           ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">sys</span></pre>
+<pre>        │           ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">tmp</span></pre>
+<pre>        │           ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">usr</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">bin</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          19]  </span>awk</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--         287]  </span>ble_init.sh</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--      756732]  </span>bled</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--      391100]  </span>brcm_patchram_plus-custom_v06</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--     1164320]  </span>camctld</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          19]  </span>cut</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        9544]  </span>dbus-cleanup-sockets</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--      169504]  </span>dbus-daemon</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       17300]  </span>dbus-launch</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       20828]  </span>dbus-monitor</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       11296]  </span>dbus-run-session</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       22172]  </span>dbus-send</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        8368]  </span>dbus-uuidgen</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          19]  </span>expr</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          19]  </span>fuser</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          19]  </span>head</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          19]  </span>killall</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          19]  </span>less</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          19]  </span>logger</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          19]  </span>lspci</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       13932]  </span>membinrdwr</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       13820]  </span>membinrdwrawb</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       13952]  </span>membinrdwriq</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--      584528]  </span>mtpd</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--      214772]  </span>netmgrd</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          19]  </span>readlink</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          19]  </span>seq</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--         472]  </span>shutdown.sh</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1403]  </span>start_wlan.sh</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--         584]  </span>stop_wlan.sh</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--      189204]  </span>sysmgrd</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          19]  </span>tail</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       52936]  </span>testbt</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          19]  </span>top</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1476]  </span>usb30dev_mtp_func.sh</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        1475]  </span>usb30dev_mtp_func_n.sh</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--      119476]  </span>usbd</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--     1174696]  </span>webapid</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--          19]  </span>which</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">lib</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--      550672]  </span>libBtStack.so</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       79060]  </span>libboost_filesystem.so.1.61.0</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       10464]  </span>libboost_system.so.1.61.0</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--     1300876]  </span>libcamera-controller.so</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          17]  </span>libcares.so.2</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       62312]  </span>libcares.so.2.2.0</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       24304]  </span>libcmfwk.so</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--     1462860]  </span>libcrypto.so.1.0.0</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          19]  </span>libdbus-1.so.3</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--      256664]  </span>libdbus-1.so.3.14.7</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          17]  </span>libexpat.so.1</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--      135936]  </span>libexpat.so.1.6.2</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          15]  </span>libgpr.so.4</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       45456]  </span>libgpr.so.4.0.0</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          27]  </span>libgrpc++_unsecure.so.1</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--      221380]  </span>libgrpc++_unsecure.so.1.8.5</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          25]  </span>libgrpc_unsecure.so.4</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--      787320]  </span>libgrpc_unsecure.so.4.0.0</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          16]  </span>libkmod.so.2</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       61728]  </span>libkmod.so.2.3.1</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          16]  </span>liblzma.so.5</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--      128956]  </span>liblzma.so.5.2.2</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          19]  </span>libnl-3.so.200</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--      105164]  </span>libnl-3.so.200.23.0</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          24]  </span>libnl-genl-3.so.200</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       17524]  </span>libnl-genl-3.so.200.23.0</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       59060]  </span>libnss_myhostname.so.2</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--      236204]  </span>libnss_mymachines.so.2</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          21]  </span>libprotobuf.so.15</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--     2225640]  </span>libprotobuf.so.15.0.1</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--        9468]  </span>libshmem_manager.so</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--      313332]  </span>libssl.so.1.0.0</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          19]  </span>libstdc++.so.6</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--     1278420]  </span>libstdc++.so.6.0.22</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--      167024]  </span>libtbb.so.2</span></pre>
+<pre>        │           │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">sbin</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          19]  </span>chroot</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--      732884]  </span>hostapd</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--       49160]  </span>hostapd_cli</span></pre>
+<pre>        │           │   │   ├── [-rw-r--r--          19]  </span>udhcpd</span></pre>
+<pre>        │           │   │   └── [-rw-r--r--     1456136]  </span>wl</span></pre>
+<pre>        │           │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">share</span></pre>
+<pre>        │           │       ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">dbus-1</span></pre>
+<pre>        │           │       │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">services</span></pre>
+<pre>        │           │       │   │   └── [-rw-r--r--          51]  </span>org.freedesktop.systemd1.service</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--        3561]  </span>session.conf</span></pre>
+<pre>        │           │       │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">session.d</span></pre>
+<pre>        │           │       │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">system-services</span></pre>
+<pre>        │           │       │   │   ├── [-rw-r--r--         419]  </span>org.freedesktop.hostname1.service</span></pre>
+<pre>        │           │       │   │   ├── [-rw-r--r--         415]  </span>org.freedesktop.locale1.service</span></pre>
+<pre>        │           │       │   │   ├── [-rw-r--r--         413]  </span>org.freedesktop.login1.service</span></pre>
+<pre>        │           │       │   │   ├── [-rw-r--r--         417]  </span>org.freedesktop.machine1.service</span></pre>
+<pre>        │           │       │   │   ├── [-rw-r--r--         364]  </span>org.freedesktop.systemd1.service</span></pre>
+<pre>        │           │       │   │   └── [-rw-r--r--         419]  </span>org.freedesktop.timedate1.service</span></pre>
+<pre>        │           │       │   ├── [-rw-r--r--        4363]  </span>system.conf</span></pre>
+<pre>        │           │       │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">system.d</span></pre>
+<pre>        │           │       └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">factory</span></pre>
+<pre>        │           │           └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">etc</span></pre>
+<pre>        │           │               └── [-rw-r--r--         119]  </span>nsswitch.conf</span></pre>
+<pre>        │           └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">var</span></pre>
+<pre>        │               ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">backups</span></pre>
+<pre>        │               ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">lib</span></pre>
+<pre>        │               │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">connman</span></pre>
+<pre>        │               │   │   └── [-rw-r--r--         179]  </span>wired.config</span></pre>
+<pre>        │               │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">dbus</span></pre>
+<pre>        │               │   ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">misc</span></pre>
+<pre>        │               │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">systemd</span></pre>
+<pre>        │               ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">local</span></pre>
+<pre>        │               ├── [-rw-r--r--          11]  </span>lock</span></pre>
+<pre>        │               ├── [-rw-r--r--          12]  </span>log</span></pre>
+<pre>        │               ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">run</span></pre>
+<pre>        │               │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">SD</span></pre>
+<pre>        │               ├── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">spool</span></pre>
+<pre>        │               │   └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">mail</span></pre>
+<pre>        │               ├── [-rw-r--r--          12]  </span>tmp</span></pre>
+<pre>        │               └── [drwxrwxr-x        4096]  <span class="bold"><span class="blue">volatile</span></pre>
+<pre>        └── [-rw-r--r--    25045595]  </span>34113329-59158924.unknown</span></pre>
+<br />
+<pre>161 directories, 584 files</pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<a href="./s07_bootloader_check.html" title="./s07_bootloader_check.html" ><div id="buttonBack" class="rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a>
+<a href="./s03_firmware_bin_base_analyzer.html" title="./s03_firmware_bin_base_analyzer.html" ><div id="buttonForward" class="rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/></svg></div> </a>
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+  var embarkButton = document.getElementById("embark");
+  if ( !(embarkButton.href.includes("embarkBackUrl")) ) {
+    embarkButton.classList.remove('hidden');
+    document.getElementById("logoImage").src = "./style/embark.svg";
+    document.getElementById("logo").style.background = "#2d2d2d";
+  }
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!-- 
+EMBA - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2023 Siemens AG
+Copyright 2020-2023 Siemens Energy AG
+
+EMBA comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+EMBA is licensed under GPLv3
+
+Author(s): Pascal Eckmann
+Contributor(s): Michael Messner, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div id="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" id="logoImage" src="./../style/emba.svg" alt="logo"></a>
+  </div>
+  <div id="nav">
+      <a id="embark" class="hidden" href="{{ embarkBackUrl }}">&laquo; Back to EMBArk</a> <!-- nosem -->
+      <a class="backButton" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s15_radare_decompile_checks.html" title="./../s15_radare_decompile_checks.html" >&laquo; Back to s15_radare_decompile_checks</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">systemd</span></pre>
+<br />
+<pre>  </pre>
+<pre>  	<span class="green">Full RELRO</span>     <span class="green">Canary found</span>      <span class="green">NX enabled</span>   <span class="green">PIE enabled</span>  <span class="green">No RPATH</span>     <span class="green">No RUNPATH</span>   <span class="green">No Symbols</pre>
+<br />
+<pre></span></pre>
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">fprintf</span> tear down of </span><span class="orange">systemd</span></pre>
+<br />
+<pre>    ; assembly                               | /* r2dec pseudo code output */</pre>
+<pre>                                             | /* /logs/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/lib/systemd/systemd &commat; 0x94064 */</pre>
+<pre>                                             | #include &lt;stdint.h&gt;</pre>
+<pre>                                             |  </pre>
+<pre>    ; (fcn) fcn.00094064 ()                  | void fcn_00094064 (int32_t arg_1ch, int32_t arg_20h, uint32_t arg1, int32_t arg2) {</pre>
+<pre>                                             |     int32_t var_0h;</pre>
+<pre>                                             |     int32_t var_4h;</pre>
+<pre>                                             |     int32_t var_ch;</pre>
+<pre>                                             |     int32_t var_1ch;</pre>
+<pre>                                             |     r0 = arg1;</pre>
+<pre>                                             |     r1 = arg2;</pre>
+<pre>    0x00094064 str r3, [sp, -4]!             |     *((sp -= 4)) = r3;</pre>
+<pre>    0x00094068 push {r4, r5, r6, lr}         |     </pre>
+<pre>    0x0009406c sub sp, sp, 0xc               |     </pre>
+<pre>    0x00094070 ldr r6, [sp, 0x1c]            |     r6 = *(arg_1ch);</pre>
+<pre>    0x00094074 ldr r3, [pc, 0x110]           |     r3 = *(0x94188);</pre>
+<pre>    0x00094078 add r3, pc, r3                |     r3 = pc + r3;</pre>
+<pre>    0x0009407c ldr ip, [pc, 0x10c]           |     ip = *(0x00094190);</pre>
+<pre>    0x00094080 ldr r5, [r3, ip]              |     r5 = *(0x94188);</pre>
+<pre>    0x00094084 ldr r3, [r5]                  |     r3 = *(0x94188);</pre>
+<pre>    0x00094088 str r3, [sp, 4]               |     var_4h = r3;</pre>
+<pre>    0x0009408c cmp r0, 0                     |     </pre>
+<pre>                                             |     if (arg_1ch != ) {</pre>
+<pre>    0x00094090 beq 0x94108                   |         </pre>
+<pre>    0x00094094 mov r4, r1                    |         r4 = r1;</pre>
+<pre>    0x00094098 cmp r1, 0                     |         </pre>
+<pre>                                             |         if (r1 == 0) {</pre>
+<pre>    0x0009409c beq 0x94128                   |             goto label_0;</pre>
+<pre>                                             |         }</pre>
+<pre>    0x000940a0 cmp r2, 0                     |         </pre>
+<pre>                                             |         if (r2 == 0) {</pre>
+<pre>    0x000940a4 beq 0x94148                   |             goto label_1;</pre>
+<pre>                                             |         }</pre>
+<pre>    0x000940a8 cmp r6, 0                     |         </pre>
+<pre>                                             |         if (r6 == 0) {</pre>
+<pre>    0x000940ac beq 0x94168                   |             goto label_2;</pre>
+<pre>                                             |         }</pre>
+<pre>    0x000940b0 mov r0, r2                    |         r0 = r2;</pre>
+<pre>    0x000940b4 bl 0xdf34                     |         fputs (r0, r1);</pre>
+<pre>    0x000940b8 mov r1, r4                    |         r1 = r4;</pre>
+<pre>    0x000940bc mov r0, 0x3d                  |         r0 = 0x3d;</pre>
+<pre>    0x000940c0 bl 0xd934                     |         fputc (r0, r1);</pre>
+<pre>    0x000940c4 add r3, sp, 0x20              |         r3 += arg_20h;</pre>
+<pre>    0x000940c8 str r3, [sp]                  |         *(sp) = r3;</pre>
+<pre>    0x000940cc mov r2, r6                    |         r2 = r6;</pre>
+<pre>    0x000940d0 mov r1, 1                     |         r1 = 1;</pre>
+<pre>    0x000940d4 mov r0, r4                    |         r0 = r4;</pre>
+<pre><span class="red">    0x000940d8 bl 0xdb68                     |         vfprintf_chk ()</span></span></pre>
+<pre>    0x000940dc mov r1, r4                    |         r1 = r4;</pre>
+<pre>    0x000940e0 mov r0, 0xa                   |         r0 = 0xa;</pre>
+<pre>    0x000940e4 bl 0xd934                     |         fputc (r0, r1);</pre>
+<pre>    0x000940e8 ldr r2, [sp, 4]               |         r2 = var_4h;</pre>
+<pre>    0x000940ec ldr r3, [r5]                  |         r3 = *(r5);</pre>
+<pre>    0x000940f0 cmp r2, r3                    |         </pre>
+<pre>                                             |         if (r2 != r3) {</pre>
+<pre>    0x000940f4 bne 0x94188                   |             goto label_3;</pre>
+<pre>                                             |         }</pre>
+<pre>    0x000940f8 add sp, sp, 0xc               |         </pre>
+<pre>    0x000940fc pop {r4, r5, r6, lr}          |         </pre>
+<pre>    0x00094100 add sp, sp, 4                 |         </pre>
+<pre>    0x00094104 bx lr                         |         return;</pre>
+<pre>                                             |     }</pre>
+<pre>    0x00094108 ldr r3, [pc, 0x84]            |     r3 = *(0x94190);</pre>
+<pre>    0x0009410c add r3, pc, r3                |     r3 = pc + r3;</pre>
+<pre>    0x00094110 movw r2, 0xa84                |     r2 = 0xa84;</pre>
+<pre>    0x00094114 ldr r1, [pc, 0x7c]            |     r1 = *(0x94194);</pre>
+<pre>    0x00094118 add r1, pc, r1                |     r1 = pc + r1;</pre>
+<pre>    0x0009411c ldr r0, [pc, 0x78]            |     r0 = *(0x94198);</pre>
+<pre>    0x00094120 add r0, pc, r0                |     r0 = pc + r0;</pre>
+<pre>    0x00094124 bl 0x56b34                    |     fcn_00056b34 (r0, r1);</pre>
+<pre>                                             | label_0:</pre>
+<pre>    0x00094128 ldr r3, [pc, 0x70]            |     r3 = *(0x9419c);</pre>
+<pre>    0x0009412c add r3, pc, r3                |     r3 = pc + r3;</pre>
+<pre>    0x00094130 movw r2, 0xa85                |     r2 = 0xa85;</pre>
+<pre>    0x00094134 ldr r1, [pc, 0x68]            |     r1 = *(0x941a0);</pre>
+<pre>    0x00094138 add r1, pc, r1                |     r1 = pc + r1;</pre>
+<pre>    0x0009413c ldr r0, [pc, 0x64]            |     r0 = *(0x941a4);</pre>
+<pre>    0x00094140 add r0, pc, r0                |     r0 = pc + r0;</pre>
+<pre>    0x00094144 bl 0x56b34                    |     fcn_00056b34 (r0, r1);</pre>
+<pre>                                             | label_1:</pre>
+<pre>    0x00094148 ldr r3, [pc, 0x5c]            |     r3 = *(0x941a8);</pre>
+<pre>    0x0009414c add r3, pc, r3                |     r3 = pc + r3;</pre>
+<pre>    0x00094150 movw r2, 0xa86                |     r2 = 0xa86;</pre>
+<pre>    0x00094154 ldr r1, [pc, 0x54]            |     r1 = *(0x941ac);</pre>
+<pre>    0x00094158 add r1, pc, r1                |     r1 = pc + r1;</pre>
+<pre>    0x0009415c ldr r0, [pc, 0x50]            |     r0 = *(0x941b0);</pre>
+<pre>    0x00094160 add r0, pc, r0                |     r0 = pc + r0;</pre>
+<pre>    0x00094164 bl 0x56b34                    |     fcn_00056b34 (r0, r1);</pre>
+<pre>                                             | label_2:</pre>
+<pre>    0x00094168 ldr r3, [pc, 0x48]            |     r3 = *(0x941b4);</pre>
+<pre>    0x0009416c add r3, pc, r3                |     r3 = pc + r3;</pre>
+<pre>    0x00094170 movw r2, 0xa87                |     r2 = 0xa87;</pre>
+<pre>    0x00094174 ldr r1, [pc, 0x40]            |     r1 = *(0x941b8);</pre>
+<pre>    0x00094178 add r1, pc, r1                |     r1 = pc + r1;</pre>
+<pre>    0x0009417c ldr r0, [pc, 0x3c]            |     r0 = *(0x941bc);</pre>
+<pre>    0x00094180 add r0, pc, r0                |     r0 = pc + r0;</pre>
+<pre>    0x00094184 bl 0x56b34                    |     r0 = fcn_00056b34 (r0, r1);</pre>
+<pre>                                             | label_3:</pre>
+<pre>    0x00094188 bl 0xd4a8                     |     stack_chk_fail ();</pre>
+<pre>                                             |     if (r2 != r3) {</pre>
+<pre>    0x0009418c andeq r1, fp, r8, lsl sl      |         r1 = fp &amp; (r8 &lt;&lt; sl);</pre>
+<pre>                                             |     }</pre>
+<pre>    0x00094190 invalid                       |     </pre>
+<pre>                                             | }</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">fprintf</span> used </span><span class="orange">2</span> times </span><span class="orange">systemd</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+  var embarkButton = document.getElementById("embark");
+  if ( !(embarkButton.href.includes("embarkBackUrl")) ) {
+    embarkButton.classList.remove('hidden');
+    document.getElementById("logoImage").src = "./../style/embark.svg";
+    document.getElementById("logo").style.background = "#2d2d2d";
+  }
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

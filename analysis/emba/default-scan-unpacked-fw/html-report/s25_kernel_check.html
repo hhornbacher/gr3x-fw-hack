@@ -1,0 +1,395 @@
+<!-- 
+EMBA - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2023 Siemens AG
+Copyright 2020-2023 Siemens Energy AG
+
+EMBA comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+EMBA is licensed under GPLv3
+
+Author(s): Pascal Eckmann
+Contributor(s): Michael Messner, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div id="logo">
+    <a class="inherit" href="./index.html"><img class="inherit" id="logoImage" src="./style/emba.svg" alt="logo"></a>
+  </div>
+  <div id="nav">
+      <a id="embark" class="hidden" href="{{ embarkBackUrl }}">&laquo; Back to EMBArk</a> <!-- nosem -->
+      <a class="backButton" href="./index.html">&laquo; Back to main</a>
+      <!-- navigation start --><a class="modul" href="#identify_and_analyze_kernel_version" title="#identify_and_analyze_kernel_version" >Identify and analyze kernel version</a><a class="submodul" href="#kernelvulnerabilities" title="#kernelvulnerabilities" >Kernel vulnerabilities</a><a class="submodul" href="#possibleexploitsvialinuxexploitsuggestershforkernelversion4415" title="#possibleexploitsvialinuxexploitsuggestershforkernelversion4415" >Possible exploits via linux-exploit-suggester.sh for kernel version 4.4.15</a><a class="submodul" href="#checkmodprobeddirectoryandcontent" title="#checkmodprobeddirectoryandcontent" >Check modprobe.d directory and content</a><a class="submodul" href="#analyzekernelmodules" title="#analyzekernelmodules" >Analyze kernel modules</a>
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="blue">+</span>] </span><span class="cyan"><span class="bold"><a id="identify_and_analyze_kernel_version">Identify and analyze kernel version</a></span></pre>
+<pre><span class="bold"><hr class="double" /></span></pre>
+<pre>This module tries to identify the version of the used Linux kernel. The following sources are tested:</pre>
+<pre>    - Results of module s24</pre>
+<pre>    - Identified kernel modules in .ko format</pre>
+<pre>    - Identified kernel modules in .o format</pre>
+<pre>    - Filesytem path of kernel modules - e.g.: /lib/modules/1.2.3/bla</pre>
+<br />
+<pre>Additionally it checks the identified kernel version with the linux-exploit-suggester (<a href="https://github.com/mzet-/linux-exploit-suggester" title="https://github.com/mzet-/linux-exploit-suggester" target="_blank" >https://github.com/mzet-/linux-exploit-suggester</a>) for known exploits.</pre>
+<pre>Finally it tests the kernel modules for interesting combination of closed source modules with debugging information. E.g. Non open source modules with debugging information included.</pre>
+<br />
+<pre>Kernel version:</pre>
+<pre>    </span><span class="orange">4.4.15</span></pre>
+<br />
+<pre>Kernel details:</pre>
+<pre>    </pre>
+<pre>    Simple_RAM_filesystem_for_user_driven_kernel_subsystem_configuration_</pre>
+<pre>    TCP_Westwood_</pre>
+<br />
+<pre></span><span class="blue">==&gt</span></span> </span><span class="cyan"><a id="kernelvulnerabilities">Kernel vulnerabilities</a></span></pre>
+<pre><hr class="mono" /></pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> Found linux kernel version/s:</span></pre>
+<pre>    </span><span class="orange">4.4.15</span></pre>
+<br />
+<br />
+<pre></span><span class="blue">==&gt</span></span> </span><span class="cyan">Possible exploits via linux-exploit-suggester.sh for kernel version </span><span class="orange">4.4.15</span></span></pre>
+<pre><hr class="mono" /></pre>
+<pre>[</span><span class="orange">*</span>] Search possible exploits via linux-exploit-suggester.sh for kernel version </span><span class="orange">4.4.15</span></pre>
+<pre>    <a href="https://github.com/mzet-/linux-exploit-suggester" title="https://github.com/mzet-/linux-exploit-suggester" target="_blank" >https://github.com/mzet-/linux-exploit-suggester</a></pre>
+<br />
+<pre><span class="bold">Available information:</span></pre>
+<br />
+<pre>Kernel version: <span class="bold"><span class="green">4.4.15</span></pre>
+<pre>Architecture: <span class="bold">N/A</span></pre>
+<pre>Distribution: <span class="bold">N/A</span></pre>
+<pre>Distribution version: <span class="bold">N/A</span></pre>
+<pre>Additional checks (CONFIG_*, sysctl entries, custom Bash commands): <span class="bold">N/A</span></pre>
+<pre>Package listing: <span class="bold">N/A</span></pre>
+<br />
+<pre><span class="bold">Searching among:</span></pre>
+<br />
+<pre>81 kernel space exploits</pre>
+<pre>0 user space exploits</pre>
+<br />
+<pre><span class="bold">Possible Exploits:</span></pre>
+<br />
+<pre>[+] <span class="bold"><span class="green">[<a href="https://nvd.nist.gov/vuln/detail/CVE-2017-16995" title="CVE-2017-16995" target="_blank" >CVE-2017-16995</a>]</span> eBPF_verifier</pre>
+<br />
+<pre>   Details: <a href="https://ricklarabee.blogspot.com/2018/07/ebpf-and-analysis-of-get-rekt-linux.html" title="https://ricklarabee.blogspot.com/2018/07/ebpf-and-analysis-of-get-rekt-linux.html" target="_blank" >https://ricklarabee.blogspot.com/2018/07/ebpf-and-analysis-of-get-rekt-linux.html</a></pre>
+<pre>   Exposure: probable</pre>
+<pre>   Tags: debian=9.0{kernel:4.9.0-3-amd64},fedora=25|26|27,ubuntu=14.04{kernel:4.4.0-89-generic},ubuntu=(16.04|17.04){kernel:4.(8|10).0-(19|28|45)-generic}</pre>
+<pre>   Download URL: <a href="https://www.exploit-db.com/download/45010" title="https://www.exploit-db.com/download/45010" target="_blank" >https://www.exploit-db.com/download/45010</a></pre>
+<pre>   Comments: CONFIG_BPF_SYSCALL needs to be set &amp;&amp; kernel.unprivileged_bpf_disabled != 1</pre>
+<pre>   Requirements: pkg=linux-kernel,ver&gt;=4.4,ver&lt;=4.14.8,CONFIG_BPF_SYSCALL=y,sysctl:kernel.unprivileged_bpf_disabled!=1</pre>
+<pre>   exploit-db: 45010</pre>
+<pre>   author: Rick Larabee</pre>
+<br />
+<pre>[+] <span class="bold"><span class="green">[<a href="https://nvd.nist.gov/vuln/detail/CVE-2016-5195" title="CVE-2016-5195" target="_blank" >CVE-2016-5195</a>]</span> dirtycow</pre>
+<br />
+<pre>   Details: <a href="https://github.com/dirtycow/dirtycow.github.io/wiki/VulnerabilityDetails" title="https://github.com/dirtycow/dirtycow.github.io/wiki/VulnerabilityDetails" target="_blank" >https://github.com/dirtycow/dirtycow.github.io/wiki/VulnerabilityDetails</a></pre>
+<pre>   Exposure: probable</pre>
+<pre>   Tags: debian=7|8,RHEL=5{kernel:2.6.(18|24|33)-*},RHEL=6{kernel:2.6.32-*|3.(0|2|6|8|10).*|2.6.33.9-rt31},RHEL=7{kernel:3.10.0-*|4.2.0-0.21.el7},ubuntu=16.04|14.04|12.04</pre>
+<pre>   Download URL: <a href="https://www.exploit-db.com/download/40611" title="https://www.exploit-db.com/download/40611" target="_blank" >https://www.exploit-db.com/download/40611</a></pre>
+<pre>   Comments: For RHEL/CentOS see exact vulnerable versions here: <a href="https://access.redhat.com/sites/default/files/rh-cve-2016-5195_5.sh" title="https://access.redhat.com/sites/default/files/rh-cve-2016-5195_5.sh" target="_blank" >https://access.redhat.com/sites/default/files/rh-cve-2016-5195_5.sh</a></pre>
+<pre>   Requirements: pkg=linux-kernel,ver&gt;=2.6.22,ver&lt;=4.8.3</pre>
+<pre>   exploit-db: 40611</pre>
+<pre>   author: Phil Oester</pre>
+<br />
+<pre>[+] <span class="bold"><span class="green">[<a href="https://nvd.nist.gov/vuln/detail/CVE-2016-5195" title="CVE-2016-5195" target="_blank" >CVE-2016-5195</a>]</span> dirtycow 2</pre>
+<br />
+<pre>   Details: <a href="https://github.com/dirtycow/dirtycow.github.io/wiki/VulnerabilityDetails" title="https://github.com/dirtycow/dirtycow.github.io/wiki/VulnerabilityDetails" target="_blank" >https://github.com/dirtycow/dirtycow.github.io/wiki/VulnerabilityDetails</a></pre>
+<pre>   Exposure: probable</pre>
+<pre>   Tags: debian=7|8,RHEL=5|6|7,ubuntu=14.04|12.04,ubuntu=10.04{kernel:2.6.32-21-generic},ubuntu=16.04{kernel:4.4.0-21-generic}</pre>
+<pre>   Download URL: <a href="https://www.exploit-db.com/download/40839" title="https://www.exploit-db.com/download/40839" target="_blank" >https://www.exploit-db.com/download/40839</a></pre>
+<pre>   ext-url: <a href="https://www.exploit-db.com/download/40847" title="https://www.exploit-db.com/download/40847" target="_blank" >https://www.exploit-db.com/download/40847</a></pre>
+<pre>   Comments: For RHEL/CentOS see exact vulnerable versions here: <a href="https://access.redhat.com/sites/default/files/rh-cve-2016-5195_5.sh" title="https://access.redhat.com/sites/default/files/rh-cve-2016-5195_5.sh" target="_blank" >https://access.redhat.com/sites/default/files/rh-cve-2016-5195_5.sh</a></pre>
+<pre>   Requirements: pkg=linux-kernel,ver&gt;=2.6.22,ver&lt;=4.8.3</pre>
+<pre>   exploit-db: 40839</pre>
+<pre>   author: FireFart (author of exploit at EDB 40839); Gabriele Bonacini (author of exploit at 'ext-url')</pre>
+<br />
+<pre>[+] <span class="bold"><span class="green">[<a href="https://nvd.nist.gov/vuln/detail/CVE-2022-32250" title="CVE-2022-32250" target="_blank" >CVE-2022-32250</a>]</span> nft_object UAF (NFT_MSG_NEWSET)</pre>
+<br />
+<pre>   Details: <a href="https://research.nccgroup.com/2022/09/01/settlers-of-netlink-exploiting-a-limited-uaf-in-nf_tables-cve-2022-32250/" title="https://research.nccgroup.com/2022/09/01/settlers-of-netlink-exploiting-a-limited-uaf-in-nf_tables-cve-2022-32250/" target="_blank" >https://research.nccgroup.com/2022/09/01/settlers-of-netlink-exploiting-a-limited-uaf-in-nf_tables-cve-2022-32250/</a></pre>
+<pre><a href="https://blog.theori.io/research/<a href="https://nvd.nist.gov/vuln/detail/CVE-2022-32250" title="CVE-2022-32250" target="_blank" >CVE-2022-32250</a>-linux-kernel-lpe-2022/" title="https://blog.theori.io/research/CVE-2022-32250-linux-kernel-lpe-2022/" target="_blank" >https://blog.theori.io/research/CVE-2022-32250-linux-kernel-lpe-2022/</a></pre>
+<pre>   Exposure: less probable</pre>
+<pre>   Tags: ubuntu=(22.04){kernel:5.15.0-27-generic}</pre>
+<pre>   Download URL: <a href="https://raw.githubusercontent.com/theori-io/<a href="https://nvd.nist.gov/vuln/detail/CVE-2022-32250" title="CVE-2022-32250" target="_blank" >CVE-2022-32250</a>-exploit/main/exp.c" title="https://raw.githubusercontent.com/theori-io/CVE-2022-32250-exploit/main/exp.c" target="_blank" >https://raw.githubusercontent.com/theori-io/CVE-2022-32250-exploit/main/exp.c</a></pre>
+<pre>   Comments: kernel.unprivileged_userns_clone=1 required (to obtain CAP_NET_ADMIN)</pre>
+<pre>   Requirements: pkg=linux-kernel,ver&lt;5.18.1,CONFIG_USER_NS=y,sysctl:kernel.unprivileged_userns_clone==1</pre>
+<pre>   author: vulnerability discovery: EDG Team from NCC Group; Author of this exploit: theori.io</pre>
+<br />
+<pre>[+] <span class="bold"><span class="green">[<a href="https://nvd.nist.gov/vuln/detail/CVE-2022-2586" title="CVE-2022-2586" target="_blank" >CVE-2022-2586</a>]</span> nft_object UAF</pre>
+<br />
+<pre>   Details: <a href="https://www.openwall.com/lists/oss-security/2022/08/29/5" title="https://www.openwall.com/lists/oss-security/2022/08/29/5" target="_blank" >https://www.openwall.com/lists/oss-security/2022/08/29/5</a></pre>
+<pre>   Exposure: less probable</pre>
+<pre>   Tags: ubuntu=(20.04){kernel:5.12.13}</pre>
+<pre>   Download URL: <a href="https://www.openwall.com/lists/oss-security/2022/08/29/5/1" title="https://www.openwall.com/lists/oss-security/2022/08/29/5/1" target="_blank" >https://www.openwall.com/lists/oss-security/2022/08/29/5/1</a></pre>
+<pre>   Comments: kernel.unprivileged_userns_clone=1 required (to obtain CAP_NET_ADMIN)</pre>
+<pre>   Requirements: pkg=linux-kernel,ver&gt;=3.16,CONFIG_USER_NS=y,sysctl:kernel.unprivileged_userns_clone==1</pre>
+<pre>   author: vulnerability discovery: Team Orca of Sea Security; Exploit author: Alejandro Guerrero</pre>
+<br />
+<pre>[+] <span class="bold"><span class="green">[<a href="https://nvd.nist.gov/vuln/detail/CVE-2021-27365" title="CVE-2021-27365" target="_blank" >CVE-2021-27365</a>]</span> linux-iscsi</pre>
+<br />
+<pre>   Details: <a href="https://blog.grimm-co.com/2021/03/new-old-bugs-in-linux-kernel.html" title="https://blog.grimm-co.com/2021/03/new-old-bugs-in-linux-kernel.html" target="_blank" >https://blog.grimm-co.com/2021/03/new-old-bugs-in-linux-kernel.html</a></pre>
+<pre>   Exposure: less probable</pre>
+<pre>   Tags: RHEL=8</pre>
+<pre>   Download URL: <a href="https://codeload.github.com/grimm-co/NotQuite0DayFriday/zip/trunk" title="https://codeload.github.com/grimm-co/NotQuite0DayFriday/zip/trunk" target="_blank" >https://codeload.github.com/grimm-co/NotQuite0DayFriday/zip/trunk</a></pre>
+<pre>   Comments: CONFIG_SLAB_FREELIST_HARDENED must not be enabled</pre>
+<pre>   Requirements: pkg=linux-kernel,ver&lt;=5.11.3,CONFIG_SLAB_FREELIST_HARDENED!=y</pre>
+<pre>   author: GRIMM</pre>
+<br />
+<pre>[+] <span class="bold"><span class="green">[<a href="https://nvd.nist.gov/vuln/detail/CVE-2021-22555" title="CVE-2021-22555" target="_blank" >CVE-2021-22555</a>]</span> Netfilter heap out-of-bounds write</pre>
+<br />
+<pre>   Details: <a href="https://google.github.io/security-research/pocs/linux/cve-2021-22555/writeup.html" title="https://google.github.io/security-research/pocs/linux/cve-2021-22555/writeup.html" target="_blank" >https://google.github.io/security-research/pocs/linux/cve-2021-22555/writeup.html</a></pre>
+<pre>   Exposure: less probable</pre>
+<pre>   Tags: ubuntu=20.04{kernel:5.8.0-*}</pre>
+<pre>   Download URL: <a href="https://raw.githubusercontent.com/google/security-research/master/pocs/linux/cve-2021-22555/exploit.c" title="https://raw.githubusercontent.com/google/security-research/master/pocs/linux/cve-2021-22555/exploit.c" target="_blank" >https://raw.githubusercontent.com/google/security-research/master/pocs/linux/cve-2021-22555/exploit.c</a></pre>
+<pre>   ext-url: <a href="https://raw.githubusercontent.com/bcoles/kernel-exploits/master/<a href="https://nvd.nist.gov/vuln/detail/CVE-2021-22555" title="CVE-2021-22555" target="_blank" >CVE-2021-22555</a>/exploit.c" title="https://raw.githubusercontent.com/bcoles/kernel-exploits/master/CVE-2021-22555/exploit.c" target="_blank" >https://raw.githubusercontent.com/bcoles/kernel-exploits/master/CVE-2021-22555/exploit.c</a></pre>
+<pre>   Comments: ip_tables kernel module must be loaded</pre>
+<pre>   Requirements: pkg=linux-kernel,ver&gt;=2.6.19,ver&lt;=5.12-rc6</pre>
+<pre>   exploit-db: 50135</pre>
+<pre>   author: theflow (orginal exploit author); bcoles (author of exploit update at 'ext-url')</pre>
+<br />
+<pre>[+] <span class="bold"><span class="green">[<a href="https://nvd.nist.gov/vuln/detail/CVE-2019-15666" title="CVE-2019-15666" target="_blank" >CVE-2019-15666</a>]</span> XFRM_UAF</pre>
+<br />
+<pre>   Details: <a href="https://duasynt.com/blog/ubuntu-centos-redhat-privesc" title="https://duasynt.com/blog/ubuntu-centos-redhat-privesc" target="_blank" >https://duasynt.com/blog/ubuntu-centos-redhat-privesc</a></pre>
+<pre>   Exposure: less probable</pre>
+<pre>   Download URL: </pre>
+<pre>   Comments: CONFIG_USER_NS needs to be enabled; CONFIG_XFRM needs to be enabled</pre>
+<pre>   Requirements: pkg=linux-kernel,ver&gt;=3,ver&lt;5.0.19,CONFIG_USER_NS=y,sysctl:kernel.unprivileged_userns_clone==1,CONFIG_XFRM=y</pre>
+<pre>   author: Vitaly 'vnik' Nikolenko</pre>
+<br />
+<pre>[+] <span class="bold"><span class="green">[<a href="https://nvd.nist.gov/vuln/detail/CVE-2019-13272" title="CVE-2019-13272" target="_blank" >CVE-2019-13272</a>]</span> PTRACE_TRACEME</pre>
+<br />
+<pre>   Details: <a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1903" title="https://bugs.chromium.org/p/project-zero/issues/detail?id=1903" target="_blank" >https://bugs.chromium.org/p/project-zero/issues/detail?id=1903</a></pre>
+<pre>   Exposure: less probable</pre>
+<pre>   Tags: ubuntu=16.04{kernel:4.15.0-*},ubuntu=18.04{kernel:4.15.0-*},debian=9{kernel:4.9.0-*},debian=10{kernel:4.19.0-*},fedora=30{kernel:5.0.9-*}</pre>
+<pre>   Download URL: <a href="https://github.com/offensive-security/exploitdb-bin-sploits/raw/master/bin-sploits/47133.zip" title="https://github.com/offensive-security/exploitdb-bin-sploits/raw/master/bin-sploits/47133.zip" target="_blank" >https://github.com/offensive-security/exploitdb-bin-sploits/raw/master/bin-sploits/47133.zip</a></pre>
+<pre>   ext-url: <a href="https://raw.githubusercontent.com/bcoles/kernel-exploits/master/<a href="https://nvd.nist.gov/vuln/detail/CVE-2019-13272" title="CVE-2019-13272" target="_blank" >CVE-2019-13272</a>/poc.c" title="https://raw.githubusercontent.com/bcoles/kernel-exploits/master/CVE-2019-13272/poc.c" target="_blank" >https://raw.githubusercontent.com/bcoles/kernel-exploits/master/CVE-2019-13272/poc.c</a></pre>
+<pre>   Comments: Requires an active PolKit agent.</pre>
+<pre>   Requirements: pkg=linux-kernel,ver&gt;=4,ver&lt;5.1.17,sysctl:kernel.yama.ptrace_scope==0,x86_64</pre>
+<pre>   exploit-db: 47133</pre>
+<pre>47163</pre>
+<pre>   author: Jann Horn (orginal exploit author); bcoles (author of exploit update at 'ext-url')</pre>
+<br />
+<pre>[+] <span class="bold"><span class="green">[<a href="https://nvd.nist.gov/vuln/detail/CVE-2018-5333" title="CVE-2018-5333" target="_blank" >CVE-2018-5333</a>]</span> rds_atomic_free_op NULL pointer dereference</pre>
+<br />
+<pre>   Details: <a href="https://gist.githubusercontent.com/wbowling/9d32492bd96d9e7c3bf52e23a0ac30a4/raw/959325819c78248a6437102bb289bb8578a135cd/cve-2018-5333-poc.c" title="https://gist.githubusercontent.com/wbowling/9d32492bd96d9e7c3bf52e23a0ac30a4/raw/959325819c78248a6437102bb289bb8578a135cd/cve-2018-5333-poc.c" target="_blank" >https://gist.githubusercontent.com/wbowling/9d32492bd96d9e7c3bf52e23a0ac30a4/raw/959325819c78248a6437102bb289bb8578a135cd/cve-2018-5333-poc.c</a></pre>
+<pre>   Exposure: less probable</pre>
+<pre>   Tags: ubuntu=16.04{kernel:4.4.0|4.8.0}</pre>
+<pre>   Download URL: <a href="https://gist.githubusercontent.com/wbowling/9d32492bd96d9e7c3bf52e23a0ac30a4/raw/959325819c78248a6437102bb289bb8578a135cd/cve-2018-5333-poc.c" title="https://gist.githubusercontent.com/wbowling/9d32492bd96d9e7c3bf52e23a0ac30a4/raw/959325819c78248a6437102bb289bb8578a135cd/cve-2018-5333-poc.c" target="_blank" >https://gist.githubusercontent.com/wbowling/9d32492bd96d9e7c3bf52e23a0ac30a4/raw/959325819c78248a6437102bb289bb8578a135cd/cve-2018-5333-poc.c</a></pre>
+<pre>   ext-url: <a href="https://raw.githubusercontent.com/bcoles/kernel-exploits/master/<a href="https://nvd.nist.gov/vuln/detail/CVE-2018-5333" title="CVE-2018-5333" target="_blank" >CVE-2018-5333</a>/cve-2018-5333.c" title="https://raw.githubusercontent.com/bcoles/kernel-exploits/master/CVE-2018-5333/cve-2018-5333.c" target="_blank" >https://raw.githubusercontent.com/bcoles/kernel-exploits/master/CVE-2018-5333/cve-2018-5333.c</a></pre>
+<pre>   Comments: rds.ko kernel module needs to be loaded. Modified version at 'ext-url' adds support for additional targets and bypassing KASLR.</pre>
+<pre>   Requirements: pkg=linux-kernel,ver&gt;=4.4,ver&lt;=4.14.13,cmd:grep</pre>
+<pre>   author: wbowling (orginal exploit author); bcoles (author of exploit update at 'ext-url')</pre>
+<br />
+<pre>[+] <span class="bold"><span class="green">[<a href="https://nvd.nist.gov/vuln/detail/CVE-2017-7308" title="CVE-2017-7308" target="_blank" >CVE-2017-7308</a>]</span> af_packet</pre>
+<br />
+<pre>   Details: <a href="https://googleprojectzero.blogspot.com/2017/05/exploiting-linux-kernel-via-packet.html" title="https://googleprojectzero.blogspot.com/2017/05/exploiting-linux-kernel-via-packet.html" target="_blank" >https://googleprojectzero.blogspot.com/2017/05/exploiting-linux-kernel-via-packet.html</a></pre>
+<pre>   Exposure: less probable</pre>
+<pre>   Tags: ubuntu=16.04{kernel:4.8.0-(34|36|39|41|42|44|45)-generic}</pre>
+<pre>   Download URL: <a href="https://raw.githubusercontent.com/xairy/kernel-exploits/master/<a href="https://nvd.nist.gov/vuln/detail/CVE-2017-7308" title="CVE-2017-7308" target="_blank" >CVE-2017-7308</a>/poc.c" title="https://raw.githubusercontent.com/xairy/kernel-exploits/master/CVE-2017-7308/poc.c" target="_blank" >https://raw.githubusercontent.com/xairy/kernel-exploits/master/CVE-2017-7308/poc.c</a></pre>
+<pre>   ext-url: <a href="https://raw.githubusercontent.com/bcoles/kernel-exploits/master/<a href="https://nvd.nist.gov/vuln/detail/CVE-2017-7308" title="CVE-2017-7308" target="_blank" >CVE-2017-7308</a>/poc.c" title="https://raw.githubusercontent.com/bcoles/kernel-exploits/master/CVE-2017-7308/poc.c" target="_blank" >https://raw.githubusercontent.com/bcoles/kernel-exploits/master/CVE-2017-7308/poc.c</a></pre>
+<pre>   Comments: CAP_NET_RAW cap or CONFIG_USER_NS=y needed. Modified version at 'ext-url' adds support for additional kernels</pre>
+<pre>   Requirements: pkg=linux-kernel,ver&gt;=3.2,ver&lt;=4.10.6,CONFIG_USER_NS=y,sysctl:kernel.unprivileged_userns_clone==1</pre>
+<pre>   exploit-db: 41994</pre>
+<pre>   author: Andrey 'xairy' Konovalov (orginal exploit author); Brendan Coles (author of exploit update at 'ext-url')</pre>
+<br />
+<pre>[+] <span class="bold"><span class="green">[<a href="https://nvd.nist.gov/vuln/detail/CVE-2017-6074" title="CVE-2017-6074" target="_blank" >CVE-2017-6074</a>]</span> dccp</pre>
+<br />
+<pre>   Details: <a href="http://www.openwall.com/lists/oss-security/2017/02/22/3" title="http://www.openwall.com/lists/oss-security/2017/02/22/3" target="_blank" >http://www.openwall.com/lists/oss-security/2017/02/22/3</a></pre>
+<pre>   Exposure: less probable</pre>
+<pre>   Tags: ubuntu=(14.04|16.04){kernel:4.4.0-62-generic}</pre>
+<pre>   Download URL: <a href="https://www.exploit-db.com/download/41458" title="https://www.exploit-db.com/download/41458" target="_blank" >https://www.exploit-db.com/download/41458</a></pre>
+<pre>   Comments: Requires Kernel be built with CONFIG_IP_DCCP enabled. Includes partial SMEP/SMAP bypass</pre>
+<pre>   Requirements: pkg=linux-kernel,ver&gt;=2.6.18,ver&lt;=4.9.11,CONFIG_IP_DCCP=[my]</pre>
+<pre>   exploit-db: 41458</pre>
+<pre>   author: Andrey 'xairy' Konovalov</pre>
+<br />
+<pre>[+] <span class="bold"><span class="green">[<a href="https://nvd.nist.gov/vuln/detail/CVE-2017-1000253" title="CVE-2017-1000253" target="_blank" >CVE-2017-1000253</a>]</span> PIE_stack_corruption</pre>
+<br />
+<pre>   Details: <a href="https://www.qualys.com/2017/09/26/linux-pie-cve-2017-1000253/cve-2017-1000253.txt" title="https://www.qualys.com/2017/09/26/linux-pie-cve-2017-1000253/cve-2017-1000253.txt" target="_blank" >https://www.qualys.com/2017/09/26/linux-pie-cve-2017-1000253/cve-2017-1000253.txt</a></pre>
+<pre>   Exposure: less probable</pre>
+<pre>   Tags: RHEL=6,RHEL=7{kernel:3.10.0-514.21.2|3.10.0-514.26.1}</pre>
+<pre>   Download URL: <a href="https://www.qualys.com/2017/09/26/linux-pie-cve-2017-1000253/cve-2017-1000253.c" title="https://www.qualys.com/2017/09/26/linux-pie-cve-2017-1000253/cve-2017-1000253.c" target="_blank" >https://www.qualys.com/2017/09/26/linux-pie-cve-2017-1000253/cve-2017-1000253.c</a></pre>
+<pre>   Requirements: pkg=linux-kernel,ver&gt;=3.2,ver&lt;=4.13,x86_64</pre>
+<pre>   exploit-db: 42887</pre>
+<pre>   author: Qualys</pre>
+<br />
+<pre>[+] <span class="bold"><span class="green">[<a href="https://nvd.nist.gov/vuln/detail/CVE-2017-1000112" title="CVE-2017-1000112" target="_blank" >CVE-2017-1000112</a>]</span> NETIF_F_UFO</pre>
+<br />
+<pre>   Details: <a href="http://www.openwall.com/lists/oss-security/2017/08/13/1" title="http://www.openwall.com/lists/oss-security/2017/08/13/1" target="_blank" >http://www.openwall.com/lists/oss-security/2017/08/13/1</a></pre>
+<pre>   Exposure: less probable</pre>
+<pre>   Tags: ubuntu=14.04{kernel:4.4.0-*},ubuntu=16.04{kernel:4.8.0-*}</pre>
+<pre>   Download URL: <a href="https://raw.githubusercontent.com/xairy/kernel-exploits/master/<a href="https://nvd.nist.gov/vuln/detail/CVE-2017-1000112" title="CVE-2017-1000112" target="_blank" >CVE-2017-1000112</a>/poc.c" title="https://raw.githubusercontent.com/xairy/kernel-exploits/master/CVE-2017-1000112/poc.c" target="_blank" >https://raw.githubusercontent.com/xairy/kernel-exploits/master/CVE-2017-1000112/poc.c</a></pre>
+<pre>   ext-url: <a href="https://raw.githubusercontent.com/bcoles/kernel-exploits/master/<a href="https://nvd.nist.gov/vuln/detail/CVE-2017-1000112" title="CVE-2017-1000112" target="_blank" >CVE-2017-1000112</a>/poc.c" title="https://raw.githubusercontent.com/bcoles/kernel-exploits/master/CVE-2017-1000112/poc.c" target="_blank" >https://raw.githubusercontent.com/bcoles/kernel-exploits/master/CVE-2017-1000112/poc.c</a></pre>
+<pre>   Comments: CAP_NET_ADMIN cap or CONFIG_USER_NS=y needed. SMEP/KASLR bypass included. Modified version at 'ext-url' adds support for additional distros/kernels</pre>
+<pre>   Requirements: pkg=linux-kernel,ver&gt;=4.4,ver&lt;=4.13,CONFIG_USER_NS=y,sysctl:kernel.unprivileged_userns_clone==1</pre>
+<pre>   author: Andrey 'xairy' Konovalov (orginal exploit author); Brendan Coles (author of exploit update at 'ext-url')</pre>
+<br />
+<pre>[+] <span class="bold"><span class="green">[<a href="https://nvd.nist.gov/vuln/detail/CVE-2016-9793" title="CVE-2016-9793" target="_blank" >CVE-2016-9793</a>]</span> SO_{SND|RCV}BUFFORCE</pre>
+<br />
+<pre>   Details: <a href="https://github.com/xairy/kernel-exploits/tree/master/<a href="https://nvd.nist.gov/vuln/detail/CVE-2016-9793" title="CVE-2016-9793" target="_blank" >CVE-2016-9793</a>" title="https://github.com/xairy/kernel-exploits/tree/master/CVE-2016-9793" target="_blank" >https://github.com/xairy/kernel-exploits/tree/master/CVE-2016-9793</a></pre>
+<pre>   Exposure: less probable</pre>
+<pre>   Download URL: <a href="https://raw.githubusercontent.com/xairy/kernel-exploits/master/<a href="https://nvd.nist.gov/vuln/detail/CVE-2016-9793" title="CVE-2016-9793" target="_blank" >CVE-2016-9793</a>/poc.c" title="https://raw.githubusercontent.com/xairy/kernel-exploits/master/CVE-2016-9793/poc.c" target="_blank" >https://raw.githubusercontent.com/xairy/kernel-exploits/master/CVE-2016-9793/poc.c</a></pre>
+<pre>   Comments: CAP_NET_ADMIN caps OR CONFIG_USER_NS=y needed. No SMEP/SMAP/KASLR bypass included. Tested in QEMU only</pre>
+<pre>   Requirements: pkg=linux-kernel,ver&gt;=3.11,ver&lt;4.8.14,CONFIG_USER_NS=y,sysctl:kernel.unprivileged_userns_clone==1</pre>
+<pre>   exploit-db: 41995</pre>
+<pre>   author: Andrey 'xairy' Konovalov</pre>
+<br />
+<pre>[+] <span class="bold"><span class="green">[<a href="https://nvd.nist.gov/vuln/detail/CVE-2016-8655" title="CVE-2016-8655" target="_blank" >CVE-2016-8655</a>]</span> chocobo_root</pre>
+<br />
+<pre>   Details: <a href="http://www.openwall.com/lists/oss-security/2016/12/06/1" title="http://www.openwall.com/lists/oss-security/2016/12/06/1" target="_blank" >http://www.openwall.com/lists/oss-security/2016/12/06/1</a></pre>
+<pre>   Exposure: less probable</pre>
+<pre>   Tags: ubuntu=(14.04|16.04){kernel:4.4.0-(21|22|24|28|31|34|36|38|42|43|45|47|51)-generic}</pre>
+<pre>   Download URL: <a href="https://www.exploit-db.com/download/40871" title="https://www.exploit-db.com/download/40871" target="_blank" >https://www.exploit-db.com/download/40871</a></pre>
+<pre>   Comments: CAP_NET_RAW capability is needed OR CONFIG_USER_NS=y needs to be enabled</pre>
+<pre>   Requirements: pkg=linux-kernel,ver&gt;=4.4.0,ver&lt;4.9,CONFIG_USER_NS=y,sysctl:kernel.unprivileged_userns_clone==1</pre>
+<pre>   exploit-db: 40871</pre>
+<pre>   author: rebel</pre>
+<br />
+<pre>[+] <span class="bold"><span class="green">[<a href="https://nvd.nist.gov/vuln/detail/CVE-2016-4557" title="CVE-2016-4557" target="_blank" >CVE-2016-4557</a>]</span> double-fdput()</pre>
+<br />
+<pre>   Details: <a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=808" title="https://bugs.chromium.org/p/project-zero/issues/detail?id=808" target="_blank" >https://bugs.chromium.org/p/project-zero/issues/detail?id=808</a></pre>
+<pre>   Exposure: less probable</pre>
+<pre>   Tags: ubuntu=16.04{kernel:4.4.0-21-generic}</pre>
+<pre>   Download URL: <a href="https://github.com/offensive-security/exploit-database-bin-sploits/raw/master/bin-sploits/39772.zip" title="https://github.com/offensive-security/exploit-database-bin-sploits/raw/master/bin-sploits/39772.zip" target="_blank" >https://github.com/offensive-security/exploit-database-bin-sploits/raw/master/bin-sploits/39772.zip</a></pre>
+<pre>   Comments: CONFIG_BPF_SYSCALL needs to be set &amp;&amp; kernel.unprivileged_bpf_disabled != 1</pre>
+<pre>   Requirements: pkg=linux-kernel,ver&gt;=4.4,ver&lt;4.5.5,CONFIG_BPF_SYSCALL=y,sysctl:kernel.unprivileged_bpf_disabled!=1</pre>
+<pre>   exploit-db: 40759</pre>
+<pre>   author: Jann Horn</pre>
+<br />
+<pre>[</span><span class="green">+</span>]</span><span class="green"> </span><span class="orange">WARNING:</span><span class="green"> Vulnerability </span><span class="orange"><a href="https://nvd.nist.gov/vuln/detail/CVE-2016-5195" title="CVE-2016-5195" target="_blank" >CVE-2016-5195</a></span><span class="green"> is a known exploited vulnerability.</span></pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> </span><span class="orange">WARNING:</span><span class="green"> Vulnerability </span><span class="orange"><a href="https://nvd.nist.gov/vuln/detail/CVE-2016-5195" title="CVE-2016-5195" target="_blank" >CVE-2016-5195</a></span><span class="green"> is a known exploited vulnerability.</span></pre>
+<pre>[</span><span class="green">+</span>]</span><span class="green"> </span><span class="orange">WARNING:</span><span class="green"> Vulnerability </span><span class="orange"><a href="https://nvd.nist.gov/vuln/detail/CVE-2019-13272" title="CVE-2019-13272" target="_blank" >CVE-2019-13272</a></span><span class="green"> is a known exploited vulnerability.</span></pre>
+<br />
+<pre></span><span class="blue">==&gt</span></span> </span><span class="cyan"><a id="checkmodprobeddirectoryandcontent">Check modprobe.d directory and content</a></span></pre>
+<pre><hr class="mono" /></pre>
+<pre>[</span><span class="red">-</span>] No modprobe.d directory found</pre>
+<pre>[</span><span class="red">-</span>] No check for kernel configuration</pre>
+<br />
+<pre></span><span class="blue">==&gt</span></span> </span><span class="cyan"><a id="analyzekernelmodules">Analyze kernel modules</a></span></pre>
+<pre><hr class="mono" /></pre>
+<a class="anc" id="anchor_kernel_modules"></a>
+<pre>[</span><span class="orange">*</span>] Found </span><span class="orange">8</span> kernel modules.</pre>
+<pre>[</span><span class="red">-</span>] Found kernel module </span>/lib/modules/4.4.15/kernel/drivers/usb/gadget/function/usb_f_mtp.ko (-rw-r--r-- root root)  </span><span class="orange">License: GPL</span> - </span><span class="green">NOT STRIPPED</span></pre>
+<pre>[</span><span class="red">-</span>] Found kernel module </span>/lib/modules/4.4.15/kernel/kernel/rcu/rcutorture.ko (-rw-r--r-- root root)  </span><span class="orange">License: GPL</span> - </span><span class="green">NOT STRIPPED</span></pre>
+<pre>[</span><span class="red">-</span>] Found kernel module </span>/lib/modules/4.4.15/kernel/net/packet/af_packet_diag.ko (-rw-r--r-- root root)  </span><span class="orange">License: GPL</span> - </span><span class="green">NOT STRIPPED</span></pre>
+<pre>[</span><span class="red">-</span>] Found kernel module </span>/home/root/murata-driver/bcmdhd.ko (-rw-r--r-- root root)  </span><span class="orange">License: GPLandadditionalrights</span> - </span><span class="green">NOT STRIPPED</span></pre>
+<pre>[</span><span class="red">-</span>] Found kernel module </span>/lib/modules/4.4.15/kernel/net/ipv4/tcp_westwood.ko (-rw-r--r-- root root)  </span><span class="orange">License: GPL</span> - </span><span class="green">NOT STRIPPED</span></pre>
+<pre>[</span><span class="red">-</span>] Found kernel module </span>/lib/modules/4.4.15/kernel/kernel/torture.ko (-rw-r--r-- root root)  </span><span class="orange">License: GPL</span> - </span><span class="green">NOT STRIPPED</span></pre>
+<pre>[</span><span class="red">-</span>] Found kernel module </span>/lib/modules/4.4.15/kernel/fs/configfs/configfs.ko (-rw-r--r-- root root)  </span><span class="orange">License: GPL</span> - </span><span class="green">NOT STRIPPED</span></pre>
+<pre>[</span><span class="red">-</span>] Found kernel module </span>/lib/modules/4.4.15/kernel/drivers/usb/gadget/libcomposite.ko (-rw-r--r-- root root)  </span><span class="orange">License: GPL</span> - </span><span class="green">NOT STRIPPED</span></pre>
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<a href="./s35_http_file_check.html" title="./s35_http_file_check.html" ><div id="buttonBack" class="rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a>
+<a href="./s24_kernel_bin_identifier.html" title="./s24_kernel_bin_identifier.html" ><div id="buttonForward" class="rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/></svg></div> </a>
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+  var embarkButton = document.getElementById("embark");
+  if ( !(embarkButton.href.includes("embarkBackUrl")) ) {
+    embarkButton.classList.remove('hidden');
+    document.getElementById("logoImage").src = "./style/embark.svg";
+    document.getElementById("logo").style.background = "#2d2d2d";
+  }
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

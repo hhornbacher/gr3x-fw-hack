@@ -1,0 +1,433 @@
+<!-- 
+EMBA - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2023 Siemens AG
+Copyright 2020-2023 Siemens Energy AG
+
+EMBA comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+EMBA is licensed under GPLv3
+
+Author(s): Pascal Eckmann
+Contributor(s): Michael Messner, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div id="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" id="logoImage" src="./../style/emba.svg" alt="logo"></a>
+  </div>
+  <div id="nav">
+      <a id="embark" class="hidden" href="{{ embarkBackUrl }}">&laquo; Back to EMBArk</a> <!-- nosem -->
+      <a class="backButton" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s15_radare_decompile_checks.html" title="./../s15_radare_decompile_checks.html" >&laquo; Back to s15_radare_decompile_checks</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">libc-2.24.so</span></pre>
+<br />
+<pre>  </pre>
+<pre>  	<span class="orange">Partial RELRO</span>  <span class="green">Canary found</span>      <span class="green">NX enabled</span>   <span class="orange">DSO</span>          <span class="green">No RPATH</span>     <span class="green">No RUNPATH</span>   <span class="green">No Symbols</pre>
+<br />
+<pre></span></pre>
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">sprintf</span> tear down of </span><span class="orange">libc-2.24.so</span></pre>
+<br />
+<pre>    ; assembly                               | /* r2dec pseudo code output */</pre>
+<pre>                                             | /* /logs/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/lib/libc-2.24.so &commat; 0x4532c9ac */</pre>
+<pre>                                             | #include &lt;stdint.h&gt;</pre>
+<pre>                                             |  </pre>
+<pre>    ; (fcn) sym.argp_error ()                | void argp_error (void * arg1) {</pre>
+<pre>                                             |     int32_t var_0h_2;</pre>
+<pre>                                             |     int32_t var_4h;</pre>
+<pre>                                             |     int32_t var_1ch;</pre>
+<pre>                                             |     int32_t var_20h;</pre>
+<pre>                                             |     r0 = arg1;</pre>
+<pre>    0x4532c9ac push {r1, r2, r3}             |     </pre>
+<pre>    0x4532c9b0 push {r4, r5, r6, lr}         |     </pre>
+<pre>    0x4532c9b4 subs r4, r0, 0                |     r4 -= var_0h_2;</pre>
+<pre>    0x4532c9b8 ldr r6, [pc, 0xbc]            |     r6 = *(0x4532ca78);</pre>
+<pre>    0x4532c9bc sub sp, sp, 0xc               |     </pre>
+<pre>    0x4532c9c0 add r6, pc, r6                |     r6 = pc + r6;</pre>
+<pre>                                             |     if (r4 == var_0h_2) {</pre>
+<pre>    0x4532c9c4 beq 0x4532ca6c                |         goto label_1;</pre>
+<pre>                                             |     }</pre>
+<pre>    0x4532c9c8 ldr r3, [r4, 0x10]            |     r3 = *((r4 + 0x10));</pre>
+<pre>    0x4532c9cc tst r3, 2                     |     </pre>
+<pre>                                             |     if ((r3 &amp; 2) != 0) {</pre>
+<pre>    0x4532c9d0 ldreq r5, [r4, 0x2c]          |         r5 = *((r4 + 0x2c));</pre>
+<pre>                                             |     }</pre>
+<pre>                                             |     if ((r3 &amp; 2) != 0) {</pre>
+<pre>    0x4532c9d4 bne 0x4532ca4c                |         goto label_2;</pre>
+<pre>                                             |     }</pre>
+<pre>                                             | label_0:</pre>
+<pre>    0x4532c9d8 cmp r5, 0                     |     </pre>
+<pre>                                             |     if (r5 == 0) {</pre>
+<pre>    0x4532c9dc beq 0x4532ca4c                |         goto label_2;</pre>
+<pre>                                             |     }</pre>
+<pre>    0x4532c9e0 mov r0, r5                    |     r0 = r5;</pre>
+<pre>    0x4532c9e4 bl 0x452a9490                 |     flockfile ();</pre>
+<pre>    0x4532c9e8 add r3, sp, 0x20              |     r3 += var_20h;</pre>
+<pre>    0x4532c9ec ldr r1, [sp, 0x1c]            |     r1 = var_1ch;</pre>
+<pre>    0x4532c9f0 add r0, sp, 4                 |     r0 += var_4h;</pre>
+<pre>    0x4532c9f4 mov r2, r3                    |     r2 = r3;</pre>
+<pre>    0x4532c9f8 str r3, [sp]                  |     *(sp) = r3;</pre>
+<pre><span class="red">    0x4532c9fc bl 0x452b5350                 |     r0 = vasprintf ()</span></span></pre>
+<pre>    0x4532ca00 cmp r0, 0                     |     </pre>
+<pre>                                             |     if (r0 &gt;= 0) {</pre>
+<pre>    0x4532ca04 movlt r3, 0                   |         r3 = 0;</pre>
+<pre>                                             |     }</pre>
+<pre>                                             |     if (r0 &lt; 0) {</pre>
+<pre>    0x4532ca08 ldrge r3, [sp, 4]             |         r3 = var_4h;</pre>
+<pre>                                             |     }</pre>
+<pre>                                             |     if (r0 &gt;= 0) {</pre>
+<pre>    0x4532ca0c strlt r3, [sp, 4]             |         var_4h = r3;</pre>
+<pre>                                             |     }</pre>
+<pre>    0x4532ca10 cmp r4, 0                     |     </pre>
+<pre>                                             |     if (r4 == 0) {</pre>
+<pre>    0x4532ca14 beq 0x4532ca5c                |         goto label_3;</pre>
+<pre>                                             |     }</pre>
+<pre>    0x4532ca18 ldr r2, [r4, 0x28]            |     r2 = *((r4 + 0x28));</pre>
+<pre>                                             |     do {</pre>
+<pre>    0x4532ca1c ldr r1, [pc, 0x5c]            |         r1 = *(0x4532ca7c);</pre>
+<pre>    0x4532ca20 mov r0, r5                    |         r0 = r5;</pre>
+<pre>    0x4532ca24 add r1, pc, r1                |         r1 = pc + r1;</pre>
+<pre>    0x4532ca28 bl 0x452ab4bc                 |         fcn_452ab4bc (r0);</pre>
+<pre>    0x4532ca2c ldr r0, [sp, 4]               |         r0 = var_4h;</pre>
+<pre>    0x4532ca30 bl 0x452673c0                 |         fcn_452673c0 ();</pre>
+<pre>    0x4532ca34 mov r0, r4                    |         r0 = r4;</pre>
+<pre>    0x4532ca38 mov r2, 0x104                 |         r2 = 0x104;</pre>
+<pre>    0x4532ca3c mov r1, r5                    |         r1 = r5;</pre>
+<pre>    0x4532ca40 bl 0x4532c8e8                 |         argp_state_help ();</pre>
+<pre>    0x4532ca44 mov r0, r5                    |         r0 = r5;</pre>
+<pre>    0x4532ca48 bl 0x452a9584                 |         IO_funlockfile ();</pre>
+<pre>                                             | label_2:</pre>
+<pre>    0x4532ca4c add sp, sp, 0xc               |         </pre>
+<pre>    0x4532ca50 pop {r4, r5, r6, lr}          |         </pre>
+<pre>    0x4532ca54 add sp, sp, 0xc               |         </pre>
+<pre>    0x4532ca58 bx lr                         |         return;</pre>
+<pre>                                             | label_3:</pre>
+<pre>    0x4532ca5c ldr r2, [pc, 0x20]            |         </pre>
+<pre>    0x4532ca60 ldr r2, [r6, r2]              |         r2 = *((r6 + r2));</pre>
+<pre>    0x4532ca64 ldr r2, [r2]                  |         r2 = *(0x4532ca80);</pre>
+<pre>    0x4532ca68 b 0x4532ca1c                  |         </pre>
+<pre>                                             |     } while (1);</pre>
+<pre>                                             | label_1:</pre>
+<pre>    0x4532ca6c ldr r3, [pc, 0x14]            |     r3 = *(0x4532ca84);</pre>
+<pre>    0x4532ca70 ldr r3, [r6, r3]              |     r3 = *((r6 + r3));</pre>
+<pre>    0x4532ca74 ldr r5, [r3]                  |     r5 = *(0x4532ca84);</pre>
+<pre>    0x4532ca78 b 0x4532c9d8                  |     goto label_0;</pre>
+<pre>                                             | }</pre>
+<pre>    ; assembly                                       | /* r2dec pseudo code output */</pre>
+<pre>                                                     | /* /logs/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/lib/libc-2.24.so &commat; 0x4532b394 */</pre>
+<pre>                                                     | #include &lt;stdint.h&gt;</pre>
+<pre>                                                     |  </pre>
+<pre>    ; (fcn) sym.argp_failure ()                      | void argp_failure (int32_t arg_ech, int32_t arg_f0h, int32_t arg1, int32_t arg2) {</pre>
+<pre>                                                     |     int32_t var_4h;</pre>
+<pre>                                                     |     int32_t var_8h_2;</pre>
+<pre>                                                     |     int32_t var_8h;</pre>
+<pre>                                                     |     int32_t var_d4h;</pre>
+<pre>                                                     |     int32_t var_ech;</pre>
+<pre>                                                     |     r0 = arg1;</pre>
+<pre>                                                     |     r1 = arg2;</pre>
+<pre>    0x4532b394 str r3, [sp, -4]!                     |     *((sp -= 4)) = r3;</pre>
+<pre>    0x4532b398 push {r4, r5, r6, r7, r8, lr}         |     </pre>
+<pre>    0x4532b39c subs r5, r0, 0                        |     r5 -= arg_ech;</pre>
+<pre>    0x4532b3a0 ldr r6, [pc, 0x16c]                   |     r6 = *(0x4532b510);</pre>
+<pre>    0x4532b3a4 sub sp, sp, 0xd4                      |     </pre>
+<pre>    0x4532b3a8 mov r8, r1                            |     r8 = r1;</pre>
+<pre>    0x4532b3ac mov r7, r2                            |     r7 = r2;</pre>
+<pre>    0x4532b3b0 add r6, pc, r6                        |     r6 = pc + r6;</pre>
+<pre>                                                     |     if (r5 == arg_ech) {</pre>
+<pre>    0x4532b3b4 beq 0x4532b4e0                        |         goto label_4;</pre>
+<pre>                                                     |     }</pre>
+<pre>    0x4532b3b8 ldr r3, [r5, 0x10]                    |     r3 = *((r5 + 0x10));</pre>
+<pre>    0x4532b3bc tst r3, 2                             |     </pre>
+<pre>                                                     |     if ((r3 &amp; 2) != 0) {</pre>
+<pre>    0x4532b3c0 bne 0x4532b478                        |         goto label_2;</pre>
+<pre>                                                     |     }</pre>
+<pre>    0x4532b3c4 ldr r4, [r5, 0x2c]                    |     r4 = *((r5 + 0x2c));</pre>
+<pre>    0x4532b3c8 cmp r4, 0                             |     </pre>
+<pre>                                                     |     if (r4 == 0) {</pre>
+<pre>    0x4532b3cc beq 0x4532b478                        |         goto label_2;</pre>
+<pre>                                                     |     }</pre>
+<pre>    0x4532b3d0 mov r0, r4                            |     r0 = r4;</pre>
+<pre>    0x4532b3d4 bl 0x452a9490                         |     flockfile ();</pre>
+<pre>    0x4532b3d8 ldr r2, [r5, 0x28]                    |     r2 = *((r5 + 0x28));</pre>
+<pre>                                                     | label_3:</pre>
+<pre>    0x4532b3dc ldr r1, [pc, 0x134]                   |     r1 = "H";</pre>
+<pre>    0x4532b3e0 mov r0, r4                            |     r0 = r4;</pre>
+<pre>    0x4532b3e4 add r1, pc, r1                        |     r1 = pc + r1;</pre>
+<pre>    0x4532b3e8 bl 0x452ab4bc                         |     fcn_452ab4bc (r0);</pre>
+<pre>    0x4532b3ec ldr r3, [sp, 0xec]                    |     r3 = *(arg_ech);</pre>
+<pre>    0x4532b3f0 cmp r3, 0                             |     </pre>
+<pre>                                                     |     if (r3 != 0) {</pre>
+<pre>    0x4532b3f4 beq 0x4532b434                        |         </pre>
+<pre>    0x4532b3f8 add r2, sp, 0xf0                      |         r2 += arg_f0h;</pre>
+<pre>    0x4532b3fc mov r1, r3                            |         r1 = r3;</pre>
+<pre>    0x4532b400 add r0, sp, 8                         |         r0 += var_8h;</pre>
+<pre>    0x4532b404 str r2, [sp, 4]                       |         var_4h = r2;</pre>
+<pre><span class="red">    0x4532b408 bl 0x452b5350                         |         vasprintf ()</span></span></pre>
+<pre>    0x4532b40c ldr r1, [pc, 0x108]                   |         r1 = *(0x4532b518);</pre>
+<pre>    0x4532b410 add r1, pc, r1                        |         r1 = pc + r1;</pre>
+<pre>    0x4532b414 cmp r0, 0                             |         </pre>
+<pre>    0x4532b418 mov r0, r4                            |         r0 = r4;</pre>
+<pre>                                                     |         if (r0 &gt;= 0) {</pre>
+<pre>    0x4532b41c movlt r2, 0                           |             r2 = 0;</pre>
+<pre>                                                     |         }</pre>
+<pre>                                                     |         if (r0 &lt; 0) {</pre>
+<pre>    0x4532b420 ldrge r2, [sp, 8]                     |             r2 = var_8h;</pre>
+<pre>                                                     |         }</pre>
+<pre>                                                     |         if (r0 &gt;= 0) {</pre>
+<pre>    0x4532b424 strlt r2, [sp, 8]                     |             var_8h = r2;</pre>
+<pre>                                                     |         }</pre>
+<pre>    0x4532b428 bl 0x452ab4bc                         |         fcn_452ab4bc (r0);</pre>
+<pre>    0x4532b42c ldr r0, [sp, 8]                       |         r0 = var_8h;</pre>
+<pre>    0x4532b430 bl 0x452673c0                         |         fcn_452673c0 ();</pre>
+<pre>                                                     |     }</pre>
+<pre>    0x4532b434 cmp r7, 0                             |     </pre>
+<pre>                                                     |     if (r7 != 0) {</pre>
+<pre>    0x4532b438 bne 0x4532b4b8                        |         goto label_5;</pre>
+<pre>                                                     |     }</pre>
+<pre>                                                     | label_1:</pre>
+<pre>    0x4532b43c ldr r3, [r4, 0x6c]                    |     r3 = *((r4 + 0x6c));</pre>
+<pre>    0x4532b440 cmp r3, 0                             |     </pre>
+<pre>                                                     |     if (r3 &lt;= 0) {</pre>
+<pre>    0x4532b444 ble 0x4532b488                        |         goto label_6;</pre>
+<pre>                                                     |     }</pre>
+<pre>    0x4532b448 mov r1, r4                            |     r1 = r4;</pre>
+<pre>    0x4532b44c mov r0, 0xa                           |     r0 = 0xa;</pre>
+<pre>    0x4532b450 bl 0x452b027c                         |     putwc_unlocked ();</pre>
+<pre>                                                     |     do {</pre>
+<pre>                                                     | label_0:</pre>
+<pre>    0x4532b454 mov r0, r4                            |         r0 = r4;</pre>
+<pre>    0x4532b458 bl 0x452a9584                         |         IO_funlockfile ();</pre>
+<pre>    0x4532b45c cmp r8, 0                             |         </pre>
+<pre>                                                     |         if (r8 != 0) {</pre>
+<pre>    0x4532b460 beq 0x4532b478                        |             </pre>
+<pre>    0x4532b464 cmp r5, 0                             |             </pre>
+<pre>                                                     |             if (r5 == 0) {</pre>
+<pre>    0x4532b468 beq 0x4532b50c                        |                 goto label_7;</pre>
+<pre>                                                     |             }</pre>
+<pre>    0x4532b46c ldr r3, [r5, 0x10]                    |             r3 = *((r5 + 0x10));</pre>
+<pre>    0x4532b470 tst r3, 0x20                          |             </pre>
+<pre>                                                     |             if ((r3 &amp; 0x20) == 0) {</pre>
+<pre>    0x4532b474 beq 0x4532b50c                        |                 goto label_7;</pre>
+<pre>                                                     |             }</pre>
+<pre>                                                     |         }</pre>
+<pre>                                                     | label_2:</pre>
+<pre>    0x4532b478 add sp, sp, 0xd4                      |         </pre>
+<pre>    0x4532b47c pop {r4, r5, r6, r7, r8, lr}          |         </pre>
+<pre>    0x4532b480 add sp, sp, 4                         |         </pre>
+<pre>    0x4532b484 bx lr                                 |         return;</pre>
+<pre>                                                     | label_6:</pre>
+<pre>    0x4532b488 ldr r3, [r4, 0x14]                    |         r3 = *((r4 + 0x14));</pre>
+<pre>    0x4532b48c ldr r2, [r4, 0x18]                    |         r2 = *((r4 + 0x18));</pre>
+<pre>    0x4532b490 cmp r3, r2                            |         </pre>
+<pre>                                                     |         if (r3 &gt;= r2) {</pre>
+<pre>    0x4532b494 addlo r1, r3, 1                       |             r1 = r3 + 1;</pre>
+<pre>                                                     |         }</pre>
+<pre>                                                     |         if (r3 &gt;= r2) {</pre>
+<pre>    0x4532b498 strlo r1, [r4, 0x14]                  |             *((r4 + 0x14)) = r1;</pre>
+<pre>                                                     |         }</pre>
+<pre>                                                     |         if (r3 &gt;= r2) {</pre>
+<pre>    0x4532b49c movlo r2, 0xa                         |             r2 = 0xa;</pre>
+<pre>                                                     |         }</pre>
+<pre>                                                     |         if (r3 &gt;= r2) {</pre>
+<pre>    0x4532b4a0 strblo r2, [r3]                       |             *(r3) = r2;</pre>
+<pre>                                                     |         }</pre>
+<pre>    0x4532b4a4 blo 0x4532b454                        |         </pre>
+<pre>                                                     |     } while (r3 &lt;= r2);</pre>
+<pre>    0x4532b4a8 mov r1, 0xa                           |     r1 = 0xa;</pre>
+<pre>    0x4532b4ac mov r0, r4                            |     r0 = r4;</pre>
+<pre>    0x4532b4b0 bl 0x452baa34                         |     overflow ();</pre>
+<pre>    0x4532b4b4 b 0x4532b454                          |     goto label_0;</pre>
+<pre>                                                     | label_5:</pre>
+<pre>    0x4532b4b8 add r1, sp, 8                         |     r1 += var_8h;</pre>
+<pre>    0x4532b4bc mov r0, r7                            |     r0 = r7;</pre>
+<pre>    0x4532b4c0 mov r2, 0xc8                          |     r2 = 0xc8;</pre>
+<pre>    0x4532b4c4 bl 0x452c6358                         |     strerror_r ();</pre>
+<pre>    0x4532b4c8 ldr r1, [pc, 0x50]                    |     r1 = *(0x4532b51c);</pre>
+<pre>    0x4532b4cc add r1, pc, r1                        |     r1 = pc + r1;</pre>
+<pre>    0x4532b4d0 mov r2, r0                            |     r2 = r0;</pre>
+<pre>    0x4532b4d4 mov r0, r4                            |     r0 = r4;</pre>
+<pre>    0x4532b4d8 bl 0x452ab4bc                         |     fcn_452ab4bc (r0);</pre>
+<pre>    0x4532b4dc b 0x4532b43c                          |     goto label_1;</pre>
+<pre>                                                     | label_4:</pre>
+<pre>    0x4532b4e0 ldr r3, [pc, 0x3c]                    |     r3 = *(0x4532b520);</pre>
+<pre>    0x4532b4e4 ldr r3, [r6, r3]                      |     r3 = *((r6 + r3));</pre>
+<pre>    0x4532b4e8 ldr r4, [r3]                          |     r4 = *(0x4532b520);</pre>
+<pre>    0x4532b4ec cmp r4, 0                             |     </pre>
+<pre>                                                     |     if (r4 == 0) {</pre>
+<pre>    0x4532b4f0 beq 0x4532b478                        |         goto label_2;</pre>
+<pre>                                                     |     }</pre>
+<pre>    0x4532b4f4 mov r0, r4                            |     r0 = r4;</pre>
+<pre>    0x4532b4f8 bl 0x452a9490                         |     flockfile ();</pre>
+<pre>    0x4532b4fc ldr r3, [pc, 0x24]                    |     r3 = *(0x4532b524);</pre>
+<pre>    0x4532b500 ldr r3, [r6, r3]                      |     r3 = *((r6 + r3));</pre>
+<pre>    0x4532b504 ldr r2, [r3]                          |     r2 = *(0x4532b524);</pre>
+<pre>    0x4532b508 b 0x4532b3dc                          |     goto label_3;</pre>
+<pre>                                                     | label_7:</pre>
+<pre>    0x4532b50c mov r0, r8                            |     r0 = r8;</pre>
+<pre>    0x4532b510 bl 0x4527f04c                         |     exit (r0);</pre>
+<pre>                                                     |     if (r4 != 0) {</pre>
+<pre>    0x4532b514 andeq r0, r6, r8, asr 32              |         r0 = r6 &amp; (r8 &gt;&gt; 32);</pre>
+<pre>                                                     |     }</pre>
+<pre>    0x4532b518 strdeq r8, sb, [r4], -ip              |     __asm ("strdeq r8, sb, [r4], -ip");</pre>
+<pre>                                                     |     if (r4 != 0) {</pre>
+<pre>    0x4532b51c muleq r4, ip, lr                      |         r4 = ip * lr;</pre>
+<pre>                                                     |     }</pre>
+<pre>                                                     |     if (r4 != 0) {</pre>
+<pre>    0x4532b520 andeq r6, r4, r0, ror 27              |         r6 = r4 &amp; (r0 &gt;&gt;&gt; 27);</pre>
+<pre>                                                     |     }</pre>
+<pre>                                                     |     if (r4 != 0) {</pre>
+<pre>    0x4532b524 andeq r0, r0, r8, asr 32              |         r0 &amp;= (r8 &gt;&gt; 32);</pre>
+<pre>                                                     |     }</pre>
+<pre>                                                     |     /* Beware that this jump is a conditional jump.</pre>
+<pre>                                                     |      * r2dec transformed it as a return, due being the</pre>
+<pre>                                                     |      * last instruction. Please, check 'pdda' output</pre>
+<pre>                                                     |      * for more hints. */</pre>
+<pre>    0x4532b528 andeq r0, r0, r8, lsr 2               |     return r0 &amp;= (r8 &gt;&gt; 2);</pre>
+<pre>                                                     | }</pre>
+<pre>    ; assembly                           | /* r2dec pseudo code output */</pre>
+<pre>                                         | /* /logs/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/lib/libc-2.24.so &commat; 0x45297aac */</pre>
+<pre>                                         | #include &lt;stdint.h&gt;</pre>
+<pre>                                         |  </pre>
+<pre><span class="red">    ; (fcn) sym.asprintf ()              | void asprintf (int32_t arg1) {</span></pre>
+<pre>                                         |     int32_t var_4h_2;</pre>
+<pre>                                         |     int32_t var_4h;</pre>
+<pre>                                         |     int32_t var_ch_2;</pre>
+<pre>                                         |     int32_t var_ch;</pre>
+<pre>                                         |     int32_t var_10h;</pre>
+<pre>                                         |     r0 = arg1;</pre>
+<pre>    0x45297aac push {r1, r2, r3}         |     </pre>
+<pre>    0x45297ab0 str lr, [sp, -4]!         |     </pre>
+<pre>    0x45297ab4 sub sp, sp, 8             |     </pre>
+<pre>    0x45297ab8 add r2, sp, 0x10          |     r2 += var_10h;</pre>
+<pre>    0x45297abc ldr r1, [sp, 0xc]         |     r1 = var_ch;</pre>
+<pre>    0x45297ac0 str r2, [sp, 4]           |     var_4h = r2;</pre>
+<pre><span class="red">    0x45297ac4 bl 0x452b5350             |     vasprintf ()</span></span></pre>
+<pre>    0x45297ac8 add sp, sp, 8             |     </pre>
+<pre>    0x45297acc pop {lr}                  |     </pre>
+<pre>    0x45297ad0 add sp, sp, 0xc           |     </pre>
+<pre>    0x45297ad4 bx lr                     |     return;</pre>
+<pre>                                         | }</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">sprintf</span> used </span><span class="orange">5</span> times </span><span class="orange">libc-2.24.so</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+  var embarkButton = document.getElementById("embark");
+  if ( !(embarkButton.href.includes("embarkBackUrl")) ) {
+    embarkButton.classList.remove('hidden');
+    document.getElementById("logoImage").src = "./../style/embark.svg";
+    document.getElementById("logo").style.background = "#2d2d2d";
+  }
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

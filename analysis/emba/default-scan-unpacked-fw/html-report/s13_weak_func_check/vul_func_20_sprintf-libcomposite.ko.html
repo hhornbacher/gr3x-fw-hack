@@ -1,0 +1,441 @@
+<!-- 
+EMBA - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2023 Siemens AG
+Copyright 2020-2023 Siemens Energy AG
+
+EMBA comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+EMBA is licensed under GPLv3
+
+Author(s): Pascal Eckmann
+Contributor(s): Michael Messner, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div id="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" id="logoImage" src="./../style/emba.svg" alt="logo"></a>
+  </div>
+  <div id="nav">
+      <a id="embark" class="hidden" href="{{ embarkBackUrl }}">&laquo; Back to EMBArk</a> <!-- nosem -->
+      <a class="backButton" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s13_weak_func_check.html" title="./../s13_weak_func_check.html" >&laquo; Back to s13_weak_func_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">libcomposite.ko</span></pre>
+<br />
+<pre>  </pre>
+<pre>  	<span class="red">No RELRO</span>       <span class="red">No Canary found</span>   <span class="red">NX disabled</span>  <span class="orange">REL</span>          <span class="green">No RPATH</span>     <span class="green">No RUNPATH</span>   <span class="red">Symbols</span></pre>
+<br />
+<pre></span></pre>
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">sprintf</span> tear down of </span><span class="orange">libcomposite.ko</span></pre>
+<br />
+<pre>     bfc:	8803      	ldrh	r3, [r0, #0]</pre>
+<pre>     bfe:	42b3      	cmp	r3, r6</pre>
+<pre>     c00:	d1f9      	bne.n	bf6 &lt;lookup_string+0xa&gt;</pre>
+<pre>     c02:	462a      	mov	r2, r5</pre>
+<pre>     c04:	4639      	mov	r1, r7</pre>
+<pre>     c06:	f7ff fffe 	bl	0 &lt;usb_gadget_get_string&gt;</pre>
+<pre>     c0a:	2800      	cmp	r0, #0</pre>
+<pre>     c0c:	ddf3      	ble.n	bf6 &lt;lookup_string+0xa&gt;</pre>
+<pre>     c0e:	e001      	b.n	c14 &lt;lookup_string+0x28&gt;</pre>
+<pre>     c10:	f06f 0015 	mvn.w	r0, #21</pre>
+<pre>     c14:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}</pre>
+<br />
+<pre>00000c16 &lt;suspended_show&gt;:</pre>
+<pre>     c16:	b508      	push	{r3, lr}</pre>
+<pre>     c18:	4613      	mov	r3, r2</pre>
+<pre>     c1a:	6d82      	ldr	r2, [r0, #88]	; 0x58</pre>
+<pre>     c1c:	4618      	mov	r0, r3</pre>
+<pre>     c1e:	4904      	ldr	r1, [pc, #16]	; (c30 &lt;suspended_show+0x1a&gt;)</pre>
+<pre>     c20:	f892 2024 	ldrb.w	r2, [r2, #36]	; 0x24</pre>
+<pre>     c24:	f3c2 0240 	ubfx	r2, r2, #1, #1</pre>
+<pre><span class="red">     c28:	f7ff fffe 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>     c2c:	bd08      	pop	{r3, pc}</pre>
+<pre>     c2e:	bf00      	nop</pre>
+<pre>--</pre>
+<pre>    27a2:	f7ff fffe 	bl	0 &lt;kstrtou8&gt;</pre>
+<pre>    27a6:	b958      	cbnz	r0, 27c0 &lt;gadget_config_desc_bmAttributes_store+0x2c&gt;</pre>
+<pre>    27a8:	f89d 3007 	ldrb.w	r3, [sp, #7]</pre>
+<pre>    27ac:	0619      	lsls	r1, r3, #24</pre>
+<pre>    27ae:	d505      	bpl.n	27bc &lt;gadget_config_desc_bmAttributes_store+0x28&gt;</pre>
+<pre>    27b0:	06da      	lsls	r2, r3, #27</pre>
+<pre>    27b2:	d103      	bne.n	27bc &lt;gadget_config_desc_bmAttributes_store+0x28&gt;</pre>
+<pre>    27b4:	f885 30ae 	strb.w	r3, [r5, #174]	; 0xae</pre>
+<pre>    27b8:	4620      	mov	r0, r4</pre>
+<pre>    27ba:	e001      	b.n	27c0 &lt;gadget_config_desc_bmAttributes_store+0x2c&gt;</pre>
+<pre>    27bc:	f06f 0015 	mvn.w	r0, #21</pre>
+<pre>    27c0:	b003      	add	sp, #12</pre>
+<pre>    27c2:	bd30      	pop	{r4, r5, pc}</pre>
+<br />
+<pre>000027c4 &lt;ext_prop_type_show&gt;:</pre>
+<pre>    27c4:	b508      	push	{r3, lr}</pre>
+<pre>    27c6:	460b      	mov	r3, r1</pre>
+<pre>    27c8:	f810 2c14 	ldrb.w	r2, [r0, #-20]</pre>
+<pre>    27cc:	4618      	mov	r0, r3</pre>
+<pre>    27ce:	4902      	ldr	r1, [pc, #8]	; (27d8 &lt;ext_prop_type_show+0x14&gt;)</pre>
+<pre><span class="red">    27d0:	f7ff fffe 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    27d4:	bd08      	pop	{r3, pc}</pre>
+<pre>    27d6:	bf00      	nop</pre>
+<pre>--</pre>
+<pre>    27e8:	4628      	mov	r0, r5</pre>
+<pre>    27ea:	f7ff fffe 	bl	0 &lt;_raw_spin_lock_irqsave&gt;</pre>
+<pre>    27ee:	f8d4 3238 	ldr.w	r3, [r4, #568]	; 0x238</pre>
+<pre>    27f2:	4601      	mov	r1, r0</pre>
+<pre>    27f4:	b93b      	cbnz	r3, 2806 &lt;state_show+0x2a&gt;</pre>
+<pre>    27f6:	f894 32a0 	ldrb.w	r3, [r4, #672]	; 0x2a0</pre>
+<pre>    27fa:	4a09      	ldr	r2, [pc, #36]	; (2820 &lt;state_show+0x44&gt;)</pre>
+<pre>    27fc:	4c09      	ldr	r4, [pc, #36]	; (2824 &lt;state_show+0x48&gt;)</pre>
+<pre>    27fe:	2b00      	cmp	r3, #0</pre>
+<pre>    2800:	bf18      	it	ne</pre>
+<pre>    2802:	4614      	movne	r4, r2</pre>
+<pre>    2804:	e000      	b.n	2808 &lt;state_show+0x2c&gt;</pre>
+<pre>    2806:	4c08      	ldr	r4, [pc, #32]	; (2828 &lt;state_show+0x4c&gt;)</pre>
+<pre>    2808:	4628      	mov	r0, r5</pre>
+<pre>    280a:	f7ff fffe 	bl	0 &lt;_raw_spin_unlock_irqrestore&gt;</pre>
+<pre>    280e:	e000      	b.n	2812 &lt;state_show+0x36&gt;</pre>
+<pre>    2810:	4c04      	ldr	r4, [pc, #16]	; (2824 &lt;state_show+0x48&gt;)</pre>
+<pre>    2812:	4622      	mov	r2, r4</pre>
+<pre>    2814:	4905      	ldr	r1, [pc, #20]	; (282c &lt;state_show+0x50&gt;)</pre>
+<pre>    2816:	4630      	mov	r0, r6</pre>
+<pre><span class="red">    2818:	f7ff fffe 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    281c:	bd70      	pop	{r4, r5, r6, pc}</pre>
+<pre>    281e:	bf00      	nop</pre>
+<pre>    2820:	0000036f 	.word	0x0000036f</pre>
+<pre>    2824:	00000362 	.word	0x00000362</pre>
+<pre>    2828:	00000357 	.word	0x00000357</pre>
+<pre>    282c:	00000379 	.word	0x00000379</pre>
+<br />
+<pre>00002830 &lt;gadget_dev_desc_UDC_show&gt;:</pre>
+<pre>    2830:	b508      	push	{r3, lr}</pre>
+<pre>    2832:	460b      	mov	r3, r1</pre>
+<pre>    2834:	f8d0 219c 	ldr.w	r2, [r0, #412]	; 0x19c</pre>
+<pre>    2838:	4618      	mov	r0, r3</pre>
+<pre>    283a:	4904      	ldr	r1, [pc, #16]	; (284c &lt;gadget_dev_desc_UDC_show+0x1c&gt;)</pre>
+<pre>    283c:	2a00      	cmp	r2, #0</pre>
+<pre>    283e:	bf08      	it	eq</pre>
+<pre>    2840:	460a      	moveq	r2, r1</pre>
+<pre>    2842:	4903      	ldr	r1, [pc, #12]	; (2850 &lt;gadget_dev_desc_UDC_show+0x20&gt;)</pre>
+<pre><span class="red">    2844:	f7ff fffe 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2848:	bd08      	pop	{r3, pc}</pre>
+<pre>    284a:	bf00      	nop</pre>
+<pre>    284c:	0000037d 	.word	0x0000037d</pre>
+<pre>    2850:	00000379 	.word	0x00000379</pre>
+<br />
+<pre>00002854 &lt;gadget_dev_desc_bcdUSB_show&gt;:</pre>
+<pre>    2854:	b508      	push	{r3, lr}</pre>
+<pre>    2856:	460b      	mov	r3, r1</pre>
+<pre>    2858:	f8b0 2253 	ldrh.w	r2, [r0, #595]	; 0x253</pre>
+<pre>    285c:	4618      	mov	r0, r3</pre>
+<pre>    285e:	4902      	ldr	r1, [pc, #8]	; (2868 &lt;gadget_dev_desc_bcdUSB_show+0x14&gt;)</pre>
+<pre><span class="red">    2860:	f7ff fffe 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2864:	bd08      	pop	{r3, pc}</pre>
+<pre>    2866:	bf00      	nop</pre>
+<pre>    2868:	0000037e 	.word	0x0000037e</pre>
+<br />
+<pre>0000286c &lt;gadget_dev_desc_bcdDevice_show&gt;:</pre>
+<pre>    286c:	b508      	push	{r3, lr}</pre>
+<pre>    286e:	460b      	mov	r3, r1</pre>
+<pre>    2870:	f8b0 225d 	ldrh.w	r2, [r0, #605]	; 0x25d</pre>
+<pre>    2874:	4618      	mov	r0, r3</pre>
+<pre>    2876:	4902      	ldr	r1, [pc, #8]	; (2880 &lt;gadget_dev_desc_bcdDevice_show+0x14&gt;)</pre>
+<pre><span class="red">    2878:	f7ff fffe 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    287c:	bd08      	pop	{r3, pc}</pre>
+<pre>    287e:	bf00      	nop</pre>
+<pre>    2880:	0000037e 	.word	0x0000037e</pre>
+<br />
+<pre>00002884 &lt;gadget_dev_desc_idProduct_show&gt;:</pre>
+<pre>    2884:	b508      	push	{r3, lr}</pre>
+<pre>    2886:	460b      	mov	r3, r1</pre>
+<pre>    2888:	f8b0 225b 	ldrh.w	r2, [r0, #603]	; 0x25b</pre>
+<pre>    288c:	4618      	mov	r0, r3</pre>
+<pre>    288e:	4902      	ldr	r1, [pc, #8]	; (2898 &lt;gadget_dev_desc_idProduct_show+0x14&gt;)</pre>
+<pre><span class="red">    2890:	f7ff fffe 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2894:	bd08      	pop	{r3, pc}</pre>
+<pre>    2896:	bf00      	nop</pre>
+<pre>    2898:	0000037e 	.word	0x0000037e</pre>
+<br />
+<pre>0000289c &lt;gadget_dev_desc_idVendor_show&gt;:</pre>
+<pre>    289c:	b508      	push	{r3, lr}</pre>
+<pre>    289e:	460b      	mov	r3, r1</pre>
+<pre>    28a0:	f8b0 2259 	ldrh.w	r2, [r0, #601]	; 0x259</pre>
+<pre>    28a4:	4618      	mov	r0, r3</pre>
+<pre>    28a6:	4902      	ldr	r1, [pc, #8]	; (28b0 &lt;gadget_dev_desc_idVendor_show+0x14&gt;)</pre>
+<pre><span class="red">    28a8:	f7ff fffe 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    28ac:	bd08      	pop	{r3, pc}</pre>
+<pre>    28ae:	bf00      	nop</pre>
+<pre>    28b0:	0000037e 	.word	0x0000037e</pre>
+<br />
+<pre>000028b4 &lt;gadget_dev_desc_bMaxPacketSize0_show&gt;:</pre>
+<pre>    28b4:	b508      	push	{r3, lr}</pre>
+<pre>    28b6:	460b      	mov	r3, r1</pre>
+<pre>    28b8:	f890 2258 	ldrb.w	r2, [r0, #600]	; 0x258</pre>
+<pre>    28bc:	4618      	mov	r0, r3</pre>
+<pre>    28be:	4902      	ldr	r1, [pc, #8]	; (28c8 &lt;gadget_dev_desc_bMaxPacketSize0_show+0x14&gt;)</pre>
+<pre><span class="red">    28c0:	f7ff fffe 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    28c4:	bd08      	pop	{r3, pc}</pre>
+<pre>    28c6:	bf00      	nop</pre>
+<pre>    28c8:	00000386 	.word	0x00000386</pre>
+<br />
+<pre>000028cc &lt;gadget_dev_desc_bDeviceProtocol_show&gt;:</pre>
+<pre>    28cc:	b508      	push	{r3, lr}</pre>
+<pre>    28ce:	460b      	mov	r3, r1</pre>
+<pre>    28d0:	f890 2257 	ldrb.w	r2, [r0, #599]	; 0x257</pre>
+<pre>    28d4:	4618      	mov	r0, r3</pre>
+<pre>    28d6:	4902      	ldr	r1, [pc, #8]	; (28e0 &lt;gadget_dev_desc_bDeviceProtocol_show+0x14&gt;)</pre>
+<pre><span class="red">    28d8:	f7ff fffe 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    28dc:	bd08      	pop	{r3, pc}</pre>
+<pre>    28de:	bf00      	nop</pre>
+<pre>    28e0:	00000386 	.word	0x00000386</pre>
+<br />
+<pre>000028e4 &lt;gadget_dev_desc_bDeviceSubClass_show&gt;:</pre>
+<pre>    28e4:	b508      	push	{r3, lr}</pre>
+<pre>    28e6:	460b      	mov	r3, r1</pre>
+<pre>    28e8:	f890 2256 	ldrb.w	r2, [r0, #598]	; 0x256</pre>
+<pre>    28ec:	4618      	mov	r0, r3</pre>
+<pre>    28ee:	4902      	ldr	r1, [pc, #8]	; (28f8 &lt;gadget_dev_desc_bDeviceSubClass_show+0x14&gt;)</pre>
+<pre><span class="red">    28f0:	f7ff fffe 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    28f4:	bd08      	pop	{r3, pc}</pre>
+<pre>    28f6:	bf00      	nop</pre>
+<pre>    28f8:	00000386 	.word	0x00000386</pre>
+<br />
+<pre>000028fc &lt;gadget_dev_desc_bDeviceClass_show&gt;:</pre>
+<pre>    28fc:	b508      	push	{r3, lr}</pre>
+<pre>    28fe:	460b      	mov	r3, r1</pre>
+<pre>    2900:	f890 2255 	ldrb.w	r2, [r0, #597]	; 0x255</pre>
+<pre>    2904:	4618      	mov	r0, r3</pre>
+<pre>    2906:	4902      	ldr	r1, [pc, #8]	; (2910 &lt;gadget_dev_desc_bDeviceClass_show+0x14&gt;)</pre>
+<pre><span class="red">    2908:	f7ff fffe 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    290c:	bd08      	pop	{r3, pc}</pre>
+<pre>    290e:	bf00      	nop</pre>
+<pre>    2910:	00000386 	.word	0x00000386</pre>
+<br />
+<pre>00002914 &lt;os_desc_b_vendor_code_show&gt;:</pre>
+<pre>    2914:	b508      	push	{r3, lr}</pre>
+<pre>    2916:	460b      	mov	r3, r1</pre>
+<pre>    2918:	6a42      	ldr	r2, [r0, #36]	; 0x24</pre>
+<pre>    291a:	4618      	mov	r0, r3</pre>
+<pre>    291c:	4902      	ldr	r1, [pc, #8]	; (2928 &lt;os_desc_b_vendor_code_show+0x14&gt;)</pre>
+<pre>    291e:	f892 2291 	ldrb.w	r2, [r2, #657]	; 0x291</pre>
+<pre><span class="red">    2922:	f7ff fffe 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2926:	bd08      	pop	{r3, pc}</pre>
+<pre>    2928:	00000354 	.word	0x00000354</pre>
+<br />
+<pre>0000292c &lt;os_desc_use_show&gt;:</pre>
+<pre>    292c:	b508      	push	{r3, lr}</pre>
+<pre>    292e:	460b      	mov	r3, r1</pre>
+<pre>    2930:	6a42      	ldr	r2, [r0, #36]	; 0x24</pre>
+<pre>    2932:	4618      	mov	r0, r3</pre>
+<pre>    2934:	4902      	ldr	r1, [pc, #8]	; (2940 &lt;os_desc_use_show+0x14&gt;)</pre>
+<pre>    2936:	f892 2290 	ldrb.w	r2, [r2, #656]	; 0x290</pre>
+<pre><span class="red">    293a:	f7ff fffe 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    293e:	bd08      	pop	{r3, pc}</pre>
+<pre>    2940:	00000354 	.word	0x00000354</pre>
+<br />
+<pre>00002944 &lt;gadget_strings_serialnumber_show&gt;:</pre>
+<pre>    2944:	b508      	push	{r3, lr}</pre>
+<pre>    2946:	460b      	mov	r3, r1</pre>
+<pre>    2948:	f850 2c04 	ldr.w	r2, [r0, #-4]</pre>
+<pre>    294c:	4618      	mov	r0, r3</pre>
+<pre>    294e:	4904      	ldr	r1, [pc, #16]	; (2960 &lt;gadget_strings_serialnumber_show+0x1c&gt;)</pre>
+<pre>    2950:	2a00      	cmp	r2, #0</pre>
+<pre>    2952:	bf08      	it	eq</pre>
+<pre>    2954:	460a      	moveq	r2, r1</pre>
+<pre>    2956:	4903      	ldr	r1, [pc, #12]	; (2964 &lt;gadget_strings_serialnumber_show+0x20&gt;)</pre>
+<pre><span class="red">    2958:	f7ff fffe 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    295c:	bd08      	pop	{r3, pc}</pre>
+<pre>    295e:	bf00      	nop</pre>
+<pre>    2960:	0000037d 	.word	0x0000037d</pre>
+<pre>    2964:	00000379 	.word	0x00000379</pre>
+<br />
+<pre>00002968 &lt;gadget_strings_product_show&gt;:</pre>
+<pre>    2968:	b508      	push	{r3, lr}</pre>
+<pre>    296a:	460b      	mov	r3, r1</pre>
+<pre>    296c:	f850 2c08 	ldr.w	r2, [r0, #-8]</pre>
+<pre>    2970:	4618      	mov	r0, r3</pre>
+<pre>    2972:	4904      	ldr	r1, [pc, #16]	; (2984 &lt;gadget_strings_product_show+0x1c&gt;)</pre>
+<pre>    2974:	2a00      	cmp	r2, #0</pre>
+<pre>    2976:	bf08      	it	eq</pre>
+<pre>    2978:	460a      	moveq	r2, r1</pre>
+<pre>    297a:	4903      	ldr	r1, [pc, #12]	; (2988 &lt;gadget_strings_product_show+0x20&gt;)</pre>
+<pre><span class="red">    297c:	f7ff fffe 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    2980:	bd08      	pop	{r3, pc}</pre>
+<pre>    2982:	bf00      	nop</pre>
+<pre>    2984:	0000037d 	.word	0x0000037d</pre>
+<pre>    2988:	00000379 	.word	0x00000379</pre>
+<br />
+<pre>0000298c &lt;gadget_strings_manufacturer_show&gt;:</pre>
+<pre>    298c:	b508      	push	{r3, lr}</pre>
+<pre>    298e:	460b      	mov	r3, r1</pre>
+<pre>    2990:	f850 2c0c 	ldr.w	r2, [r0, #-12]</pre>
+<pre>    2994:	4618      	mov	r0, r3</pre>
+<pre>    2996:	4904      	ldr	r1, [pc, #16]	; (29a8 &lt;gadget_strings_manufacturer_show+0x1c&gt;)</pre>
+<pre>    2998:	2a00      	cmp	r2, #0</pre>
+<pre>    299a:	bf08      	it	eq</pre>
+<pre>    299c:	460a      	moveq	r2, r1</pre>
+<pre>    299e:	4903      	ldr	r1, [pc, #12]	; (29ac &lt;gadget_strings_manufacturer_show+0x20&gt;)</pre>
+<pre><span class="red">    29a0:	f7ff fffe 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    29a4:	bd08      	pop	{r3, pc}</pre>
+<pre>    29a6:	bf00      	nop</pre>
+<pre>    29a8:	0000037d 	.word	0x0000037d</pre>
+<pre>    29ac:	00000379 	.word	0x00000379</pre>
+<br />
+<pre>000029b0 &lt;gadget_config_name_configuration_show&gt;:</pre>
+<pre>    29b0:	b508      	push	{r3, lr}</pre>
+<pre>    29b2:	460b      	mov	r3, r1</pre>
+<pre>    29b4:	f850 2c04 	ldr.w	r2, [r0, #-4]</pre>
+<pre>    29b8:	4618      	mov	r0, r3</pre>
+<pre>    29ba:	4904      	ldr	r1, [pc, #16]	; (29cc &lt;gadget_config_name_configuration_show+0x1c&gt;)</pre>
+<pre>    29bc:	2a00      	cmp	r2, #0</pre>
+<pre>    29be:	bf08      	it	eq</pre>
+<pre>    29c0:	460a      	moveq	r2, r1</pre>
+<pre>    29c2:	4903      	ldr	r1, [pc, #12]	; (29d0 &lt;gadget_config_name_configuration_show+0x20&gt;)</pre>
+<pre><span class="red">    29c4:	f7ff fffe 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    29c8:	bd08      	pop	{r3, pc}</pre>
+<pre>    29ca:	bf00      	nop</pre>
+<pre>    29cc:	0000037d 	.word	0x0000037d</pre>
+<pre>    29d0:	00000379 	.word	0x00000379</pre>
+<br />
+<pre>000029d4 &lt;gadget_config_desc_bmAttributes_show&gt;:</pre>
+<pre>    29d4:	b508      	push	{r3, lr}</pre>
+<pre>    29d6:	460b      	mov	r3, r1</pre>
+<pre>    29d8:	f890 20ae 	ldrb.w	r2, [r0, #174]	; 0xae</pre>
+<pre>    29dc:	4618      	mov	r0, r3</pre>
+<pre>    29de:	4902      	ldr	r1, [pc, #8]	; (29e8 &lt;gadget_config_desc_bmAttributes_show+0x14&gt;)</pre>
+<pre><span class="red">    29e0:	f7ff fffe 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    29e4:	bd08      	pop	{r3, pc}</pre>
+<pre>    29e6:	bf00      	nop</pre>
+<pre>    29e8:	00000386 	.word	0x00000386</pre>
+<br />
+<pre>000029ec &lt;gadget_config_desc_MaxPower_show&gt;:</pre>
+<pre>    29ec:	b508      	push	{r3, lr}</pre>
+<pre>    29ee:	460b      	mov	r3, r1</pre>
+<pre>    29f0:	f8b0 20b0 	ldrh.w	r2, [r0, #176]	; 0xb0</pre>
+<pre>    29f4:	4618      	mov	r0, r3</pre>
+<pre>    29f6:	4902      	ldr	r1, [pc, #8]	; (2a00 &lt;gadget_config_desc_MaxPower_show+0x14&gt;)</pre>
+<pre><span class="red">    29f8:	f7ff fffe 	bl	0 &lt;sprintf&gt</span></span></pre>
+<pre>    29fc:	bd08      	pop	{r3, pc}</pre>
+<pre>    29fe:	bf00      	nop</pre>
+<br />
+<pre></span></pre>
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">sprintf</span> used </span><span class="orange">20</span> times </span><span class="orange">libcomposite.ko</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+  var embarkButton = document.getElementById("embark");
+  if ( !(embarkButton.href.includes("embarkBackUrl")) ) {
+    embarkButton.classList.remove('hidden');
+    document.getElementById("logoImage").src = "./../style/embark.svg";
+    document.getElementById("logo").style.background = "#2d2d2d";
+  }
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!-- 
+EMBA - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2023 Siemens AG
+Copyright 2020-2023 Siemens Energy AG
+
+EMBA comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+EMBA is licensed under GPLv3
+
+Author(s): Pascal Eckmann
+Contributor(s): Michael Messner, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div id="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" id="logoImage" src="./../style/emba.svg" alt="logo"></a>
+  </div>
+  <div id="nav">
+      <a id="embark" class="hidden" href="{{ embarkBackUrl }}">&laquo; Back to EMBArk</a> <!-- nosem -->
+      <a class="backButton" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s15_radare_decompile_checks.html" title="./../s15_radare_decompile_checks.html" >&laquo; Back to s15_radare_decompile_checks</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">libgrpc++_unsecure.so.1.8.5</span></pre>
+<br />
+<pre>  </pre>
+<pre>  	<span class="red">No RELRO</span>       <span class="red">No Canary found</span>   <span class="green">NX enabled</span>   <span class="orange">DSO</span>          <span class="green">No RPATH</span>     <span class="green">No RUNPATH</span>   <span class="green">No Symbols</pre>
+<br />
+<pre></span></pre>
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">strcat</span> tear down of </span><span class="orange">libgrpc++_unsecure.so.1.8.5</span></pre>
+<br />
+<pre>    ; assembly                                                                                           | /* r2dec pseudo code output */</pre>
+<pre>                                                                                                         | /* /logs/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/usr/lib/libgrpc++_unsecure.so.1.8.5 &commat; 0x45aa614c */</pre>
+<pre>                                                                                                         | #include &lt;stdint.h&gt;</pre>
+<pre>                                                                                                         |  </pre>
+<pre>    ; (fcn) method.grpc::Channel.WaitForStateChangeImpl_grpc_connectivity_state__gpr_timespec_ ()        | void method_grpc::Channel_WaitForStateChangeImpl_grpc_connectivity_state_gpr_timespec_ (int32_t arg_0h, int32_t arg1, int32_t arg2) {</pre>
+<pre>                                                                                                         |     int32_t var_0h;</pre>
+<pre>                                                                                                         |     int32_t var_8h;</pre>
+<pre>                                                                                                         |     int32_t var_ch;</pre>
+<pre>                                                                                                         |     int32_t var_10h;</pre>
+<pre>                                                                                                         |     int32_t var_14h;</pre>
+<pre>                                                                                                         |     int32_t var_1bh;</pre>
+<pre>                                                                                                         |     int32_t var_1ch;</pre>
+<pre>                                                                                                         |     int32_t var_20h;</pre>
+<pre>                                                                                                         |     int32_t var_24h;</pre>
+<pre>                                                                                                         |     int32_t var_28h;</pre>
+<pre>                                                                                                         |     int32_t var_30h;</pre>
+<pre>                                                                                                         |     int32_t var_34h;</pre>
+<pre>                                                                                                         |     int32_t var_38h;</pre>
+<pre>                                                                                                         |     int32_t var_3ch;</pre>
+<pre>                                                                                                         |     int32_t var_44h;</pre>
+<pre>                                                                                                         |     int32_t var_68h;</pre>
+<pre>                                                                                                         |     r0 = arg1;</pre>
+<pre>                                                                                                         |     r1 = arg2;</pre>
+<pre>                                                                                                         |     /* grpc::Channel::WaitForStateChangeImpl(grpc_connectivity_state, gpr_timespec) */</pre>
+<pre>    0x45aa614c sub sp, sp, 8                                                                             |     </pre>
+<pre>    0x45aa6150 ldr ip, [pc, 0x290]                                                                       |     ip = *(0x45aa63e8);</pre>
+<pre>    0x45aa6154 push {r4, r5, r6, r7, r8, sb, sl, fp, lr}                                                 |     </pre>
+<pre>    0x45aa6158 sub sp, sp, 0x44                                                                          |     </pre>
+<pre>    0x45aa615c ldr fp, [pc, 0x288]                                                                       |     fp = *(0x45aa63ec);</pre>
+<pre>    0x45aa6160 add r6, sp, 0x68                                                                          |     r6 += var_68h;</pre>
+<pre>    0x45aa6164 mov lr, 1                                                                                 |     lr = 1;</pre>
+<pre>    0x45aa6168 str lr, [sp, 0x20]                                                                        |     var_20h = lr;</pre>
+<pre>    0x45aa616c add fp, pc, fp                                                                            |     </pre>
+<pre>    0x45aa6170 stm r6, {r2, r3}                                                                          |     *(r6) = r2;</pre>
+<pre>                                                                                                         |     *((r6 + 4)) = r3;</pre>
+<pre>    0x45aa6174 mov r2, 0                                                                                 |     r2 = 0;</pre>
+<pre>    0x45aa6178 str r2, [sp, 0x24]                                                                        |     var_24h = r2;</pre>
+<pre>    0x45aa617c str r2, [sp, 0x28]                                                                        |     var_28h = r2;</pre>
+<pre>    0x45aa6180 mov sb, r0                                                                                |     sb = r0;</pre>
+<pre>    0x45aa6184 ldr r5, [fp, ip]                                                                          |     r5 = *((fp + ip));</pre>
+<pre>    0x45aa6188 mov sl, r1                                                                                |     sl = r1;</pre>
+<pre>    0x45aa618c ldr r3, [pc, 0x25c]                                                                       |     r3 = *(0x45aa63ec);</pre>
+<pre>    0x45aa6190 strb r2, [sp, 0x34]                                                                       |     var_34h = r2;</pre>
+<pre>    0x45aa6194 add r2, r5, 8                                                                             |     r2 = r5 + 8;</pre>
+<pre>    0x45aa6198 str r2, [sp, 0x30]                                                                        |     var_30h = r2;</pre>
+<pre>    0x45aa619c ldr r3, [fp, r3]                                                                          |     r3 = *((fp + r3));</pre>
+<pre>    0x45aa61a0 ldr r0, [r3]                                                                              |     r0 = *(0x45aa63ec);</pre>
+<pre>    0x45aa61a4 str r3, [sp, 0x14]                                                                        |     var_14h = r3;</pre>
+<pre>    0x45aa61a8 cmp r0, 0                                                                                 |     </pre>
+<pre>                                                                                                         |     if (r0 == 0) {</pre>
+<pre>    0x45aa61ac beq 0x45aa632c                                                                            |         goto label_5;</pre>
+<pre>                                                                                                         |     }</pre>
+<pre>    0x45aa61b0 ldr r3, [pc, 0x23c]                                                                       |     r3 = *(0x45aa63f0);</pre>
+<pre>    0x45aa61b4 ldr r7, [fp, r3]                                                                          |     r7 = *((fp + r3));</pre>
+<pre>                                                                                                         | label_2:</pre>
+<pre>    0x45aa61b8 ldr r2, [r0]                                                                              |     r2 = *(r0);</pre>
+<pre>    0x45aa61bc ldr r3, [pc, 0x234]                                                                       |     r3 = *(0x45aa63f4);</pre>
+<pre>    0x45aa61c0 ldr r2, [r2]                                                                              |     r2 = *(r2);</pre>
+<pre>    0x45aa61c4 add r3, pc, r3                                                                            |     r3 = pc + r3;</pre>
+<pre>    0x45aa61c8 cmp r2, r3                                                                                |     </pre>
+<pre>                                                                                                         |     if (r2 != r3) {</pre>
+<pre>    0x45aa61cc bne 0x45aa631c                                                                            |         goto label_6;</pre>
+<pre>                                                                                                         |     }</pre>
+<pre>    0x45aa61d0 bl 0x45aa462c                                                                             |     fcn_45aa462c ();</pre>
+<pre>                                                                                                         | label_0:</pre>
+<pre>    0x45aa61d4 ldr r8, [r7]                                                                              |     r8 = *(r7);</pre>
+<pre>    0x45aa61d8 mov r2, 1                                                                                 |     r2 = 1;</pre>
+<pre>    0x45aa61dc ldr r3, [pc, 0x218]                                                                       |     r3 = *(0x45aa63f8);</pre>
+<pre>    0x45aa61e0 add r4, sp, 0x20                                                                          |     r4 += var_20h;</pre>
+<pre>    0x45aa61e4 strb r2, [sp, 0x34]                                                                       |     var_34h = r2;</pre>
+<pre>    0x45aa61e8 ldr r2, [r8]                                                                              |     r2 = *(r8);</pre>
+<pre>    0x45aa61ec mov r0, r8                                                                                |     r0 = r8;</pre>
+<pre>    0x45aa61f0 ldr r3, [fp, r3]                                                                          |     r3 = *((fp + r3));</pre>
+<pre>    0x45aa61f4 mov r1, r4                                                                                |     r1 = r4;</pre>
+<pre>    0x45aa61f8 str r3, [sp, 0x10]                                                                        |     var_10h = r3;</pre>
+<pre>    0x45aa61fc add r3, r3, 8                                                                             |     r3 += 8;</pre>
+<pre>    0x45aa6200 str r3, [sp, 0x30]                                                                        |     var_30h = r3;</pre>
+<pre>    0x45aa6204 ldmib r2, {r3, fp}                                                                        |     __asm ("ldmib r2, {r3, fp}");</pre>
+<pre>    0x45aa6208 blx r3                                                                                    |     r0 = uint32_t (*r3)(uint32_t, uint32_t, uint32_t, uint32_t) (r0, r1, r2, r3);</pre>
+<pre>    0x45aa620c mov r1, r0                                                                                |     r1 = r0;</pre>
+<pre>    0x45aa6210 mov r3, 0                                                                                 |     r3 = 0;</pre>
+<pre>    0x45aa6214 mov r0, r8                                                                                |     r0 = r8;</pre>
+<pre>    0x45aa6218 mov r2, r4                                                                                |     r2 = r4;</pre>
+<pre>    0x45aa621c blx fp                                                                                    |     fp (r0, r1, r2, r3);</pre>
+<pre>    0x45aa6220 add r3, sp, 0x70                                                                          |     r3 += arg_0h;</pre>
+<pre>    0x45aa6224 str r0, [sp, 0x38]                                                                        |     var_38h = r0;</pre>
+<pre>    0x45aa6228 mov r2, 1                                                                                 |     r2 = 1;</pre>
+<pre>    0x45aa622c dmb ish                                                                                   |     __asm ("dmb ish");</pre>
+<pre>    0x45aa6230 str r2, [sp, 0x3c]                                                                        |     var_3ch = r2;</pre>
+<pre>    0x45aa6234 mov ip, 0                                                                                 |     </pre>
+<pre>    0x45aa6238 ldm r3, {r0, r1}                                                                          |     r0 = *(r3);</pre>
+<pre>                                                                                                         |     r1 = *((r3 + 4));</pre>
+<pre>    0x45aa623c add r8, sp, 0x30                                                                          |     r8 += var_30h;</pre>
+<pre>    0x45aa6240 str ip, [sp, 0xc]                                                                         |     var_ch = ip;</pre>
+<pre>    0x45aa6244 str r8, [sp, 8]                                                                           |     var_8h = r8;</pre>
+<pre>    0x45aa6248 stm sp, {r0, r1}                                                                          |     *(sp) = r0;</pre>
+<pre>                                                                                                         |     *((sp + 4)) = r1;</pre>
+<pre>    0x45aa624c mov r1, sl                                                                                |     r1 = sl;</pre>
+<pre>    0x45aa6250 mov r0, sb                                                                                |     r0 = sb;</pre>
+<pre>    0x45aa6254 ldm r6, {r2, r3}                                                                          |     r2 = *(r6);</pre>
+<pre>                                                                                                         |     r3 = *((r6 + 4));</pre>
+<pre>    0x45aa6258 strb ip, [sp, 0x1b]                                                                       |     var_1bh = ip;</pre>
+<pre>    0x45aa625c str ip, [sp, 0x1c]                                                                        |     var_1ch = ip;</pre>
+<pre>    0x45aa6260 bl 0x45aa4590                                                                             |     fcn_45aa4590 ();</pre>
+<pre>    0x45aa6264 ldr r1, [r7]                                                                              |     r1 = *(r7);</pre>
+<pre>    0x45aa6268 mov r2, 1                                                                                 |     r2 = 1;</pre>
+<pre>    0x45aa626c mov r0, r4                                                                                |     r0 = r4;</pre>
+<pre>    0x45aa6270 ldr r3, [r1]                                                                              |     r3 = *(r1);</pre>
+<pre>    0x45aa6274 ldr r3, [r3, 0xb8]                                                                        |     r3 = *((r3 + 0xb8));</pre>
+<pre>    0x45aa6278 blx r3                                                                                    |     r0 = uint32_t (*r3)(uint32_t, uint32_t, uint32_t, uint32_t) (r0, r1, r2, r3);</pre>
+<pre>    0x45aa627c ldm r4, {r0, r1, r2, r3}                                                                  |     r0 = *(r4);</pre>
+<pre>                                                                                                         |     r1 = *((r4 + 4));</pre>
+<pre>                                                                                                         |     r2 = *((r4 + 8));</pre>
+<pre>                                                                                                         |     r3 = *((r4 + 12));</pre>
+<pre>    0x45aa6280 stm sp, {r0, r1, r2, r3}                                                                  |     *(sp) = r0;</pre>
+<pre>                                                                                                         |     *((sp + 4)) = r1;</pre>
+<pre>                                                                                                         |     *((sp + 8)) = r2;</pre>
+<pre>                                                                                                         |     *((sp + 12)) = r3;</pre>
+<pre>    0x45aa6284 add r2, sp, 0x1b                                                                          |     r2 += var_1bh;</pre>
+<pre>    0x45aa6288 add r1, sp, 0x1c                                                                          |     r1 += var_1ch;</pre>
+<pre>    0x45aa628c mov r0, r8                                                                                |     r0 = r8;</pre>
+<pre>    0x45aa6290 bl 0x45aa4758                                                                             |     fcn_45aa4758 ();</pre>
+<pre>    0x45aa6294 ldr r3, [sp, 0x1c]                                                                        |     r3 = var_1ch;</pre>
+<pre>    0x45aa6298 cmp r3, 0                                                                                 |     </pre>
+<pre>                                                                                                         |     if (r3 != 0) {</pre>
+<pre>    0x45aa629c bne 0x45aa6394                                                                            |         goto label_7;</pre>
+<pre>                                                                                                         |     }</pre>
+<pre>    0x45aa62a0 ldr r0, [r7]                                                                              |     r0 = *(r7);</pre>
+<pre>    0x45aa62a4 add r5, r5, 8                                                                             |     r5 += 8;</pre>
+<pre>    0x45aa62a8 ldr r3, [sp, 0x10]                                                                        |     r3 = var_10h;</pre>
+<pre>    0x45aa62ac ldr r1, [sp, 0x38]                                                                        |     r1 = var_38h;</pre>
+<pre>    0x45aa62b0 add r3, r3, 8                                                                             |     r3 += 8;</pre>
+<pre>    0x45aa62b4 str r3, [sp, 0x30]                                                                        |     var_30h = r3;</pre>
+<pre>    0x45aa62b8 ldr r3, [r0]                                                                              |     r3 = *(r0);</pre>
+<pre>    0x45aa62bc ldrb r4, [sp, 0x1b]                                                                       |     r4 = var_1bh;</pre>
+<pre>    0x45aa62c0 ldr r3, [r3, 0x14]                                                                        |     r3 = *((r3 + 0x14));</pre>
+<pre>    0x45aa62c4 blx r3                                                                                    |     uint32_t (*r3)(uint32_t, uint32_t, uint32_t) (r0, r1, r3);</pre>
+<pre>    0x45aa62c8 ldrb r3, [sp, 0x34]                                                                       |     r3 = var_34h;</pre>
+<pre>    0x45aa62cc str r5, [sp, 0x30]                                                                        |     var_30h = r5;</pre>
+<pre>    0x45aa62d0 cmp r3, 0                                                                                 |     </pre>
+<pre>    0x45aa62d4 bne 0x45aa62ec                                                                            |     </pre>
+<pre>                                                                                                         |     while (1) {</pre>
+<pre>                                                                                                         | label_1:</pre>
+<pre>    0x45aa62d8 mov r0, r4                                                                                |         r0 = r4;</pre>
+<pre>    0x45aa62dc add sp, sp, 0x44                                                                          |         </pre>
+<pre>    0x45aa62e0 pop {r4, r5, r6, r7, r8, sb, sl, fp, lr}                                                  |         </pre>
+<pre>    0x45aa62e4 add sp, sp, 8                                                                             |         </pre>
+<pre>    0x45aa62e8 bx lr                                                                                     |         return;</pre>
+<pre>    0x45aa62ec ldr r3, [sp, 0x14]                                                                        |         r3 = var_14h;</pre>
+<pre>    0x45aa62f0 ldr r0, [r3]                                                                              |         r0 = *(r3);</pre>
+<pre>    0x45aa62f4 cmp r0, 0                                                                                 |         </pre>
+<pre>                                                                                                         |         if (r0 == 0) {</pre>
+<pre>    0x45aa62f8 beq 0x45aa6364                                                                            |             goto label_8;</pre>
+<pre>                                                                                                         |         }</pre>
+<pre>                                                                                                         | label_3:</pre>
+<pre>    0x45aa62fc ldr r2, [r0]                                                                              |         r2 = *(r0);</pre>
+<pre>    0x45aa6300 ldr r3, [pc, 0xf8]                                                                        |         r3 = *(0x45aa63fc);</pre>
+<pre>    0x45aa6304 ldr r2, [r2, 4]                                                                           |         r2 = *((r2 + 4));</pre>
+<pre>    0x45aa6308 add r3, pc, r3                                                                            |         r3 = pc + r3;</pre>
+<pre>    0x45aa630c cmp r2, r3                                                                                |         </pre>
+<pre>                                                                                                         |         if (r2 != r3) {</pre>
+<pre>    0x45aa6310 bne 0x45aa6324                                                                            |             goto label_9;</pre>
+<pre>                                                                                                         |         }</pre>
+<pre>    0x45aa6314 bl 0x45aa3dec                                                                             |         fcn_45aa3dec ();</pre>
+<pre>    0x45aa6318 b 0x45aa62d8                                                                              |         </pre>
+<pre>                                                                                                         |     }</pre>
+<pre>                                                                                                         | label_6:</pre>
+<pre>    0x45aa631c blx r2                                                                                    |     uint32_t (*r2)() ();</pre>
+<pre>    0x45aa6320 b 0x45aa61d4                                                                              |     goto label_0;</pre>
+<pre>                                                                                                         | label_9:</pre>
+<pre>    0x45aa6324 blx r2                                                                                    |     uint32_t (*r2)() ();</pre>
+<pre>    0x45aa6328 b 0x45aa62d8                                                                              |     goto label_1;</pre>
+<pre>                                                                                                         | label_5:</pre>
+<pre>    0x45aa632c ldr r0, [pc, 0xc0]                                                                        |     r0 = *(0x45aa63f0);</pre>
+<pre>    0x45aa6330 mov r3, 0x2b                                                                              |     r3 = 0x2b;</pre>
+<pre>    0x45aa6334 ldr r2, [pc, 0xc8]                                                                        |     r2 = *(0x45aa6400);</pre>
+<pre>    0x45aa6338 ldr r1, [pc, 0xc8]                                                                        |     r1 = *(0x45aa6404);</pre>
+<pre>    0x45aa633c ldr r7, [fp, r0]                                                                          |     r7 = *((fp + r0));</pre>
+<pre>    0x45aa6340 add r2, pc, r2                                                                            |     r2 = pc + r2;</pre>
+<pre>    0x45aa6344 add r1, pc, r1                                                                            |     r1 = pc + r1;</pre>
+<pre>    0x45aa6348 ldr r0, [r7]                                                                              |     r0 = *(r7);</pre>
+<pre>    0x45aa634c ldr ip, [r0]                                                                              |     ip = *(0x45aa63f0);</pre>
+<pre>    0x45aa6350 ldr r4, [ip]                                                                              |     r4 = *(0x45aa63f0);</pre>
+<pre>    0x45aa6354 blx r4                                                                                    |     uint32_t (*r4)(uint32_t, uint32_t, uint32_t, uint32_t) (r0, r1, r2, r3);</pre>
+<pre>    0x45aa6358 ldr r3, [sp, 0x14]                                                                        |     r3 = var_14h;</pre>
+<pre>    0x45aa635c ldr r0, [r3]                                                                              |     r0 = *(r3);</pre>
+<pre>    0x45aa6360 b 0x45aa61b8                                                                              |     goto label_2;</pre>
+<pre>                                                                                                         | label_8:</pre>
+<pre>    0x45aa6364 ldr r0, [r7]                                                                              |     r0 = *(r7);</pre>
+<pre>    0x45aa6368 mov r3, 0x34                                                                              |     r3 = 0x34;</pre>
+<pre>    0x45aa636c ldr r2, [pc, 0x98]                                                                        |     r2 = *(0x45aa6408);</pre>
+<pre>    0x45aa6370 ldr r1, [pc, 0x98]                                                                        |     r1 = *(0x45aa640c);</pre>
+<pre>    0x45aa6374 ldr ip, [r0]                                                                              |     ip = *(r0);</pre>
+<pre>    0x45aa6378 add r2, pc, r2                                                                            |     r2 = pc + r2;</pre>
+<pre>    0x45aa637c add r1, pc, r1                                                                            |     r1 = pc + r1;</pre>
+<pre>    0x45aa6380 ldr r5, [ip]                                                                              |     r5 = *(ip);</pre>
+<pre>    0x45aa6384 blx r5                                                                                    |     uint32_t (*r5)(uint32_t, uint32_t, uint32_t, uint32_t) (r0, r1, r2, r3);</pre>
+<pre>    0x45aa6388 ldr r3, [sp, 0x14]                                                                        |     r3 = var_14h;</pre>
+<pre>    0x45aa638c ldr r0, [r3]                                                                              |     r0 = *(r3);</pre>
+<pre>    0x45aa6390 b 0x45aa62fc                                                                              |     goto label_3;</pre>
+<pre>                                                                                                         | label_7:</pre>
+<pre>    0x45aa6394 ldr ip, [pc, 0x78]                                                                        |     ip = *(0x45aa6414);</pre>
+<pre>    0x45aa6398 mov r2, 2                                                                                 |     r2 = 2;</pre>
+<pre>    0x45aa639c ldr r3, [pc, 0x74]                                                                        |     r3 = *(0x45aa6414);</pre>
+<pre>    0x45aa63a0 mov r1, 0xb1                                                                              |     r1 = 0xb1;</pre>
+<pre>    0x45aa63a4 ldr r0, [pc, 0x70]                                                                        |     r0 = *(0x45aa6418);</pre>
+<pre>    0x45aa63a8 add ip, pc, ip                                                                            |     </pre>
+<pre>    0x45aa63ac add r3, pc, r3                                                                            |     r3 = pc + r3;</pre>
+<pre>    0x45aa63b0 str ip, [sp]                                                                              |     *(sp) = ip;</pre>
+<pre>    0x45aa63b4 add r0, pc, r0                                                                            |     r0 = pc + r0;</pre>
+<pre>    0x45aa63b8 bl 0x45aa4164                                                                             |     fcn_45aa4164 ();</pre>
+<pre>    0x45aa63bc bl 0x45aa42cc                                                                             |     fcn_45aa42cc ();</pre>
+<pre>    0x45aa63c0 mov r0, r8                                                                                |     r0 = r8;</pre>
+<pre>    0x45aa63c4 bl 0x45aa6cf8                                                                             |     r0 = fcn_45aa6cf8 (r0);</pre>
+<pre>                                                                                                         |     do {</pre>
+<pre>                                                                                                         | label_4:</pre>
+<pre>    0x45aa63c8 bl 0x45aa447c                                                                             |         fcn_45aa447c ();</pre>
+<pre>    0x45aa63cc ldrb r3, [sp, 0x34]                                                                       |         r3 = var_34h;</pre>
+<pre>    0x45aa63d0 add r5, r5, 8                                                                             |         r5 += 8;</pre>
+<pre>    0x45aa63d4 str r5, [sp, 0x30]                                                                        |         var_30h = r5;</pre>
+<pre>    0x45aa63d8 cmp r3, 0                                                                                 |         </pre>
+<pre>    0x45aa63dc beq 0x45aa63c8                                                                            |         </pre>
+<pre>                                                                                                         |     } while (r3 == 0);</pre>
+<pre>    0x45aa63e0 bl 0x45aa4b18                                                                             |     entry0 ();</pre>
+<pre>    0x45aa63e4 b 0x45aa63c8                                                                              |     goto label_4;</pre>
+<pre>                                                                                                         | }</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">strcat</span> used </span><span class="orange">1</span> times </span><span class="orange">libgrpc++_unsecure.so.1.8.5</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+  var embarkButton = document.getElementById("embark");
+  if ( !(embarkButton.href.includes("embarkBackUrl")) ) {
+    embarkButton.classList.remove('hidden');
+    document.getElementById("logoImage").src = "./../style/embark.svg";
+    document.getElementById("logo").style.background = "#2d2d2d";
+  }
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

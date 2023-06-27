@@ -1,0 +1,678 @@
+<!-- 
+EMBA - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2023 Siemens AG
+Copyright 2020-2023 Siemens Energy AG
+
+EMBA comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+EMBA is licensed under GPLv3
+
+Author(s): Pascal Eckmann
+Contributor(s): Michael Messner, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div id="logo">
+    <a class="inherit" href="./index.html"><img class="inherit" id="logoImage" src="./style/emba.svg" alt="logo"></a>
+  </div>
+  <div id="nav">
+      <a id="embark" class="hidden" href="{{ embarkBackUrl }}">&laquo; Back to EMBArk</a> <!-- nosem -->
+      <a class="backButton" href="./index.html">&laquo; Back to main</a>
+      <!-- navigation start --><a class="modul" href="#qemu_user-mode_emulation" title="#qemu_user-mode_emulation" >Qemu user-mode emulation</a><a class="submodul" href="#preparationphase" title="#preparationphase" >Preparation phase</a><a class="submodul" href="#cleanupphase" title="#cleanupphase" >Cleanup phase</a><a class="submodul" href="#reportingphase" title="#reportingphase" >Reporting phase</a>
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="blue">+</span>] </span><span class="cyan"><span class="bold"><a id="qemu_user-mode_emulation">Qemu user-mode emulation</a></span></pre>
+<pre><span class="bold"><hr class="double" /></span></pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Using </span><span class="orange">jchroot</span> for building more secure chroot environments</pre>
+<pre>[</span><span class="orange">*</span>] This module creates a working copy of the firmware filesystem in the log directory /logs.</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Create a firmware backup for emulation ...</pre>
+<pre>[</span><span class="orange">*</span>] Firmware backup for emulation created in </span><span class="orange">/logs/s115_usermode_emulator/firmware</span></pre>
+<pre>[</span><span class="orange">*</span>] Root directory auto detection for </span><span class="orange">/logs/s115_usermode_emulator/firmware</span> (could take some time)</pre>
+<br />
+<a class="refmodul" href="./s05_firmware_details.html#anchor_file_dirs" title="LINK" ><pre>[</span><span class="orange">*</span>] Found </span><span class="orange">1</span> different root directories:</pre></a>
+
+<a class="refmodul" href="./s05_firmware_details.html#anchor_file_dirs" title="LINK" ><pre>[</span><span class="green">+</span>]</span><span class="green"> Found the following root directory: </span><span class="orange">/logs/s115_usermode_emulator/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract</span><span class="green"> via </span><span class="orange">binary interpreter / dir names / busybox</span><span class="green">.</span></pre></a>
+
+<pre>[</span><span class="orange">*</span>] Detected </span><span class="orange">1</span> root directories:</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Detected root path: </span><span class="orange">/logs/s115_usermode_emulator/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract</span></pre>
+<pre>[</span><span class="orange">*</span>] No symlinks found in firmware ... Starting link fixing helper ...</pre>
+<pre>[</span><span class="orange">*</span>] Running emulation processes in </span><span class="orange">/logs/s115_usermode_emulator/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract</span> root path (</span><span class="orange">1/1</span>).</pre>
+<pre>[</span><span class="orange">*</span>] Create unique binary array for </span><span class="orange">/logs/s115_usermode_emulator/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract</span> root path (</span><span class="orange">1/1</span>).</pre>
+<pre>[</span><span class="orange">*</span>] Testing </span><span class="orange">90</span> unique executables in root dirctory: </span><span class="orange">/logs/s115_usermode_emulator/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract</span> (</span><span class="orange">1/1</span>).</pre>
+<br />
+<pre></span><span class="blue">==&gt</span></span> </span><span class="cyan"><a id="preparationphase">Preparation phase</a></span></pre>
+<pre><hr class="mono" /></pre>
+<pre>[</span><span class="orange">*</span>] Preparing the environment for usermode emulation</pre>
+<pre>[</span><span class="orange">*</span>] Creating dev area for user mode emulation</pre>
+<pre>[</span><span class="orange">*</span>] Creating /dev/console</pre>
+<pre>[</span><span class="orange">*</span>] Creating /dev/null</pre>
+<pre>[</span><span class="orange">*</span>] Creating /dev/zero</pre>
+<pre>[</span><span class="orange">*</span>] Creating /dev/ptmx</pre>
+<pre>[</span><span class="orange">*</span>] Creating /dev/tty</pre>
+<pre>[</span><span class="orange">*</span>] Creating /dev/random</pre>
+<pre>[</span><span class="orange">*</span>] Creating /dev/urandom</pre>
+<pre>[</span><span class="orange">*</span>] Creating /dev/mem</pre>
+<pre>[</span><span class="orange">*</span>] Creating /dev/kmem</pre>
+<pre>[</span><span class="orange">*</span>] Creating /dev/armem</pre>
+<pre>[</span><span class="orange">*</span>] Creating /dev/tty0</pre>
+<pre>[</span><span class="orange">*</span>] Creating /dev/ttyS0 - ttyS3</pre>
+<pre>[</span><span class="orange">*</span>] Creating /dev/adsl0</pre>
+<pre>[</span><span class="orange">*</span>] Creating /dev/ppp</pre>
+<pre>[</span><span class="orange">*</span>] Creating /dev/hidraw0</pre>
+<pre>[</span><span class="orange">*</span>] Creating and populating /dev/mtd</pre>
+<pre>[</span><span class="orange">*</span>] Creating and populating /dev/mtdblock</pre>
+<pre>[</span><span class="orange">*</span>] Creating and populating /dev/tts</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Currently mounted areas:</pre>
+<pre>    proc on /logs/s115_usermode_emulator/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/proc type proc (rw,relatime)</pre>
+<pre>    overlay on /logs/s115_usermode_emulator/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/run type overlay (ro,relatime,lowerdir=/var/lib/docker/overlay2/l/L2NO65R5SH6YCCMQG7JULRFXBZ:/var/lib/docker/overlay2/l/VCS3PUYHDQNVZA3JZX4C4UDSJ2:/var/lib/docker/overlay2/l/VZYYMJNZ2I5ZRW34BYKWFSIJIB:/var/lib/docker/overlay2/l/WYDTGYSZNSDL4YUAIRZL4M5NSF:/var/lib/docker/overlay2/l/54L2J7IHLHCGZ5RUSHK6DN62EK:/var/lib/docker/overlay2/l/BMFSAT3WA7TFPQOBWELXQIRPVO:/var/lib/docker/overlay2/l/SJQICRFTSV3BJA5SWGWAWXRGEZ:/var/lib/docker/overlay2/l/JYDRDD7SO72XTH7SQI4MTTA4LF,upperdir=/var/lib/docker/overlay2/b570e937e6b6c6a2937b0f8f8c0d8983bc6150827c21a893d74a37f56e56df08/diff,workdir=/var/lib/docker/overlay2/b570e937e6b6c6a2937b0f8f8c0d8983bc6150827c21a893d74a37f56e56df08/work)</pre>
+<pre>    sysfs on /logs/s115_usermode_emulator/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/sys type sysfs (rw,nosuid,nodev,noexec,relatime)</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Final fixes of the root filesytem in a chroot environment</pre>
+<br />
+<pre><hr class="mono" /></pre>
+<br />
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libmount.so.1.1.0.html" title="./s115_usermode_emulator/qemu_init_libmount.so.1.1.0.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libmount.so.1.1.0</span> with CPU configuration </span><span class="orange"></span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libcap.so.2.25.html" title="./s115_usermode_emulator/qemu_init_libcap.so.2.25.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libcap.so.2.25</span> with CPU configuration </span><span class="orange"></span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libacl.so.1.1.0.html" title="./s115_usermode_emulator/qemu_init_libacl.so.1.1.0.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libacl.so.1.1.0</span> with CPU configuration </span><span class="orange"></span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libblkid.so.1.1.0.html" title="./s115_usermode_emulator/qemu_init_libblkid.so.1.1.0.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libblkid.so.1.1.0</span> with CPU configuration </span><span class="orange"></span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libz.so.1.2.8.html" title="./s115_usermode_emulator/qemu_init_libz.so.1.2.8.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libz.so.1.2.8</span> with CPU configuration </span><span class="orange"></span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libsystemd.so.0.15.0.html" title="./s115_usermode_emulator/qemu_init_libsystemd.so.0.15.0.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libsystemd.so.0.15.0</span> with CPU configuration </span><span class="orange"></span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libgcc_s.so.1.html" title="./s115_usermode_emulator/qemu_init_libgcc_s.so.1.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libgcc_s.so.1</span> with CPU configuration </span><span class="orange"></span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libcom_err.so.2.1.html" title="./s115_usermode_emulator/qemu_init_libcom_err.so.2.1.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libcom_err.so.2.1</span> with CPU configuration </span><span class="orange"></span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libext2fs.so.2.4.html" title="./s115_usermode_emulator/qemu_init_libext2fs.so.2.4.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libext2fs.so.2.4</span> with CPU configuration </span><span class="orange"></span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_systemd-udevd.html" title="./s115_usermode_emulator/qemu_init_systemd-udevd.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">systemd-udevd</span> with CPU configuration </span><span class="orange"></span>.</pre></a>
+
+<pre>[</span><span class="orange">*</span>] Binary </span><span class="orange">./lib/systemd/systemd</span> (</span><span class="orange">11/90</span>) not emulated - blacklist triggered</pre>
+<a class="reference" href="./s115_usermode_emulator/qemu_init_ata_id.html" title="./s115_usermode_emulator/qemu_init_ata_id.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">ata_id</span> with CPU configuration </span><span class="orange"></span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_scsi_id.html" title="./s115_usermode_emulator/qemu_init_scsi_id.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">scsi_id</span> with CPU configuration </span><span class="orange"></span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_mtd_probe.html" title="./s115_usermode_emulator/qemu_init_mtd_probe.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">mtd_probe</span> with CPU configuration </span><span class="orange"></span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_v4l_id.html" title="./s115_usermode_emulator/qemu_init_v4l_id.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">v4l_id</span> with CPU configuration </span><span class="orange"></span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_collect.html" title="./s115_usermode_emulator/qemu_init_collect.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">collect</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_cdrom_id.html" title="./s115_usermode_emulator/qemu_init_cdrom_id.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">cdrom_id</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_systemd-udevd.html" title="./s115_usermode_emulator/stracer_systemd-udevd.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./lib/systemd/systemd-udevd</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libuuid.so.1.3.0.html" title="./s115_usermode_emulator/qemu_init_libuuid.so.1.3.0.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libuuid.so.1.3.0</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libattr.so.1.1.0.html" title="./s115_usermode_emulator/qemu_init_libattr.so.1.1.0.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libattr.so.1.1.0</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libe2p.so.2.3.html" title="./s115_usermode_emulator/qemu_init_libe2p.so.2.3.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libe2p.so.2.3</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_ata_id.html" title="./s115_usermode_emulator/stracer_ata_id.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./lib/udev/ata_id</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_e2fsck.html" title="./s115_usermode_emulator/qemu_init_e2fsck.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">e2fsck</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_ldconfig.html" title="./s115_usermode_emulator/qemu_init_ldconfig.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">ldconfig</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_agetty.html" title="./s115_usermode_emulator/qemu_init_agetty.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">agetty</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_vipw.shadow.html" title="./s115_usermode_emulator/qemu_init_vipw.shadow.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">vipw.shadow</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_scsi_id.html" title="./s115_usermode_emulator/stracer_scsi_id.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./lib/udev/scsi_id</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_nologin.html" title="./s115_usermode_emulator/qemu_init_nologin.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">nologin</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<pre>[</span><span class="orange">*</span>] Binary </span><span class="orange">./sbin/sulogin.util-linux</span> (</span><span class="orange">26/90</span>) not emulated - blacklist triggered</pre>
+<a class="reference" href="./s115_usermode_emulator/stracer_mtd_probe.html" title="./s115_usermode_emulator/stracer_mtd_probe.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./lib/udev/mtd_probe</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_v4l_id.html" title="./s115_usermode_emulator/stracer_v4l_id.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./lib/udev/v4l_id</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_finit.html" title="./s115_usermode_emulator/qemu_init_finit.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">finit</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_fsck.util-linux.html" title="./s115_usermode_emulator/qemu_init_fsck.util-linux.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">fsck.util-linux</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_ldconfig.html" title="./s115_usermode_emulator/stracer_ldconfig.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./sbin/ldconfig</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libcares.so.2.2.0.html" title="./s115_usermode_emulator/qemu_init_libcares.so.2.2.0.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libcares.so.2.2.0</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libexpat.so.1.6.2.html" title="./s115_usermode_emulator/qemu_init_libexpat.so.1.6.2.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libexpat.so.1.6.2</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libkmod.so.2.3.1.html" title="./s115_usermode_emulator/qemu_init_libkmod.so.2.3.1.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libkmod.so.2.3.1</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libcrypto.so.1.0.0.html" title="./s115_usermode_emulator/qemu_init_libcrypto.so.1.0.0.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libcrypto.so.1.0.0</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libmount.so.1.1.0.html" title="./s115_usermode_emulator/stracer_libmount.so.1.1.0.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./lib/libmount.so.1.1.0</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libgpr.so.4.0.0.html" title="./s115_usermode_emulator/qemu_init_libgpr.so.4.0.0.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libgpr.so.4.0.0</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libacl.so.1.1.0.html" title="./s115_usermode_emulator/stracer_libacl.so.1.1.0.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./lib/libacl.so.1.1.0</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libstdc++.so.6.0.22.html" title="./s115_usermode_emulator/qemu_init_libstdc++.so.6.0.22.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libstdc++.so.6.0.22</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libblkid.so.1.1.0.html" title="./s115_usermode_emulator/stracer_libblkid.so.1.1.0.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./lib/libblkid.so.1.1.0</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libcap.so.2.25.html" title="./s115_usermode_emulator/stracer_libcap.so.2.25.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./lib/libcap.so.2.25</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libnss_mymachines.so.2.html" title="./s115_usermode_emulator/qemu_init_libnss_mymachines.so.2.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libnss_mymachines.so.2</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libsystemd.so.0.15.0.html" title="./s115_usermode_emulator/stracer_libsystemd.so.0.15.0.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./lib/libsystemd.so.0.15.0</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libz.so.1.2.8.html" title="./s115_usermode_emulator/stracer_libz.so.1.2.8.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./lib/libz.so.1.2.8</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libgcc_s.so.1.html" title="./s115_usermode_emulator/stracer_libgcc_s.so.1.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./lib/libgcc_s.so.1</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libgrpc++_unsecure.so.1.8.5.html" title="./s115_usermode_emulator/qemu_init_libgrpc++_unsecure.so.1.8.5.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libgrpc++_unsecure.so.1.8.5</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libcom_err.so.2.1.html" title="./s115_usermode_emulator/stracer_libcom_err.so.2.1.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./lib/libcom_err.so.2.1</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libboost_filesystem.so.1.61.0.html" title="./s115_usermode_emulator/qemu_init_libboost_filesystem.so.1.61.0.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libboost_filesystem.so.1.61.0</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libext2fs.so.2.4.html" title="./s115_usermode_emulator/stracer_libext2fs.so.2.4.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./lib/libext2fs.so.2.4</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libssl.so.1.0.0.html" title="./s115_usermode_emulator/qemu_init_libssl.so.1.0.0.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libssl.so.1.0.0</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libtbb.so.2.html" title="./s115_usermode_emulator/qemu_init_libtbb.so.2.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libtbb.so.2</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_vipw.shadow.html" title="./s115_usermode_emulator/stracer_vipw.shadow.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./sbin/vipw.shadow</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_fsck.util-linux.html" title="./s115_usermode_emulator/stracer_fsck.util-linux.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./sbin/fsck.util-linux</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_cdrom_id.html" title="./s115_usermode_emulator/stracer_cdrom_id.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./lib/udev/cdrom_id</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_collect.html" title="./s115_usermode_emulator/stracer_collect.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./lib/udev/collect</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libprotobuf.so.15.0.1.html" title="./s115_usermode_emulator/qemu_init_libprotobuf.so.15.0.1.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libprotobuf.so.15.0.1</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libnl-3.so.200.23.0.html" title="./s115_usermode_emulator/qemu_init_libnl-3.so.200.23.0.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libnl-3.so.200.23.0</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libnss_myhostname.so.2.html" title="./s115_usermode_emulator/qemu_init_libnss_myhostname.so.2.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libnss_myhostname.so.2</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libboost_system.so.1.61.0.html" title="./s115_usermode_emulator/qemu_init_libboost_system.so.1.61.0.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libboost_system.so.1.61.0</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libuuid.so.1.3.0.html" title="./s115_usermode_emulator/stracer_libuuid.so.1.3.0.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./lib/libuuid.so.1.3.0</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libattr.so.1.1.0.html" title="./s115_usermode_emulator/stracer_libattr.so.1.1.0.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./lib/libattr.so.1.1.0</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libnl-genl-3.so.200.23.0.html" title="./s115_usermode_emulator/qemu_init_libnl-genl-3.so.200.23.0.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libnl-genl-3.so.200.23.0</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libe2p.so.2.3.html" title="./s115_usermode_emulator/stracer_libe2p.so.2.3.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./lib/libe2p.so.2.3</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libdbus-1.so.3.14.7.html" title="./s115_usermode_emulator/qemu_init_libdbus-1.so.3.14.7.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libdbus-1.so.3.14.7</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_e2fsck.html" title="./s115_usermode_emulator/stracer_e2fsck.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./sbin/e2fsck</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_libgrpc_unsecure.so.4.0.0.html" title="./s115_usermode_emulator/qemu_init_libgrpc_unsecure.so.4.0.0.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">libgrpc_unsecure.so.4.0.0</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_agetty.html" title="./s115_usermode_emulator/stracer_agetty.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./sbin/agetty</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_liblzma.so.5.2.2.html" title="./s115_usermode_emulator/qemu_init_liblzma.so.5.2.2.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">liblzma.so.5.2.2</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_wl.html" title="./s115_usermode_emulator/qemu_init_wl.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">wl</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_nologin.html" title="./s115_usermode_emulator/stracer_nologin.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./sbin/nologin</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_hostapd.html" title="./s115_usermode_emulator/qemu_init_hostapd.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">hostapd</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_finit.html" title="./s115_usermode_emulator/stracer_finit.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./sbin/finit</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_hostapd_cli.html" title="./s115_usermode_emulator/qemu_init_hostapd_cli.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">hostapd_cli</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_mtpd.html" title="./s115_usermode_emulator/qemu_init_mtpd.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">mtpd</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libcares.so.2.2.0.html" title="./s115_usermode_emulator/stracer_libcares.so.2.2.0.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/lib/libcares.so.2.2.0</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_dbus-run-session.html" title="./s115_usermode_emulator/qemu_init_dbus-run-session.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">dbus-run-session</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libexpat.so.1.6.2.html" title="./s115_usermode_emulator/stracer_libexpat.so.1.6.2.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/lib/libexpat.so.1.6.2</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libkmod.so.2.3.1.html" title="./s115_usermode_emulator/stracer_libkmod.so.2.3.1.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/lib/libkmod.so.2.3.1</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_dbus-cleanup-sockets.html" title="./s115_usermode_emulator/qemu_init_dbus-cleanup-sockets.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">dbus-cleanup-sockets</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_membinrdwriq.html" title="./s115_usermode_emulator/qemu_init_membinrdwriq.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">membinrdwriq</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libcrypto.so.1.0.0.html" title="./s115_usermode_emulator/stracer_libcrypto.so.1.0.0.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/lib/libcrypto.so.1.0.0</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libstdc++.so.6.0.22.html" title="./s115_usermode_emulator/stracer_libstdc++.so.6.0.22.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/lib/libstdc++.so.6.0.22</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libgpr.so.4.0.0.html" title="./s115_usermode_emulator/stracer_libgpr.so.4.0.0.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/lib/libgpr.so.4.0.0</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_wl.html" title="./s115_usermode_emulator/stracer_wl.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/sbin/wl</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_dbus-launch.html" title="./s115_usermode_emulator/qemu_init_dbus-launch.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">dbus-launch</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_hostapd_cli.html" title="./s115_usermode_emulator/stracer_hostapd_cli.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/sbin/hostapd_cli</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libnss_mymachines.so.2.html" title="./s115_usermode_emulator/stracer_libnss_mymachines.so.2.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/lib/libnss_mymachines.so.2</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libgrpc++_unsecure.so.1.8.5.html" title="./s115_usermode_emulator/stracer_libgrpc++_unsecure.so.1.8.5.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/lib/libgrpc++_unsecure.so.1.8.5</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_dbus-daemon.html" title="./s115_usermode_emulator/qemu_init_dbus-daemon.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">dbus-daemon</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_membinrdwriq.html" title="./s115_usermode_emulator/stracer_membinrdwriq.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/bin/membinrdwriq</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_hostapd.html" title="./s115_usermode_emulator/stracer_hostapd.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/sbin/hostapd</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_mtpd.html" title="./s115_usermode_emulator/stracer_mtpd.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/bin/mtpd</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libboost_filesystem.so.1.61.0.html" title="./s115_usermode_emulator/stracer_libboost_filesystem.so.1.61.0.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/lib/libboost_filesystem.so.1.61.0</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_dbus-run-session.html" title="./s115_usermode_emulator/stracer_dbus-run-session.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/bin/dbus-run-session</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libssl.so.1.0.0.html" title="./s115_usermode_emulator/stracer_libssl.so.1.0.0.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/lib/libssl.so.1.0.0</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_testbt.html" title="./s115_usermode_emulator/qemu_init_testbt.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">testbt</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_dbus-cleanup-sockets.html" title="./s115_usermode_emulator/stracer_dbus-cleanup-sockets.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/bin/dbus-cleanup-sockets</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_dbus-launch.html" title="./s115_usermode_emulator/stracer_dbus-launch.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/bin/dbus-launch</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libtbb.so.2.html" title="./s115_usermode_emulator/stracer_libtbb.so.2.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/lib/libtbb.so.2</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_camctld.html" title="./s115_usermode_emulator/qemu_init_camctld.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">camctld</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_dbus-daemon.html" title="./s115_usermode_emulator/stracer_dbus-daemon.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/bin/dbus-daemon</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libprotobuf.so.15.0.1.html" title="./s115_usermode_emulator/stracer_libprotobuf.so.15.0.1.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/lib/libprotobuf.so.15.0.1</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_webapid.html" title="./s115_usermode_emulator/qemu_init_webapid.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">webapid</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libnl-3.so.200.23.0.html" title="./s115_usermode_emulator/stracer_libnl-3.so.200.23.0.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/lib/libnl-3.so.200.23.0</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_membinrdwr.html" title="./s115_usermode_emulator/qemu_init_membinrdwr.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">membinrdwr</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_testbt.html" title="./s115_usermode_emulator/stracer_testbt.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/bin/testbt</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_camctld.html" title="./s115_usermode_emulator/stracer_camctld.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/bin/camctld</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libnss_myhostname.so.2.html" title="./s115_usermode_emulator/stracer_libnss_myhostname.so.2.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/lib/libnss_myhostname.so.2</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_dbus-monitor.html" title="./s115_usermode_emulator/qemu_init_dbus-monitor.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">dbus-monitor</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_usbd.html" title="./s115_usermode_emulator/qemu_init_usbd.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">usbd</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libnl-genl-3.so.200.23.0.html" title="./s115_usermode_emulator/stracer_libnl-genl-3.so.200.23.0.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/lib/libnl-genl-3.so.200.23.0</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_webapid.html" title="./s115_usermode_emulator/stracer_webapid.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/bin/webapid</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libboost_system.so.1.61.0.html" title="./s115_usermode_emulator/stracer_libboost_system.so.1.61.0.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/lib/libboost_system.so.1.61.0</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_membinrdwr.html" title="./s115_usermode_emulator/stracer_membinrdwr.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/bin/membinrdwr</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_dbus-send.html" title="./s115_usermode_emulator/qemu_init_dbus-send.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">dbus-send</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_dbus-monitor.html" title="./s115_usermode_emulator/stracer_dbus-monitor.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/bin/dbus-monitor</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_dbus-uuidgen.html" title="./s115_usermode_emulator/qemu_init_dbus-uuidgen.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">dbus-uuidgen</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libdbus-1.so.3.14.7.html" title="./s115_usermode_emulator/stracer_libdbus-1.so.3.14.7.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/lib/libdbus-1.so.3.14.7</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_libgrpc_unsecure.so.4.0.0.html" title="./s115_usermode_emulator/stracer_libgrpc_unsecure.so.4.0.0.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/lib/libgrpc_unsecure.so.4.0.0</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_sysmgrd.html" title="./s115_usermode_emulator/qemu_init_sysmgrd.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">sysmgrd</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_liblzma.so.5.2.2.html" title="./s115_usermode_emulator/stracer_liblzma.so.5.2.2.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/lib/liblzma.so.5.2.2</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_dbus-send.html" title="./s115_usermode_emulator/stracer_dbus-send.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/bin/dbus-send</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_membinrdwrawb.html" title="./s115_usermode_emulator/qemu_init_membinrdwrawb.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">membinrdwrawb</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_netmgrd.html" title="./s115_usermode_emulator/qemu_init_netmgrd.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">netmgrd</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_bled.html" title="./s115_usermode_emulator/qemu_init_bled.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">bled</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_brcm_patchram_plus-custom_v06.html" title="./s115_usermode_emulator/qemu_init_brcm_patchram_plus-custom_v06.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">brcm_patchram_plus-custom_v06</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_usbd.html" title="./s115_usermode_emulator/stracer_usbd.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/bin/usbd</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_sysmgrd.html" title="./s115_usermode_emulator/stracer_sysmgrd.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/bin/sysmgrd</span> to identify missing areas</pre></a>
+
+<pre>[</span><span class="orange">*</span>] Binary </span><span class="orange">./bin/su.shadow</span> (</span><span class="orange">70/90</span>) not emulated - blacklist triggered</pre>
+<a class="reference" href="./s115_usermode_emulator/stracer_dbus-uuidgen.html" title="./s115_usermode_emulator/stracer_dbus-uuidgen.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/bin/dbus-uuidgen</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_membinrdwrawb.html" title="./s115_usermode_emulator/stracer_membinrdwrawb.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/bin/membinrdwrawb</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_systemd-firstboot.html" title="./s115_usermode_emulator/qemu_init_systemd-firstboot.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">systemd-firstboot</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_udevadm.html" title="./s115_usermode_emulator/qemu_init_udevadm.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">udevadm</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_bled.html" title="./s115_usermode_emulator/stracer_bled.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/bin/bled</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_netmgrd.html" title="./s115_usermode_emulator/stracer_netmgrd.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/bin/netmgrd</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_brcm_patchram_plus-custom_v06.html" title="./s115_usermode_emulator/stracer_brcm_patchram_plus-custom_v06.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./usr/bin/brcm_patchram_plus-custom_v06</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_systemd-notify.html" title="./s115_usermode_emulator/qemu_init_systemd-notify.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">systemd-notify</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_busybox.suid.html" title="./s115_usermode_emulator/qemu_init_busybox.suid.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">busybox.suid</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_systemd-firstboot.html" title="./s115_usermode_emulator/stracer_systemd-firstboot.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/systemd-firstboot</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_kmod.html" title="./s115_usermode_emulator/qemu_init_kmod.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">kmod</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_udevadm.html" title="./s115_usermode_emulator/stracer_udevadm.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/udevadm</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_journalctl.html" title="./s115_usermode_emulator/qemu_init_journalctl.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">journalctl</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_systemd-notify.html" title="./s115_usermode_emulator/stracer_systemd-notify.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/systemd-notify</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_systemd-escape.html" title="./s115_usermode_emulator/qemu_init_systemd-escape.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">systemd-escape</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_busybox.suid.html" title="./s115_usermode_emulator/stracer_busybox.suid.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/busybox.suid</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_systemctl.html" title="./s115_usermode_emulator/qemu_init_systemctl.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">systemctl</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_kmod.html" title="./s115_usermode_emulator/stracer_kmod.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/kmod</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_systemd-sysusers.html" title="./s115_usermode_emulator/qemu_init_systemd-sysusers.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">systemd-sysusers</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_journalctl.html" title="./s115_usermode_emulator/stracer_journalctl.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/journalctl</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_systemd-tmpfiles.html" title="./s115_usermode_emulator/qemu_init_systemd-tmpfiles.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">systemd-tmpfiles</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_systemd-machine-id-setup.html" title="./s115_usermode_emulator/qemu_init_systemd-machine-id-setup.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">systemd-machine-id-setup</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_systemd-escape.html" title="./s115_usermode_emulator/stracer_systemd-escape.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/systemd-escape</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_systemd-tty-ask-password-agent.html" title="./s115_usermode_emulator/qemu_init_systemd-tty-ask-password-agent.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">systemd-tty-ask-password-agent</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_systemctl.html" title="./s115_usermode_emulator/stracer_systemctl.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/systemctl</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_systemd-inhibit.html" title="./s115_usermode_emulator/qemu_init_systemd-inhibit.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">systemd-inhibit</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_systemd-sysusers.html" title="./s115_usermode_emulator/stracer_systemd-sysusers.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/systemd-sysusers</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_login.shadow.html" title="./s115_usermode_emulator/qemu_init_login.shadow.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">login.shadow</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_systemd-tmpfiles.html" title="./s115_usermode_emulator/stracer_systemd-tmpfiles.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/systemd-tmpfiles</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_systemd-machine-id-setup.html" title="./s115_usermode_emulator/stracer_systemd-machine-id-setup.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/systemd-machine-id-setup</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_systemd-ask-password.html" title="./s115_usermode_emulator/qemu_init_systemd-ask-password.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">systemd-ask-password</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_systemd-tty-ask-password-agent.html" title="./s115_usermode_emulator/stracer_systemd-tty-ask-password-agent.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/systemd-tty-ask-password-agent</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_machinectl.html" title="./s115_usermode_emulator/qemu_init_machinectl.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">machinectl</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_systemd-inhibit.html" title="./s115_usermode_emulator/stracer_systemd-inhibit.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/systemd-inhibit</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_loginctl.html" title="./s115_usermode_emulator/qemu_init_loginctl.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">loginctl</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_login.shadow.html" title="./s115_usermode_emulator/stracer_login.shadow.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/login.shadow</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_busybox.nosuid.html" title="./s115_usermode_emulator/qemu_init_busybox.nosuid.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">busybox.nosuid</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_systemd-ask-password.html" title="./s115_usermode_emulator/stracer_systemd-ask-password.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/systemd-ask-password</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_systemd-hwdb.html" title="./s115_usermode_emulator/qemu_init_systemd-hwdb.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">systemd-hwdb</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_machinectl.html" title="./s115_usermode_emulator/stracer_machinectl.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/machinectl</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_init_mount.util-linux.html" title="./s115_usermode_emulator/qemu_init_mount.util-linux.html" ><pre>[</span><span class="orange">*</span>] Initial CPU detection process of binary </span><span class="orange">mount.util-linux</span> with CPU configuration </span><span class="orange">NONE</span>.</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_loginctl.html" title="./s115_usermode_emulator/stracer_loginctl.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/loginctl</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_busybox.nosuid.html" title="./s115_usermode_emulator/stracer_busybox.nosuid.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/busybox.nosuid</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_systemd-hwdb.html" title="./s115_usermode_emulator/stracer_systemd-hwdb.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/systemd-hwdb</span> to identify missing areas</pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/stracer_mount.util-linux.html" title="./s115_usermode_emulator/stracer_mount.util-linux.html" ><pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/mount.util-linux</span> to identify missing areas</pre></a>
+
+<br />
+<br />
+<pre></span><span class="blue">==&gt</span></span> </span><span class="cyan"><a id="cleanupphase">Cleanup phase</a></span></pre>
+<pre><hr class="mono" /></pre>
+<pre>[</span><span class="orange">*</span>] Terminating qemu processes - check it with ps</pre>
+<pre>[</span><span class="orange">*</span>] Cleaning the emulation environment</pre>
+<br />
+<br />
+<pre>[</span><span class="orange">*</span>] Umounting proc, sys and run</pre>
+<pre>[</span><span class="orange">*</span>] Unmounting proc on /logs/s115_usermode_emulator/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/proc type proc (rw,relatime)</pre>
+<pre>[</span><span class="orange">*</span>] Unmounting overlay on /logs/s115_usermode_emulator/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/run type overlay (ro,relatime,lowerdir=/var/lib/docker/overlay2/l/L2NO65R5SH6YCCMQG7JULRFXBZ:/var/lib/docker/overlay2/l/VCS3PUYHDQNVZA3JZX4C4UDSJ2:/var/lib/docker/overlay2/l/VZYYMJNZ2I5ZRW34BYKWFSIJIB:/var/lib/docker/overlay2/l/WYDTGYSZNSDL4YUAIRZL4M5NSF:/var/lib/docker/overlay2/l/54L2J7IHLHCGZ5RUSHK6DN62EK:/var/lib/docker/overlay2/l/BMFSAT3WA7TFPQOBWELXQIRPVO:/var/lib/docker/overlay2/l/SJQICRFTSV3BJA5SWGWAWXRGEZ:/var/lib/docker/overlay2/l/JYDRDD7SO72XTH7SQI4MTTA4LF,upperdir=/var/lib/docker/overlay2/b570e937e6b6c6a2937b0f8f8c0d8983bc6150827c21a893d74a37f56e56df08/diff,workdir=/var/lib/docker/overlay2/b570e937e6b6c6a2937b0f8f8c0d8983bc6150827c21a893d74a37f56e56df08/work)</pre>
+<pre>[</span><span class="orange">*</span>] Unmounting sysfs on /logs/s115_usermode_emulator/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/sys type sysfs (rw,nosuid,nodev,noexec,relatime)</pre>
+<pre>[</span><span class="orange">*</span>] Found </span><span class="orange">2</span> binaries not emulated - Illegal instructions</pre>
+<br />
+<pre></span><span class="blue">==&gt</span></span> </span><span class="cyan"><a id="reportingphase">Reporting phase</a></span></pre>
+<pre><hr class="mono" /></pre>
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_mount.util-linux.html" title="./s115_usermode_emulator/qemu_tmp_mount.util-linux.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">mount.util-linux</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_mount.util-linux.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_systemd-udevd.html" title="./s115_usermode_emulator/qemu_tmp_systemd-udevd.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">systemd-udevd</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_systemd-udevd.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_dbus-monitor.html" title="./s115_usermode_emulator/qemu_tmp_dbus-monitor.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">dbus-monitor</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_dbus-monitor.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_finit.html" title="./s115_usermode_emulator/qemu_tmp_finit.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">finit</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_finit.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_udevadm.html" title="./s115_usermode_emulator/qemu_tmp_udevadm.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">udevadm</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_udevadm.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_e2fsck.html" title="./s115_usermode_emulator/qemu_tmp_e2fsck.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">e2fsck</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_e2fsck.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_wl.html" title="./s115_usermode_emulator/qemu_tmp_wl.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">wl</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_wl.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_webapid.html" title="./s115_usermode_emulator/qemu_tmp_webapid.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">webapid</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_webapid.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_dbus-launch.html" title="./s115_usermode_emulator/qemu_tmp_dbus-launch.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">dbus-launch</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_dbus-launch.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_hostapd.html" title="./s115_usermode_emulator/qemu_tmp_hostapd.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">hostapd</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_hostapd.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_journalctl.html" title="./s115_usermode_emulator/qemu_tmp_journalctl.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">journalctl</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_journalctl.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_mtpd.html" title="./s115_usermode_emulator/qemu_tmp_mtpd.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">mtpd</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_mtpd.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_systemd-tty-ask-password-agent.html" title="./s115_usermode_emulator/qemu_tmp_systemd-tty-ask-password-agent.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">systemd-tty-ask-password-agent</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_systemd-tty-ask-password-agent.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_busybox.suid.html" title="./s115_usermode_emulator/qemu_tmp_busybox.suid.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">busybox.suid</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_busybox.suid.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_hostapd_cli.html" title="./s115_usermode_emulator/qemu_tmp_hostapd_cli.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">hostapd</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_hostapd_cli.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_camctld.html" title="./s115_usermode_emulator/qemu_tmp_camctld.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">camctld</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_camctld.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_systemd-hwdb.html" title="./s115_usermode_emulator/qemu_tmp_systemd-hwdb.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">systemd-hwdb</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_systemd-hwdb.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_usbd.html" title="./s115_usermode_emulator/qemu_tmp_usbd.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">usbd</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_usbd.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_vipw.shadow.html" title="./s115_usermode_emulator/qemu_tmp_vipw.shadow.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">vipw.shadow</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_vipw.shadow.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_agetty.html" title="./s115_usermode_emulator/qemu_tmp_agetty.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">agetty</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_agetty.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_systemd-sysusers.html" title="./s115_usermode_emulator/qemu_tmp_systemd-sysusers.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">systemd-sysusers</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_systemd-sysusers.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_systemd-tmpfiles.html" title="./s115_usermode_emulator/qemu_tmp_systemd-tmpfiles.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">systemd-tmpfiles</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_systemd-tmpfiles.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_bled.html" title="./s115_usermode_emulator/qemu_tmp_bled.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">bled</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_bled.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_systemd-machine-id-setup.html" title="./s115_usermode_emulator/qemu_tmp_systemd-machine-id-setup.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">systemd-machine-id-setup</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_systemd-machine-id-setup.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_dbus-uuidgen.html" title="./s115_usermode_emulator/qemu_tmp_dbus-uuidgen.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">dbus-uuidgen</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_dbus-uuidgen.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_systemd-ask-password.html" title="./s115_usermode_emulator/qemu_tmp_systemd-ask-password.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">systemd-ask-password</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_systemd-ask-password.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_login.shadow.html" title="./s115_usermode_emulator/qemu_tmp_login.shadow.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">login.shadow</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_login.shadow.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_netmgrd.html" title="./s115_usermode_emulator/qemu_tmp_netmgrd.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">netmgrd</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_netmgrd.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_kmod.html" title="./s115_usermode_emulator/qemu_tmp_kmod.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">kmod</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_kmod.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_systemd-escape.html" title="./s115_usermode_emulator/qemu_tmp_systemd-escape.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">systemd-escape</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_systemd-escape.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_systemctl.html" title="./s115_usermode_emulator/qemu_tmp_systemctl.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">systemctl</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_systemctl.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_ldconfig.html" title="./s115_usermode_emulator/qemu_tmp_ldconfig.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">ldconfig</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_ldconfig.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_nologin.html" title="./s115_usermode_emulator/qemu_tmp_nologin.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">nologin</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_nologin.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_membinrdwr.html" title="./s115_usermode_emulator/qemu_tmp_membinrdwr.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">membinrdwr</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_membinrdwr.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_busybox.nosuid.html" title="./s115_usermode_emulator/qemu_tmp_busybox.nosuid.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">busybox.nosuid</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_busybox.nosuid.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_testbt.html" title="./s115_usermode_emulator/qemu_tmp_testbt.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">testbt</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_testbt.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_ata_id.html" title="./s115_usermode_emulator/qemu_tmp_ata_id.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">ata</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_ata_id.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_systemd-inhibit.html" title="./s115_usermode_emulator/qemu_tmp_systemd-inhibit.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">systemd-inhibit</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_systemd-inhibit.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_systemd-firstboot.html" title="./s115_usermode_emulator/qemu_tmp_systemd-firstboot.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">systemd-firstboot</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_systemd-firstboot.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_systemd-notify.html" title="./s115_usermode_emulator/qemu_tmp_systemd-notify.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">systemd-notify</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_systemd-notify.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_dbus-run-session.html" title="./s115_usermode_emulator/qemu_tmp_dbus-run-session.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">dbus-run-session</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_dbus-run-session.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_dbus-send.html" title="./s115_usermode_emulator/qemu_tmp_dbus-send.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">dbus-send</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_dbus-send.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_machinectl.html" title="./s115_usermode_emulator/qemu_tmp_machinectl.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">machinectl</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_machinectl.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_dbus-cleanup-sockets.html" title="./s115_usermode_emulator/qemu_tmp_dbus-cleanup-sockets.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">dbus-cleanup-sockets</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_dbus-cleanup-sockets.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_mtd_probe.html" title="./s115_usermode_emulator/qemu_tmp_mtd_probe.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">mtd</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_mtd_probe.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_loginctl.html" title="./s115_usermode_emulator/qemu_tmp_loginctl.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">loginctl</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_loginctl.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_fsck.util-linux.html" title="./s115_usermode_emulator/qemu_tmp_fsck.util-linux.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">fsck.util-linux</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_fsck.util-linux.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_membinrdwrawb.html" title="./s115_usermode_emulator/qemu_tmp_membinrdwrawb.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">membinrdwrawb</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_membinrdwrawb.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_scsi_id.html" title="./s115_usermode_emulator/qemu_tmp_scsi_id.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">scsi</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_scsi_id.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_brcm_patchram_plus-custom_v06.html" title="./s115_usermode_emulator/qemu_tmp_brcm_patchram_plus-custom_v06.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">brcm</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_brcm_patchram_plus-custom_v06.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_membinrdwriq.html" title="./s115_usermode_emulator/qemu_tmp_membinrdwriq.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">membinrdwriq</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_membinrdwriq.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_sysmgrd.html" title="./s115_usermode_emulator/qemu_tmp_sysmgrd.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">sysmgrd</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_sysmgrd.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_cdrom_id.html" title="./s115_usermode_emulator/qemu_tmp_cdrom_id.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">cdrom</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_cdrom_id.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_collect.html" title="./s115_usermode_emulator/qemu_tmp_collect.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">collect</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_collect.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_dbus-daemon.html" title="./s115_usermode_emulator/qemu_tmp_dbus-daemon.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">dbus-daemon</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_dbus-daemon.txt</span>.</span></pre></a>
+
+<a class="reference" href="./s115_usermode_emulator/qemu_tmp_v4l_id.html" title="./s115_usermode_emulator/qemu_tmp_v4l_id.html" ><pre>[</span><span class="green">+</span>]</span><span class="green"></span> Emulated binary </span><span class="green">v4l</span> generated output in </span><span class="green">/logs/s115_usermode_emulator/qemu_tmp_v4l_id.txt</span>.</span></pre></a>
+
+<pre>[</span><span class="orange">*</span>] Remove firmware copy from emulation directory.</pre>
+<br />
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<a href="./s116_qemu_version_detection.html" title="./s116_qemu_version_detection.html" ><div id="buttonBack" class="rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a>
+<a href="./s108_stacs_password_search.html" title="./s108_stacs_password_search.html" ><div id="buttonForward" class="rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/></svg></div> </a>
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+  var embarkButton = document.getElementById("embark");
+  if ( !(embarkButton.href.includes("embarkBackUrl")) ) {
+    embarkButton.classList.remove('hidden');
+    document.getElementById("logoImage").src = "./style/embark.svg";
+    document.getElementById("logo").style.background = "#2d2d2d";
+  }
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

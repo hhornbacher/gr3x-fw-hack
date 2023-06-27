@@ -1,0 +1,572 @@
+<!-- 
+EMBA - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2023 Siemens AG
+Copyright 2020-2023 Siemens Energy AG
+
+EMBA comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+EMBA is licensed under GPLv3
+
+Author(s): Pascal Eckmann
+Contributor(s): Michael Messner, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div id="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" id="logoImage" src="./../style/emba.svg" alt="logo"></a>
+  </div>
+  <div id="nav">
+      <a id="embark" class="hidden" href="{{ embarkBackUrl }}">&laquo; Back to EMBArk</a> <!-- nosem -->
+      <a class="backButton" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s115_usermode_emulator.html" title="./../s115_usermode_emulator.html" >&laquo; Back to s115_usermode_emulator</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<br />
+<pre>-----------------------------------------------------------------</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Initial strace run with </span><span class="orange">jchroot</span> on the command </span><span class="orange">./bin/busybox.nosuid</span> to identify missing areas</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Emulating binary name: </span><span class="orange">busybox.nosuid</span> in </span><span class="orange">strace</span> mode to identify missing areas (with </span><span class="orange">jchroot</span>)</pre>
+<pre>[</span><span class="orange">*</span>] Emulator used: </span><span class="orange">qemu-arm-static</span></pre>
+<pre>[</span><span class="orange">*</span>] Chroot environment used: </span><span class="orange">jchroot</span></pre>
+<pre>[</span><span class="orange">*</span>] Using root directory: </span><span class="orange">/logs/s115_usermode_emulator/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract</span> (</span><span class="orange">1/1</span>)</pre>
+<pre>[</span><span class="orange">*</span>] Using CPU config: </span><span class="orange">NONE</span></pre>
+<br />
+<pre>1 brk(NULL) = 0x000bb000</pre>
+<pre>1 uname(0x4071e680) = 0</pre>
+<pre>1 mmap2(NULL,8192,PROT_READ|PROT_WRITE,MAP_PRIVATE|MAP_ANONYMOUS,-1,0) = 0x3fffd000</pre>
+<pre>1 access("/etc/ld.so.preload",R_OK) = -1 errno=2 (No such file or directory)</pre>
+<pre>1 open("/etc/ld.so.cache",O_RDONLY|O_CLOEXEC) = 3</pre>
+<pre>1 fstat64(3,0x4071e278) = 0</pre>
+<pre>1 mmap2(NULL,3577,PROT_READ,MAP_PRIVATE,3,0) = 0x3fffc000</pre>
+<pre>1 close(3) = 0</pre>
+<pre>1 open("/lib/libm.so.6",O_RDONLY|O_CLOEXEC) = 3</pre>
+<pre>1 read(3,0x4071e380,512) = 512</pre>
+<pre>1 fstat64(3,0x4071e2b0) = 0</pre>
+<pre>1 mmap2(0x45400000,737480,PROT_EXEC|PROT_READ,MAP_PRIVATE|MAP_DENYWRITE,3,0) = 0x45400000</pre>
+<pre>1 mprotect(0x454a3000,65536,PROT_NONE) = 0</pre>
+<pre>1 mmap2(0x454b3000,8192,PROT_READ|PROT_WRITE,MAP_PRIVATE|MAP_DENYWRITE|MAP_FIXED,3,0xa3) = 0x454b3000</pre>
+<pre>1 close(3) = 0</pre>
+<pre>1 open("/lib/libc.so.6",O_RDONLY|O_CLOEXEC) = 3</pre>
+<pre>1 read(3,0x4071e368,512) = 512</pre>
+<pre>1 fstat64(3,0x4071e298) = 0</pre>
+<pre>1 mmap2(0x45250000,1304912,PROT_EXEC|PROT_READ,MAP_PRIVATE|MAP_DENYWRITE,3,0) = 0x45250000</pre>
+<pre>1 mprotect(0x4537a000,61440,PROT_NONE) = 0</pre>
+<pre>1 mmap2(0x45389000,16384,PROT_READ|PROT_WRITE,MAP_PRIVATE|MAP_DENYWRITE|MAP_FIXED,3,0x129) = 0x45389000</pre>
+<pre>1 mmap2(0x4538d000,6480,PROT_READ|PROT_WRITE,MAP_PRIVATE|MAP_ANONYMOUS|MAP_FIXED,-1,0) = 0x4538d000</pre>
+<pre>1 close(3) = 0</pre>
+<pre>1 mprotect(0x454b3000,4096,PROT_READ) = 0</pre>
+<pre>1 mprotect(0x45389000,8192,PROT_READ) = 0</pre>
+<pre>1 mprotect(0x4523f000,4096,PROT_READ) = 0</pre>
+<pre>1 munmap(0x3fffc000,3577) = 0</pre>
+<pre>1 getuid32(1081210562,791621423,9,1081210576,702780,1081207172) = 0</pre>
+<pre>1 ioctl(0,TIOCGWINSZ,0x4071e7e0) = -1 errno=25 (Inappropriate ioctl for device)</pre>
+<pre>1 dup2(1,2) = 2</pre>
+<pre>1 write(2,0x96dd4,41)BusyBox v1.24.1 (2021-07-05 21:03:30 JST) = 41</pre>
+<pre>1 write(2,0x89570,20) multi-call binary.</pre>
+<pre> = 20</pre>
+<pre>1 write(2,0x89638,496)BusyBox is copyrighted by many authors between 1998-2015.</pre>
+<pre>Licensed under GPLv2. See source distribution for detailed</pre>
+<pre>copyright notices.</pre>
+<br />
+<pre>Usage: busybox [function [arguments]...]</pre>
+<pre>   or: busybox --list</pre>
+<pre>   or: function [arguments]...</pre>
+<br />
+<pre>	BusyBox is a multi-call binary that combines many common Unix</pre>
+<pre>	utilities into a single executable.  Most people will create a</pre>
+<pre>	link to busybox for each function they wish to use and BusyBox</pre>
+<pre>	will act like whatever it was invoked as.</pre>
+<br />
+<pre>Currently defined functions:</pre>
+<pre> = 496</pre>
+<pre>1 write(2,0x89830,1)	 = 1</pre>
+<pre>1 write(2,0x96104,1)[ = 1</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96106,2)[[ = 2</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96109,8)addgroup = 8</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96112,7)adduser = 7</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9611a,6)arping = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96121,3)ash = 3</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96125,3)awk = 3</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96129,8)basename = 8</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96132,5)blkid = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96138,7)bunzip2 = 7</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96140,5)bzcat = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96146,3)cat = 3</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9614a,6)chattr = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96151,5)chgrp = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96157,5)chmod = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9615d,5)chown = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96163,6)chroot = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9616a,4)chvt = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9616f,5)clear = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96175,3)cmp = 3</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96179,2)cp = 2</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9617c,4)cpio = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96181,3)cut = 3</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96185,4)date = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9618a,2)dc = 2</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9618d,2)dd = 2</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96190,9)deallocvt = 9</pre>
+<pre>1 write(2,0x8982c,2),</pre>
+<pre> = 2</pre>
+<pre>1 write(2,0x89830,1)	 = 1</pre>
+<pre>1 write(2,0x9619a,8)delgroup = 8</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x961a3,7)deluser = 7</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x961ab,6)depmod = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x961b2,2)df = 2</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x961b5,4)diff = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x961ba,7)dirname = 7</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x961c2,5)dmesg = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x961c8,13)dnsdomainname = 13</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x961d6,2)du = 2</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x961d9,8)dumpkmap = 8</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x961e2,10)dumpleases = 10</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x961ed,4)echo = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x961f2,5)egrep = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x961f8,3)env = 3</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x961fc,4)expr = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96201,5)false = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96207,5)fbset = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9620d,5)fdisk = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96213,5)fgrep = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96219,4)find = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9621e,5)flock = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96224,4)free = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96229,4)fsck = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9622e,6)fstrim = 6</pre>
+<pre>1 write(2,0x8982c,2),</pre>
+<pre> = 2</pre>
+<pre>1 write(2,0x89830,1)	 = 1</pre>
+<pre>1 write(2,0x96235,5)fuser = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9623b,6)getopt = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96242,5)getty = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96248,4)grep = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9624d,6)groups = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96254,6)gunzip = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9625b,4)gzip = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96260,4)halt = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96265,4)head = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9626a,7)hexdump = 7</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96272,8)hostname = 8</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9627b,5)httpd = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96281,7)hwclock = 7</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96289,2)id = 2</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9628c,8)ifconfig = 8</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96295,6)ifdown = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9629c,4)ifup = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x962a1,6)insmod = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x962a8,2)ip = 2</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x962ab,4)kill = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x962b0,7)killall = 7</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x962b8,5)klogd = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x962be,4)less = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x962c3,2)ln = 2</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x962c6,8)loadfont = 8</pre>
+<pre>1 write(2,0x8982c,2),</pre>
+<pre> = 2</pre>
+<pre>1 write(2,0x89830,1)	 = 1</pre>
+<pre>1 write(2,0x962cf,8)loadkmap = 8</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x962d8,6)logger = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x962df,7)logname = 7</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x962e7,7)logread = 7</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x962ef,7)losetup = 7</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x962f7,2)ls = 2</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x962fa,5)lsmod = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96300,5)lspci = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96306,6)md5sum = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9630d,4)mesg = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96312,8)microcom = 8</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9631b,5)mkdir = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96321,6)mkfifo = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96328,5)mknod = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9632e,6)mkswap = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96335,6)mktemp = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9633c,8)modprobe = 8</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96345,4)more = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9634a,5)mount = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96350,2)mv = 2</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96353,2)nc = 2</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96356,7)netstat = 7</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9635e,5)nohup = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96364,8)nslookup = 8</pre>
+<pre>1 write(2,0x8982c,2),</pre>
+<pre> = 2</pre>
+<pre>1 write(2,0x89830,1)	 = 1</pre>
+<pre>1 write(2,0x9636d,2)od = 2</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96370,6)openvt = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96377,5)patch = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9637d,5)pidof = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96383,10)pivot_root = 10</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9638e,8)poweroff = 8</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96397,6)printf = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9639e,2)ps = 2</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x963a1,3)pwd = 3</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x963a5,5)rdate = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x963ab,8)readlink = 8</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x963b4,8)realpath = 8</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x963bd,6)reboot = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x963c4,6)renice = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x963cb,5)reset = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x963d1,6)resize = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x963d8,6)rfkill = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x963df,2)rm = 2</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x963e2,5)rmdir = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x963e8,5)rmmod = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x963ee,5)route = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x963f4,9)run-parts = 9</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x963fe,3)sed = 3</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96402,3)seq = 3</pre>
+<pre>1 write(2,0x8982c,2),</pre>
+<pre> = 2</pre>
+<pre>1 write(2,0x89830,1)	 = 1</pre>
+<pre>1 write(2,0x96406,10)setconsole = 10</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96411,2)sh = 2</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96414,7)sha1sum = 7</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9641c,9)sha256sum = 9</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96426,4)shuf = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9642b,5)sleep = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96431,4)sort = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96436,17)start-stop-daemon = 17</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96448,4)stat = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9644d,7)strings = 7</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96455,4)stty = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9645a,7)sulogin = 7</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96462,7)swapoff = 7</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9646a,6)swapon = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96471,11)switch_root = 11</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9647d,4)sync = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96482,6)sysctl = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96489,7)syslogd = 7</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96491,4)tail = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96496,3)tar = 3</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9649a,3)tee = 3</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9649e,6)telnet = 6</pre>
+<pre>1 write(2,0x8982c,2),</pre>
+<pre> = 2</pre>
+<pre>1 write(2,0x89830,1)	 = 1</pre>
+<pre>1 write(2,0x964a5,4)test = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x964aa,4)tftp = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x964af,4)time = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x964b4,3)top = 3</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x964b8,5)touch = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x964be,2)tr = 2</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x964c1,4)true = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x964c6,3)tty = 3</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x964ca,6)udhcpc = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x964d1,6)udhcpd = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x964d8,6)umount = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x964df,5)uname = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x964e5,4)uniq = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x964ea,6)unlink = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x964f1,5)unzip = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x964f7,6)uptime = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x964fe,5)users = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96504,6)usleep = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9650b,2)vi = 2</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9650e,5)watch = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96514,2)wc = 2</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96517,4)wget = 4</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9651c,5)which = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96522,3)who = 3</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96526,6)whoami = 6</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x9652d,5)xargs = 5</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96533,3)yes = 3</pre>
+<pre>1 write(2,0x8e768,2),  = 2</pre>
+<pre>1 write(2,0x96537,4)zcat = 4</pre>
+<pre>1 write(2,0x89834,2)</pre>
+<br />
+<pre> = 2</pre>
+<pre>1 exit_group(0)</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Identification of missing filesytem areas.</pre>
+<pre>[</span><span class="orange">*</span>] No missing areas found.</pre>
+<br />
+<pre>-----------------------------------------------------------------</pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+  var embarkButton = document.getElementById("embark");
+  if ( !(embarkButton.href.includes("embarkBackUrl")) ) {
+    embarkButton.classList.remove('hidden');
+    document.getElementById("logoImage").src = "./../style/embark.svg";
+    document.getElementById("logo").style.background = "#2d2d2d";
+  }
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

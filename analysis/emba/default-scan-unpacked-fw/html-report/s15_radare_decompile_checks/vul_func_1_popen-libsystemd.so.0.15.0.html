@@ -1,0 +1,326 @@
+<!-- 
+EMBA - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2023 Siemens AG
+Copyright 2020-2023 Siemens Energy AG
+
+EMBA comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+EMBA is licensed under GPLv3
+
+Author(s): Pascal Eckmann
+Contributor(s): Michael Messner, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div id="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" id="logoImage" src="./../style/emba.svg" alt="logo"></a>
+  </div>
+  <div id="nav">
+      <a id="embark" class="hidden" href="{{ embarkBackUrl }}">&laquo; Back to EMBArk</a> <!-- nosem -->
+      <a class="backButton" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s15_radare_decompile_checks.html" title="./../s15_radare_decompile_checks.html" >&laquo; Back to s15_radare_decompile_checks</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">libsystemd.so.0.15.0</span></pre>
+<br />
+<pre>  </pre>
+<pre>  	<span class="green">Full RELRO</span>     <span class="green">Canary found</span>      <span class="green">NX enabled</span>   <span class="orange">DSO</span>          <span class="green">No RPATH</span>     <span class="green">No RUNPATH</span>   <span class="green">No Symbols</pre>
+<br />
+<pre></span></pre>
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">popen</span> tear down of </span><span class="orange">libsystemd.so.0.15.0</span></pre>
+<br />
+<pre>    ; assembly                                   | /* r2dec pseudo code output */</pre>
+<pre>                                                 | /* /logs/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/lib/libsystemd.so.0.15.0 &commat; 0x454e0004 */</pre>
+<pre>                                                 | #include &lt;stdint.h&gt;</pre>
+<pre>                                                 |  </pre>
+<pre>    ; (fcn) fcn.454e0004 ()                      | void fcn_454e0004 (int32_t arg2) {</pre>
+<pre>                                                 |     r1 = arg2;</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0004 andeq r0, r1, r1, lsl 2           |         r0 = r1 &amp; (r1 &lt;&lt; 2);</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0008 andeq r0, r0, r0                  |         r0 &amp;= r0;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e000c andeq r0, r0, r0                  |         r0 &amp;= r0;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0010 eoreq r0, r8, r3                  |         r0 = r8 ^ r3;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0014 andeq r0, r0, r1                  |         r0 &amp;= r1;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? &gt;= ?) {</pre>
+<pre>    0x454e0018 strbmi r0, [lr, -0]               |         *((lr - 0)) = r0;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e001c andeq r0, r0, r4, lsr r0          |         r0 &amp;= (r4 &gt;&gt; r0);</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0020 andeq r1, r7, ip, asr 26          |         r1 = r7 &amp; (ip &gt;&gt; 26);</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0024 streq r0, [r0, -0x200]            |         *((r0 - 0x200)) = r0;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0028 eoreq r0, r0, r4, lsr r0          |         r0 ^= (r4 &gt;&gt; r0);</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e002c eoreq r0, r8, sb                  |         r0 = r8 ^ sb;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0030 eoreq r0, r3, r4, lsr 32          |         r0 = r3 ^ (r4 &gt;&gt; 32);</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0034 andeq r0, r0, r6                  |         r0 &amp;= r6;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0038 andeq r0, r0, r4, lsr r0          |         r0 &amp;= (r4 &gt;&gt; r0);</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? &gt;= ?) {</pre>
+<pre>    0x454e003c strbmi r0, [lr, -0x34]            |         *((lr - 0x34)) = r0;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? &gt;= ?) {</pre>
+<pre>    0x454e0040 strbmi r0, [lr, -0x34]            |         *((lr - 0x34)) = r0;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0044 andeq r0, r0, r0, lsr 2           |         r0 &amp;= (r0 &gt;&gt; 2);</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0048 andeq r0, r0, r0, lsr 2           |         r0 &amp;= (r0 &gt;&gt; 2);</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e004c andeq r0, r0, r4                  |         r0 &amp;= r4;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0050 andeq r0, r0, r4                  |         r0 &amp;= r4;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0054 andeq r0, r0, r1                  |         r0 &amp;= r1;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0058 andeq r0, r0, r0                  |         r0 &amp;= r0;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? &gt;= ?) {</pre>
+<pre>    0x454e005c strbmi r0, [lr, -0]               |         *((lr - 0)) = r0;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? &gt;= ?) {</pre>
+<pre>    0x454e0060 strbmi r0, [lr, -0]               |         *((lr - 0)) = r0;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0064 andeq pc, r6, r4, lsr r3          |         pc = r6 &amp; (r4 &gt;&gt; r3);</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0068 andeq pc, r6, r4, lsr r3          |         pc = r6 &amp; (r4 &gt;&gt; r3);</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e006c andeq r0, r0, r5                  |         r0 &amp;= r5;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0070 andeq r1, r0, r0                  |         r1 = r0 &amp; r0;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0074 andeq r0, r0, r1                  |         r0 &amp;= r1;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0078 andeq pc, r6, r8, lsl 23          |         pc = r6 &amp; (r8 &lt;&lt; 23);</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? &gt;= ?) {</pre>
+<pre>    0x454e007c ldrbmi r0, [r5, -0xb88]           |         r0 = *((r5 - 0xb88));</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? &gt;= ?) {</pre>
+<pre>    0x454e0080 ldrbmi r0, [r5, -0xb88]           |         r0 = *((r5 - 0xb88));</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0084 andeq r1, r0, r8, asr r8          |         r1 = r0 &amp; (r8 &gt;&gt; r8);</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0088 andeq r2, r0, sp, lsl 3           |         r2 = r0 &amp; (sp &lt;&lt; 3);</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e008c andeq r0, r0, r6                  |         r0 &amp;= r6;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0090 andeq r1, r0, r0                  |         r1 = r0 &amp; r0;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0094 andeq r0, r0, r2                  |         r0 &amp;= r2;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e0098 andeq r0, r7, r0, asr 19          |         r0 = r7 &amp; (r0 &gt;&gt; 19);</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? &gt;= ?) {</pre>
+<pre>    0x454e009c ldrbmi r1, [r5, -0x9c0]           |         r1 = *((r5 - 0x9c0));</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? &gt;= ?) {</pre>
+<pre>    0x454e00a0 ldrbmi r1, [r5, -0x9c0]           |         r1 = *((r5 - 0x9c0));</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e00a4 andeq r0, r0, r0, asr r1          |         r0 &amp;= (r0 &gt;&gt; r1);</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e00a8 andeq r0, r0, r0, asr r1          |         r0 &amp;= (r0 &gt;&gt; r1);</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e00ac andeq r0, r0, r6                  |         r0 &amp;= r6;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e00b0 andeq r0, r0, r4                  |         r0 &amp;= r4;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e00b4 andeq r0, r0, r4                  |         r0 &amp;= r4;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e00b8 andeq r0, r0, r4, asr r1          |         r0 &amp;= (r4 &gt;&gt; r1);</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? &gt;= ?) {</pre>
+<pre>    0x454e00bc strbmi r0, [lr, -0x154]           |         *((lr - 0x154)) = r0;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? &gt;= ?) {</pre>
+<pre>    0x454e00c0 strbmi r0, [lr, -0x154]           |         *((lr - 0x154)) = r0;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e00c4 andeq r0, r0, r4, lsr 32          |         r0 &amp;= (r4 &gt;&gt; 32);</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e00c8 andeq r0, r0, r4, lsr 32          |         r0 &amp;= (r4 &gt;&gt; 32);</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e00cc andeq r0, r0, r4                  |         r0 &amp;= r4;</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e00d0 andeq r0, r0, r4                  |         r0 &amp;= r4;</pre>
+<pre>                                                 |     }</pre>
+<pre>    0x454e00d4 ldrbtvs lr, [r4], -0x550          |     __asm ("ldrbtvs lr, [r4], -0x550");</pre>
+<pre>                                                 |     if (? != ?) {</pre>
+<pre>    0x454e00d8 andeq pc, r6, ip, lsr 6           |         pc = r6 &amp; (ip &gt;&gt; 6);</pre>
+<pre>                                                 |     }</pre>
+<pre>                                                 |     /* Beware that this jump is a conditional jump.</pre>
+<pre>                                                 |      * r2dec transformed it as a return, due being the</pre>
+<pre>                                                 |      * last instruction. Please, check 'pdda' output</pre>
+<pre>                                                 |      * for more hints. */</pre>
+<pre>    0x454e00dc ldrbmi pc, [r4, -0x32c]           |     return pc = *((r4 - 0x32c));</pre>
+<pre>                                                 | }</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">popen</span> used </span><span class="orange">1</span> times </span><span class="orange">libsystemd.so.0.15.0</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+  var embarkButton = document.getElementById("embark");
+  if ( !(embarkButton.href.includes("embarkBackUrl")) ) {
+    embarkButton.classList.remove('hidden');
+    document.getElementById("logoImage").src = "./../style/embark.svg";
+    document.getElementById("logo").style.background = "#2d2d2d";
+  }
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

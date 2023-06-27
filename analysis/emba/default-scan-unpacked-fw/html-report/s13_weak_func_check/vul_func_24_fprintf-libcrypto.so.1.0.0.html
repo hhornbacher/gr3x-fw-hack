@@ -1,0 +1,652 @@
+<!-- 
+EMBA - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2023 Siemens AG
+Copyright 2020-2023 Siemens Energy AG
+
+EMBA comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+EMBA is licensed under GPLv3
+
+Author(s): Pascal Eckmann
+Contributor(s): Michael Messner, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div id="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" id="logoImage" src="./../style/emba.svg" alt="logo"></a>
+  </div>
+  <div id="nav">
+      <a id="embark" class="hidden" href="{{ embarkBackUrl }}">&laquo; Back to EMBArk</a> <!-- nosem -->
+      <a class="backButton" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s13_weak_func_check.html" title="./../s13_weak_func_check.html" >&laquo; Back to s13_weak_func_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">libcrypto.so.1.0.0</span></pre>
+<br />
+<pre>  </pre>
+<pre>  	<span class="red">No RELRO</span>       <span class="red">No Canary found</span>   <span class="green">NX enabled</span>   <span class="orange">DSO</span>          <span class="green">No RPATH</span>     <span class="green">No RUNPATH</span>   <span class="green">No Symbols</span></pre>
+<br />
+<pre></span></pre>
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">fprintf</span> tear down of </span><span class="orange">libcrypto.so.1.0.0</span></pre>
+<br />
+<pre>45784bd0:	e5813000 	str	r3, [r1]</pre>
+<pre>45784bd4:	e12fff1e 	bx	lr</pre>
+<pre>45784bd8:	e59f3014 	ldr	r3, [pc, #20]	; 45784bf4 &lt;ENGINE_pkey_asn1_find_str&commat;&commat;OPENSSL_1.0.2d+0x15c&gt;</pre>
+<pre>45784bdc:	e3a00001 	mov	r0, #1</pre>
+<pre>45784be0:	e08f3003 	add	r3, pc, r3</pre>
+<pre>45784be4:	e2833008 	add	r3, r3, #8</pre>
+<pre>45784be8:	e5823000 	str	r3, [r2]</pre>
+<pre>45784bec:	e12fff1e 	bx	lr</pre>
+<pre>45784bf0:	000c3d40 	andeq	r3, ip, r0, asr #26</pre>
+<pre>45784bf4:	000cb2d0 	ldrdeq	fp, [ip], -r0</pre>
+<pre>45784bf8:	e59f3068 	ldr	r3, [pc, #104]	; 45784c68 &lt;ENGINE_pkey_asn1_find_str&commat;&commat;OPENSSL_1.0.2d+0x1d0&gt;</pre>
+<pre>45784bfc:	e1a02001 	mov	r2, r1</pre>
+<pre>45784c00:	e59f0064 	ldr	r0, [pc, #100]	; 45784c6c &lt;ENGINE_pkey_asn1_find_str&commat;&commat;OPENSSL_1.0.2d+0x1d4&gt;</pre>
+<pre>45784c04:	e08f3003 	add	r3, pc, r3</pre>
+<pre>45784c08:	e92d4070 	push	{r4, r5, r6, lr}</pre>
+<pre>45784c0c:	e1a04001 	mov	r4, r1</pre>
+<pre>45784c10:	e7933000 	ldr	r3, [r3, r0]</pre>
+<pre>45784c14:	e59f1054 	ldr	r1, [pc, #84]	; 45784c70 &lt;ENGINE_pkey_asn1_find_str&commat;&commat;OPENSSL_1.0.2d+0x1d8&gt;</pre>
+<pre>45784c18:	e5930000 	ldr	r0, [r3]</pre>
+<pre>45784c1c:	e08f1001 	add	r1, pc, r1</pre>
+<pre><span class="red">45784c20:	ebfe6bbe 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>45784c24:	e59f1048 	ldr	r1, [pc, #72]	; 45784c74 &lt;ENGINE_pkey_asn1_find_str&commat;&commat;OPENSSL_1.0.2d+0x1dc&gt;</pre>
+<pre>45784c28:	e1a00004 	mov	r0, r4</pre>
+<pre>--</pre>
+<pre>457bdafc:	e28dd008 	add	sp, sp, #8</pre>
+<pre>457bdb00:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}</pre>
+<pre>457bdb04:	e1a07002 	mov	r7, r2</pre>
+<pre>457bdb08:	ebfd8c7e 	bl	45720d08 &lt;EVP_get_pw_prompt&commat;plt&gt;</pre>
+<pre>457bdb0c:	e2509000 	subs	r9, r0, #0</pre>
+<pre>457bdb10:	0a000034 	beq	457bdbe8 &lt;PEM_def_callback&commat;&commat;OPENSSL_1.0.2d+0x134&gt;</pre>
+<pre>457bdb14:	e3570000 	cmp	r7, #0</pre>
+<pre>457bdb18:	0a000016 	beq	457bdb78 &lt;PEM_def_callback&commat;&commat;OPENSSL_1.0.2d+0xc4&gt;</pre>
+<pre>457bdb1c:	e59fa0d4 	ldr	sl, [pc, #212]	; 457bdbf8 &lt;PEM_def_callback&commat;&commat;OPENSSL_1.0.2d+0x144&gt;</pre>
+<pre>457bdb20:	e08fa00a 	add	sl, pc, sl</pre>
+<pre>457bdb24:	ea000009 	b	457bdb50 &lt;PEM_def_callback&commat;&commat;OPENSSL_1.0.2d+0x9c&gt;</pre>
+<pre>457bdb28:	ebfd86f7 	bl	4571f70c &lt;strlen&commat;plt&gt;</pre>
+<pre>457bdb2c:	e59f30c8 	ldr	r3, [pc, #200]	; 457bdbfc &lt;PEM_def_callback&commat;&commat;OPENSSL_1.0.2d+0x148&gt;</pre>
+<pre>457bdb30:	e3a02004 	mov	r2, #4</pre>
+<pre>457bdb34:	e1a0100a 	mov	r1, sl</pre>
+<pre>457bdb38:	e3500003 	cmp	r0, #3</pre>
+<pre>457bdb3c:	e1a04000 	mov	r4, r0</pre>
+<pre>457bdb40:	caffffec 	bgt	457bdaf8 &lt;PEM_def_callback&commat;&commat;OPENSSL_1.0.2d+0x44&gt;</pre>
+<pre>457bdb44:	e7983003 	ldr	r3, [r8, r3]</pre>
+<pre>457bdb48:	e5930000 	ldr	r0, [r3]</pre>
+<pre><span class="red">457bdb4c:	ebfd87f3 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457bdb50:	e58d7000 	str	r7, [sp]</pre>
+<pre>457bdb54:	e1a03009 	mov	r3, r9</pre>
+<pre>--</pre>
+<pre>457df2c8:	e59d300c 	ldr	r3, [sp, #12]</pre>
+<pre>457df2cc:	e5c2a000 	strb	sl, [r2]</pre>
+<pre>457df2d0:	e1a0200b 	mov	r2, fp</pre>
+<pre>457df2d4:	e1500003 	cmp	r0, r3</pre>
+<pre>457df2d8:	aaffffc9 	bge	457df204 &lt;TXT_DB_read&commat;&commat;OPENSSL_1.0.2d+0x21c&gt;</pre>
+<pre>457df2dc:	e781b100 	str	fp, [r1, r0, lsl #2]</pre>
+<pre>457df2e0:	e2800001 	add	r0, r0, #1</pre>
+<pre>457df2e4:	eaffffec 	b	457df29c &lt;TXT_DB_read&commat;&commat;OPENSSL_1.0.2d+0x2b4&gt;</pre>
+<pre>457df2e8:	e1a00004 	mov	r0, r4</pre>
+<pre>457df2ec:	ebfd0313 	bl	4571ff40 &lt;BUF_MEM_free&commat;plt&gt;</pre>
+<pre>457df2f0:	eaffff65 	b	457df08c &lt;TXT_DB_read&commat;&commat;OPENSSL_1.0.2d+0xa4&gt;</pre>
+<pre>457df2f4:	e1a0c000 	mov	ip, r0</pre>
+<pre>457df2f8:	e59f0050 	ldr	r0, [pc, #80]	; 457df350 &lt;TXT_DB_read&commat;&commat;OPENSSL_1.0.2d+0x368&gt;</pre>
+<pre>457df2fc:	e59f105c 	ldr	r1, [pc, #92]	; 457df360 &lt;TXT_DB_read&commat;&commat;OPENSSL_1.0.2d+0x378&gt;</pre>
+<pre>457df300:	e1a02007 	mov	r2, r7</pre>
+<pre>457df304:	e59d300c 	ldr	r3, [sp, #12]</pre>
+<pre>457df308:	e7980000 	ldr	r0, [r8, r0]</pre>
+<pre>457df30c:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457df310:	e88d5000 	stm	sp, {ip, lr}</pre>
+<pre>457df314:	e5900000 	ldr	r0, [r0]</pre>
+<pre><span class="red">457df318:	ebfd0200 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457df31c:	e1a00004 	mov	r0, r4</pre>
+<pre>457df320:	ebfd0306 	bl	4571ff40 &lt;BUF_MEM_free&commat;plt&gt;</pre>
+<pre>--</pre>
+<pre>457ecbb4:	ebfcd52d 	bl	45722070 &lt;fputs&commat;plt&gt;</pre>
+<pre>457ecbb8:	e5950008 	ldr	r0, [r5, #8]</pre>
+<pre>457ecbbc:	ebfcc09d 	bl	4571ce38 &lt;fflush&commat;plt&gt;</pre>
+<pre>457ecbc0:	e1a00004 	mov	r0, r4</pre>
+<pre>457ecbc4:	ebfcd277 	bl	457215a8 &lt;UI_get_input_flags&commat;plt&gt;</pre>
+<pre>457ecbc8:	e1a01004 	mov	r1, r4</pre>
+<pre>457ecbcc:	e3a03000 	mov	r3, #0</pre>
+<pre>457ecbd0:	e2002001 	and	r2, r0, #1</pre>
+<pre>457ecbd4:	e1a00006 	mov	r0, r6</pre>
+<pre>457ecbd8:	e8bd41f0 	pop	{r4, r5, r6, r7, r8, lr}</pre>
+<pre>457ecbdc:	eaffff04 	b	457ec7f4 &lt;UI_set_result&commat;&commat;OPENSSL_1.0.2d+0x37c&gt;</pre>
+<pre>457ecbe0:	e59f50a4 	ldr	r5, [pc, #164]	; 457ecc8c &lt;UI_set_result&commat;&commat;OPENSSL_1.0.2d+0x814&gt;</pre>
+<pre>457ecbe4:	e1a00004 	mov	r0, r4</pre>
+<pre>457ecbe8:	e08f5005 	add	r5, pc, r5</pre>
+<pre>457ecbec:	e5957008 	ldr	r7, [r5, #8]</pre>
+<pre>457ecbf0:	ebfcbee0 	bl	4571c778 &lt;UI_get0_output_string&commat;plt&gt;</pre>
+<pre>457ecbf4:	e59f1094 	ldr	r1, [pc, #148]	; 457ecc90 &lt;UI_set_result&commat;&commat;OPENSSL_1.0.2d+0x818&gt;</pre>
+<pre>457ecbf8:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457ecbfc:	e1a02000 	mov	r2, r0</pre>
+<pre>457ecc00:	e1a00007 	mov	r0, r7</pre>
+<pre><span class="red">457ecc04:	ebfccbc5 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457ecc08:	e5950008 	ldr	r0, [r5, #8]</pre>
+<pre>457ecc0c:	ebfcc089 	bl	4571ce38 &lt;fflush&commat;plt&gt;</pre>
+<pre>--</pre>
+<pre>457f94b4:	ebfc92d0 	bl	4571dffc &lt;TS_RESP_CTX_add_flags&commat;plt&gt;</pre>
+<pre>457f94b8:	e3a00001 	mov	r0, #1</pre>
+<pre>457f94bc:	e8bd8070 	pop	{r4, r5, r6, pc}</pre>
+<pre>457f94c0:	e353006e 	cmp	r3, #110	; 0x6e</pre>
+<pre>457f94c4:	1a000007 	bne	457f94e8 &lt;TS_MSG_IMPRINT_print_bio&commat;&commat;OPENSSL_1.0.2d+0xec&gt;</pre>
+<pre>457f94c8:	e5d03001 	ldrb	r3, [r0, #1]</pre>
+<pre>457f94cc:	e353006f 	cmp	r3, #111	; 0x6f</pre>
+<pre>457f94d0:	1a000004 	bne	457f94e8 &lt;TS_MSG_IMPRINT_print_bio&commat;&commat;OPENSSL_1.0.2d+0xec&gt;</pre>
+<pre>457f94d4:	e5d03002 	ldrb	r3, [r0, #2]</pre>
+<pre>457f94d8:	e3530000 	cmp	r3, #0</pre>
+<pre>457f94dc:	1a000001 	bne	457f94e8 &lt;TS_MSG_IMPRINT_print_bio&commat;&commat;OPENSSL_1.0.2d+0xec&gt;</pre>
+<pre>457f94e0:	e3a00001 	mov	r0, #1</pre>
+<pre>457f94e4:	e8bd8070 	pop	{r4, r5, r6, pc}</pre>
+<pre>457f94e8:	e59f0024 	ldr	r0, [pc, #36]	; 457f9514 &lt;TS_MSG_IMPRINT_print_bio&commat;&commat;OPENSSL_1.0.2d+0x118&gt;</pre>
+<pre>457f94ec:	e1a03005 	mov	r3, r5</pre>
+<pre>457f94f0:	e59f1020 	ldr	r1, [pc, #32]	; 457f9518 &lt;TS_MSG_IMPRINT_print_bio&commat;&commat;OPENSSL_1.0.2d+0x11c&gt;</pre>
+<pre>457f94f4:	e1a02004 	mov	r2, r4</pre>
+<pre>457f94f8:	e79c0000 	ldr	r0, [ip, r0]</pre>
+<pre>457f94fc:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457f9500:	e5900000 	ldr	r0, [r0]</pre>
+<pre><span class="red">457f9504:	ebfc9985 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457f9508:	e3a00000 	mov	r0, #0</pre>
+<pre>457f950c:	e8bd8070 	pop	{r4, r5, r6, pc}</pre>
+<pre>--</pre>
+<pre>457f9534:	e08f4004 	add	r4, pc, r4</pre>
+<pre>457f9538:	e2506000 	subs	r6, r0, #0</pre>
+<pre>457f953c:	0a000009 	beq	457f9568 &lt;TS_CONF_load_cert&commat;&commat;OPENSSL_1.0.2d+0x4c&gt;</pre>
+<pre>457f9540:	e3a03000 	mov	r3, #0</pre>
+<pre>457f9544:	e1a02003 	mov	r2, r3</pre>
+<pre>457f9548:	e1a01003 	mov	r1, r3</pre>
+<pre>457f954c:	ebfc9937 	bl	4571fa30 &lt;PEM_read_bio_X509_AUX&commat;plt&gt;</pre>
+<pre>457f9550:	e2505000 	subs	r5, r0, #0</pre>
+<pre>457f9554:	0a000003 	beq	457f9568 &lt;TS_CONF_load_cert&commat;&commat;OPENSSL_1.0.2d+0x4c&gt;</pre>
+<pre>457f9558:	e1a00006 	mov	r0, r6</pre>
+<pre>457f955c:	ebfc9aa7 	bl	45720000 &lt;BIO_free&commat;plt&gt;</pre>
+<pre>457f9560:	e1a00005 	mov	r0, r5</pre>
+<pre>457f9564:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}</pre>
+<pre>457f9568:	e59f3024 	ldr	r3, [pc, #36]	; 457f9594 &lt;TS_CONF_load_cert&commat;&commat;OPENSSL_1.0.2d+0x78&gt;</pre>
+<pre>457f956c:	e1a02007 	mov	r2, r7</pre>
+<pre>457f9570:	e59f1020 	ldr	r1, [pc, #32]	; 457f9598 &lt;TS_CONF_load_cert&commat;&commat;OPENSSL_1.0.2d+0x7c&gt;</pre>
+<pre>457f9574:	e3a05000 	mov	r5, #0</pre>
+<pre>457f9578:	e7943003 	ldr	r3, [r4, r3]</pre>
+<pre>457f957c:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457f9580:	e5930000 	ldr	r0, [r3]</pre>
+<pre><span class="red">457f9584:	ebfc9965 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457f9588:	eafffff2 	b	457f9558 &lt;TS_CONF_load_cert&commat;&commat;OPENSSL_1.0.2d+0x3c&gt;</pre>
+<pre>457f958c:	0002d7cc 	andeq	sp, r2, ip, asr #15</pre>
+<pre>--</pre>
+<pre>457f95fc:	e1a00006 	mov	r0, r6</pre>
+<pre>457f9600:	e2844001 	add	r4, r4, #1</pre>
+<pre>457f9604:	aa000011 	bge	457f9650 &lt;TS_CONF_load_certs&commat;&commat;OPENSSL_1.0.2d+0xb4&gt;</pre>
+<pre>457f9608:	ebfc8e76 	bl	4571cfe8 &lt;sk_value&commat;plt&gt;</pre>
+<pre>457f960c:	e5901000 	ldr	r1, [r0]</pre>
+<pre>457f9610:	e1a05000 	mov	r5, r0</pre>
+<pre>457f9614:	e1a00007 	mov	r0, r7</pre>
+<pre>457f9618:	e3510000 	cmp	r1, #0</pre>
+<pre>457f961c:	0afffff2 	beq	457f95ec &lt;TS_CONF_load_certs&commat;&commat;OPENSSL_1.0.2d+0x50&gt;</pre>
+<pre>457f9620:	ebfc93a7 	bl	4571e4c4 &lt;sk_push&commat;plt&gt;</pre>
+<pre>457f9624:	e5858000 	str	r8, [r5]</pre>
+<pre>457f9628:	eaffffef 	b	457f95ec &lt;TS_CONF_load_certs&commat;&commat;OPENSSL_1.0.2d+0x50&gt;</pre>
+<pre>457f962c:	e59f3044 	ldr	r3, [pc, #68]	; 457f9678 &lt;TS_CONF_load_certs&commat;&commat;OPENSSL_1.0.2d+0xdc&gt;</pre>
+<pre>457f9630:	e3a06000 	mov	r6, #0</pre>
+<pre>457f9634:	e59f1040 	ldr	r1, [pc, #64]	; 457f967c &lt;TS_CONF_load_certs&commat;&commat;OPENSSL_1.0.2d+0xe0&gt;</pre>
+<pre>457f9638:	e1a02004 	mov	r2, r4</pre>
+<pre>457f963c:	e1a07006 	mov	r7, r6</pre>
+<pre>457f9640:	e7993003 	ldr	r3, [r9, r3]</pre>
+<pre>457f9644:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457f9648:	e5930000 	ldr	r0, [r3]</pre>
+<pre><span class="red">457f964c:	ebfc9933 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457f9650:	e59f3028 	ldr	r3, [pc, #40]	; 457f9680 &lt;TS_CONF_load_certs&commat;&commat;OPENSSL_1.0.2d+0xe4&gt;</pre>
+<pre>457f9654:	e1a00006 	mov	r0, r6</pre>
+<pre>--</pre>
+<pre>457f96a0:	e08f4004 	add	r4, pc, r4</pre>
+<pre>457f96a4:	e2506000 	subs	r6, r0, #0</pre>
+<pre>457f96a8:	0a000009 	beq	457f96d4 &lt;TS_CONF_load_key&commat;&commat;OPENSSL_1.0.2d+0x50&gt;</pre>
+<pre>457f96ac:	e3a02000 	mov	r2, #0</pre>
+<pre>457f96b0:	e1a03005 	mov	r3, r5</pre>
+<pre>457f96b4:	e1a01002 	mov	r1, r2</pre>
+<pre>457f96b8:	ebfca0c8 	bl	457219e0 &lt;PEM_read_bio_PrivateKey&commat;plt&gt;</pre>
+<pre>457f96bc:	e2505000 	subs	r5, r0, #0</pre>
+<pre>457f96c0:	0a000003 	beq	457f96d4 &lt;TS_CONF_load_key&commat;&commat;OPENSSL_1.0.2d+0x50&gt;</pre>
+<pre>457f96c4:	e1a00006 	mov	r0, r6</pre>
+<pre>457f96c8:	ebfc9a4c 	bl	45720000 &lt;BIO_free&commat;plt&gt;</pre>
+<pre>457f96cc:	e1a00005 	mov	r0, r5</pre>
+<pre>457f96d0:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}</pre>
+<pre>457f96d4:	e59f3024 	ldr	r3, [pc, #36]	; 457f9700 &lt;TS_CONF_load_key&commat;&commat;OPENSSL_1.0.2d+0x7c&gt;</pre>
+<pre>457f96d8:	e1a02007 	mov	r2, r7</pre>
+<pre>457f96dc:	e59f1020 	ldr	r1, [pc, #32]	; 457f9704 &lt;TS_CONF_load_key&commat;&commat;OPENSSL_1.0.2d+0x80&gt;</pre>
+<pre>457f96e0:	e3a05000 	mov	r5, #0</pre>
+<pre>457f96e4:	e7943003 	ldr	r3, [r4, r3]</pre>
+<pre>457f96e8:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457f96ec:	e5930000 	ldr	r0, [r3]</pre>
+<pre><span class="red">457f96f0:	ebfc990a 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457f96f4:	eafffff2 	b	457f96c4 &lt;TS_CONF_load_key&commat;&commat;OPENSSL_1.0.2d+0x40&gt;</pre>
+<pre>457f96f8:	0002d658 	andeq	sp, r2, r8, asr r6</pre>
+<pre>--</pre>
+<pre>457f9714:	e08f5005 	add	r5, pc, r5</pre>
+<pre>457f9718:	0a000001 	beq	457f9724 &lt;TS_CONF_get_tsa_section&commat;&commat;OPENSSL_1.0.2d+0x1c&gt;</pre>
+<pre>457f971c:	e1a00004 	mov	r0, r4</pre>
+<pre>457f9720:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}</pre>
+<pre>457f9724:	e59f7044 	ldr	r7, [pc, #68]	; 457f9770 &lt;TS_CONF_get_tsa_section&commat;&commat;OPENSSL_1.0.2d+0x68&gt;</pre>
+<pre>457f9728:	e59f6044 	ldr	r6, [pc, #68]	; 457f9774 &lt;TS_CONF_get_tsa_section&commat;&commat;OPENSSL_1.0.2d+0x6c&gt;</pre>
+<pre>457f972c:	e08f7007 	add	r7, pc, r7</pre>
+<pre>457f9730:	e08f6006 	add	r6, pc, r6</pre>
+<pre>457f9734:	e1a02007 	mov	r2, r7</pre>
+<pre>457f9738:	e1a01006 	mov	r1, r6</pre>
+<pre>457f973c:	ebfc92cd 	bl	4571e278 &lt;NCONF_get_string&commat;plt&gt;</pre>
+<pre>457f9740:	e2504000 	subs	r4, r0, #0</pre>
+<pre>457f9744:	1afffff4 	bne	457f971c &lt;TS_CONF_get_tsa_section&commat;&commat;OPENSSL_1.0.2d+0x14&gt;</pre>
+<pre>457f9748:	e59f0028 	ldr	r0, [pc, #40]	; 457f9778 &lt;TS_CONF_get_tsa_section&commat;&commat;OPENSSL_1.0.2d+0x70&gt;</pre>
+<pre>457f974c:	e1a03007 	mov	r3, r7</pre>
+<pre>457f9750:	e59f1024 	ldr	r1, [pc, #36]	; 457f977c &lt;TS_CONF_get_tsa_section&commat;&commat;OPENSSL_1.0.2d+0x74&gt;</pre>
+<pre>457f9754:	e1a02006 	mov	r2, r6</pre>
+<pre>457f9758:	e7950000 	ldr	r0, [r5, r0]</pre>
+<pre>457f975c:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457f9760:	e5900000 	ldr	r0, [r0]</pre>
+<pre><span class="red">457f9764:	ebfc98ed 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457f9768:	eaffffeb 	b	457f971c &lt;TS_CONF_get_tsa_section&commat;&commat;OPENSSL_1.0.2d+0x14&gt;</pre>
+<pre>457f976c:	00052b60 	andeq	r2, r5, r0, ror #22</pre>
+<pre>--</pre>
+<pre>457f9794:	e59f5058 	ldr	r5, [pc, #88]	; 457f97f4 &lt;TS_CONF_set_serial&commat;&commat;OPENSSL_1.0.2d+0x74&gt;</pre>
+<pre>457f9798:	e08f6006 	add	r6, pc, r6</pre>
+<pre>457f979c:	e08f5005 	add	r5, pc, r5</pre>
+<pre>457f97a0:	e1a02006 	mov	r2, r6</pre>
+<pre>457f97a4:	ebfc92b3 	bl	4571e278 &lt;NCONF_get_string&commat;plt&gt;</pre>
+<pre>457f97a8:	e2504000 	subs	r4, r0, #0</pre>
+<pre>457f97ac:	0a000005 	beq	457f97c8 &lt;TS_CONF_set_serial&commat;&commat;OPENSSL_1.0.2d+0x48&gt;</pre>
+<pre>457f97b0:	e1a00007 	mov	r0, r7</pre>
+<pre>457f97b4:	e1a02004 	mov	r2, r4</pre>
+<pre>457f97b8:	e1a01008 	mov	r1, r8</pre>
+<pre>457f97bc:	ebfc90b2 	bl	4571da8c &lt;TS_RESP_CTX_set_serial_cb&commat;plt&gt;</pre>
+<pre>457f97c0:	e3a00001 	mov	r0, #1</pre>
+<pre>457f97c4:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}</pre>
+<pre>457f97c8:	e59f0028 	ldr	r0, [pc, #40]	; 457f97f8 &lt;TS_CONF_set_serial&commat;&commat;OPENSSL_1.0.2d+0x78&gt;</pre>
+<pre>457f97cc:	e1a03006 	mov	r3, r6</pre>
+<pre>457f97d0:	e59f1024 	ldr	r1, [pc, #36]	; 457f97fc &lt;TS_CONF_set_serial&commat;&commat;OPENSSL_1.0.2d+0x7c&gt;</pre>
+<pre>457f97d4:	e1a02009 	mov	r2, r9</pre>
+<pre>457f97d8:	e7950000 	ldr	r0, [r5, r0]</pre>
+<pre>457f97dc:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457f97e0:	e5900000 	ldr	r0, [r0]</pre>
+<pre><span class="red">457f97e4:	ebfc98cd 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457f97e8:	e1a00004 	mov	r0, r4</pre>
+<pre>457f97ec:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}</pre>
+<pre>--</pre>
+<pre>457f992c:	e3520000 	cmp	r2, #0</pre>
+<pre>457f9930:	e59f5068 	ldr	r5, [pc, #104]	; 457f99a0 &lt;TS_CONF_set_crypto_device&commat;&commat;OPENSSL_1.0.2d+0x78&gt;</pre>
+<pre>457f9934:	e1a06001 	mov	r6, r1</pre>
+<pre>457f9938:	e08f5005 	add	r5, pc, r5</pre>
+<pre>457f993c:	0a000011 	beq	457f9988 &lt;TS_CONF_set_crypto_device&commat;&commat;OPENSSL_1.0.2d+0x60&gt;</pre>
+<pre>457f9940:	e1a00002 	mov	r0, r2</pre>
+<pre>457f9944:	ebfc9dd3 	bl	45721098 &lt;TS_CONF_set_default_engine&commat;plt&gt;</pre>
+<pre>457f9948:	e2504000 	subs	r4, r0, #0</pre>
+<pre>457f994c:	0a000002 	beq	457f995c &lt;TS_CONF_set_crypto_device&commat;&commat;OPENSSL_1.0.2d+0x34&gt;</pre>
+<pre>457f9950:	e3a04001 	mov	r4, #1</pre>
+<pre>457f9954:	e1a00004 	mov	r0, r4</pre>
+<pre>457f9958:	e8bd8070 	pop	{r4, r5, r6, pc}</pre>
+<pre>457f995c:	e59f0040 	ldr	r0, [pc, #64]	; 457f99a4 &lt;TS_CONF_set_crypto_device&commat;&commat;OPENSSL_1.0.2d+0x7c&gt;</pre>
+<pre>457f9960:	e1a02006 	mov	r2, r6</pre>
+<pre>457f9964:	e59f303c 	ldr	r3, [pc, #60]	; 457f99a8 &lt;TS_CONF_set_crypto_device&commat;&commat;OPENSSL_1.0.2d+0x80&gt;</pre>
+<pre>457f9968:	e59f103c 	ldr	r1, [pc, #60]	; 457f99ac &lt;TS_CONF_set_crypto_device&commat;&commat;OPENSSL_1.0.2d+0x84&gt;</pre>
+<pre>457f996c:	e7950000 	ldr	r0, [r5, r0]</pre>
+<pre>457f9970:	e08f3003 	add	r3, pc, r3</pre>
+<pre>457f9974:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457f9978:	e5900000 	ldr	r0, [r0]</pre>
+<pre><span class="red">457f997c:	ebfc9867 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457f9980:	e1a00004 	mov	r0, r4</pre>
+<pre>457f9984:	e8bd8070 	pop	{r4, r5, r6, pc}</pre>
+<pre>--</pre>
+<pre>457f99f0:	13a06001 	movne	r6, #1</pre>
+<pre>457f99f4:	e1a00004 	mov	r0, r4</pre>
+<pre>457f99f8:	ebfc9cb9 	bl	45720ce4 &lt;X509_free&commat;plt&gt;</pre>
+<pre>457f99fc:	e1a00006 	mov	r0, r6</pre>
+<pre>457f9a00:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}</pre>
+<pre>457f9a04:	e59f8040 	ldr	r8, [pc, #64]	; 457f9a4c &lt;TS_CONF_set_signer_cert&commat;&commat;OPENSSL_1.0.2d+0x98&gt;</pre>
+<pre>457f9a08:	e1a07001 	mov	r7, r1</pre>
+<pre>457f9a0c:	e08f8008 	add	r8, pc, r8</pre>
+<pre>457f9a10:	e1a02008 	mov	r2, r8</pre>
+<pre>457f9a14:	ebfc9217 	bl	4571e278 &lt;NCONF_get_string&commat;plt&gt;</pre>
+<pre>457f9a18:	e2504000 	subs	r4, r0, #0</pre>
+<pre>457f9a1c:	1affffea 	bne	457f99cc &lt;TS_CONF_set_signer_cert&commat;&commat;OPENSSL_1.0.2d+0x18&gt;</pre>
+<pre>457f9a20:	e59f0028 	ldr	r0, [pc, #40]	; 457f9a50 &lt;TS_CONF_set_signer_cert&commat;&commat;OPENSSL_1.0.2d+0x9c&gt;</pre>
+<pre>457f9a24:	e1a03008 	mov	r3, r8</pre>
+<pre>457f9a28:	e59f1024 	ldr	r1, [pc, #36]	; 457f9a54 &lt;TS_CONF_set_signer_cert&commat;&commat;OPENSSL_1.0.2d+0xa0&gt;</pre>
+<pre>457f9a2c:	e1a02007 	mov	r2, r7</pre>
+<pre>457f9a30:	e1a06004 	mov	r6, r4</pre>
+<pre>457f9a34:	e7950000 	ldr	r0, [r5, r0]</pre>
+<pre>457f9a38:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457f9a3c:	e5900000 	ldr	r0, [r0]</pre>
+<pre><span class="red">457f9a40:	ebfc9836 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457f9a44:	eaffffea 	b	457f99f4 &lt;TS_CONF_set_signer_cert&commat;&commat;OPENSSL_1.0.2d+0x40&gt;</pre>
+<pre>457f9a48:	000528b0 			; &lt;UNDEFINED&gt; instruction: 0x000528b0</pre>
+<pre>--</pre>
+<pre>457f9b28:	e1a00006 	mov	r0, r6</pre>
+<pre>457f9b2c:	e28dd00c 	add	sp, sp, #12</pre>
+<pre>457f9b30:	e8bd80f0 	pop	{r4, r5, r6, r7, pc}</pre>
+<pre>457f9b34:	e59f7048 	ldr	r7, [pc, #72]	; 457f9b84 &lt;TS_CONF_set_signer_key&commat;&commat;OPENSSL_1.0.2d+0xa8&gt;</pre>
+<pre>457f9b38:	e1a06001 	mov	r6, r1</pre>
+<pre>457f9b3c:	e58d3004 	str	r3, [sp, #4]</pre>
+<pre>457f9b40:	e08f7007 	add	r7, pc, r7</pre>
+<pre>457f9b44:	e1a02007 	mov	r2, r7</pre>
+<pre>457f9b48:	ebfc91ca 	bl	4571e278 &lt;NCONF_get_string&commat;plt&gt;</pre>
+<pre>457f9b4c:	e59d3004 	ldr	r3, [sp, #4]</pre>
+<pre>457f9b50:	e2504000 	subs	r4, r0, #0</pre>
+<pre>457f9b54:	1affffe6 	bne	457f9af4 &lt;TS_CONF_set_signer_key&commat;&commat;OPENSSL_1.0.2d+0x18&gt;</pre>
+<pre>457f9b58:	e59f0028 	ldr	r0, [pc, #40]	; 457f9b88 &lt;TS_CONF_set_signer_key&commat;&commat;OPENSSL_1.0.2d+0xac&gt;</pre>
+<pre>457f9b5c:	e1a02006 	mov	r2, r6</pre>
+<pre>457f9b60:	e59f1024 	ldr	r1, [pc, #36]	; 457f9b8c &lt;TS_CONF_set_signer_key&commat;&commat;OPENSSL_1.0.2d+0xb0&gt;</pre>
+<pre>457f9b64:	e1a03007 	mov	r3, r7</pre>
+<pre>457f9b68:	e1a06004 	mov	r6, r4</pre>
+<pre>457f9b6c:	e7950000 	ldr	r0, [r5, r0]</pre>
+<pre>457f9b70:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457f9b74:	e5900000 	ldr	r0, [r0]</pre>
+<pre><span class="red">457f9b78:	ebfc97e8 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457f9b7c:	eaffffe7 	b	457f9b20 &lt;TS_CONF_set_signer_key&commat;&commat;OPENSSL_1.0.2d+0x44&gt;</pre>
+<pre>457f9b80:	00052788 	andeq	r2, r5, r8, lsl #15</pre>
+<pre>--</pre>
+<pre>457f9bb8:	e2504000 	subs	r4, r0, #0</pre>
+<pre>457f9bbc:	0a000008 	beq	457f9be4 &lt;TS_CONF_set_def_policy&commat;&commat;OPENSSL_1.0.2d+0x54&gt;</pre>
+<pre>457f9bc0:	e1a00006 	mov	r0, r6</pre>
+<pre>457f9bc4:	e1a01004 	mov	r1, r4</pre>
+<pre>457f9bc8:	ebfc9243 	bl	4571e4dc &lt;TS_RESP_CTX_set_def_policy&commat;plt&gt;</pre>
+<pre>457f9bcc:	e2906000 	adds	r6, r0, #0</pre>
+<pre>457f9bd0:	13a06001 	movne	r6, #1</pre>
+<pre>457f9bd4:	e1a00004 	mov	r0, r4</pre>
+<pre>457f9bd8:	ebfc9cfb 	bl	45720fcc &lt;ASN1_OBJECT_free&commat;plt&gt;</pre>
+<pre>457f9bdc:	e1a00006 	mov	r0, r6</pre>
+<pre>457f9be0:	e8bd81f0 	pop	{r4, r5, r6, r7, r8, pc}</pre>
+<pre>457f9be4:	e59f0068 	ldr	r0, [pc, #104]	; 457f9c54 &lt;TS_CONF_set_def_policy&commat;&commat;OPENSSL_1.0.2d+0xc4&gt;</pre>
+<pre>457f9be8:	e1a02007 	mov	r2, r7</pre>
+<pre>457f9bec:	e59f3064 	ldr	r3, [pc, #100]	; 457f9c58 &lt;TS_CONF_set_def_policy&commat;&commat;OPENSSL_1.0.2d+0xc8&gt;</pre>
+<pre>457f9bf0:	e1a06004 	mov	r6, r4</pre>
+<pre>457f9bf4:	e59f1060 	ldr	r1, [pc, #96]	; 457f9c5c &lt;TS_CONF_set_def_policy&commat;&commat;OPENSSL_1.0.2d+0xcc&gt;</pre>
+<pre>457f9bf8:	e7950000 	ldr	r0, [r5, r0]</pre>
+<pre>457f9bfc:	e08f3003 	add	r3, pc, r3</pre>
+<pre>457f9c00:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457f9c04:	e5900000 	ldr	r0, [r0]</pre>
+<pre><span class="red">457f9c08:	ebfc97c4 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457f9c0c:	eafffff0 	b	457f9bd4 &lt;TS_CONF_set_def_policy&commat;&commat;OPENSSL_1.0.2d+0x44&gt;</pre>
+<pre>457f9c10:	e59f8048 	ldr	r8, [pc, #72]	; 457f9c60 &lt;TS_CONF_set_def_policy&commat;&commat;OPENSSL_1.0.2d+0xd0&gt;</pre>
+<pre>457f9c14:	e08f8008 	add	r8, pc, r8</pre>
+<pre>457f9c18:	e1a02008 	mov	r2, r8</pre>
+<pre>457f9c1c:	ebfc9195 	bl	4571e278 &lt;NCONF_get_string&commat;plt&gt;</pre>
+<pre>457f9c20:	e2504000 	subs	r4, r0, #0</pre>
+<pre>457f9c24:	1affffe0 	bne	457f9bac &lt;TS_CONF_set_def_policy&commat;&commat;OPENSSL_1.0.2d+0x1c&gt;</pre>
+<pre>457f9c28:	e59f0024 	ldr	r0, [pc, #36]	; 457f9c54 &lt;TS_CONF_set_def_policy&commat;&commat;OPENSSL_1.0.2d+0xc4&gt;</pre>
+<pre>457f9c2c:	e1a03008 	mov	r3, r8</pre>
+<pre>457f9c30:	e59f102c 	ldr	r1, [pc, #44]	; 457f9c64 &lt;TS_CONF_set_def_policy&commat;&commat;OPENSSL_1.0.2d+0xd4&gt;</pre>
+<pre>457f9c34:	e1a02007 	mov	r2, r7</pre>
+<pre>457f9c38:	e1a06004 	mov	r6, r4</pre>
+<pre>457f9c3c:	e7950000 	ldr	r0, [r5, r0]</pre>
+<pre>457f9c40:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457f9c44:	e5900000 	ldr	r0, [r0]</pre>
+<pre><span class="red">457f9c48:	ebfc97b4 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457f9c4c:	eaffffe0 	b	457f9bd4 &lt;TS_CONF_set_def_policy&commat;&commat;OPENSSL_1.0.2d+0x44&gt;</pre>
+<pre>457f9c50:	000526d0 	ldrdeq	r2, [r5], -r0</pre>
+<pre>--</pre>
+<pre>457f9cf4:	e1540000 	cmp	r4, r0</pre>
+<pre>457f9cf8:	e1a00006 	mov	r0, r6</pre>
+<pre>457f9cfc:	e2844001 	add	r4, r4, #1</pre>
+<pre>457f9d00:	baffffe8 	blt	457f9ca8 &lt;TS_CONF_set_policies&commat;&commat;OPENSSL_1.0.2d+0x40&gt;</pre>
+<pre>457f9d04:	e3a0a001 	mov	sl, #1</pre>
+<pre>457f9d08:	e59f306c 	ldr	r3, [pc, #108]	; 457f9d7c &lt;TS_CONF_set_policies&commat;&commat;OPENSSL_1.0.2d+0x114&gt;</pre>
+<pre>457f9d0c:	e1a00006 	mov	r0, r6</pre>
+<pre>457f9d10:	e7981003 	ldr	r1, [r8, r3]</pre>
+<pre>457f9d14:	ebfc8afa 	bl	4571c904 &lt;sk_pop_free&commat;plt&gt;</pre>
+<pre>457f9d18:	e1a0000a 	mov	r0, sl</pre>
+<pre>457f9d1c:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}</pre>
+<pre>457f9d20:	e59f0058 	ldr	r0, [pc, #88]	; 457f9d80 &lt;TS_CONF_set_policies&commat;&commat;OPENSSL_1.0.2d+0x118&gt;</pre>
+<pre>457f9d24:	e1a02009 	mov	r2, r9</pre>
+<pre>457f9d28:	e59f3054 	ldr	r3, [pc, #84]	; 457f9d84 &lt;TS_CONF_set_policies&commat;&commat;OPENSSL_1.0.2d+0x11c&gt;</pre>
+<pre>457f9d2c:	e1a0a005 	mov	sl, r5</pre>
+<pre>457f9d30:	e59f1050 	ldr	r1, [pc, #80]	; 457f9d88 &lt;TS_CONF_set_policies&commat;&commat;OPENSSL_1.0.2d+0x120&gt;</pre>
+<pre>457f9d34:	e7980000 	ldr	r0, [r8, r0]</pre>
+<pre>457f9d38:	e08f3003 	add	r3, pc, r3</pre>
+<pre>457f9d3c:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457f9d40:	e5900000 	ldr	r0, [r0]</pre>
+<pre><span class="red">457f9d44:	ebfc9775 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457f9d48:	eaffffee 	b	457f9d08 &lt;TS_CONF_set_policies&commat;&commat;OPENSSL_1.0.2d+0xa0&gt;</pre>
+<pre>457f9d4c:	e59f002c 	ldr	r0, [pc, #44]	; 457f9d80 &lt;TS_CONF_set_policies&commat;&commat;OPENSSL_1.0.2d+0x118&gt;</pre>
+<pre>457f9d50:	e1a03004 	mov	r3, r4</pre>
+<pre>457f9d54:	e59f1030 	ldr	r1, [pc, #48]	; 457f9d8c &lt;TS_CONF_set_policies&commat;&commat;OPENSSL_1.0.2d+0x124&gt;</pre>
+<pre>457f9d58:	e1a02009 	mov	r2, r9</pre>
+<pre>457f9d5c:	e1a0a006 	mov	sl, r6</pre>
+<pre>457f9d60:	e7980000 	ldr	r0, [r8, r0]</pre>
+<pre>457f9d64:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457f9d68:	e5900000 	ldr	r0, [r0]</pre>
+<pre><span class="red">457f9d6c:	ebfc976b 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457f9d70:	eaffffe4 	b	457f9d08 &lt;TS_CONF_set_policies&commat;&commat;OPENSSL_1.0.2d+0xa0&gt;</pre>
+<pre>457f9d74:	000340d4 	ldrdeq	r4, [r3], -r4	; &lt;UNPREDICTABLE&gt;</pre>
+<pre>--</pre>
+<pre>457f9e18:	e1a01004 	mov	r1, r4</pre>
+<pre>457f9e1c:	e1540000 	cmp	r4, r0</pre>
+<pre>457f9e20:	e1a00005 	mov	r0, r5</pre>
+<pre>457f9e24:	e2844001 	add	r4, r4, #1</pre>
+<pre>457f9e28:	baffffeb 	blt	457f9ddc &lt;TS_CONF_set_digests&commat;&commat;OPENSSL_1.0.2d+0x4c&gt;</pre>
+<pre>457f9e2c:	e3a09001 	mov	r9, #1</pre>
+<pre>457f9e30:	e59f30b4 	ldr	r3, [pc, #180]	; 457f9eec &lt;TS_CONF_set_digests&commat;&commat;OPENSSL_1.0.2d+0x15c&gt;</pre>
+<pre>457f9e34:	e1a00005 	mov	r0, r5</pre>
+<pre>457f9e38:	e7971003 	ldr	r1, [r7, r3]</pre>
+<pre>457f9e3c:	ebfc8ab0 	bl	4571c904 &lt;sk_pop_free&commat;plt&gt;</pre>
+<pre>457f9e40:	e1a00009 	mov	r0, r9</pre>
+<pre>457f9e44:	e8bd87f0 	pop	{r4, r5, r6, r7, r8, r9, sl, pc}</pre>
+<pre>457f9e48:	e59f00a0 	ldr	r0, [pc, #160]	; 457f9ef0 &lt;TS_CONF_set_digests&commat;&commat;OPENSSL_1.0.2d+0x160&gt;</pre>
+<pre>457f9e4c:	e1a02008 	mov	r2, r8</pre>
+<pre>457f9e50:	e59f309c 	ldr	r3, [pc, #156]	; 457f9ef4 &lt;TS_CONF_set_digests&commat;&commat;OPENSSL_1.0.2d+0x164&gt;</pre>
+<pre>457f9e54:	e59f109c 	ldr	r1, [pc, #156]	; 457f9ef8 &lt;TS_CONF_set_digests&commat;&commat;OPENSSL_1.0.2d+0x168&gt;</pre>
+<pre>457f9e58:	e7970000 	ldr	r0, [r7, r0]</pre>
+<pre>457f9e5c:	e08f3003 	add	r3, pc, r3</pre>
+<pre>457f9e60:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457f9e64:	e5900000 	ldr	r0, [r0]</pre>
+<pre><span class="red">457f9e68:	ebfc972c 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457f9e6c:	eaffffef 	b	457f9e30 &lt;TS_CONF_set_digests&commat;&commat;OPENSSL_1.0.2d+0xa0&gt;</pre>
+<pre>457f9e70:	e59f0078 	ldr	r0, [pc, #120]	; 457f9ef0 &lt;TS_CONF_set_digests&commat;&commat;OPENSSL_1.0.2d+0x160&gt;</pre>
+<pre>457f9e74:	e1a03004 	mov	r3, r4</pre>
+<pre>457f9e78:	e59f107c 	ldr	r1, [pc, #124]	; 457f9efc &lt;TS_CONF_set_digests&commat;&commat;OPENSSL_1.0.2d+0x16c&gt;</pre>
+<pre>457f9e7c:	e1a02008 	mov	r2, r8</pre>
+<pre>457f9e80:	e7970000 	ldr	r0, [r7, r0]</pre>
+<pre>457f9e84:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457f9e88:	e5900000 	ldr	r0, [r0]</pre>
+<pre><span class="red">457f9e8c:	ebfc9723 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457f9e90:	eaffffe6 	b	457f9e30 &lt;TS_CONF_set_digests&commat;&commat;OPENSSL_1.0.2d+0xa0&gt;</pre>
+<pre>457f9e94:	e59f0054 	ldr	r0, [pc, #84]	; 457f9ef0 &lt;TS_CONF_set_digests&commat;&commat;OPENSSL_1.0.2d+0x160&gt;</pre>
+<pre>457f9e98:	e1a03004 	mov	r3, r4</pre>
+<pre>457f9e9c:	e59f105c 	ldr	r1, [pc, #92]	; 457f9f00 &lt;TS_CONF_set_digests&commat;&commat;OPENSSL_1.0.2d+0x170&gt;</pre>
+<pre>457f9ea0:	e1a02008 	mov	r2, r8</pre>
+<pre>457f9ea4:	e1a09005 	mov	r9, r5</pre>
+<pre>457f9ea8:	e7970000 	ldr	r0, [r7, r0]</pre>
+<pre>457f9eac:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457f9eb0:	e5900000 	ldr	r0, [r0]</pre>
+<pre><span class="red">457f9eb4:	ebfc9719 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457f9eb8:	eaffffdc 	b	457f9e30 &lt;TS_CONF_set_digests&commat;&commat;OPENSSL_1.0.2d+0xa0&gt;</pre>
+<pre>457f9ebc:	e59f002c 	ldr	r0, [pc, #44]	; 457f9ef0 &lt;TS_CONF_set_digests&commat;&commat;OPENSSL_1.0.2d+0x160&gt;</pre>
+<pre>457f9ec0:	e1a03004 	mov	r3, r4</pre>
+<pre>457f9ec4:	e59f1038 	ldr	r1, [pc, #56]	; 457f9f04 &lt;TS_CONF_set_digests&commat;&commat;OPENSSL_1.0.2d+0x174&gt;</pre>
+<pre>457f9ec8:	e1a02008 	mov	r2, r8</pre>
+<pre>457f9ecc:	e1a09005 	mov	r9, r5</pre>
+<pre>457f9ed0:	e7970000 	ldr	r0, [r7, r0]</pre>
+<pre>457f9ed4:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457f9ed8:	e5900000 	ldr	r0, [r0]</pre>
+<pre><span class="red">457f9edc:	ebfc970f 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457f9ee0:	eaffffd2 	b	457f9e30 &lt;TS_CONF_set_digests&commat;&commat;OPENSSL_1.0.2d+0xa0&gt;</pre>
+<pre>457f9ee4:	00033fbc 			; &lt;UNDEFINED&gt; instruction: 0x00033fbc</pre>
+<pre>--</pre>
+<pre>457fa040:	e2904000 	adds	r4, r0, #0</pre>
+<pre>457fa044:	13a04001 	movne	r4, #1</pre>
+<pre>457fa048:	e59f3088 	ldr	r3, [pc, #136]	; 457fa0d8 &lt;TS_CONF_set_accuracy&commat;&commat;OPENSSL_1.0.2d+0x1d0&gt;</pre>
+<pre>457fa04c:	e1a00007 	mov	r0, r7</pre>
+<pre>457fa050:	e59d200c 	ldr	r2, [sp, #12]</pre>
+<pre>457fa054:	e7921003 	ldr	r1, [r2, r3]</pre>
+<pre>457fa058:	ebfc8a29 	bl	4571c904 &lt;sk_pop_free&commat;plt&gt;</pre>
+<pre>457fa05c:	e1a00004 	mov	r0, r4</pre>
+<pre>457fa060:	e28dd01c 	add	sp, sp, #28</pre>
+<pre>457fa064:	e8bd8ff0 	pop	{r4, r5, r6, r7, r8, r9, sl, fp, pc}</pre>
+<pre>457fa068:	e59dc00c 	ldr	ip, [sp, #12]</pre>
+<pre>457fa06c:	e3a04000 	mov	r4, #0</pre>
+<pre>457fa070:	e59f0064 	ldr	r0, [pc, #100]	; 457fa0dc &lt;TS_CONF_set_accuracy&commat;&commat;OPENSSL_1.0.2d+0x1d4&gt;</pre>
+<pre>457fa074:	e59f3064 	ldr	r3, [pc, #100]	; 457fa0e0 &lt;TS_CONF_set_accuracy&commat;&commat;OPENSSL_1.0.2d+0x1d8&gt;</pre>
+<pre>457fa078:	e59f1064 	ldr	r1, [pc, #100]	; 457fa0e4 &lt;TS_CONF_set_accuracy&commat;&commat;OPENSSL_1.0.2d+0x1dc&gt;</pre>
+<pre>457fa07c:	e79c0000 	ldr	r0, [ip, r0]</pre>
+<pre>457fa080:	e08f3003 	add	r3, pc, r3</pre>
+<pre>457fa084:	e59d2014 	ldr	r2, [sp, #20]</pre>
+<pre>457fa088:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457fa08c:	e5900000 	ldr	r0, [r0]</pre>
+<pre><span class="red">457fa090:	ebfc96a2 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457fa094:	eaffffeb 	b	457fa048 &lt;TS_CONF_set_accuracy&commat;&commat;OPENSSL_1.0.2d+0x140&gt;</pre>
+<pre>457fa098:	e59dc00c 	ldr	ip, [sp, #12]</pre>
+<pre>457fa09c:	e1a03004 	mov	r3, r4</pre>
+<pre>457fa0a0:	e59f0034 	ldr	r0, [pc, #52]	; 457fa0dc &lt;TS_CONF_set_accuracy&commat;&commat;OPENSSL_1.0.2d+0x1d4&gt;</pre>
+<pre>457fa0a4:	e1a04007 	mov	r4, r7</pre>
+<pre>457fa0a8:	e59f1038 	ldr	r1, [pc, #56]	; 457fa0e8 &lt;TS_CONF_set_accuracy&commat;&commat;OPENSSL_1.0.2d+0x1e0&gt;</pre>
+<pre>457fa0ac:	e59d2014 	ldr	r2, [sp, #20]</pre>
+<pre>457fa0b0:	e79c0000 	ldr	r0, [ip, r0]</pre>
+<pre>457fa0b4:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457fa0b8:	e5900000 	ldr	r0, [r0]</pre>
+<pre><span class="red">457fa0bc:	ebfc9697 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457fa0c0:	eaffffe0 	b	457fa048 &lt;TS_CONF_set_accuracy&commat;&commat;OPENSSL_1.0.2d+0x140&gt;</pre>
+<pre>457fa0c4:	000335c0 	andeq	r3, r3, r0, asr #11</pre>
+<pre>--</pre>
+<pre>457fa104:	e08f5005 	add	r5, pc, r5</pre>
+<pre>457fa108:	e5234004 	str	r4, [r3, #-4]!</pre>
+<pre>457fa10c:	e1a07001 	mov	r7, r1</pre>
+<pre>457fa110:	e1a02005 	mov	r2, r5</pre>
+<pre>457fa114:	ebfc8e95 	bl	4571db70 &lt;NCONF_get_number_e&commat;plt&gt;</pre>
+<pre>457fa118:	e59fc060 	ldr	ip, [pc, #96]	; 457fa180 &lt;TS_CONF_set_clock_precision_digits&commat;&commat;OPENSSL_1.0.2d+0x94&gt;</pre>
+<pre>457fa11c:	e08fc00c 	add	ip, pc, ip</pre>
+<pre>457fa120:	e2501000 	subs	r1, r0, #0</pre>
+<pre>457fa124:	058d1004 	streq	r1, [sp, #4]</pre>
+<pre>457fa128:	0a00000d 	beq	457fa164 &lt;TS_CONF_set_clock_precision_digits&commat;&commat;OPENSSL_1.0.2d+0x78&gt;</pre>
+<pre>457fa12c:	e59d1004 	ldr	r1, [sp, #4]</pre>
+<pre>457fa130:	e3510006 	cmp	r1, #6</pre>
+<pre>457fa134:	9a00000a 	bls	457fa164 &lt;TS_CONF_set_clock_precision_digits&commat;&commat;OPENSSL_1.0.2d+0x78&gt;</pre>
+<pre>457fa138:	e59f0044 	ldr	r0, [pc, #68]	; 457fa184 &lt;TS_CONF_set_clock_precision_digits&commat;&commat;OPENSSL_1.0.2d+0x98&gt;</pre>
+<pre>457fa13c:	e1a03005 	mov	r3, r5</pre>
+<pre>457fa140:	e59f1040 	ldr	r1, [pc, #64]	; 457fa188 &lt;TS_CONF_set_clock_precision_digits&commat;&commat;OPENSSL_1.0.2d+0x9c&gt;</pre>
+<pre>457fa144:	e1a02007 	mov	r2, r7</pre>
+<pre>457fa148:	e79c0000 	ldr	r0, [ip, r0]</pre>
+<pre>457fa14c:	e08f1001 	add	r1, pc, r1</pre>
+<pre>457fa150:	e5900000 	ldr	r0, [r0]</pre>
+<pre><span class="red">457fa154:	ebfc9671 	bl	4571fb20 &lt;fprintf&commat;plt&gt</span></span></pre>
+<pre>457fa158:	e1a00004 	mov	r0, r4</pre>
+<pre>457fa15c:	e28dd00c 	add	sp, sp, #12</pre>
+<br />
+<pre></span></pre>
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">fprintf</span> used </span><span class="orange">24</span> times </span><span class="orange">libcrypto.so.1.0.0</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+  var embarkButton = document.getElementById("embark");
+  if ( !(embarkButton.href.includes("embarkBackUrl")) ) {
+    embarkButton.classList.remove('hidden');
+    document.getElementById("logoImage").src = "./../style/embark.svg";
+    document.getElementById("logo").style.background = "#2d2d2d";
+  }
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

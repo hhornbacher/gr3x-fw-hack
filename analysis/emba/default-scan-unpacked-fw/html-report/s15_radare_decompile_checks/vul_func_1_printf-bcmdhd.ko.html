@@ -1,0 +1,1413 @@
+<!-- 
+EMBA - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2023 Siemens AG
+Copyright 2020-2023 Siemens Energy AG
+
+EMBA comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+EMBA is licensed under GPLv3
+
+Author(s): Pascal Eckmann
+Contributor(s): Michael Messner, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div id="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" id="logoImage" src="./../style/emba.svg" alt="logo"></a>
+  </div>
+  <div id="nav">
+      <a id="embark" class="hidden" href="{{ embarkBackUrl }}">&laquo; Back to EMBArk</a> <!-- nosem -->
+      <a class="backButton" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s15_radare_decompile_checks.html" title="./../s15_radare_decompile_checks.html" >&laquo; Back to s15_radare_decompile_checks</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">bcmdhd.ko</span></pre>
+<br />
+<pre>  </pre>
+<pre>  	<span class="red">No RELRO</span>       <span class="red">No Canary found</span>   <span class="red">NX disabled</span>  <span class="orange">REL</span>          <span class="green">No RPATH</span>     <span class="green">No RUNPATH</span>   <span class="red">Symbols</pre>
+<br />
+<pre></span></pre>
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">printf</span> tear down of </span><span class="orange">bcmdhd.ko</span></pre>
+<br />
+<pre>    ; assembly                                                   | /* r2dec pseudo code output */</pre>
+<pre>                                                                 | /* /logs/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/home/root/murata-driver/bcmdhd.ko &commat; 0x800e2e4 */</pre>
+<pre>                                                                 | #include &lt;stdint.h&gt;</pre>
+<pre>                                                                 |  </pre>
+<pre>                                                                 | #define SWAP64(val) ((uint64_t) (((val &amp; 0x00000000000000ffull) &lt;&lt; 56) | \</pre>
+<pre>                                                                 |                                  ((val &amp; 0x000000000000ff00ull) &lt;&lt; 40) | \</pre>
+<pre>                                                                 |                                  ((val &amp; 0x0000000000ff0000ull) &lt;&lt; 24) | \</pre>
+<pre>                                                                 |                                  ((val &amp; 0x00000000ff000000ull) &lt;&lt;  8) | \</pre>
+<pre>                                                                 |                                  ((val &amp; 0x000000ff00000000ull) &gt;&gt;  8) | \</pre>
+<pre>                                                                 |                                  ((val &amp; 0x0000ff0000000000ull) &gt;&gt; 24) | \</pre>
+<pre>                                                                 |                                  ((val &amp; 0x00ff000000000000ull) &gt;&gt; 40) | \</pre>
+<pre>                                                                 |                                  ((val &amp; 0xff00000000000000ull) &gt;&gt; 56)))</pre>
+<pre>                                                                 | #define SWAP32(n) ((uint32_t) (((n &amp; 0x000000ff) &lt;&lt; 24) | \</pre>
+<pre>                                                                 |                                ((n &amp; 0x0000ff00) &lt;&lt;  8) | \</pre>
+<pre>                                                                 |                                ((n &amp; 0x00ff0000) &gt;&gt;  8) | \</pre>
+<pre>                                                                 |                                ((n &amp; 0xff000000) &gt;&gt; 24)))</pre>
+<pre>                                                                 |  </pre>
+<pre>    ; (fcn) sym.dhd_mschdbg_dump_data ()                         | void dhd_mschdbg_dump_data (int16_t arg_1h, int16_t arg_60h, int16_t arg_300h, int16_t arg1, int16_t arg2, int16_t arg3, int16_t arg4) {</pre>
+<pre>                                                                 |     int16_t var_0h;</pre>
+<pre>                                                                 |     int16_t var_4h;</pre>
+<pre>                                                                 |     int16_t var_8h;</pre>
+<pre>                                                                 |     int16_t var_ch;</pre>
+<pre>                                                                 |     int16_t var_10h;</pre>
+<pre>                                                                 |     int16_t var_1ch;</pre>
+<pre>                                                                 |     int16_t var_20h;</pre>
+<pre>                                                                 |     int16_t var_24h;</pre>
+<pre>                                                                 |     r0 = arg1;</pre>
+<pre>                                                                 |     r1 = arg2;</pre>
+<pre>                                                                 |     r2 = arg3;</pre>
+<pre>                                                                 |     r3 = arg4;</pre>
+<pre>    0x0800e2e4 push.w {r4, r5, r6, r7, r8, sb, sl, fp, lr}       |     </pre>
+<pre>    0x0800e2e8 invalid                                           |     </pre>
+<pre>                                                                 |     do {</pre>
+<pre>    0x0800e2ea movs r6, 3                                        |         r6 = 3;</pre>
+<pre>    0x0800e2ec cmp r6, 3                                         |         </pre>
+<pre>    0x0800e2ee sub sp, 0x3c                                      |         </pre>
+<pre>    0x0800e2f0 mov.w r7, 0                                       |         r7 = 0;</pre>
+<pre>    0x0800e2f4 mov sl, r0                                        |         sl = r0;</pre>
+<pre>    0x0800e2f6 mov fp, r1                                        |         </pre>
+<pre>                                                                 | label_0:</pre>
+<pre>    0x0800e2f8 mov r5, r2                                        |         r5 = r2;</pre>
+<pre>    0x0800e2fa mov r4, r3                                        |         r4 = r3;</pre>
+<pre>    0x0800e2fc str r7, [sp, 0x1c]                                |         var_1ch = r7;</pre>
+<pre>    0x0800e2fe str r7, [sp, 0x20]                                |         var_20h = r7;</pre>
+<pre>                                                                 |         if (r6 &gt; 3) {</pre>
+<pre>    0x0800e300 bgt.w 0x800eaba                                   |             goto label_50;</pre>
+<pre>                                                                 |         }</pre>
+<pre>    0x0800e304 uxtb.w r8, r2                                     |         r8 = (int8_t) r2;</pre>
+<pre>    0x0800e308 cmp.w r8, 6                                       |         </pre>
+<pre>                                                                 |         if (r8 &lt;= 6) {</pre>
+<pre>    0x0800e30c bgt 0x800e32c                                     |             </pre>
+<pre>    0x0800e30e ldr r1, [r3]                                      |             r1 = *(r3);</pre>
+<pre>    0x0800e310 mov r2, r7                                        |             r2 = r7;</pre>
+<pre>    0x0800e312 ldr r0, [r3, 4]                                   |             r0 = *((r3 + 4));</pre>
+<pre>    0x0800e314 rev.w lr, r1                                      |             r1 = SWAPundefined (lr);</pre>
+<pre>    0x0800e318 rev r3, r0                                        |             r0 = SWAP32 (r3);</pre>
+<pre>    0x0800e31a orr.w r2, r2, lr                                  |             r2 |= lr;</pre>
+<pre>    0x0800e31e strd r2, r3, [sp, 8]                              |             __asm ("strd r2, r3, [var_8h]");</pre>
+<pre>    0x0800e322 add r3, sp, 0x20                                  |             r3 += var_20h;</pre>
+<pre>    0x0800e324 add r2, sp, 0x1c                                  |             r2 += var_1ch;</pre>
+<pre>    0x0800e326 bl 0x800d1a0                                      |             dhd_mschdbg_us_to_sec ();</pre>
+<pre>    0x0800e32a b 0x800e334                                       |             </pre>
+<pre>                                                                 |         } else {</pre>
+<pre>    0x0800e32c movs r2, 0                                        |             r2 = 0;</pre>
+<pre>    0x0800e32e movs r3, 0                                        |             r3 = 0;</pre>
+<pre>    0x0800e330 strd r2, r3, [sp, 8]                              |             __asm ("strd r2, r3, [var_8h]");</pre>
+<pre>                                                                 |         }</pre>
+<pre>    0x0800e334 ldr r7, [pc, 0x168]                               |         r7 = .bss;</pre>
+<pre>    0x0800e336 ldrb.w r3, [r7, 0x20]                             |         r3 = *((r7 + 0x20));</pre>
+<pre>                                                                 |         if (r3 == 0) {</pre>
+<pre>    0x0800e33a cbz r3, 0x800e374                                 |             goto label_51;</pre>
+<pre>                                                                 |         }</pre>
+<pre>    0x0800e33c cmp.w r8, 4                                       |         </pre>
+<pre>                                                                 |         if (r8 == 4) {</pre>
+<pre>    0x0800e340 beq.w 0x800e7e0                                   |             goto label_52;</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 | label_1:</pre>
+<pre>    0x0800e342 strh r6, [r1, 0x12]                               |         *((r1 + 0x12)) = r6;</pre>
+<pre>    0x0800e344 cmp.w r8, 0xa                                     |         </pre>
+<pre>                                                                 |         if (r8 == 0xa) {</pre>
+<pre>    0x0800e348 beq 0x800e39c                                     |             goto label_53;</pre>
+<pre>                                                                 |         }</pre>
+<pre>    0x0800e34a ldr r3, [pc, 0x158]                               |         r3 = *(0x800e4a6);</pre>
+<pre>    0x0800e34c ldr r2, [r3]                                      |         r2 = *(0x800e4a6);</pre>
+<pre>    0x0800e34e mov sb, r3                                        |         sb = r3;</pre>
+<pre>    0x0800e350 tst.w r2, 0x800                                   |         </pre>
+<pre>                                                                 |         if ((r2 &amp; 0x800) == 0) {</pre>
+<pre>    0x0800e354 beq 0x800e360                                     |             goto label_54;</pre>
+<pre>                                                                 |         }</pre>
+<pre>    0x0800e356 ldr r2, [pc, 0x150]                               |         r2 = *(0x800e4aa);</pre>
+<pre>    0x0800e358 ldr r0, [pc, 0x150]                               |         r0 = .rodata.str1.1;</pre>
+<pre>    0x0800e35a ldr r1, [r2]                                      |         r1 = *(0x800e4aa);</pre>
+<pre>    0x0800e35c bne 0x800e2ea                                     |         </pre>
+<pre>                                                                 |     } while ((r2 &amp; 0x800) != 0);</pre>
+<pre>    0x0800e35e lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_54:</pre>
+<pre>    0x0800e360 ldr.w r3, [sb]                                    |     r3 = *(sb);</pre>
+<pre>    0x0800e364 lsls r3, r3, 0x14                                 |     r3 &lt;&lt;= 0x14;</pre>
+<pre>                                                                 |     if (r3 &gt;= r3) {</pre>
+<pre>    0x0800e366 bpl 0x800e36e                                     |         goto label_55;</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 | label_2:</pre>
+<pre>    0x0800e368 ldr r0, [pc, 0x144]                               |     r0 = .rodata.str1.1;</pre>
+<pre>                                                                 |     if (r3 != r3) {</pre>
+<pre>    0x0800e36a bne 0x800e2f8                                     |         goto label_0;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e36c lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_55:</pre>
+<pre>    0x0800e36e movs r3, 0                                        |     r3 = 0;</pre>
+<pre>    0x0800e370 strb.w r3, [r7, 0x20]                             |     *((r7 + 0x20)) = r3;</pre>
+<pre>                                                                 | label_51:</pre>
+<pre>    0x0800e374 ubfx r5, r5, 0xc, 4                               |     r5 = (r5 &gt;&gt; 0xc) &amp; ((1 &lt;&lt; 4) - 1);</pre>
+<pre>    0x0800e378 cmp.w r8, 0xb                                     |     </pre>
+<pre>                                                                 |     if (r8 &gt; 0xb) {</pre>
+<pre>    0x0800e37c bhi.w 0x800ea94                                   |         goto label_56;</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 |     /* switch table (13 cases) at 0x800e384 */</pre>
+<pre>    0x0800e380 tbh [pc, r8, lsl 1]                               |     __asm ("tbh [pc, r8, lsl 1]");</pre>
+<pre>                                                                 | label_3:</pre>
+<pre>    0x0800e38a lsls r0, r4, 2                                    |     r0 = r4 &lt;&lt; 2;</pre>
+<pre>    0x0800e38c lsls r6, r5, 8                                    |     r6 = r5 &lt;&lt; 8;</pre>
+<pre>    0x0800e38e lsls r0, r1, 9                                    |     r0 = r1 &lt;&lt; 9;</pre>
+<pre>    0x0800e390 lsls r3, r6, 9                                    |     r3 = r6 &lt;&lt; 9;</pre>
+<pre>    0x0800e392 lsls r6, r6, 0xa                                  |     r6 &lt;&lt;= 10;</pre>
+<pre>    0x0800e394 lsls r1, r6, 0xd                                  |     r1 = r6 &lt;&lt; 13;</pre>
+<pre>                                                                 | label_4:</pre>
+<pre>    0x0800e396 lsls r6, r6, 0xd                                  |     r6 &lt;&lt;= 0xd;</pre>
+<pre>    0x0800e398 movs r4, r1                                       |     r4 = r1;</pre>
+<pre>    0x0800e39a lsls r6, r7, 0xd                                  |     r6 = r7 &lt;&lt; 13;</pre>
+<pre>                                                                 | label_53:</pre>
+<pre>    0x0800e39c ldr r5, [pc, 0x104]                               |     r5 = $d;</pre>
+<pre>    0x0800e39e ldr r6, [pc, 0x108]                               |     r6 = *(0x800e4aa);</pre>
+<pre>    0x0800e3a0 b 0x800e7d8                                       |     goto label_21;</pre>
+<pre>    0x0800e3a2 ldr r3, [pc, 0x100]                               |     r3 = *(0x800e4a6);</pre>
+<pre>    0x0800e3a4 ldr r2, [r3]                                      |     r2 = *(0x800e4a6);</pre>
+<pre>                                                                 | label_5:</pre>
+<pre>    0x0800e3a6 mov r4, r3                                        |     r4 = r3;</pre>
+<pre>    0x0800e3a8 tst.w r2, 0x800                                   |     </pre>
+<pre>                                                                 |     if ((r2 &amp; 0x800) == 0) {</pre>
+<pre>    0x0800e3ac beq 0x800e3b8                                     |         goto label_57;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e3ae ldr r3, [pc, 0xf8]                                |     r3 = *(0x800e4aa);</pre>
+<pre>    0x0800e3b0 ldr r0, [pc, 0xf8]                                |     r0 = .rodata.str1.1;</pre>
+<pre>                                                                 | label_6:</pre>
+<pre>    0x0800e3b2 ldr r1, [r3]                                      |     r1 = *(0x800e4aa);</pre>
+<pre>                                                                 |     if ((r2 &amp; 0x800) != 0) {</pre>
+<pre>    0x0800e3b4 bne 0x800e342                                     |         goto label_1;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e3b6 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_57:</pre>
+<pre>    0x0800e3b8 ldr r3, [r4]                                      |     r3 = *(r4);</pre>
+<pre>    0x0800e3ba lsls r4, r3, 0x14                                 |     r4 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r4 &gt;= r3) {</pre>
+<pre>    0x0800e3bc bpl.w 0x800eaba                                   |         goto label_50;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e3c0 ldr r2, [sp, 0x20]                                |     r2 = var_20h;</pre>
+<pre>                                                                 | label_7:</pre>
+<pre>    0x0800e3c2 ldr r1, [sp, 0x1c]                                |     r1 = var_1ch;</pre>
+<pre>    0x0800e3c4 ldr r0, [pc, 0xec]                                |     r0 = .rodata.str1.1;</pre>
+<pre>    0x0800e3c6 b 0x800eab6                                       |     goto label_58;</pre>
+<pre>    0x0800e3c8 ldr r3, [pc, 0xd8]                                |     r3 = $d;</pre>
+<pre>    0x0800e3ca ldr r2, [r3]                                      |     r2 = $d;</pre>
+<pre>    0x0800e3cc mov r4, r3                                        |     r4 = r3;</pre>
+<pre>    0x0800e3ce tst.w r2, 0x800                                   |     </pre>
+<pre>                                                                 |     if ((r2 &amp; 0x800) == 0) {</pre>
+<pre>    0x0800e3d2 beq 0x800e3de                                     |         goto label_59;</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 | label_8:</pre>
+<pre>    0x0800e3d4 ldr r3, [pc, 0xd0]                                |     r3 = .data;</pre>
+<pre>    0x0800e3d6 ldr r0, [pc, 0xd4]                                |     r0 = *(0x800e4ae);</pre>
+<pre>    0x0800e3d8 ldr r1, [r3]                                      |     r1 = .data;</pre>
+<pre>                                                                 |     if ((r2 &amp; 0x800) != 0) {</pre>
+<pre>    0x0800e3da bne 0x800e368                                     |         goto label_2;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e3dc lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_59:</pre>
+<pre>    0x0800e3de ldr r3, [r4]                                      |     r3 = *(r4);</pre>
+<pre>    0x0800e3e0 lsls r0, r3, 0x14                                 |     r0 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r0 &gt;= r3) {</pre>
+<pre>    0x0800e3e2 bpl.w 0x800eaba                                   |         goto label_50;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e3e6 ldr r2, [sp, 0x20]                                |     r2 = var_20h;</pre>
+<pre>    0x0800e3e8 ldr r1, [sp, 0x1c]                                |     r1 = var_1ch;</pre>
+<pre>    0x0800e3ea ldr r0, [pc, 0xcc]                                |     r0 = *(0x800e4ba);</pre>
+<pre>    0x0800e3ec b 0x800eab6                                       |     goto label_58;</pre>
+<pre>    0x0800e3ee ldr r7, [pc, 0xb4]                                |     r7 = *(0x800e4a6);</pre>
+<pre>    0x0800e3f0 ldr r3, [r7]                                      |     r3 = *(0x800e4a6);</pre>
+<pre>    0x0800e3f2 lsls r1, r3, 0x14                                 |     r1 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r1 &gt;= r3) {</pre>
+<pre>    0x0800e3f4 bpl 0x800e400                                     |         goto label_60;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e3f6 ldr r3, [pc, 0xb0]                                |     r3 = *(0x800e4aa);</pre>
+<pre>    0x0800e3f8 ldr r0, [pc, 0xb0]                                |     r0 = .rodata.str1.1;</pre>
+<pre>    0x0800e3fa ldr r1, [r3]                                      |     r1 = *(0x800e4aa);</pre>
+<pre>                                                                 |     if (r1 != r3) {</pre>
+<pre>                                                                 | label_9:</pre>
+<pre>    0x0800e3fc bne 0x800e38a                                     |         goto label_3;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e3fe lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_60:</pre>
+<pre>    0x0800e400 ldr r3, [r7]                                      |     r3 = *(r7);</pre>
+<pre>    0x0800e402 lsls r2, r3, 0x14                                 |     r2 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r2 &gt;= r3) {</pre>
+<pre>    0x0800e404 bpl 0x800e40c                                     |         goto label_61;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e406 ldr r0, [pc, 0xa8]                                |     r0 = *(0x800e4b2);</pre>
+<pre>                                                                 |     if (r2 != r3) {</pre>
+<pre>                                                                 | label_10:</pre>
+<pre>    0x0800e408 bne 0x800e396                                     |         goto label_4;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e40a lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_61:</pre>
+<pre>    0x0800e40c ldr r3, [r7]                                      |     r3 = *(r7);</pre>
+<pre>    0x0800e40e lsls r3, r3, 0x14                                 |     r3 &lt;&lt;= 0x14;</pre>
+<pre>                                                                 |     if (r3 &gt;= r3) {</pre>
+<pre>    0x0800e410 bpl 0x800e41c                                     |         goto label_62;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e412 ldr r3, [pc, 0x94]                                |     r3 = *(0x800e4aa);</pre>
+<pre>    0x0800e414 ldr r0, [pc, 0x94]                                |     r0 = .rodata.str1.1;</pre>
+<pre>    0x0800e416 ldr r1, [r3]                                      |     r1 = *(0x800e4aa);</pre>
+<pre>                                                                 |     if (r3 != r3) {</pre>
+<pre>                                                                 | label_11:</pre>
+<pre>    0x0800e418 bne 0x800e3a6                                     |         goto label_5;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e41a lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_62:</pre>
+<pre>    0x0800e41c ldr r3, [r7]                                      |     r3 = *(r7);</pre>
+<pre>    0x0800e41e lsls r0, r3, 0x14                                 |     r0 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r0 &gt;= r3) {</pre>
+<pre>    0x0800e420 bpl 0x800e428                                     |         goto label_63;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e422 ldr r0, [pc, 0x98]                                |     r0 = *(0x800e4be);</pre>
+<pre>                                                                 |     if (r0 != r3) {</pre>
+<pre>    0x0800e424 bne 0x800e3b2                                     |         goto label_6;</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 | label_12:</pre>
+<pre>    0x0800e426 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_63:</pre>
+<pre>    0x0800e428 ldr r3, [r7]                                      |     r3 = *(r7);</pre>
+<pre>    0x0800e42a lsls r1, r3, 0x14                                 |     r1 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r1 &gt;= r3) {</pre>
+<pre>    0x0800e42c bpl 0x800e438                                     |         goto label_64;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e42e ldr r3, [pc, 0x78]                                |     r3 = *(0x800e4aa);</pre>
+<pre>    0x0800e430 ldr r0, [pc, 0x78]                                |     r0 = .rodata.str1.1;</pre>
+<pre>    0x0800e432 ldr r1, [r3]                                      |     r1 = *(0x800e4aa);</pre>
+<pre>                                                                 |     if (r1 != r3) {</pre>
+<pre>    0x0800e434 bne 0x800e3c2                                     |         goto label_7;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e436 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_64:</pre>
+<pre>    0x0800e438 ldr r3, [r7]                                      |     r3 = *(r7);</pre>
+<pre>    0x0800e43a lsls r2, r3, 0x14                                 |     r2 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r2 &gt;= r3) {</pre>
+<pre>    0x0800e43c bpl 0x800e44a                                     |         goto label_65;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e43e mov r3, r6                                        |     r3 = r6;</pre>
+<pre>    0x0800e440 ldr r2, [sp, 0x20]                                |     r2 = var_20h;</pre>
+<pre>    0x0800e442 ldr r1, [sp, 0x1c]                                |     r1 = var_1ch;</pre>
+<pre>    0x0800e444 ldr r0, [pc, 0x78]                                |     r0 = .rodata.str1.1;</pre>
+<pre>                                                                 |     if (r2 != r3) {</pre>
+<pre>    0x0800e446 bne 0x800e3d4                                     |         goto label_8;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e448 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_65:</pre>
+<pre>    0x0800e44a ldrh r3, [r4, 0xc]                                |     r3 = *((r4 + 0xc));</pre>
+<pre>    0x0800e44c mov r2, r4                                        |     r2 = r4;</pre>
+<pre>    0x0800e44e mov r1, r5                                        |     r1 = r5;</pre>
+<pre>    0x0800e450 movs r0, 4                                        |     r0 = 4;</pre>
+<pre>    0x0800e452 bl 0x800d358                                      |     dhd_mschdbg_req_param_profiler_event_data ();</pre>
+<pre>    0x0800e456 ldrh r3, [r4, 8]                                  |     r3 = *((r4 + 8));</pre>
+<pre>    0x0800e458 mov r1, r4                                        |     r1 = r4;</pre>
+<pre>    0x0800e45a ldrh r2, [r4, 0xa]                                |     r2 = *((r4 + 0xa));</pre>
+<pre>    0x0800e45c movs r0, 4                                        |     r0 = 4;</pre>
+<pre>    0x0800e45e invalid                                           |     </pre>
+<pre>                                                                 | label_13:</pre>
+<pre>    0x0800e460 vceq.i32 d6, d1, d27                              |     __asm ("vceq.i32 d6, d1, d27");</pre>
+<pre>    0x0800e464 lsls r3, r3, 0x14                                 |     r3 &lt;&lt;= 0x14;</pre>
+<pre>                                                                 |     if (r3 &gt;= r3) {</pre>
+<pre>    0x0800e466 bpl 0x800e472                                     |         goto label_14;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e468 ldr r3, [pc, 0x3c]                                |     r3 = .data;</pre>
+<pre>    0x0800e46a ldr r0, [pc, 0x40]                                |     r0 = *(0x800e4ae);</pre>
+<pre>    0x0800e46c ldr r1, [r3]                                      |     r1 = .data;</pre>
+<pre>                                                                 |     if (r3 != r3) {</pre>
+<pre>    0x0800e46e bne 0x800e3fc                                     |         goto label_9;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e470 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_14:</pre>
+<pre>    0x0800e472 ldr r3, [r7]                                      |     r3 = *(r7);</pre>
+<pre>    0x0800e474 lsls r6, r3, 0x14                                 |     r6 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r6 &gt;= r3) {</pre>
+<pre>    0x0800e476 bpl 0x800e47e                                     |         goto label_66;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e478 ldr r0, [pc, 0x40]                                |     r0 = .rodata.str1.1;</pre>
+<pre>                                                                 |     if (r6 != r3) {</pre>
+<pre>    0x0800e47a bne 0x800e408                                     |         goto label_10;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e47c lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_66:</pre>
+<pre>    0x0800e47e ldr r3, [r7]                                      |     r3 = *(r7);</pre>
+<pre>    0x0800e480 lsls r5, r3, 0x14                                 |     r5 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r5 &gt;= r3) {</pre>
+<pre>    0x0800e482 bpl 0x800e48e                                     |         goto label_67;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e484 ldr r3, [pc, 0x20]                                |     r3 = .data;</pre>
+<pre>    0x0800e486 ldr r0, [pc, 0x24]                                |     r0 = *(0x800e4ae);</pre>
+<pre>    0x0800e488 ldr r1, [r3]                                      |     r1 = .data;</pre>
+<pre>                                                                 |     if (r5 != r3) {</pre>
+<pre>    0x0800e48a bne 0x800e418                                     |         goto label_11;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e48c lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_67:</pre>
+<pre>    0x0800e48e ldr r3, [r7]                                      |     r3 = *(r7);</pre>
+<pre>                                                                 | label_28:</pre>
+<pre>    0x0800e490 lsls r4, r3, 0x14                                 |     r4 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r4 &gt;= r3) {</pre>
+<pre>    0x0800e492 bpl.w 0x800eaba                                   |         goto label_50;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e496 ldr r0, [pc, 0x18]                                |     r0 = *(0x800e4b2);</pre>
+<pre>                                                                 |     if (r4 != r3) {</pre>
+<pre>    0x0800e498 bne 0x800e426                                     |         goto label_12;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e49a lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>    0x0800e49c b 0x800eaba                                       |     goto label_50;</pre>
+<pre>    0x0800e4c4 ldr r5, [pc, 0x258]                               |     r5 = $d;</pre>
+<pre>    0x0800e4c6 ldr r3, [r5]                                      |     r3 = $d;</pre>
+<pre>    0x0800e4c8 lsls r0, r3, 0x14                                 |     r0 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r0 &gt;= r3) {</pre>
+<pre>    0x0800e4ca bpl 0x800e4d6                                     |         goto label_68;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e4cc ldr r3, [pc, 0x254]                               |     r3 = .data;</pre>
+<pre>    0x0800e4ce ldr r0, [pc, 0x258]                               |     r0 = *(0x800e72a);</pre>
+<pre>    0x0800e4d0 ldr r1, [r3]                                      |     r1 = .data;</pre>
+<pre>                                                                 |     if (r0 != r3) {</pre>
+<pre>    0x0800e4d2 bne 0x800e460                                     |         goto label_13;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e4d4 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_68:</pre>
+<pre>    0x0800e4d6 ldr r3, [r5]                                      |     r3 = *(r5);</pre>
+<pre>    0x0800e4d8 lsls r1, r3, 0x14                                 |     r1 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r1 &gt;= r3) {</pre>
+<pre>    0x0800e4da bpl 0x800e4e8                                     |         goto label_69;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e4dc mov r3, r6                                        |     r3 = r6;</pre>
+<pre>    0x0800e4de ldr r2, [sp, 0x20]                                |     r2 = var_20h;</pre>
+<pre>    0x0800e4e0 ldr r1, [sp, 0x1c]                                |     r1 = var_1ch;</pre>
+<pre>    0x0800e4e2 ldr r0, [pc, 0x248]                               |     r0 = *(0x800e72e);</pre>
+<pre>                                                                 |     if (r1 != r3) {</pre>
+<pre>    0x0800e4e4 bne 0x800e472                                     |         goto label_14;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e4e6 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_69:</pre>
+<pre>    0x0800e4e8 ldr r3, [r5]                                      |     r3 = *(r5);</pre>
+<pre>    0x0800e4ea lsls r2, r3, 0x14                                 |     r2 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r2 &lt; r3) {</pre>
+<pre>    0x0800e4ec bpl 0x800e50e                                     |         </pre>
+<pre>    0x0800e4ee ldrh r3, [r4, 0xa]                                |         r3 = *((r4 + 0xa));</pre>
+<pre>    0x0800e4f0 add r1, sp, 0x24                                  |         r1 += var_24h;</pre>
+<pre>    0x0800e4f2 ldr r2, [r4, 0x20]                                |         r2 = *((r4 + 0x20));</pre>
+<pre>    0x0800e4f4 lsrs r0, r3, 8                                    |         r0 = r3 &gt;&gt; 8;</pre>
+<pre>    0x0800e4f6 rev.w r8, r2                                      |         r2 = SWAP32 (r8);</pre>
+<pre>    0x0800e4fa orr.w r0, r0, r3, lsl 8                           |         r0 |= (r3 &lt;&lt; 8);</pre>
+<pre>    0x0800e4fe uxth r0, r0                                       |         r0 = (int16_t) r0;</pre>
+<pre>    0x0800e500 invalid                                           |         </pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e50e ldrh r3, [r4, 8]                                  |     r3 = *((r4 + 8));</pre>
+<pre>    0x0800e510 lsr.w r8, r3, 8                                   |     r8 = r3 &gt;&gt; 8;</pre>
+<pre>    0x0800e514 orr.w r8, r8, r3, lsl 8                           |     r8 |= (r3 &lt;&lt; 8);</pre>
+<pre>    0x0800e518 uxth.w r8, r8                                     |     r8 = (int16_t) r8;</pre>
+<pre>    0x0800e51c ands r3, r8, 2                                    |     r3 = r8 &amp; 2;</pre>
+<pre>    0x0800e520 str r3, [sp, 0x10]                                |     var_10h = r3;</pre>
+<pre>                                                                 |     if (r3 != r8) {</pre>
+<pre>    0x0800e522 beq 0x800e530                                     |         </pre>
+<pre>    0x0800e524 ldr r3, [r5]                                      |         r3 = *(r5);</pre>
+<pre>    0x0800e526 lsls r3, r3, 0x14                                 |         r3 &lt;&lt;= 0x14;</pre>
+<pre>                                                                 |         if (r3 &gt;= r3) {</pre>
+<pre>    0x0800e528 bpl 0x800e530                                     |             goto label_70;</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 | label_70:</pre>
+<pre>    0x0800e530 tst.w r8, 0x20                                    |     </pre>
+<pre>                                                                 |     if ((r8 &amp; 0x20) == 0) {</pre>
+<pre>    0x0800e534 beq 0x800e542                                     |         void (*0x800e542)() ();</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 |     do {</pre>
+<pre>    0x0800e730 ldr r6, [r1, 0x2c]                                |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e732 lsrs r4, r0, 0x20                                 |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e734 ldr r6, [r1, 0x2c]                                |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e736 lsrs r4, r0, 0x20                                 |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e738 ldr r6, [r1, 0x2c]                                |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e73a lsrs r4, r0, 0x20                                 |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e73c ldr r6, [r1, 0x2c]                                |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e73e lsrs r4, r0, 0x20                                 |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e740 ldr r6, [r1, 0x2c]                                |         r6 = *((r1 + 0x2c));</pre>
+<pre>                                                                 | label_15:</pre>
+<pre>    0x0800e742 lsrs r4, r0, 0x20                                 |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e744 ldr r6, [r1, 0x2c]                                |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e746 lsrs r4, r0, 0x20                                 |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e748 ldr r6, [r1, 0x2c]                                |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e74a lsrs r4, r0, 0x20                                 |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e74c ldr r6, [r1, 0x2c]                                |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e74e lsrs r4, r0, 0x20                                 |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e750 ldr r6, [r1, 0x2c]                                |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e752 lsrs r4, r0, 0x20                                 |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e754 ldr r6, [r1, 0x2c]                                |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e756 lsrs r4, r0, 0x20                                 |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e758 ldr r6, [r1, 0x2c]                                |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e75a lsrs r4, r0, 0x20                                 |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e75c ldr r6, [r1, 0x2c]                                |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e75e lsrs r4, r0, 0x20                                 |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e760 ldr r6, [r1, 0x2c]                                |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e762 lsrs r4, r0, 0x20                                 |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e764 ldr r6, [r1, 0x2c]                                |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e766 lsrs r4, r0, 0x20                                 |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e768 ldr r6, [r1, 0x2c]                                |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e76a lsrs r4, r0, 0x20                                 |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e76c ldr r6, [r1, 0x2c]                                |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e76e lsrs r4, r0, 0x20                                 |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e770 ldr r6, [r1, 0x2c]                                |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e772 lsrs r4, r0, 0x20                                 |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e774 ldr r6, [r1, 0x2c]                                |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e776 lsrs r4, r0, 0x20                                 |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e778 ldr r6, [r1, 0x2c]                                |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e77a lsrs r4, r0, 0x20                                 |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>                                                                 | label_16:</pre>
+<pre>    0x0800e77c ldrb r3, [r4, 9]                                  |         r3 = *((r4 + 9));</pre>
+<pre>    0x0800e77e ldr r2, [sp, 0x60]                                |         r2 = *(arg_60h);</pre>
+<pre>                                                                 | label_17:</pre>
+<pre>    0x0800e780 ldr r1, [r4]                                      |         r1 = *(r4);</pre>
+<pre>    0x0800e782 adds r3, 3                                        |         r3 += 3;</pre>
+<pre>    0x0800e784 ldr r0, [r4, 4]                                   |         r0 = *((r4 + 4));</pre>
+<pre>    0x0800e786 lsls r3, r3, 2                                    |         r3 &lt;&lt;= 2;</pre>
+<pre>    0x0800e788 add.w r8, r4, r3                                  |         r8 = r4 + r3;</pre>
+<pre>    0x0800e78c subs r3, r2, r3                                   |         r3 = r2 - r3;</pre>
+<pre>    0x0800e78e str r3, [sp, 0x60]                                |         *(arg_60h) = r3;</pre>
+<pre>    0x0800e790 add r2, sp, 0x1c                                  |         r2 += var_1ch;</pre>
+<pre>    0x0800e792 add r3, sp, 0x20                                  |         r3 += var_20h;</pre>
+<pre>    0x0800e794 invalid                                           |         </pre>
+<pre>                                                                 | label_18:</pre>
+<pre>    0x0800e796 stc2 p8, c6, [r4, -0xac]                          |         __asm ("stc2 p8, c6, [r4, -0xac]");</pre>
+<pre>    0x0800e79a lsls r2, r3, 0x14                                 |         r2 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |         if (r2 &gt;= r3) {</pre>
+<pre>    0x0800e79c bpl 0x800e7a6                                     |             goto label_71;</pre>
+<pre>                                                                 |         }</pre>
+<pre>    0x0800e79e ldr r1, [r6]                                      |         r1 = *(r6);</pre>
+<pre>    0x0800e7a0 ldr r0, [pc, 0x12c]                               |         r0 = .rodata.str1.1;</pre>
+<pre>    0x0800e7a2 bne 0x800e730                                     |         </pre>
+<pre>                                                                 |     } while (r2 != r3);</pre>
+<pre>    0x0800e7a4 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_71:</pre>
+<pre>    0x0800e7a6 ldr r3, [r5]                                      |     r3 = *(r5);</pre>
+<pre>    0x0800e7a8 lsls r3, r3, 0x14                                 |     r3 &lt;&lt;= 0x14;</pre>
+<pre>                                                                 |     if (r3 &gt;= r3) {</pre>
+<pre>    0x0800e7aa bpl 0x800e7b8                                     |         goto label_72;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e7ac ldrb r3, [r4, 8]                                  |     r3 = *((r4 + 8));</pre>
+<pre>    0x0800e7ae ldr r2, [sp, 0x20]                                |     r2 = var_20h;</pre>
+<pre>    0x0800e7b0 ldr r1, [sp, 0x1c]                                |     r1 = var_1ch;</pre>
+<pre>    0x0800e7b2 ldr r0, [pc, 0x120]                               |     r0 = *(0x800e8d6);</pre>
+<pre>                                                                 |     if (r3 != r3) {</pre>
+<pre>    0x0800e7b4 bne 0x800e742                                     |         goto label_15;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e7b6 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_72:</pre>
+<pre>    0x0800e7b8 ldrh r2, [r4, 0xa]                                |     r2 = *((r4 + 0xa));</pre>
+<pre>    0x0800e7ba movs r3, 0x8e                                     |     r3 = 0x8e;</pre>
+<pre>                                                                 | label_19:</pre>
+<pre>    0x0800e7bc strb r3, [r4, 8]                                  |     *((r4 + 8)) = r3;</pre>
+<pre>    0x0800e7be add.w r1, r4, 8                                   |     r1 = r4 + 8;</pre>
+<pre>    0x0800e7c2 mov r0, sl                                        |     r0 = sl;</pre>
+<pre>    0x0800e7c4 lsrs r3, r2, 8                                    |     r3 = r2 &gt;&gt; 8;</pre>
+<pre>    0x0800e7c6 invalid                                           |     </pre>
+<pre>                                                                 | label_20:</pre>
+<pre>    0x0800e7c8 movs r3, 2                                        |     r3 = 2;</pre>
+<pre>    0x0800e7ca mov r2, fp                                        |     r2 = fp;</pre>
+<pre>    0x0800e7cc strh r3, [r4, 0xa]                                |     *((r4 + 0xa)) = r3;</pre>
+<pre>    0x0800e7ce add.w r3, r4, 0xc                                 |     r3 = r4 + 0xc;</pre>
+<pre>    0x0800e7d2 mov r4, r8                                        |     r4 = r8;</pre>
+<pre>    0x0800e7d4 stm r6!, {r2, r4, r6}                             |     *(r6!) = r2;</pre>
+<pre>                                                                 |     *((r6! + 4)) = r4;</pre>
+<pre>                                                                 |     *((r6! + 8)) = r6;</pre>
+<pre>    0x0800e7d6 lsrs r0, r0, 0x20                                 |     r0 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_21:</pre>
+<pre>    0x0800e7d8 ldr r3, [sp, 0x60]                                |     r3 = *(arg_60h);</pre>
+<pre>    0x0800e7da cmp r3, 0                                         |     </pre>
+<pre>                                                                 |     if (r3 &gt; 0) {</pre>
+<pre>    0x0800e7dc bgt 0x800e77c                                     |         goto label_16;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e7de b 0x800e80c                                       |     goto label_73;</pre>
+<pre>                                                                 | label_52:</pre>
+<pre>    0x0800e7e0 ldr r3, [pc, 0xf4]                                |     r3 = $d;</pre>
+<pre>    0x0800e7e2 ldr r2, [r3]                                      |     r2 = $d;</pre>
+<pre>    0x0800e7e4 mov r5, r3                                        |     r5 = r3;</pre>
+<pre>    0x0800e7e6 tst.w r2, 0x800                                   |     </pre>
+<pre>                                                                 |     if ((r2 &amp; 0x800) == 0) {</pre>
+<pre>                                                                 | label_22:</pre>
+<pre>    0x0800e7ea beq 0x800e7f6                                     |         goto label_74;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e7ec ldr r3, [pc, 0xec]                                |     r3 = .data;</pre>
+<pre>    0x0800e7ee ldr r0, [pc, 0xe0]                                |     r0 = *(0x800e8d2);</pre>
+<pre>    0x0800e7f0 ldr r1, [r3]                                      |     r1 = .data;</pre>
+<pre>                                                                 |     if ((r2 &amp; 0x800) != 0) {</pre>
+<pre>    0x0800e7f2 bne 0x800e780                                     |         goto label_17;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e7f4 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_74:</pre>
+<pre>    0x0800e7f6 ldr r3, [r5]                                      |     r3 = *(r5);</pre>
+<pre>    0x0800e7f8 lsls r0, r3, 0x14                                 |     r0 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r0 &gt;= r3) {</pre>
+<pre>    0x0800e7fa bpl 0x800e80c                                     |         goto label_73;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e7fc adds r4, 8                                        |     r4 += 8;</pre>
+<pre>    0x0800e7fe mov r3, r6                                        |     r3 = r6;</pre>
+<pre>    0x0800e800 str r4, [sp]                                      |     *(sp) = r4;</pre>
+<pre>    0x0800e802 ldr r2, [sp, 0x20]                                |     r2 = var_20h;</pre>
+<pre>    0x0800e804 ldr r1, [sp, 0x1c]                                |     r1 = var_1ch;</pre>
+<pre>    0x0800e806 ldr r0, [pc, 0xd8]                                |     r0 = *(0x800e8e2);</pre>
+<pre>                                                                 |     if (r4 != 8) {</pre>
+<pre>    0x0800e808 bne 0x800e796                                     |         goto label_18;</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 | label_23:</pre>
+<pre>    0x0800e80a lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_73:</pre>
+<pre>    0x0800e80c movs r3, 1                                        |     r3 = 1;</pre>
+<pre>    0x0800e80e strb.w r3, [r7, 0x20]                             |     *((r7 + 0x20)) = r3;</pre>
+<pre>    0x0800e812 b 0x800eaba                                       |     goto label_50;</pre>
+<pre>    0x0800e814 ldrd r2, r3, [sp, 8]                              |     __asm ("ldrd r2, r3, [var_8h]");</pre>
+<pre>    0x0800e818 add.w r7, r7, r6, lsl 3                           |     r7 += (r6 &lt;&lt; 3);</pre>
+<pre>    0x0800e81c strd r2, r3, [r7, 0x88]                           |     __asm ("strd r2, r3, [r7, 0x88]");</pre>
+<pre>    0x0800e820 ldr r7, [pc, 0xb4]                                |     r7 = $d;</pre>
+<pre>    0x0800e822 ldr r3, [r7]                                      |     r3 = $d;</pre>
+<pre>    0x0800e824 lsls r1, r3, 0x14                                 |     r1 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r1 &gt;= r3) {</pre>
+<pre>    0x0800e826 bpl 0x800e832                                     |         goto label_75;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e828 ldr r3, [pc, 0xb0]                                |     r3 = .data;</pre>
+<pre>                                                                 | label_24:</pre>
+<pre>    0x0800e82a ldr r0, [pc, 0xa4]                                |     r0 = *(0x800e8d2);</pre>
+<pre>    0x0800e82c ldr r1, [r3]                                      |     r1 = *(r3);</pre>
+<pre>                                                                 |     if (r1 != r3) {</pre>
+<pre>    0x0800e82e bne 0x800e7bc                                     |         goto label_19;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e830 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_75:</pre>
+<pre>    0x0800e832 ldr r3, [r7]                                      |     r3 = *(r7);</pre>
+<pre>    0x0800e834 lsls r2, r3, 0x14                                 |     r2 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r2 &gt;= r3) {</pre>
+<pre>    0x0800e836 bpl 0x800e83e                                     |         goto label_76;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e838 ldr r0, [pc, 0xa8]                                |     r0 = .rodata.str1.1;</pre>
+<pre>                                                                 |     if (r2 != r3) {</pre>
+<pre>                                                                 | label_25:</pre>
+<pre>    0x0800e83a bne 0x800e7c8                                     |         goto label_20;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e83c lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_76:</pre>
+<pre>    0x0800e83e ldr r3, [r7]                                      |     r3 = *(r7);</pre>
+<pre>    0x0800e840 lsls r3, r3, 0x14                                 |     r3 &lt;&lt;= 0x14;</pre>
+<pre>                                                                 |     if (r3 &gt;= r3) {</pre>
+<pre>    0x0800e842 bpl 0x800e84e                                     |         goto label_77;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e844 ldr r3, [pc, 0x94]                                |     r3 = .data;</pre>
+<pre>                                                                 | label_26:</pre>
+<pre>    0x0800e846 ldr r0, [pc, 0x88]                                |     r0 = *(0x800e8d2);</pre>
+<pre>    0x0800e848 ldr r1, [r3]                                      |     r1 = *(r3);</pre>
+<pre>                                                                 |     if (r3 != r3) {</pre>
+<pre>    0x0800e84a bne 0x800e7d8                                     |         goto label_21;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e84c lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_77:</pre>
+<pre>    0x0800e84e ldr r3, [r7]                                      |     r3 = *(r7);</pre>
+<pre>    0x0800e850 lsls r7, r3, 0x14                                 |     r7 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r7 &gt;= r3) {</pre>
+<pre>    0x0800e852 bpl 0x800e860                                     |         goto label_78;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e854 mov r3, r6                                        |     r3 = r6;</pre>
+<pre>                                                                 | label_27:</pre>
+<pre>    0x0800e856 ldr r2, [sp, 0x20]                                |     r2 = var_20h;</pre>
+<pre>    0x0800e858 ldr r1, [sp, 0x1c]                                |     r1 = var_1ch;</pre>
+<pre>    0x0800e85a ldr r0, [pc, 0x8c]                                |     r0 = *(0x800e8ea);</pre>
+<pre>                                                                 |     if (r7 != r3) {</pre>
+<pre>    0x0800e85c bne 0x800e7ea                                     |         goto label_22;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e85e lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_78:</pre>
+<pre>    0x0800e860 mov r1, r4                                        |     r1 = r4;</pre>
+<pre>    0x0800e862 mov r0, r5                                        |     r0 = r5;</pre>
+<pre>    0x0800e864 bl 0x800dc90                                      |     dhd_mschdbg_profiler_profiler_event_data_constprop_1 ();</pre>
+<pre>    0x0800e868 b 0x800eaba                                       |     goto label_50;</pre>
+<pre>    0x0800e86a ldr r3, [pc, 0x6c]                                |     r3 = *(0x800e8da);</pre>
+<pre>    0x0800e86c ldr r2, [r3]                                      |     r2 = *(0x800e8da);</pre>
+<pre>    0x0800e86e mov r4, r3                                        |     r4 = r3;</pre>
+<pre>    0x0800e870 tst.w r2, 0x800                                   |     </pre>
+<pre>                                                                 |     if ((r2 &amp; 0x800) == 0) {</pre>
+<pre>    0x0800e874 beq 0x800e880                                     |         goto label_79;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e876 ldr r3, [pc, 0x64]                                |     r3 = *(0x800e8de);</pre>
+<pre>    0x0800e878 ldr r0, [pc, 0x54]                                |     r0 = .rodata.str1.1;</pre>
+<pre>    0x0800e87a ldr r1, [r3]                                      |     r1 = *(0x800e8de);</pre>
+<pre>                                                                 |     if ((r2 &amp; 0x800) != 0) {</pre>
+<pre>    0x0800e87c bne 0x800e80a                                     |         goto label_23;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e87e lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_79:</pre>
+<pre>    0x0800e880 ldr r3, [r4]                                      |     r3 = *(r4);</pre>
+<pre>    0x0800e882 lsls r0, r3, 0x14                                 |     r0 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r0 &gt;= r3) {</pre>
+<pre>    0x0800e884 bpl 0x800e8a0                                     |         goto label_80;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e886 add.w r7, r7, r6, lsl 3                           |     r7 += (r6 &lt;&lt; 3);</pre>
+<pre>    0x0800e88a ldr r2, [sp, 8]                                   |     r2 = var_8h;</pre>
+<pre>                                                                 | label_29:</pre>
+<pre>    0x0800e88c ldr r1, [sp, 0x1c]                                |     r1 = var_1ch;</pre>
+<pre>    0x0800e88e ldr.w r3, [r7, 0x88]                              |     r3 = *((r7 + 0x88));</pre>
+<pre>    0x0800e892 ldr r0, [pc, 0x58]                                |     r0 = *(0x800e8ee);</pre>
+<pre>    0x0800e894 subs r3, r2, r3                                   |     r3 = r2 - r3;</pre>
+<pre>    0x0800e896 ldr r2, [sp, 0x20]                                |     r2 = var_20h;</pre>
+<pre>                                                                 | label_30:</pre>
+<pre>    0x0800e898 str r3, [sp]                                      |     *(sp) = r3;</pre>
+<pre>    0x0800e89a mov r3, r6                                        |     r3 = r6;</pre>
+<pre>                                                                 |     if (r3 != r2) {</pre>
+<pre>    0x0800e89c bne 0x800e82a                                     |         goto label_24;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e89e lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_80:</pre>
+<pre>    0x0800e8a0 ldr r3, [r4]                                      |     r3 = *(r4);</pre>
+<pre>    0x0800e8a2 lsls r1, r3, 0x14                                 |     r1 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r1 &gt;= r3) {</pre>
+<pre>                                                                 | label_31:</pre>
+<pre>    0x0800e8a4 bpl 0x800e8b0                                     |         goto label_81;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e8a6 ldr r3, [pc, 0x34]                                |     r3 = *(0x800e8de);</pre>
+<pre>    0x0800e8a8 ldr r0, [pc, 0x24]                                |     r0 = .rodata.str1.1;</pre>
+<pre>    0x0800e8aa ldr r1, [r3]                                      |     r1 = *(0x800e8de);</pre>
+<pre>                                                                 |     if (r1 != r3) {</pre>
+<pre>    0x0800e8ac bne 0x800e83a                                     |         goto label_25;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e8ae lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_81:</pre>
+<pre>    0x0800e8b0 ldr r3, [r4]                                      |     r3 = *(r4);</pre>
+<pre>    0x0800e8b2 lsls r2, r3, 0x14                                 |     r2 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r2 &gt;= r3) {</pre>
+<pre>    0x0800e8b4 bpl 0x800e8bc                                     |         goto label_82;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e8b6 ldr r0, [pc, 0x2c]                                |     r0 = *(0x800e8e6);</pre>
+<pre>                                                                 |     if (r2 != r3) {</pre>
+<pre>    0x0800e8b8 bne 0x800e846                                     |         goto label_26;</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 | label_32:</pre>
+<pre>    0x0800e8ba lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_82:</pre>
+<pre>    0x0800e8bc ldr r3, [r4]                                      |     r3 = *(r4);</pre>
+<pre>    0x0800e8be lsls r3, r3, 0x14                                 |     r3 &lt;&lt;= 0x14;</pre>
+<pre>                                                                 |     if (r3 &gt;= r3) {</pre>
+<pre>    0x0800e8c0 bpl 0x800e8cc                                     |         goto label_83;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e8c2 ldr r3, [pc, 0x18]                                |     r3 = *(0x800e8de);</pre>
+<pre>    0x0800e8c4 ldr r0, [pc, 8]                                   |     r0 = reloc..rodata.str1.1;</pre>
+<pre>    0x0800e8c6 ldr r1, [r3]                                      |     r1 = *(0x800e8de);</pre>
+<pre>                                                                 |     if (r3 != r3) {</pre>
+<pre>    0x0800e8c8 bne 0x800e856                                     |         goto label_27;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e8ca lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_83:</pre>
+<pre>    0x0800e8cc ldr r3, [r4]                                      |     r3 = *(r4);</pre>
+<pre>    0x0800e8ce b 0x800e490                                       |     goto label_28;</pre>
+<pre>                                                                 | label_33:</pre>
+<pre>    0x0800e8da lsrs r5, r0, 0x20                                 |     r5 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e8dc ldr r5, [sp, 0x300]                               |     r5 = *(arg_300h);</pre>
+<pre>    0x0800e8de lsrs r5, r0, 0x20                                 |     r5 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e8e0 ldr r6, [r1, 0x2c]                                |     r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e8e2 lsrs r4, r0, 0x20                                 |     r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e8e4 ldr r6, [r1, 0x2c]                                |     r6 = *((r1 + 0x2c));</pre>
+<pre>                                                                 | label_34:</pre>
+<pre>    0x0800e8e6 lsrs r4, r0, 0x20                                 |     r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e8e8 ldr r6, [r1, 0x2c]                                |     r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e8ea lsrs r4, r0, 0x20                                 |     r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e8ec ldr r6, [r1, 0x2c]                                |     r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800e8ee lsrs r4, r0, 0x20                                 |     r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e8f0 ldr r6, [pc, 0x1cc]                               |     r6 = $d;</pre>
+<pre>                                                                 | label_35:</pre>
+<pre>    0x0800e8f2 ldr r3, [r6]                                      |     r3 = *(r6);</pre>
+<pre>    0x0800e8f4 lsls r7, r3, 0x14                                 |     r7 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r7 &gt;= r3) {</pre>
+<pre>    0x0800e8f6 bpl 0x800e902                                     |         goto label_84;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e8f8 ldr r3, [pc, 0x1c8]                               |     r3 = .data;</pre>
+<pre>    0x0800e8fa ldr r0, [pc, 0x1cc]                               |     r0 = *(0x800eaca);</pre>
+<pre>    0x0800e8fc ldr r1, [r3]                                      |     r1 = .data;</pre>
+<pre>                                                                 |     if (r7 != r3) {</pre>
+<pre>    0x0800e8fe bne 0x800e88c                                     |         goto label_29;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e900 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_84:</pre>
+<pre>    0x0800e902 ldr r3, [r6]                                      |     r3 = *(r6);</pre>
+<pre>    0x0800e904 lsls r0, r3, 0x14                                 |     r0 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r0 &gt;= r3) {</pre>
+<pre>                                                                 | label_36:</pre>
+<pre>    0x0800e906 bpl 0x800e90e                                     |         goto label_85;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e908 ldr r0, [pc, 0x1c0]                               |     r0 = .rodata.str1.1;</pre>
+<pre>                                                                 |     if (r0 != r3) {</pre>
+<pre>    0x0800e90a bne 0x800e898                                     |         goto label_30;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e90c lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_85:</pre>
+<pre>    0x0800e90e ldr r3, [r6]                                      |     r3 = *(r6);</pre>
+<pre>    0x0800e910 lsls r1, r3, 0x14                                 |     r1 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r1 &gt;= r3) {</pre>
+<pre>    0x0800e912 bpl 0x800e91a                                     |         goto label_86;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e914 ldr r0, [pc, 0x1b8]                               |     r0 = .rodata.str1.1;</pre>
+<pre>                                                                 |     if (r1 != r3) {</pre>
+<pre>    0x0800e916 bne 0x800e8a4                                     |         goto label_31;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e918 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_86:</pre>
+<pre>    0x0800e91a ldr r3, [r6]                                      |     r3 = *(r6);</pre>
+<pre>    0x0800e91c lsls r2, r3, 0x14                                 |     r2 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r2 &gt;= r3) {</pre>
+<pre>    0x0800e91e bpl 0x800e930                                     |         goto label_87;</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 | label_37:</pre>
+<pre>    0x0800e920 ldm.w r4, {r1, r2, r3}                            |     r1 = *(r4);</pre>
+<pre>                                                                 |     r2 = *((r4 + 4));</pre>
+<pre>                                                                 |     r3 = *((r4 + 8));</pre>
+<pre>    0x0800e924 ldr r0, [pc, 0x1ac]                               |     r0 = .rodata.str1.1;</pre>
+<pre>    0x0800e926 rev r3, r3                                        |     r3 = SWAP32 (r3);</pre>
+<pre>    0x0800e928 rev r2, r2                                        |     r2 = SWAP32 (r2);</pre>
+<pre>    0x0800e92a rev r1, r1                                        |     r1 = SWAP32 (r1);</pre>
+<pre>                                                                 |     if (r2 != r3) {</pre>
+<pre>    0x0800e92c bne 0x800e8ba                                     |         goto label_32;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e92e lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_87:</pre>
+<pre>    0x0800e930 ldrh r2, [r4, 0x16]                               |     r2 = *((r4 + 0x16));</pre>
+<pre>                                                                 | label_38:</pre>
+<pre>    0x0800e932 movs r0, 8                                        |     r0 = 8;</pre>
+<pre>    0x0800e934 ldrh r3, [r4, 0x18]                               |     r3 = *((r4 + 0x18));</pre>
+<pre>    0x0800e936 ldr r1, [pc, 0x1a0]                               |     r1 = *(0x800eada);</pre>
+<pre>    0x0800e938 str r2, [sp]                                      |     *(sp) = r2;</pre>
+<pre>    0x0800e93a mov r2, r4                                        |     r2 = r4;</pre>
+<pre>    0x0800e93c bl 0x800d1f8                                      |     dhd_mschdbg_elem_list ();</pre>
+<pre>                                                                 | label_39:</pre>
+<pre>    0x0800e93e mrrc2 p8, 3, r6, ip, c3                           |     __asm ("mrrc2 p8, 3, r6, ip, c3");</pre>
+<pre>    0x0800e942 lsls r3, r3, 0x14                                 |     r3 &lt;&lt;= 0x14;</pre>
+<pre>                                                                 |     if (r3 &gt;= r3) {</pre>
+<pre>    0x0800e944 bpl 0x800e950                                     |         goto label_88;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e946 ldr r3, [pc, 0x17c]                               |     r3 = *(0x800eac6);</pre>
+<pre>    0x0800e948 ldr r0, [pc, 0x17c]                               |     r0 = .rodata.str1.1;</pre>
+<pre>    0x0800e94a ldr r1, [r3]                                      |     r1 = *(0x800eac6);</pre>
+<pre>                                                                 |     if (r3 != r3) {</pre>
+<pre>    0x0800e94c bne 0x800e8da                                     |         goto label_33;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e94e lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_88:</pre>
+<pre>    0x0800e950 ldr r3, [r6]                                      |     r3 = *(r6);</pre>
+<pre>    0x0800e952 lsls r7, r3, 0x14                                 |     r7 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r7 &gt;= r3) {</pre>
+<pre>    0x0800e954 bpl 0x800e95c                                     |         goto label_89;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e956 ldr r0, [pc, 0x174]                               |     r0 = *(0x800eace);</pre>
+<pre>                                                                 |     if (r7 != r3) {</pre>
+<pre>    0x0800e958 bne 0x800e8e6                                     |         goto label_34;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e95a lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_89:</pre>
+<pre>    0x0800e95c ldr r3, [r6]                                      |     r3 = *(r6);</pre>
+<pre>                                                                 | label_40:</pre>
+<pre>    0x0800e95e lsls r0, r3, 0x14                                 |     r0 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r0 &gt;= r3) {</pre>
+<pre>    0x0800e960 bpl 0x800e968                                     |         goto label_90;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e962 ldr r0, [pc, 0x168]                               |     r0 = *(0x800eace);</pre>
+<pre>                                                                 |     if (r0 != r3) {</pre>
+<pre>    0x0800e964 bne 0x800e8f2                                     |         goto label_35;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e966 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_90:</pre>
+<pre>    0x0800e968 ldr r3, [r6]                                      |     r3 = *(r6);</pre>
+<pre>                                                                 | label_41:</pre>
+<pre>    0x0800e96a lsls r1, r3, 0x14                                 |     r1 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r1 &gt;= r3) {</pre>
+<pre>    0x0800e96c bpl 0x800e996                                     |         goto label_91;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e96e ldr r1, [r4, 0xc]                                 |     r1 = *((r4 + 0xc));</pre>
+<pre>    0x0800e970 ldr r2, [r4, 0x10]                                |     r2 = *((r4 + 0x10));</pre>
+<pre>    0x0800e972 ldr r0, [pc, 0x168]                               |     r0 = *(0x800eade);</pre>
+<pre>    0x0800e974 rev r1, r1                                        |     r1 = SWAP32 (r1);</pre>
+<pre>                                                                 | label_42:</pre>
+<pre>    0x0800e976 rev r2, r2                                        |     r2 = SWAP32 (r2);</pre>
+<pre>                                                                 |     if (r1 != r3) {</pre>
+<pre>    0x0800e978 bne 0x800e906                                     |         goto label_36;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e97a lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>    0x0800e97c cmp r5, 1                                         |     </pre>
+<pre>                                                                 |     if (r5 &gt; 1) {</pre>
+<pre>    0x0800e97e bgt 0x800e996                                     |         goto label_91;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e980 ldr r3, [r6]                                      |     r3 = *(r6);</pre>
+<pre>    0x0800e982 lsls r2, r3, 0x14                                 |     r2 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r2 &gt;= r3) {</pre>
+<pre>    0x0800e984 bpl 0x800e996                                     |         goto label_91;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e986 ldrh r3, [r4, 0x1a]                               |     r3 = *((r4 + 0x1a));</pre>
+<pre>    0x0800e988 ldr r0, [pc, 0x154]                               |     r0 = .rodata.str1.1;</pre>
+<pre>    0x0800e98a lsrs r1, r3, 8                                    |     r1 = r3 &gt;&gt; 8;</pre>
+<pre>                                                                 | label_43:</pre>
+<pre>    0x0800e98c orr.w r1, r1, r3, lsl 8                           |     r1 |= (r3 &lt;&lt; 8);</pre>
+<pre>    0x0800e990 uxth r1, r1                                       |     r1 = (int16_t) r1;</pre>
+<pre>                                                                 |     if (r1 != r3) {</pre>
+<pre>    0x0800e992 bne 0x800e920                                     |         goto label_37;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e994 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_91:</pre>
+<pre>    0x0800e996 ldr r3, [r4, 0x1c]                                |     r3 = *((r4 + 0x1c));</pre>
+<pre>    0x0800e998 lsls r3, r3, 7                                    |     r3 &lt;&lt;= 7;</pre>
+<pre>                                                                 |     if (r3 &gt;= r3) {</pre>
+<pre>    0x0800e99a bpl 0x800e9a8                                     |         goto label_45;</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 | label_44:</pre>
+<pre>    0x0800e99c ldr r3, [r6]                                      |     r3 = *(r6);</pre>
+<pre>    0x0800e99e lsls r7, r3, 0x14                                 |     r7 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r7 &gt;= r3) {</pre>
+<pre>    0x0800e9a0 bpl 0x800e9a8                                     |         goto label_45;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e9a2 ldr r0, [pc, 0x140]                               |     r0 = *(0x800eae6);</pre>
+<pre>                                                                 |     if (r7 != r3) {</pre>
+<pre>    0x0800e9a4 bne 0x800e932                                     |         goto label_38;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e9a6 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_45:</pre>
+<pre>    0x0800e9a8 ldr r3, [r6]                                      |     r3 = *(r6);</pre>
+<pre>    0x0800e9aa lsls r0, r3, 0x14                                 |     r0 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r0 &gt;= r3) {</pre>
+<pre>    0x0800e9ac bpl 0x800e9b4                                     |         goto label_46;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e9ae ldr r0, [pc, 0x138]                               |     r0 = *(0x800eaea);</pre>
+<pre>                                                                 |     if (r0 != r3) {</pre>
+<pre>    0x0800e9b0 bne 0x800e93e                                     |         goto label_39;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e9b2 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_46:</pre>
+<pre>    0x0800e9b4 ldrh r3, [r4, 0x14]                               |     r3 = *((r4 + 0x14));</pre>
+<pre>    0x0800e9b6 mov r2, r4                                        |     r2 = r4;</pre>
+<pre>    0x0800e9b8 mov r1, r5                                        |     r1 = r5;</pre>
+<pre>    0x0800e9ba movs r0, 8                                        |     r0 = 8;</pre>
+<pre>    0x0800e9bc bl 0x800d358                                      |     dhd_mschdbg_req_param_profiler_event_data ();</pre>
+<pre>    0x0800e9c0 cmp r5, 1                                         |     </pre>
+<pre>                                                                 |     if (r5 &lt;= 1) {</pre>
+<pre>    0x0800e9c2 ble 0x800eaba                                     |         goto label_50;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e9c4 ldr r3, [r6]                                      |     r3 = *(r6);</pre>
+<pre>    0x0800e9c6 lsls r1, r3, 0x14                                 |     r1 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r1 &gt;= r3) {</pre>
+<pre>    0x0800e9c8 bpl 0x800e9d4                                     |         goto label_92;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e9ca ldr r3, [pc, 0xf8]                                |     r3 = *(0x800eac6);</pre>
+<pre>    0x0800e9cc ldr r0, [pc, 0xf8]                                |     r0 = .rodata.str1.1;</pre>
+<pre>    0x0800e9ce ldr r1, [r3]                                      |     r1 = *(0x800eac6);</pre>
+<pre>                                                                 |     if (r1 != r3) {</pre>
+<pre>    0x0800e9d0 bne 0x800e95e                                     |         goto label_40;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e9d2 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_92:</pre>
+<pre>    0x0800e9d4 ldr r3, [r6]                                      |     r3 = *(r6);</pre>
+<pre>    0x0800e9d6 lsls r2, r3, 0x14                                 |     r2 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r2 &gt;= r3) {</pre>
+<pre>    0x0800e9d8 bpl 0x800e9e0                                     |         goto label_93;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e9da ldr r0, [pc, 0xf0]                                |     r0 = *(0x800eace);</pre>
+<pre>                                                                 |     if (r2 != r3) {</pre>
+<pre>    0x0800e9dc bne 0x800e96a                                     |         goto label_41;</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 | label_47:</pre>
+<pre>    0x0800e9de lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_93:</pre>
+<pre>    0x0800e9e0 ldr r3, [r6]                                      |     r3 = *(r6);</pre>
+<pre>    0x0800e9e2 lsls r3, r3, 0x14                                 |     r3 &lt;&lt;= 0x14;</pre>
+<pre>                                                                 |     if (r3 &gt;= r3) {</pre>
+<pre>    0x0800e9e4 bpl 0x800e9ec                                     |         goto label_94;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e9e6 ldr r0, [pc, 0xe4]                                |     r0 = *(0x800eace);</pre>
+<pre>                                                                 |     if (r3 != r3) {</pre>
+<pre>    0x0800e9e8 bne 0x800e976                                     |         goto label_42;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e9ea lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_94:</pre>
+<pre>    0x0800e9ec ldr r3, [r6]                                      |     r3 = *(r6);</pre>
+<pre>    0x0800e9ee lsls r7, r3, 0x14                                 |     r7 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r7 &gt;= r3) {</pre>
+<pre>    0x0800e9f0 bpl 0x800ea02                                     |         goto label_95;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800e9f2 ldr r1, [r4, 0x28]                                |     r1 = *((r4 + 0x28));</pre>
+<pre>    0x0800e9f4 ldr r0, [r4, 0x2c]                                |     r0 = *((r4 + 0x2c));</pre>
+<pre>    0x0800e9f6 lsrs r4, r7, 0x1e                                 |     r4 = r7 &gt;&gt; 0x1e;</pre>
+<pre>    0x0800e9f8 lsrs r4, r0, 0x20                                 |     r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800e9fa mov r1, r0                                        |     r1 = r0;</pre>
+<pre>    0x0800e9fc ldr r0, [pc, 0xec]                                |     r0 = .rodata.str1.1;</pre>
+<pre>                                                                 |     if (r4 != r0) {</pre>
+<pre>    0x0800e9fe bne 0x800e98c                                     |         goto label_43;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800ea00 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_95:</pre>
+<pre>    0x0800ea02 ldr r3, [r6]                                      |     r3 = *(r6);</pre>
+<pre>    0x0800ea04 lsls r5, r3, 0x14                                 |     r5 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r5 &gt;= r3) {</pre>
+<pre>    0x0800ea06 bpl 0x800ea12                                     |         goto label_96;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800ea08 ldr r3, [pc, 0xb8]                                |     r3 = .data;</pre>
+<pre>    0x0800ea0a ldr r0, [pc, 0xbc]                                |     r0 = *(0x800eaca);</pre>
+<pre>    0x0800ea0c ldr r1, [r3]                                      |     r1 = .data;</pre>
+<pre>                                                                 |     if (r5 != r3) {</pre>
+<pre>    0x0800ea0e bne 0x800e99c                                     |         goto label_44;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800ea10 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_96:</pre>
+<pre>    0x0800ea12 ldr r3, [r6]                                      |     r3 = *(r6);</pre>
+<pre>    0x0800ea14 lsls r0, r3, 0x14                                 |     r0 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r0 &gt;= r3) {</pre>
+<pre>    0x0800ea16 bpl 0x800ea1e                                     |         goto label_97;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800ea18 ldr r0, [pc, 0xb0]                                |     r0 = .rodata.str1.1;</pre>
+<pre>                                                                 |     if (r0 != r3) {</pre>
+<pre>    0x0800ea1a bne 0x800e9a8                                     |         goto label_45;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800ea1c lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_97:</pre>
+<pre>    0x0800ea1e ldr r3, [r6]                                      |     r3 = *(r6);</pre>
+<pre>    0x0800ea20 lsls r1, r3, 0x14                                 |     r1 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r1 &gt;= r3) {</pre>
+<pre>    0x0800ea22 bpl 0x800ea2a                                     |         goto label_98;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800ea24 ldr r0, [pc, 0xa4]                                |     r0 = .rodata.str1.1;</pre>
+<pre>                                                                 |     if (r1 != r3) {</pre>
+<pre>    0x0800ea26 bne 0x800e9b4                                     |         goto label_46;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800ea28 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_98:</pre>
+<pre>    0x0800ea2a ldr r3, [r6]                                      |     r3 = *(r6);</pre>
+<pre>    0x0800ea2c lsls r2, r3, 0x14                                 |     r2 = r3 &lt;&lt; 0x14;</pre>
+<pre>                                                                 |     if (r2 &gt;= r3) {</pre>
+<pre>    0x0800ea2e bpl 0x800ea54                                     |         goto label_99;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800ea30 ldrh r2, [r4, 0x26]                               |     r2 = *((r4 + 0x26));</pre>
+<pre>    0x0800ea32 ldrh r1, [r4, 0x24]                               |     r1 = *((r4 + 0x24));</pre>
+<pre>                                                                 | label_48:</pre>
+<pre>    0x0800ea34 ldrh r0, [r4, 0x1a]                               |     r0 = *((r4 + 0x1a));</pre>
+<pre>    0x0800ea36 lsrs r3, r2, 8                                    |     r3 = r2 &gt;&gt; 8;</pre>
+<pre>    0x0800ea38 orr.w r3, r3, r2, lsl 8                           |     r3 |= (r2 &lt;&lt; 8);</pre>
+<pre>    0x0800ea3c lsrs r2, r1, 8                                    |     r2 = r1 &gt;&gt; 8;</pre>
+<pre>    0x0800ea3e orr.w r2, r2, r1, lsl 8                           |     r2 |= (r1 &lt;&lt; 8);</pre>
+<pre>    0x0800ea42 lsrs r1, r0, 8                                    |     r1 = r0 &gt;&gt; 8;</pre>
+<pre>                                                                 | label_49:</pre>
+<pre>    0x0800ea44 uxth r3, r3                                       |     r3 = (int16_t) r3;</pre>
+<pre>    0x0800ea46 orr.w r1, r1, r0, lsl 8                           |     r1 |= (r0 &lt;&lt; 8);</pre>
+<pre>    0x0800ea48 movs r1, 0                                        |     r1 = 0;</pre>
+<pre>    0x0800ea4a uxth r2, r2                                       |     r2 = (int16_t) r2;</pre>
+<pre>    0x0800ea4c ldr r0, [pc, 0xa0]                                |     r0 = .rodata.str1.1;</pre>
+<pre>    0x0800ea4e uxth r1, r1                                       |     r1 = (int16_t) r1;</pre>
+<pre>                                                                 |     if (r1 != 0) {</pre>
+<pre>    0x0800ea50 bne 0x800e9de                                     |         goto label_47;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800ea52 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_99:</pre>
+<pre>    0x0800ea54 ldrh r2, [r4, 0x20]                               |     r2 = *((r4 + 0x20));</pre>
+<pre>                                                                 |     if (r2 == 0) {</pre>
+<pre>    0x0800ea56 cbz r2, 0x800eaba                                 |         goto label_50;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800ea58 ldrh r3, [r4, 0x22]                               |     r3 = *((r4 + 0x22));</pre>
+<pre>                                                                 |     if (r3 == 0) {</pre>
+<pre>    0x0800ea5a cbz r3, 0x800eaba                                 |         goto label_50;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800ea5c mov r1, r4                                        |     r1 = r4;</pre>
+<pre>    0x0800ea5e movs r0, 8                                        |     r0 = 8;</pre>
+<pre>    0x0800ea60 bl 0x800d2a4                                      |     dhd_mschdbg_chanspec_list ();</pre>
+<pre>    0x0800ea64 b 0x800eaba                                       |     goto label_50;</pre>
+<pre>    0x0800ea66 mov r1, r4                                        |     r1 = r4;</pre>
+<pre>    0x0800ea68 mov r0, r5                                        |     r0 = r5;</pre>
+<pre>    0x0800ea6a bl 0x800df5c                                      |     dhd_mschdbg_req_entity_profiler_event_data_constprop_3 ();</pre>
+<pre>    0x0800ea6e b 0x800eaba                                       |     goto label_50;</pre>
+<pre>    0x0800ea70 movs r3, 0                                        |     r3 = 0;</pre>
+<pre>    0x0800ea72 mov r2, r4                                        |     r2 = r4;</pre>
+<pre>    0x0800ea74 str r3, [sp]                                      |     *(sp) = r3;</pre>
+<pre>    0x0800ea76 mov r1, r5                                        |     r1 = r5;</pre>
+<pre>    0x0800ea78 movs r0, 4                                        |     r0 = 4;</pre>
+<pre>    0x0800ea7a bl 0x800d7dc                                      |     dhd_mschdbg_chan_ctxt_profiler_event_data ();</pre>
+<pre>    0x0800ea7e b 0x800eaba                                       |     goto label_50;</pre>
+<pre>    0x0800ea80 movs r3, 0                                        |     r3 = 0;</pre>
+<pre>    0x0800ea82 ldr r2, [pc, 0x70]                                |     r2 = *(0x800eaf6);</pre>
+<pre>    0x0800ea84 str r3, [sp, 4]                                   |     var_4h = r3;</pre>
+<pre>    0x0800ea86 mov r1, r5                                        |     r1 = r5;</pre>
+<pre>    0x0800ea88 str r3, [sp]                                      |     *(sp) = r3;</pre>
+<pre>    0x0800ea8a movs r0, 4                                        |     r0 = 4;</pre>
+<pre>    0x0800ea8c mov r3, r4                                        |     r3 = r4;</pre>
+<pre>    0x0800ea8e bl 0x800d9ec                                      |     dhd_mschdbg_req_timing_profiler_event_data ();</pre>
+<pre>    0x0800ea92 b 0x800eaba                                       |     goto label_50;</pre>
+<pre>                                                                 | label_56:</pre>
+<pre>    0x0800ea94 ldr r3, [pc, 0x28]                                |     r3 = $d;</pre>
+<pre>    0x0800ea96 ldr r2, [r3]                                      |     r2 = $d;</pre>
+<pre>    0x0800ea98 mov r4, r3                                        |     r4 = r3;</pre>
+<pre>    0x0800ea9a tst.w r2, 0x800                                   |     </pre>
+<pre>                                                                 |     if ((r2 &amp; 0x800) == 0) {</pre>
+<pre>    0x0800ea9e beq 0x800eaaa                                     |         goto label_100;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800eaa0 ldr r3, [pc, 0x20]                                |     r3 = .data;</pre>
+<pre>    0x0800eaa2 ldr r0, [pc, 0x24]                                |     r0 = *(0x800eaca);</pre>
+<pre>    0x0800eaa4 ldr r1, [r3]                                      |     r1 = .data;</pre>
+<pre>                                                                 |     if ((r2 &amp; 0x800) != 0) {</pre>
+<pre>    0x0800eaa6 bne 0x800ea34                                     |         goto label_48;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800eaa8 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_100:</pre>
+<pre>    0x0800eaaa ldr r3, [r4]                                      |     r3 = *(r4);</pre>
+<pre>    0x0800eaac lsls r3, r3, 0x14                                 |     r3 &lt;&lt;= 0x14;</pre>
+<pre>                                                                 |     if (r3 &gt;= r3) {</pre>
+<pre>    0x0800eaae bpl 0x800eaba                                     |         goto label_50;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800eab0 ldr r0, [pc, 0x44]                                |     r0 = .rodata.str1.1;</pre>
+<pre>    0x0800eab2 mov r2, r8                                        |     r2 = r8;</pre>
+<pre>    0x0800eab4 mov r1, r6                                        |     r1 = r6;</pre>
+<pre>                                                                 |     if (r3 != r3) {</pre>
+<pre>                                                                 | label_58:</pre>
+<pre>    0x0800eab6 bne 0x800ea44                                     |         goto label_49;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x0800eab8 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                 | label_50:</pre>
+<pre>    0x0800eaba add sp, 0x3c                                      |     </pre>
+<pre>    0x0800eabc pop.w {r4, r5, r6, r7, r8, sb, sl, fp, pc}        |     </pre>
+<pre>                                                                 |     do {</pre>
+<pre>    0x08017da8 str.w r5, [r4, 0x17c]                             |         __asm ("str.w r5, [r4, 0x17c]");</pre>
+<pre>    0x08017dac bl 0x8015894                                      |         dhdsdio_rxfail ();</pre>
+<pre>    0x08017db0 ldr r0, [r4]                                      |         r0 = *(r4);</pre>
+<pre>    0x08017db2 subs r0, r1, 2                                    |         r0 = r1 - 2;</pre>
+<pre>    0x08017db4 lsrs r0, r0, 0x20                                 |         r0 &gt;&gt;= 0x20;</pre>
+<pre>    0x08017db6 mov r2, r5                                        |         r2 = r5;</pre>
+<pre>    0x08017db8 ldr.w r1, [r4, 0x178]                             |         r1 = *((r4 + 0x178));</pre>
+<pre>    0x08017dbc ldr r0, [sp, 8]                                   |         r0 = var_8h;</pre>
+<pre>    0x08017dbe ldr r0, [r1, 8]                                   |         r0 = *((r1 + 8));</pre>
+<pre>    0x08017dc0 lsrs r0, r0, 0x20                                 |         r0 &gt;&gt;= 0x20;</pre>
+<pre>    0x08017dc2 ldr r0, [r4]                                      |         r0 = *(r4);</pre>
+<pre>    0x08017dc4 subs r2, r1, 2                                    |         r2 = r1 - 2;</pre>
+<pre>    0x08017dc6 lsrs r0, r0, 0x20                                 |         r0 &gt;&gt;= 0x20;</pre>
+<pre>    0x08017dc8 ldr.w r3, [r4, 0x224]                             |         r3 = *((r4 + 0x224));</pre>
+<pre>    0x08017dcc str.w r5, [r4, 0x178]                             |         __asm ("str.w r5, [r4, 0x178]");</pre>
+<pre>    0x08017dd0 adds r3, 1                                        |         r3++;</pre>
+<pre>    0x08017dd2 str.w r3, [r4, 0x224]                             |         __asm ("str.w r3, [r4, 0x224]");</pre>
+<pre>    0x08017dd6 b 0x8018206                                       |         goto label_101;</pre>
+<pre>    0x08017e06 ldrb.w r7, [sb, 9]                                |         r7 = *((sb + 9));</pre>
+<pre>                                                                 |         if (r3 == 1) {</pre>
+<pre>    0x08017e0a beq 0x8017e20                                     |             goto label_102;</pre>
+<pre>                                                                 |         }</pre>
+<pre>    0x08017e0c ldr r2, [pc, 0x40]                                |         </pre>
+<pre>    0x08017e0e ldr r2, [r2]                                      |         r2 = $d;</pre>
+<pre>    0x08017e10 lsls r5, r2, 0x1f                                 |         r5 = r2 &lt;&lt; 0x1f;</pre>
+<pre>                                                                 |         if (r5 &gt;= r2) {</pre>
+<pre>    0x08017e12 bpl 0x8017ee4                                     |             goto label_103;</pre>
+<pre>                                                                 |         }</pre>
+<pre>    0x08017e14 mov r2, sl                                        |         r2 = sl;</pre>
+<pre>    0x08017e16 ldr r1, [pc, 0x3c]                                |         r1 = *(0x8017e56);</pre>
+<pre>    0x08017e18 ldr r0, [pc, 0x5c]                                |         r0 = .rodata.str1.1;</pre>
+<pre>    0x08017e1a bne 0x8017da8                                     |         </pre>
+<pre>                                                                 |     } while (r5 != r2);</pre>
+<pre>    0x08017e1c lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>    0x08017e1e b 0x8017ee4                                       |     goto label_103;</pre>
+<pre>                                                                 | label_102:</pre>
+<pre>    0x08017e20 ldr.w fp, [r4, 0x54]                              |     fp = *((r4 + 0x54));</pre>
+<pre>    0x08017e24 uxth r5, r5                                       |     r5 = (int16_t) r5;</pre>
+<pre>    0x08017e26 add.w r0, fp, -1                                  |     r0 = fp + -1;</pre>
+<pre>    0x08017e2a mov r1, fp                                        |     r1 = fp;</pre>
+<pre>    0x08017e2c add r0, sl                                        |     r0 += sl;</pre>
+<pre>                                                                 |     if (r1 &lt;= r1) {</pre>
+<pre>    0x08017e2e blo 0x8017f2c                                     |         goto label_104;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x08017e30 lsrs r1, r1, 0x20                                 |     r1 &gt;&gt;= 0x20;</pre>
+<pre>    0x08017e32 mul r3, fp, r0                                    |     r3 = fp * r0;</pre>
+<pre>    0x08017e36 cmp r5, r3                                        |     </pre>
+<pre>                                                                 |     if (r5 == r3) {</pre>
+<pre>    0x08017e38 beq 0x8017e80                                     |         goto label_105;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x08017e3a ldr r2, [pc, 0x14]                                |     </pre>
+<pre>    0x08017e3c ldr r2, [r2]                                      |     r2 = *(0x8017e52);</pre>
+<pre>    0x08017e3e lsls r0, r2, 0x1f                                 |     r0 = r2 &lt;&lt; 0x1f;</pre>
+<pre>                                                                 |     if (r0 &gt;= r2) {</pre>
+<pre>    0x08017e40 bpl 0x8017ee4                                     |         goto label_103;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x08017e42 str r5, [sp]                                      |     *(sp) = r5;</pre>
+<pre>    0x08017e44 mov r2, sl                                        |     r2 = sl;</pre>
+<pre>    0x08017e46 ldr r1, [pc, 0xc]                                 |     r1 = *(0x8017e56);</pre>
+<pre>    0x08017e48 ldr r0, [pc, 0x30]                                |     r0 = .rodata.str1.1;</pre>
+<pre>                                                                 |     if (r0 != r2) {</pre>
+<pre>    0x08017e4a bne 0x8017dd8                                     |         void (*0x8017dd8)() ();</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 | label_105:</pre>
+<pre>    0x08017e80 ldrb.w r3, [sb, 5]                                |     r3 = *((sb + 5));</pre>
+<pre>    0x08017e84 and r2, r3, 0xf                                   |     r2 = r3 &amp; 0xf;</pre>
+<pre>    0x08017e88 cmp r2, 3                                         |     </pre>
+<pre>                                                                 |     if (r2 != 3) {</pre>
+<pre>    0x08017e8a beq 0x8017e9e                                     |         </pre>
+<pre>    0x08017e8c ldr r3, [pc, 0x2ac]                               |         </pre>
+<pre>    0x08017e8e ldr r3, [r3]                                      |         r3 = $d;</pre>
+<pre>    0x08017e90 lsls r1, r3, 0x1f                                 |         r1 = r3 &lt;&lt; 0x1f;</pre>
+<pre>                                                                 |         if (r1 &gt;= r3) {</pre>
+<pre>    0x08017e92 bpl 0x8017ee4                                     |             goto label_103;</pre>
+<pre>                                                                 |         }</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x08017e9e lsls r2, r3, 0x18                                 |     r2 = r3 &lt;&lt; 0x18;</pre>
+<pre>                                                                 |     if (r2 &gt;= r3) {</pre>
+<pre>    0x08017ea0 bpl 0x8017eb4                                     |         void (*0x8017eb4)() ();</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 | label_103:</pre>
+<pre>    0x08017ee4 mov.w r5, -1                                      |     r5 = -1;</pre>
+<pre>    0x08017ee8 ldr r3, [sp, 0xc]                                 |     r3 = var_ch;</pre>
+<pre>    0x08017eea ldr r2, [sp, 0x1c]                                |     r2 = var_1ch;</pre>
+<pre>    0x08017eec cmp r3, r2                                        |     </pre>
+<pre>    0x08017eee ittt ne                                           |     </pre>
+<pre>                                                                 |     if (r3 == r2) {</pre>
+<pre>    0x08017ef0 ldrne r3, [r4, 0x214]                             |         r3 = *((r4 + 0x214));</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 |     if (r3 == r2) {</pre>
+<pre>    0x08017ef4 addne r3, 1                                       |         r3++;</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 |     if (r3 != r2) {</pre>
+<pre>    0x08017ef6 str.w r3, [r4, 0x214]                             |         __asm ("str.w r3, [r4, 0x214]");</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x08017efa ldrb.w r3, [r4, 0x129]                            |     r3 = *((r4 + 0x129));</pre>
+<pre>    0x08017efe subs r2, r7, r3                                   |     r2 = r7 - r3;</pre>
+<pre>    0x08017f00 uxtb r2, r2                                       |     r2 = (int8_t) r2;</pre>
+<pre>    0x08017f02 cmp r2, 0x70                                      |     </pre>
+<pre>                                                                 |     if (r2 &lt; 0x70) {</pre>
+<pre>    0x08017f04 bls 0x8017f1c                                     |         void (*0x8017f1c)() ();</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 | label_104:</pre>
+<pre>    0x08017f2c movs r7, 0                                        |     r7 = 0;</pre>
+<pre>    0x08017f2e mov r0, r6                                        |     r0 = r6;</pre>
+<pre>                                                                 |     if (r7 &gt; 0) {</pre>
+<pre>    0x08017f30 blo 0x8017f36                                     |         </pre>
+<pre>    0x08017f32 lsrs r1, r1, 0x20                                 |         r1 &gt;&gt;= 0x20;</pre>
+<pre>    0x08017f34 cmp r5, 0                                         |         </pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 |     if (r5 != 0) {</pre>
+<pre>    0x08017f36 bne 0x8017fdc                                     |         goto label_106;</pre>
+<pre>                                                                 |     }</pre>
+<pre>    0x08017f38 ldr.w r1, [sb, 0xa0]                              |     r1 = *((sb + 0xa0));</pre>
+<pre>    0x08017f3c movw r0, 0xffff                                   |     r0 = 0xffff;</pre>
+<pre>    0x08017f40 ldrh r2, [r1]                                     |     r2 = *(r1);</pre>
+<pre>    0x08017f42 ldrh r3, [r1, 2]                                  |     r3 = *((r1 + 2));</pre>
+<pre>    0x08017f44 eor.w lr, r3, r2                                  |     lr = r3 ^ r2;</pre>
+<pre>    0x08017f48 cmp lr, r0                                        |     </pre>
+<pre>                                                                 |     if (lr == r0) {</pre>
+<pre>    0x08017f4a beq 0x8017f60                                     |         void (*0x8017f60)() ();</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 | label_106:</pre>
+<pre>    0x08017fdc ldr.w r3, [r4, 0x17c]                             |     r3 = *((r4 + 0x17c));</pre>
+<pre>    0x08017fe0 cmp r3, 2                                         |     </pre>
+<pre>    0x08017fe2 add.w r2, r3, 1                                   |     r2 = r3 + 1;</pre>
+<pre>    0x08017fe6 str.w r2, [r4, 0x17c]                             |     __asm ("str.w r2, [r4, 0x17c]");</pre>
+<pre>                                                                 |     if (r3 &gt; 2) {</pre>
+<pre>    0x08017fea bhi 0x8018018                                     |         void (*0x8018018)() ();</pre>
+<pre>                                                                 |     }</pre>
+<pre>                                                                 | label_101:</pre>
+<pre>    0x08018206 mov r0, r5                                        |     r0 = r5;</pre>
+<pre>    0x08018208 add sp, 0xc4                                      |     </pre>
+<pre>    0x0801820a pop.w {r4, r5, r6, r7, r8, sb, sl, fp, pc}        |     </pre>
+<pre>                                                                 | }</pre>
+<pre>    ; assembly                                                           | /* r2dec pseudo code output */</pre>
+<pre>                                                                         | /* /logs/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/home/root/murata-driver/bcmdhd.ko &commat; 0x800eb18 */</pre>
+<pre>                                                                         | #include &lt;stdint.h&gt;</pre>
+<pre>                                                                         |  </pre>
+<pre>    ; (fcn) sym.wl_mschdbg_verboselog_handler ()                         | void wl_mschdbg_verboselog_handler (int16_t arg1, int16_t arg2, uint32_t arg3, int16_t arg4) {</pre>
+<pre>                                                                         |     int16_t var_0h;</pre>
+<pre>                                                                         |     int16_t var_8h;</pre>
+<pre>                                                                         |     int16_t var_ch;</pre>
+<pre>                                                                         |     r0 = arg1;</pre>
+<pre>                                                                         |     r1 = arg2;</pre>
+<pre>                                                                         |     r2 = arg3;</pre>
+<pre>                                                                         |     r3 = arg4;</pre>
+<pre>                                                                         |     do {</pre>
+<pre>    0x0800eada lsrs r4, r0, 0x20                                         |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800eadc ldr r6, [r1, 0x2c]                                        |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800eade lsrs r4, r0, 0x20                                         |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800eae0 ldr r6, [r1, 0x2c]                                        |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800eae2 lsrs r4, r0, 0x20                                         |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800eae4 ldr r6, [r1, 0x2c]                                        |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800eae6 lsrs r4, r0, 0x20                                         |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800eae8 ldr r6, [r1, 0x2c]                                        |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800eaea lsrs r4, r0, 0x20                                         |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>                                                                         | label_0:</pre>
+<pre>    0x0800eaec ldr r6, [r1, 0x2c]                                        |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800eaee lsrs r4, r0, 0x20                                         |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800eaf0 ldr r6, [r1, 0x2c]                                        |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800eaf2 lsrs r4, r0, 0x20                                         |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800eaf4 ldr r6, [r1, 0x2c]                                        |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800eaf6 lsrs r4, r0, 0x20                                         |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800eaf8 ldr r6, [r1, 0x2c]                                        |         r6 = *((r1 + 0x2c));</pre>
+<pre>    0x0800eafa lsrs r4, r0, 0x20                                         |         r4 = r0 &gt;&gt; 0x20;</pre>
+<pre>    0x0800eb18 push.w {r0, r1, r2, r3, r4, r5, r6, r7, r8, lr}           |         </pre>
+<pre>    0x0800eb1c mov r4, r3                                                |         r4 = r3;</pre>
+<pre>    0x0800eb1e ldr.w r8, [pc, 0x94]                                      |         r8 = reloc..rodata.str1.1;</pre>
+<pre>    0x0800eb22 cmp r2, 0x8e                                              |         </pre>
+<pre>    0x0800eb24 mov r6, r0                                                |         r6 = r0;</pre>
+<pre>    0x0800eb26 mov r7, r1                                                |         r7 = r1;</pre>
+<pre>    0x0800eb28 ldr r3, [pc, 0x78]                                        |         r3 = .data;</pre>
+<pre>    0x0800eb2a str.w r8, [r3]                                            |         __asm ("str.w r8, [r3]");</pre>
+<pre>                                                                         |         if (r2 != 0x8e) {</pre>
+<pre>    0x0800eb2e bne 0x800eb82                                             |             goto label_1;</pre>
+<pre>                                                                         |         }</pre>
+<pre>    0x0800eb30 add r3, sp, 0xc                                           |         r3 += var_ch;</pre>
+<pre>    0x0800eb32 add r2, sp, 8                                             |         r2 += var_8h;</pre>
+<pre>    0x0800eb34 ldr r1, [r4]                                              |         r1 = *(r4);</pre>
+<pre>    0x0800eb36 ldr r0, [r4, 4]                                           |         r0 = *((r4 + 4));</pre>
+<pre>    0x0800eb38 bl 0x800d1a0                                              |         dhd_mschdbg_us_to_sec ();</pre>
+<pre>    0x0800eb3c ldr r3, [pc, 0x68]                                        |         r3 = $d;</pre>
+<pre>    0x0800eb3e ldr r2, [r3]                                              |         r2 = $d;</pre>
+<pre>    0x0800eb40 mov r5, r3                                                |         r5 = r3;</pre>
+<pre>    0x0800eb42 tst.w r2, 0x800                                           |         </pre>
+<pre>                                                                         |         if ((r2 &amp; 0x800) == 0) {</pre>
+<pre>    0x0800eb46 beq 0x800eb50                                             |             goto label_2;</pre>
+<pre>                                                                         |         }</pre>
+<pre>    0x0800eb48 mov r1, r8                                                |         r1 = r8;</pre>
+<pre>    0x0800eb4a ldr r0, [pc, 0x60]                                        |         r0 = *(0x800ebae);</pre>
+<pre>    0x0800eb4c bne 0x800eada                                             |         </pre>
+<pre>                                                                         |     } while ((r2 &amp; 0x800) != 0);</pre>
+<pre>    0x0800eb4e lsrs r1, r1, 0x20                                         |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                         | label_2:</pre>
+<pre>    0x0800eb50 ldr r3, [r5]                                              |     r3 = *(r5);</pre>
+<pre>    0x0800eb52 lsls r3, r3, 0x14                                         |     r3 &lt;&lt;= 0x14;</pre>
+<pre>                                                                         |     if (r3 &gt;= r3) {</pre>
+<pre>    0x0800eb54 bpl 0x800eb62                                             |         goto label_3;</pre>
+<pre>                                                                         |     }</pre>
+<pre>    0x0800eb56 ldrb r3, [r4, 8]                                          |     r3 = *((r4 + 8));</pre>
+<pre>    0x0800eb58 ldr r2, [sp, 0xc]                                         |     r2 = var_ch;</pre>
+<pre>    0x0800eb5a ldr r1, [sp, 8]                                           |     r1 = var_8h;</pre>
+<pre>    0x0800eb5c ldr r0, [pc, 0x50]                                        |     r0 = .rodata.str1.1;</pre>
+<pre>                                                                         |     if (r3 != r3) {</pre>
+<pre>    0x0800eb5e bne 0x800eaec                                             |         goto label_0;</pre>
+<pre>                                                                         |     }</pre>
+<pre>    0x0800eb60 lsrs r1, r1, 0x20                                         |     r1 &gt;&gt;= 0x20;</pre>
+<pre>                                                                         | label_3:</pre>
+<pre>    0x0800eb62 ldrh r2, [r4, 0xa]                                        |     r2 = *((r4 + 0xa));</pre>
+<pre>    0x0800eb64 movs r3, 0x8e                                             |     r3 = 0x8e;</pre>
+<pre>    0x0800eb66 strb r3, [r4, 8]                                          |     *((r4 + 8)) = r3;</pre>
+<pre>    0x0800eb68 add.w r1, r4, 8                                           |     r1 = r4 + 8;</pre>
+<pre>    0x0800eb6c mov r0, r6                                                |     r0 = r6;</pre>
+<pre>    0x0800eb6e lsrs r3, r2, 8                                            |     r3 = r2 &gt;&gt; 8;</pre>
+<pre>    0x0800eb70 orr.w r3, r3, r2, lsl 8                                   |     r3 |= (r2 &lt;&lt; 8);</pre>
+<pre>    0x0800eb74 mov r2, r7                                                |     r2 = r7;</pre>
+<pre>    0x0800eb76 strh r3, [r4, 0xa]                                        |     *((r4 + 0xa)) = r3;</pre>
+<pre>    0x0800eb78 add.w r3, r4, 0xc                                         |     r3 = r4 + 0xc;</pre>
+<pre>    0x0800eb7c stm r6!, {r2, r4, r6}                                     |     *(r6!) = r2;</pre>
+<pre>                                                                         |     *((r6! + 4)) = r4;</pre>
+<pre>                                                                         |     *((r6! + 8)) = r6;</pre>
+<pre>    0x0800eb7e lsrs r0, r0, 0x20                                         |     r0 &gt;&gt;= 0x20;</pre>
+<pre>    0x0800eb80 b 0x800eb9e                                               |     void (*0x800eb9e)() ();</pre>
+<pre>                                                                         | label_1:</pre>
+<pre>    0x0800eb82 ldrh r3, [r4]                                             |     r3 = *(r4);</pre>
+<pre>                                                                         | }</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">printf</span> used </span><span class="orange">1</span> times </span><span class="orange">bcmdhd.ko</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+  var embarkButton = document.getElementById("embark");
+  if ( !(embarkButton.href.includes("embarkBackUrl")) ) {
+    embarkButton.classList.remove('hidden');
+    document.getElementById("logoImage").src = "./../style/embark.svg";
+    document.getElementById("logo").style.background = "#2d2d2d";
+  }
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!-- 
+EMBA - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2023 Siemens AG
+Copyright 2020-2023 Siemens Energy AG
+
+EMBA comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+EMBA is licensed under GPLv3
+
+Author(s): Pascal Eckmann
+Contributor(s): Michael Messner, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div id="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" id="logoImage" src="./../style/emba.svg" alt="logo"></a>
+  </div>
+  <div id="nav">
+      <a id="embark" class="hidden" href="{{ embarkBackUrl }}">&laquo; Back to EMBArk</a> <!-- nosem -->
+      <a class="backButton" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s15_radare_decompile_checks.html" title="./../s15_radare_decompile_checks.html" >&laquo; Back to s15_radare_decompile_checks</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>[</span><span class="orange">*</span>] Binary protection state of </span><span class="orange">libnss_mymachines.so.2</span></pre>
+<br />
+<pre>  </pre>
+<pre>  	<span class="green">Full RELRO</span>     <span class="green">Canary found</span>      <span class="green">NX enabled</span>   <span class="orange">DSO</span>          <span class="green">No RPATH</span>     <span class="green">No RUNPATH</span>   <span class="green">No Symbols</pre>
+<br />
+<pre></span></pre>
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">system</span> tear down of </span><span class="orange">libnss_mymachines.so.2</span></pre>
+<br />
+<pre>    ; assembly                                               | /* r2dec pseudo code output */</pre>
+<pre>                                                             | /* /logs/firmware/unblob_extracted/firmware_extract/20256560-34113329.romfs_extract/initramfs_extract/gzip.uncompressed_extract/usr/lib/libnss_mymachines.so.2 &commat; 0x3250 */</pre>
+<pre>                                                             | #include &lt;stdint.h&gt;</pre>
+<pre>                                                             |  </pre>
+<pre>                                                             | #define BIT_MASK(t,v) ((t)(-((v)!= 0)))&amp;(((t)-1)&gt;&gt;((sizeof(t)*CHAR_BIT)-(v)))</pre>
+<pre>                                                             |  </pre>
+<pre>    ; (fcn) fcn.00003250 ()                                  | void fcn_00003250 (int32_t arg1, int32_t arg2) {</pre>
+<pre>                                                             |     int32_t var_30h;</pre>
+<pre>                                                             |     int32_t var_28h;</pre>
+<pre>                                                             |     int32_t var_0h;</pre>
+<pre>                                                             |     int32_t var_4h;</pre>
+<pre>                                                             |     int32_t var_8h;</pre>
+<pre>                                                             |     char * s1;</pre>
+<pre>                                                             |     int8_t var_0h_2;</pre>
+<pre>                                                             |     int32_t var_20h_2;</pre>
+<pre>                                                             |     int32_t var_20h;</pre>
+<pre>                                                             |     r0 = arg1;</pre>
+<pre>                                                             |     r1 = arg2;</pre>
+<pre>    0x00003250 push {r4, r5, r6, r7, r8, sb, sl, fp, lr}     |     </pre>
+<pre>    0x00003254 add fp, sp, 0x20                              |     </pre>
+<pre>    0x00003258 sub sp, sp, 0x1c                              |     </pre>
+<pre>    0x0000325c mov r7, r3                                    |     r7 = r3;</pre>
+<pre>    0x00003260 ldr r3, [pc, 0x1e0]                           |     </pre>
+<pre>    0x00003264 add r3, pc, r3                                |     r3 = pc + r3;</pre>
+<pre>    0x00003268 ldr ip, [pc, 0x1dc]                           |     ip = *(0x0000344c);</pre>
+<pre>    0x0000326c ldr r3, [r3, ip]                              |     </pre>
+<pre>    0x00003270 str r3, [fp, -0x30]                           |     var_30h = r3;</pre>
+<pre>    0x00003274 ldr r3, [r3]                                  |     r3 = *(0x3444);</pre>
+<pre>    0x00003278 str r3, [fp, -0x28]                           |     var_28h = r3;</pre>
+<pre>    0x0000327c subs r6, r0, 0                                |     r6 = r0 - 0;</pre>
+<pre>                                                             |     if (r6 == r0) {</pre>
+<pre>    0x00003280 bne 0x32a8                                    |         </pre>
+<pre>    0x00003284 ldr r3, [pc, 0x1c4]                           |         </pre>
+<pre>    0x00003288 add r3, pc, r3                                |         r3 = pc + r3;</pre>
+<pre>    0x0000328c add r3, r3, 0x158                             |         r3 = 0x35a4;</pre>
+<pre>    0x00003290 movw r2, 0x46d                                |         r2 = 0x46d;</pre>
+<pre>    0x00003294 ldr r1, [pc, 0x1b8]                           |         r1 = "_is_valid_machine_";</pre>
+<pre>    0x00003298 add r1, pc, r1                                |         r1 = pc + r1;</pre>
+<pre>    0x0000329c ldr r0, [pc, 0x1b4]                           |         r0 = *(0x3454);</pre>
+<pre>    0x000032a0 add r0, pc, r0                                |         r0 = pc + r0;</pre>
+<pre>    0x000032a4 bl 0x2f0b4                                    |         fcn_0002f0b4 (r0, r1);</pre>
+<pre>                                                             |     }</pre>
+<pre>    0x000032a8 mov r8, r1                                    |     r8 = r1;</pre>
+<pre>    0x000032ac cmp r1, 0                                     |     </pre>
+<pre>                                                             |     if (r1 == 0) {</pre>
+<pre>    0x000032b0 bne 0x32d8                                    |         </pre>
+<pre>    0x000032b4 ldr r3, [pc, 0x1a0]                           |         </pre>
+<pre>    0x000032b8 add r3, pc, r3                                |         r3 = pc + r3;</pre>
+<pre>    0x000032bc add r3, r3, 0x158                             |         r3 = 0x35b0;</pre>
+<pre>    0x000032c0 movw r2, 0x46e                                |         r2 = 0x46e;</pre>
+<pre><span class="red">    0x000032c4 ldr r1, [pc, 0x194]                           |         r1 = "rc_libsystemd_sd_login_sd_login.c"</span></span></pre>
+<pre>    0x000032c8 add r1, pc, r1                                |         r1 = pc + r1;</pre>
+<pre>    0x000032cc ldr r0, [pc, 0x190]                           |         r0 = *(0x3460);</pre>
+<pre>    0x000032d0 add r0, pc, r0                                |         r0 = pc + r0;</pre>
+<pre>    0x000032d4 bl 0x2f0b4                                    |         fcn_0002f0b4 (r0, r1);</pre>
+<pre>                                                             |     }</pre>
+<pre>    0x000032d8 mov r5, r2                                    |     r5 = r2;</pre>
+<pre>    0x000032dc cmp r2, 0                                     |     </pre>
+<pre>                                                             |     if (r2 == 0) {</pre>
+<pre>    0x000032e0 bne 0x3308                                    |         </pre>
+<pre>    0x000032e4 ldr r3, [pc, 0x17c]                           |         </pre>
+<pre>    0x000032e8 add r3, pc, r3                                |         r3 = pc + r3;</pre>
+<pre>    0x000032ec add r3, r3, 0x158                             |         r3 = 0x35bc;</pre>
+<pre>    0x000032f0 movw r2, 0x46f                                |         r2 = 0x46f;</pre>
+<pre>    0x000032f4 ldr r1, [pc, 0x170]                           |         r1 = "it_src_basic_alloc_util.c";</pre>
+<pre>    0x000032f8 add r1, pc, r1                                |         r1 = pc + r1;</pre>
+<pre>    0x000032fc ldr r0, [pc, 0x16c]                           |         r0 = *(0x346c);</pre>
+<pre>    0x00003300 add r0, pc, r0                                |         r0 = pc + r0;</pre>
+<pre>    0x00003304 bl 0x2f0b4                                    |         fcn_0002f0b4 (r0, r1);</pre>
+<pre>                                                             |     }</pre>
+<pre>    0x00003308 cmp r7, 0                                     |     </pre>
+<pre>                                                             |     if (r7 == 0) {</pre>
+<pre>    0x0000330c bne 0x3334                                    |         </pre>
+<pre>    0x00003310 ldr r3, [pc, 0x15c]                           |         </pre>
+<pre>    0x00003314 add r3, pc, r3                                |         r3 = pc + r3;</pre>
+<pre>    0x00003318 add r3, r3, 0x158                             |         r3 = 0x35c8;</pre>
+<pre>    0x0000331c mov r2, 0x470                                 |         r2 = 0x470;</pre>
+<pre>    0x00003320 ldr r1, [pc, 0x150]                           |         r1 = "lf_sessionid";</pre>
+<pre>    0x00003324 add r1, pc, r1                                |         r1 = pc + r1;</pre>
+<pre>    0x00003328 ldr r0, [pc, 0x14c]                           |         r0 = *(0x3478);</pre>
+<pre>    0x0000332c add r0, pc, r0                                |         r0 = pc + r0;</pre>
+<pre>    0x00003330 bl 0x2f0b4                                    |         fcn_0002f0b4 (r0, r1);</pre>
+<pre>                                                             |     }</pre>
+<pre>    0x00003334 str r7, [sp, 4]                               |     var_4h = r7;</pre>
+<pre>    0x00003338 mov r3, 0                                     |     r3 = 0;</pre>
+<pre>    0x0000333c str r3, [sp]                                  |     *(sp) = r3;</pre>
+<pre>    0x00003340 mov r3, r2                                    |     r3 = r2;</pre>
+<pre>    0x00003344 bl 0x2e98                                     |     r0 = entry0 (r0, r1, r2, r3);</pre>
+<pre>    0x00003348 cmp r0, 0                                     |     </pre>
+<pre>                                                             |     if (r0 &lt; 0) {</pre>
+<pre>    0x0000334c blt 0x3428                                    |         goto label_2;</pre>
+<pre>                                                             |     }</pre>
+<pre>    0x00003350 ldrb r3, [r6, 0x19]                           |     r3 = *((r6 + 0x19));</pre>
+<pre>    0x00003354 tst r3, 4                                     |     </pre>
+<pre>    0x00003358 beq 0x3364                                    |     </pre>
+<pre>                                                             |     while (r3 == 0) {</pre>
+<pre>                                                             | label_0:</pre>
+<pre>    0x0000335c mov r0, 0                                     |         r0 = 0;</pre>
+<pre>    0x00003360 b 0x3428                                      |         goto label_2;</pre>
+<pre>    0x00003364 mov r0, r5                                    |         r0 = r5;</pre>
+<pre>    0x00003368 bl 0x29e8                                     |         r0 = strlen (r0);</pre>
+<pre>    0x0000336c add r3, r0, 0xf                               |         r3 = r0 + 0xf;</pre>
+<pre>    0x00003370 bic r3, r3, 7                                 |         r3 = BIT_MASK (r3, 7);</pre>
+<pre>    0x00003374 sub sp, sp, r3                                |         </pre>
+<pre>    0x00003378 add r4, sp, 8                                 |         r4 += var_8h;</pre>
+<pre>    0x0000337c add r2, r0, 1                                 |         r2 = r0 + 1;</pre>
+<pre>    0x00003380 mov r1, r5                                    |         r1 = r5;</pre>
+<pre>    0x00003384 mov r0, r4                                    |         r0 = r4;</pre>
+<pre>    0x00003388 bl 0x28e0                                     |         memcpy (r0, r1, r2);</pre>
+<pre>    0x0000338c ldrb r3, [r4]                                 |         r3 = *(r4);</pre>
+<pre>    0x00003390 cmp r3, 0x2f                                  |         </pre>
+<pre>                                                             |         if (r3 != 0x2f) {</pre>
+<pre>    0x00003394 bne 0x33a4                                    |             goto label_3;</pre>
+<pre>                                                             |         }</pre>
+<pre>    0x00003398 ldrb r3, [r4, 1]                              |         r3 = var_0h_2;</pre>
+<pre>    0x0000339c cmp r3, 0                                     |         </pre>
+<pre>    0x000033a0 beq 0x335c                                    |         </pre>
+<pre>                                                             |     }</pre>
+<pre>                                                             | label_3:</pre>
+<pre>    0x000033a4 mov r1, 0x2f                                  |     r1 = 0x2f;</pre>
+<pre>    0x000033a8 mov r0, r4                                    |     r0 = r4;</pre>
+<pre>    0x000033ac bl 0x28d4                                     |     strrchr (r0, r1);</pre>
+<pre>    0x000033b0 mov sl, 0                                     |     sl = 0;</pre>
+<pre>    0x000033b4 mov sb, 1                                     |     sb = 1;</pre>
+<pre>                                                             | label_1:</pre>
+<pre>    0x000033b8 cmp r0, 0                                     |     </pre>
+<pre>                                                             |     if (r0 == 0) {</pre>
+<pre>    0x000033bc beq 0x335c                                    |         goto label_0;</pre>
+<pre>                                                             |     }</pre>
+<pre>    0x000033c0 sub r3, r0, r4                                |     r3 = r0 - r4;</pre>
+<pre>    0x000033c4 clz r3, r3                                    |     r3 &amp;= r3;</pre>
+<pre>    0x000033c8 lsr r3, r3, 5                                 |     r3 &gt;&gt;= 5;</pre>
+<pre>    0x000033cc strb sl, [r0, r3]                             |     *((r0 + r3)) = sl;</pre>
+<pre>    0x000033d0 str r7, [sp, 4]                               |     var_30h = r7;</pre>
+<pre>    0x000033d4 str sb, [sp]                                  |     *(sp) = sb;</pre>
+<pre>    0x000033d8 mov r3, r5                                    |     r3 = r5;</pre>
+<pre>    0x000033dc mov r2, r4                                    |     r2 = r4;</pre>
+<pre>    0x000033e0 mov r1, r8                                    |     r1 = r8;</pre>
+<pre>    0x000033e4 mov r0, r6                                    |     r0 = r6;</pre>
+<pre>    0x000033e8 bl 0x2e98                                     |     r0 = entry0 (r0, r1, r2, r3);</pre>
+<pre>    0x000033ec cmp r0, 0                                     |     </pre>
+<pre>                                                             |     if (r0 &lt; 0) {</pre>
+<pre>    0x000033f0 blt 0x3428                                    |         goto label_2;</pre>
+<pre>                                                             |     }</pre>
+<pre>    0x000033f4 ldrb r3, [r6, 0x19]                           |     r3 = *((r6 + 0x19));</pre>
+<pre>    0x000033f8 tst r3, 4                                     |     </pre>
+<pre>                                                             |     if ((r3 &amp; 4) != 0) {</pre>
+<pre>    0x000033fc bne 0x335c                                    |         goto label_0;</pre>
+<pre>                                                             |     }</pre>
+<pre>    0x00003400 ldrb r3, [r4]                                 |     r3 = *(r4);</pre>
+<pre>    0x00003404 cmp r3, 0x2f                                  |     </pre>
+<pre>                                                             |     if (r3 != 0x2f) {</pre>
+<pre>    0x00003408 bne 0x3418                                    |         goto label_4;</pre>
+<pre>                                                             |     }</pre>
+<pre>    0x0000340c ldrb r3, [r4, 1]                              |     r3 = var_0h_2;</pre>
+<pre>    0x00003410 cmp r3, 0                                     |     </pre>
+<pre>                                                             |     if (r3 == 0) {</pre>
+<pre>    0x00003414 beq 0x335c                                    |         goto label_0;</pre>
+<pre>                                                             |     }</pre>
+<pre>                                                             | label_4:</pre>
+<pre>    0x00003418 mov r1, 0x2f                                  |     r1 = 0x2f;</pre>
+<pre>    0x0000341c mov r0, r4                                    |     r0 = r4;</pre>
+<pre>    0x00003420 bl 0x28d4                                     |     strrchr (r0, r1);</pre>
+<pre>    0x00003424 b 0x33b8                                      |     goto label_1;</pre>
+<pre>                                                             | label_2:</pre>
+<pre>    0x00003428 ldr r2, [fp, -0x28]                           |     r2 = var_28h;</pre>
+<pre>    0x0000342c ldr r3, [fp, -0x30]                           |     r3 = var_30h;</pre>
+<pre>    0x00003430 ldr r3, [r3]                                  |     r3 = *(r3);</pre>
+<pre>    0x00003434 cmp r2, r3                                    |     </pre>
+<pre>                                                             |     if (r2 != r3) {</pre>
+<pre>    0x00003438 beq 0x3440                                    |         </pre>
+<pre>    0x0000343c bl 0x2a18                                     |         stack_chk_fail ();</pre>
+<pre>                                                             |     }</pre>
+<pre>    0x00003440 sub sp, fp, 0x20                              |     </pre>
+<pre>    0x00003444 pop {r4, r5, r6, r7, r8, sb, sl, fp, pc}      |     </pre>
+<pre>                                                             | }</pre>
+<br />
+<pre>[</span><span class="orange">*</span>] Function </span><span class="orange">system</span> used </span><span class="orange">2</span> times </span><span class="orange">libnss_mymachines.so.2</span></pre>
+<br />
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+  var embarkButton = document.getElementById("embark");
+  if ( !(embarkButton.href.includes("embarkBackUrl")) ) {
+    embarkButton.classList.remove('hidden');
+    document.getElementById("logoImage").src = "./../style/embark.svg";
+    document.getElementById("logo").style.background = "#2d2d2d";
+  }
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>

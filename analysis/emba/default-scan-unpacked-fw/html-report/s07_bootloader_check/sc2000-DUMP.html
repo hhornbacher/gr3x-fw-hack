@@ -1,0 +1,1807 @@
+<!-- 
+EMBA - EMBEDDED LINUX ANALYZER
+
+Copyright 2020-2023 Siemens AG
+Copyright 2020-2023 Siemens Energy AG
+
+EMBA comes with ABSOLUTELY NO WARRANTY. This is free software, and you are
+welcome to redistribute it under the terms of the GNU General Public License.
+See LICENSE file for usage of this software.
+
+EMBA is licensed under GPLv3
+
+Author(s): Pascal Eckmann
+Contributor(s): Michael Messner, Stefan Haboeck
+-->
+
+<!-- Used icons: https://github.com/CoreyGinnivan/system-uicons -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EMBA firmware report</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./../style/style.css" type="text/css">
+  <link rel="icon" type="image/png" href="./../style/favicon.png">
+</head>
+<body>
+
+<div id="sidenav" class="side">
+  <div id="logo">
+    <a class="inherit" href="./../index.html"><img class="inherit" id="logoImage" src="./../style/emba.svg" alt="logo"></a>
+  </div>
+  <div id="nav">
+      <a id="embark" class="hidden" href="{{ embarkBackUrl }}">&laquo; Back to EMBArk</a> <!-- nosem -->
+      <a class="backButton" href="./../index.html">&laquo; Back to main</a>
+<a class="modul" href="./../s07_bootloader_check.html" title="./../s07_bootloader_check.html" >&laquo; Back to s07_bootloader_check</a>
+      <!-- navigation start -->
+      <!-- navigation end -->
+      <input id="expand" class="expand_njs hidden" type="button" value="More results:" onclick="this.value=this.value=='+ Show more results'?'- Hide more results':'+ Show more results';">
+      <div class="expand_area">
+        <!-- etc start -->
+        <!-- etc end -->
+      </div>
+  </div>
+  <a href="TIMELINK"><div id="buttonTimeInvisible" class="rectButton"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round" transform="matrix(-1 0 0 1 19 2)"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 5.5v4H5"/></g></svg></div></a>
+  <div id="buttonSizer" class="rectButton buttonClose" onclick="buttonNav()"></div>
+</div>
+<div id="main" class="main">
+  <!-- content start -->
+<pre>/dts-v1/;</pre>
+<pre>// magic:		0xd00dfeed</pre>
+<pre>// totalsize:		0x7fb6 (32694)</pre>
+<pre>// off_dt_struct:	0x38</pre>
+<pre>// off_dt_strings:	0x7954</pre>
+<pre>// off_mem_rsvmap:	0x28</pre>
+<pre>// version:		17</pre>
+<pre>// last_comp_version:	16</pre>
+<pre>// boot_cpuid_phys:	0x0</pre>
+<pre>// size_dt_strings:	0x662</pre>
+<pre>// size_dt_struct:	0x791c</pre>
+<br />
+<pre>/ {</pre>
+<pre>    #address-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>    #size-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>    compatible = "milbeaut,sc2000a", "socionext,milbeaut-evb";</pre>
+<pre>    interrupt-parent = &lt;0x00000001&gt</span>;</pre>
+<pre>    model = "Socionext SC2000A EVB w/ RTOS and NETSEC";</pre>
+<pre>    chosen {</pre>
+<pre>        bootargs = "consoleblank=0 loglevel=4 rdinit=/sbin/finit root=/dev/mmcblk0p2 rootwait ro";</pre>
+<pre>        linux,initrd-start = &lt;0x43000000&gt</span>;</pre>
+<pre>        linux,initrd-end = &lt;0x43f00000&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    aliases {</pre>
+<pre>        spi0 = "/sni_spi&commat;1e800000";</pre>
+<pre>        spi1 = "/sni_spi&commat;1e800100";</pre>
+<pre>        spi2 = "/sni_spi&commat;1e800200";</pre>
+<pre>        spi3 = "/usio_spi&commat;1e700000";</pre>
+<pre>        spi4 = "/usio_spi&commat;0x1e700010";</pre>
+<pre>        spi5 = "/usio_spi&commat;0x1e700020";</pre>
+<pre>        spi6 = "/usio_spi&commat;0x1e700030";</pre>
+<pre>        spi7 = "/usio_spi&commat;0x1e700040";</pre>
+<pre>        spi8 = "/usio_spi&commat;0x1e700050";</pre>
+<pre>        spi9 = "/usio_spi&commat;0x1e700060";</pre>
+<pre>        spi10 = "/usio_spi&commat;0x1e700070";</pre>
+<pre>    };</pre>
+<pre>    memory {</pre>
+<pre>        device_type = "memory";</pre>
+<pre>        reg = &lt;0x40000000 0x0bf00000&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    cpus {</pre>
+<pre>        #address-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        #size-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>        cpu&commat;3 {</pre>
+<pre>            device_type = "cpu";</pre>
+<pre>            compatible = "arm,cortex-a7";</pre>
+<pre>            reg = &lt;0x00000f03&gt</span>;</pre>
+<pre>        };</pre>
+<pre>    };</pre>
+<pre>    interrupt-controller&commat;1d000000 {</pre>
+<pre>        compatible = "arm,cortex-a7-gic";</pre>
+<pre>        interrupt-controller;</pre>
+<pre>        #interrupt-cells = &lt;0x00000003&gt</span>;</pre>
+<pre>        reg = &lt;0x1d001000 0x00001000 0x1d002000 0x00001000&gt</span>;</pre>
+<pre>        black-list = &lt;0x00000000 0x00000001 0x00000002 0x00000003 0x00000004 0x00000005 0x00000006 0x00000007 0x00000008 0x00000009 0x0000000a 0x0000000b 0x0000000c 0x0000000d 0x0000000e 0x0000000f 0x00000010 0x00000011 0x00000012 0x00000013 0x00000014 0x00000015 0x00000017 0x00000018 0x0000001b 0x0000001d 0x0000001e 0x00000021 0x00000022 0x00000024 0x00000027 0x00000029 0x0000002b 0x0000002c 0x0000002e 0x00000030 0x00000032 0x00000033 0x00000034 0x00000035 0x00000036 0x00000037 0x00000038 0x00000039 0x0000003a 0x0000003b 0x0000003c 0x0000003d 0x0000003e 0x0000003f 0x00000040 0x00000041 0x00000042 0x00000043 0x00000044 0x00000045 0x00000046 0x00000047 0x00000048 0x00000049 0x0000004a 0x0000004b 0x0000004c 0x0000004d 0x0000004e 0x0000004f 0x00000050 0x00000051 0x00000052 0x00000053 0x00000054 0x00000055 0x00000056 0x00000057 0x00000058 0x00000059 0x0000005a 0x0000005c 0x0000005d 0x0000005e 0x0000005f 0x00000060 0x00000061 0x00000062 0x00000063 0x00000064 0x00000065 0x00000066 0x00000067 0x00000068 0x00000069 0x0000006a 0x0000006b 0x0000006c 0x0000006d 0x0000006e 0x0000006f 0x00000070 0x00000071 0x00000072 0x00000073 0x00000074 0x00000075 0x00000076 0x00000077 0x00000078 0x00000079 0x0000007a 0x0000007b 0x0000007c 0x0000007d 0x0000007e 0x0000007f 0x00000080 0x00000081 0x00000082 0x00000083 0x00000084 0x00000085 0x00000086 0x00000087 0x00000088 0x00000089 0x0000008a 0x0000008b 0x0000008c 0x0000008e 0x0000008f 0x00000090 0x00000091 0x00000092 0x00000093 0x00000094 0x00000096 0x00000097 0x00000098 0x00000099 0x0000009a 0x0000009b 0x0000009c 0x0000009d 0x0000009e 0x0000009f 0x000000a0 0x000000a1 0x000000a2 0x000000a3 0x000000a4 0x000000a5 0x000000a6 0x000000a7 0x000000a8 0x000000a9 0x000000aa 0x000000ab 0x000000ac 0x000000ad 0x000000ae 0x000000af 0x000000b0 0x000000b1 0x000000b2 0x000000b3 0x000000b4 0x000000b5 0x000000b6 0x000000b7 0x000000b8 0x000000b9 0x000000ba 0x000000bb 0x000000bc 0x000000bd 0x000000be 0x000000bf 0x000000c0 0x000000c1 0x000000c2 0x000000c3 0x000000c4 0x000000c5 0x000000c6 0x000000c7 0x000000c8 0x000000c9 0x000000ca 0x000000cb 0x000000cc 0x000000cd 0x000000ce 0x000000cf 0x000000d0 0x000000d1 0x000000d2 0x000000d3 0x000000d4 0x000000d5 0x000000d6 0x000000d7 0x000000d8 0x000000d9 0x000000da 0x000000db 0x000000dc 0x000000dd 0x000000de 0x000000df 0x000000e0 0x000000e1 0x000000e2 0x000000e3 0x000000e4 0x000000e5 0x000000e6 0x000000e7 0x000000e8 0x000000e9 0x000000ea 0x000000eb 0x000000ec 0x000000ed 0x000000ee 0x000000ef 0x000000f0 0x000000f1 0x000000f2 0x000000f3 0x000000f4 0x000000f5 0x000000f6 0x000000f7 0x000000f8 0x000000f9 0x000000fa 0x000000fb 0x000000fc 0x000000fd 0x000000fe 0x000000ff 0x00000100 0x00000101 0x00000102 0x00000103 0x00000104 0x00000109 0x0000010a 0x0000010b 0x0000010c 0x0000010d 0x0000010e 0x0000010f 0x00000110 0x00000113 0x00000114 0x00000115 0x00000116 0x00000119 0x0000011a 0x0000011b 0x0000011c 0x0000011d 0x0000011e 0x0000011f&gt</span>;</pre>
+<pre>        linux,phandle = &lt;0x00000001&gt</span>;</pre>
+<pre>        phandle = &lt;0x00000001&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    mlb01-clk-tree&commat; {</pre>
+<pre>        compatible = "socionext,mlb01-clk-regs";</pre>
+<pre>        reg = &lt;0x1d021000 0x00004000&gt</span>;</pre>
+<pre>        clocks {</pre>
+<pre>            #address-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>            #size-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>            uclk40xi {</pre>
+<pre>                compatible = "fixed-clock";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clock-frequency = &lt;0x02625a00&gt</span>;</pre>
+<pre>                linux,phandle = &lt;0x00000002&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000002&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            aumclki {</pre>
+<pre>                compatible = "fixed-clock";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clock-frequency = &lt;0x01312d00&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            rtc32k {</pre>
+<pre>                compatible = "fixed-clock";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clock-frequency = &lt;0x00008000&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            pxrefclk {</pre>
+<pre>                compatible = "fixed-clock";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clock-frequency = &lt;0x05f5e100&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            pcisuppclk {</pre>
+<pre>                compatible = "fixed-factor-clock";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000002&gt</span>;</pre>
+<pre>                clock-div = &lt;0x00000014&gt</span>;</pre>
+<pre>                clock-mult = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            usb2_clk {</pre>
+<pre>                compatible = "fixed-factor-clock";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000002&gt</span>;</pre>
+<pre>                clock-div = &lt;0x00000002&gt</span>;</pre>
+<pre>                clock-mult = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            pll1 {</pre>
+<pre>                compatible = "socionext,mlb01-pll-fixed-factor";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000002&gt</span>;</pre>
+<pre>                offset = &lt;0x00000001&gt</span>;</pre>
+<pre>                clock-div = &lt;0x00000001&gt</span>;</pre>
+<pre>                clock-mult = &lt;0x00000028&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x00000004&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000004&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            pll2 {</pre>
+<pre>                compatible = "socionext,mlb01-pll-fixed-factor";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000002&gt</span>;</pre>
+<pre>                offset = &lt;0x00000002&gt</span>;</pre>
+<pre>                clock-div = &lt;0x00000001&gt</span>;</pre>
+<pre>                clock-mult = &lt;0x0000001e&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x00000005&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000005&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            pll6 {</pre>
+<pre>                compatible = "socionext,mlb01-pll-fixed-factor";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000002&gt</span>;</pre>
+<pre>                offset = &lt;0x00000007&gt</span>;</pre>
+<pre>                clock-div = &lt;0x00000001&gt</span>;</pre>
+<pre>                clock-mult = &lt;0x00000023&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x00000006&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000006&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            pll7 {</pre>
+<pre>                compatible = "socionext,mlb01-pll-fixed-factor";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000002&gt</span>;</pre>
+<pre>                offset = &lt;0x00000008&gt</span>;</pre>
+<pre>                clock-div = &lt;0x00000001&gt</span>;</pre>
+<pre>                clock-mult = &lt;0x00000028&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x00000007&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000007&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            pll9 {</pre>
+<pre>                compatible = "fixed-factor-clock";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000002&gt</span>;</pre>
+<pre>                clock-div = &lt;0x00000001&gt</span>;</pre>
+<pre>                clock-mult = &lt;0x00000021&gt</span>;</pre>
+<pre>                linux,phandle = &lt;0x0000000e&gt</span>;</pre>
+<pre>                phandle = &lt;0x0000000e&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            pll10 {</pre>
+<pre>                compatible = "socionext,mlb01-pll-fixed-factor";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000002&gt</span>;</pre>
+<pre>                offset = &lt;0x0000000a&gt</span>;</pre>
+<pre>                clock-div = &lt;0x00000005&gt</span>;</pre>
+<pre>                clock-mult = &lt;0x0000006c&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x00000008&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000008&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            pll11 {</pre>
+<pre>                compatible = "socionext,mlb01-pll-fixed-factor";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000002&gt</span>;</pre>
+<pre>                offset = &lt;0x0000000c&gt</span>;</pre>
+<pre>                clock-div = &lt;0x00000002&gt</span>;</pre>
+<pre>                clock-mult = &lt;0x0000004b&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x00000003&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000003&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            emmcclk {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000003&gt</span>;</pre>
+<pre>                offset = &lt;0x0000001c&gt</span>;</pre>
+<pre>                mask = &lt;0x00000003&gt</span>;</pre>
+<pre>                ratios = &lt;0x0000000f 0x00000007 0x0000000a 0x00000006 0x00000009 0x00000005 0x00000008 0x00000004&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x00000020&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000020&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            pll1_div_1_2 {</pre>
+<pre>                compatible = "fixed-factor-clock";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000004&gt</span>;</pre>
+<pre>                clock-div = &lt;0x00000002&gt</span>;</pre>
+<pre>                clock-mult = &lt;0x00000001&gt</span>;</pre>
+<pre>                linux,phandle = &lt;0x0000000f&gt</span>;</pre>
+<pre>                phandle = &lt;0x0000000f&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            pll2_div_1_2 {</pre>
+<pre>                compatible = "fixed-factor-clock";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000005&gt</span>;</pre>
+<pre>                clock-div = &lt;0x00000002&gt</span>;</pre>
+<pre>                clock-mult = &lt;0x00000001&gt</span>;</pre>
+<pre>                linux,phandle = &lt;0x0000000d&gt</span>;</pre>
+<pre>                phandle = &lt;0x0000000d&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            pll6_div_1_2 {</pre>
+<pre>                compatible = "fixed-factor-clock";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000006&gt</span>;</pre>
+<pre>                clock-div = &lt;0x00000002&gt</span>;</pre>
+<pre>                clock-mult = &lt;0x00000001&gt</span>;</pre>
+<pre>                linux,phandle = &lt;0x00000010&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000010&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            pll6_div_1_3 {</pre>
+<pre>                compatible = "fixed-factor-clock";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000006&gt</span>;</pre>
+<pre>                clock-div = &lt;0x00000003&gt</span>;</pre>
+<pre>                clock-mult = &lt;0x00000001&gt</span>;</pre>
+<pre>                linux,phandle = &lt;0x00000015&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000015&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            pll7_div_1_2 {</pre>
+<pre>                compatible = "fixed-factor-clock";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000007&gt</span>;</pre>
+<pre>                clock-div = &lt;0x00000002&gt</span>;</pre>
+<pre>                clock-mult = &lt;0x00000001&gt</span>;</pre>
+<pre>                linux,phandle = &lt;0x0000000a&gt</span>;</pre>
+<pre>                phandle = &lt;0x0000000a&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            pll7_div_1_5 {</pre>
+<pre>                compatible = "fixed-factor-clock";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000007&gt</span>;</pre>
+<pre>                clock-div = &lt;0x00000005&gt</span>;</pre>
+<pre>                clock-mult = &lt;0x00000001&gt</span>;</pre>
+<pre>                linux,phandle = &lt;0x00000016&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000016&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            pll10_div_1_2 {</pre>
+<pre>                compatible = "fixed-factor-clock";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000008&gt</span>;</pre>
+<pre>                clock-div = &lt;0x00000002&gt</span>;</pre>
+<pre>                clock-mult = &lt;0x00000001&gt</span>;</pre>
+<pre>                linux,phandle = &lt;0x00000009&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000009&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            spiclk_mux_0 {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000009&gt</span>;</pre>
+<pre>                offset = &lt;0x000000e3&gt</span>;</pre>
+<pre>                mask = &lt;0x00000003&gt</span>;</pre>
+<pre>                ratios = &lt;0x00000004 0x00000005 0x00000002 0x00000004&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x0000000b&gt</span>;</pre>
+<pre>                phandle = &lt;0x0000000b&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            spiclk_mux_1 {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x0000000a&gt</span>;</pre>
+<pre>                offset = &lt;0x000000e3&gt</span>;</pre>
+<pre>                mask = &lt;0x00000003&gt</span>;</pre>
+<pre>                ratios = &lt;0x00000008 0x00000006&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x0000000c&gt</span>;</pre>
+<pre>                phandle = &lt;0x0000000c&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            spiclk {</pre>
+<pre>                compatible = "socionext,mlb01-clk-mux";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x0000000b 0x0000000c&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x00000022&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000022&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            ca7wdclk {</pre>
+<pre>                compatible = "fixed-factor-clock";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x0000000d&gt</span>;</pre>
+<pre>                clock-div = &lt;0x0000000c&gt</span>;</pre>
+<pre>                clock-mult = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            pll9_div_1_2 {</pre>
+<pre>                compatible = "fixed-factor-clock";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x0000000e&gt</span>;</pre>
+<pre>                clock-div = &lt;0x00000002&gt</span>;</pre>
+<pre>                clock-mult = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            mclk400 {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x0000000f&gt</span>;</pre>
+<pre>                offset = &lt;0x00000127&gt</span>;</pre>
+<pre>                mask = &lt;0x00000003&gt</span>;</pre>
+<pre>                ratios = &lt;0x00000004 0x00000007 0x00000002 0x00000005&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>            };</pre>
+<pre>            mclk200 {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x0000000f&gt</span>;</pre>
+<pre>                offset = &lt;0x00000123&gt</span>;</pre>
+<pre>                mask = &lt;0x00000007&gt</span>;</pre>
+<pre>                ratios = &lt;0x00000008 0x0000000f 0x00000004 0x0000000b&gt</span>;</pre>
+<pre>                read-only = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            aclk400 {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x0000000f&gt</span>;</pre>
+<pre>                offset = &lt;0x00000120&gt</span>;</pre>
+<pre>                mask = &lt;0x00000003&gt</span>;</pre>
+<pre>                ratios = &lt;0x00000004 0x00000007 0x00000002 0x00000005&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>            };</pre>
+<pre>            aclk300 {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x0000000d&gt</span>;</pre>
+<pre>                offset = &lt;0x00000160&gt</span>;</pre>
+<pre>                mask = &lt;0x00000001&gt</span>;</pre>
+<pre>                ratios = &lt;0x00000006 0x00000003 0x00000004 0x00000002&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>            };</pre>
+<pre>            aclk {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x0000000f&gt</span>;</pre>
+<pre>                offset = &lt;0x00000114&gt</span>;</pre>
+<pre>                mask = &lt;0x00000007&gt</span>;</pre>
+<pre>                ratios = &lt;0x00000008 0x0000000f 0x00000004 0x0000000b&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>            };</pre>
+<pre>            aclkexs {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x0000000f&gt</span>;</pre>
+<pre>                offset = &lt;0x00000110&gt</span>;</pre>
+<pre>                mask = &lt;0x00000007&gt</span>;</pre>
+<pre>                ratios = &lt;0x00000008 0x0000000f 0x00000006 0x0000000d 0x00000005 0x0000000c 0x00000004 0x0000000b&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>            };</pre>
+<pre>            hclk {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x0000000f&gt</span>;</pre>
+<pre>                offset = &lt;0x00000107&gt</span>;</pre>
+<pre>                mask = &lt;0x0000000f&gt</span>;</pre>
+<pre>                ratios = &lt;0x00000010 0x0000001f 0x00000008 0x00000017&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x0000001b&gt</span>;</pre>
+<pre>                phandle = &lt;0x0000001b&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            hclkbmh {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x0000000f&gt</span>;</pre>
+<pre>                offset = &lt;0x0000010c&gt</span>;</pre>
+<pre>                mask = &lt;0x00000007&gt</span>;</pre>
+<pre>                ratios = &lt;0x00000008 0x0000000f 0x00000004 0x0000000b&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>            };</pre>
+<pre>            pclk {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x0000000f&gt</span>;</pre>
+<pre>                offset = &lt;0x00000100&gt</span>;</pre>
+<pre>                mask = &lt;0x0000003f&gt</span>;</pre>
+<pre>                ratios = &lt;0x00000020 0x0000005f 0x00000010 0x0000004f&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x00000027&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000027&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            pclkca7wd {</pre>
+<pre>                compatible = "fixed-factor-clock";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x0000000f&gt</span>;</pre>
+<pre>                clock-div = &lt;0x00000010&gt</span>;</pre>
+<pre>                clock-mult = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            rclk {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000009&gt</span>;</pre>
+<pre>                offset = &lt;0x00000000&gt</span>;</pre>
+<pre>                mask = &lt;0x00000003&gt</span>;</pre>
+<pre>                ratios = &lt;0x00000040 0x00000007 0x00000030 0x00000006 0x00000020 0x00000005 0x00000010 0x00000004&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x00000019&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000019&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            uhs1clk0 {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000007&gt</span>;</pre>
+<pre>                offset = &lt;0x00000003&gt</span>;</pre>
+<pre>                mask = &lt;0x0000000f&gt</span>;</pre>
+<pre>                ratios = &lt;0x00000010 0x00000014 0x00000008 0x00000013 0x00000004 0x00000012 0x00000003 0x00000011 0x00000002 0x00000010&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x0000001c&gt</span>;</pre>
+<pre>                phandle = &lt;0x0000001c&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            uhs1clk1_div1 {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000007&gt</span>;</pre>
+<pre>                offset = &lt;0x00000008&gt</span>;</pre>
+<pre>                mask = &lt;0x0000000f&gt</span>;</pre>
+<pre>                ratios = &lt;0x00000010 0x00000014 0x00000008 0x00000013&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x00000011&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000011&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            uhs1clk1_div2 {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000010&gt</span>;</pre>
+<pre>                offset = &lt;0x00000008&gt</span>;</pre>
+<pre>                mask = &lt;0x0000000f&gt</span>;</pre>
+<pre>                ratios = &lt;0x00000001 0x00000018&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x00000012&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000012&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            uhs1clk1 {</pre>
+<pre>                compatible = "socionext,mlb01-clk-mux";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000011 0x00000012&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>            };</pre>
+<pre>            uhs1clk2_div1 {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000007&gt</span>;</pre>
+<pre>                offset = &lt;0x0000000d&gt</span>;</pre>
+<pre>                mask = &lt;0x0000000f&gt</span>;</pre>
+<pre>                ratios = &lt;0x00000010 0x00000014 0x00000008 0x00000013 0x00000004 0x00000012&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x00000013&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000013&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            uhs1clk2_div2 {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000010&gt</span>;</pre>
+<pre>                offset = &lt;0x0000000d&gt</span>;</pre>
+<pre>                mask = &lt;0x0000000f&gt</span>;</pre>
+<pre>                ratios = &lt;0x00000001 0x00000018&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x00000014&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000014&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            uhs1clk2 {</pre>
+<pre>                compatible = "socionext,mlb01-clk-mux";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000013 0x00000014&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x0000001f&gt</span>;</pre>
+<pre>                phandle = &lt;0x0000001f&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            uhs2clk {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000015&gt</span>;</pre>
+<pre>                offset = &lt;0x00000012&gt</span>;</pre>
+<pre>                mask = &lt;0x00000007&gt</span>;</pre>
+<pre>                ratios = &lt;0x00000012 0x0000000f 0x00000010 0x0000000e 0x0000000e 0x0000000d 0x0000000d 0x0000000c 0x0000000c 0x0000000b 0x0000000b 0x0000000a 0x0000000a 0x00000009 0x00000009 0x00000008&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x0000001d&gt</span>;</pre>
+<pre>                phandle = &lt;0x0000001d&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            nfclk_div1 {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x0000000a&gt</span>;</pre>
+<pre>                offset = &lt;0x00000016&gt</span>;</pre>
+<pre>                mask = &lt;0x0000001f&gt</span>;</pre>
+<pre>                ratios = &lt;0x00000028 0x00000024 0x00000010 0x00000023 0x0000000d 0x00000022 0x0000000a 0x00000021 0x00000008 0x00000020&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x00000017&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000017&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            nfclk_div2 {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000016&gt</span>;</pre>
+<pre>                offset = &lt;0x00000016&gt</span>;</pre>
+<pre>                mask = &lt;0x0000001f&gt</span>;</pre>
+<pre>                ratios = &lt;0x0000000a 0x00000028&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x00000018&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000018&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            nfclk {</pre>
+<pre>                compatible = "socionext,mlb01-clk-mux";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000017 0x00000018&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x00000023&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000023&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            clk5 {</pre>
+<pre>                compatible = "socionext,mlb01-clk-div";</pre>
+<pre>                #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>                clocks = &lt;0x00000009&gt</span>;</pre>
+<pre>                offset = &lt;0x000000ef&gt</span>;</pre>
+<pre>                mask = &lt;0x00000003&gt</span>;</pre>
+<pre>                ratios = &lt;0x00000040 0x00000007 0x00000030 0x00000006 0x00000020 0x00000005 0x00000010 0x00000004&gt</span>;</pre>
+<pre>                read-only;</pre>
+<pre>                linux,phandle = &lt;0x00000025&gt</span>;</pre>
+<pre>                phandle = &lt;0x00000025&gt</span>;</pre>
+<pre>            };</pre>
+<pre>        };</pre>
+<pre>    };</pre>
+<pre>    peri-timer&commat;1e000000 {</pre>
+<pre>        compatible = "socionext,milbeaut-timer";</pre>
+<pre>        reg = &lt;0x1e000050 0x00000010 0x1e000060 0x00000010&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000005b 0x00000004&gt</span>;</pre>
+<pre>        clocks = &lt;0x00000019&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    timer {</pre>
+<pre>        compatible = "arm,armv7-timer";</pre>
+<pre>        interrupts = &lt;0x00000001 0x0000000d 0x00000f04 0x00000001 0x0000000e 0x00000f04 0x00000001 0x0000000b 0x00000f04 0x00000001 0x0000000a 0x00000f04&gt</span>;</pre>
+<pre>        clock-frequency = &lt;0x02625a00&gt</span>;</pre>
+<pre>        always-on;</pre>
+<pre>        arm,cpu-registers-not-fw-configured;</pre>
+<pre>    };</pre>
+<pre>    pmu {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "arm,cortex-a7-pmu";</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000000c 0x00000004 0x00000000 0x0000000d 0x00000004 0x00000000 0x0000000e 0x00000004 0x00000000 0x0000000f 0x00000004&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    dummy_clk {</pre>
+<pre>        compatible = "fixed-clock";</pre>
+<pre>        #clock-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>        clock-frequency = &lt;0x02faf080&gt</span>;</pre>
+<pre>        linux,phandle = &lt;0x0000001a&gt</span>;</pre>
+<pre>        phandle = &lt;0x0000001a&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    resetcon&commat;1b110000 {</pre>
+<pre>        compatible = "socionext,milbeaut-reset";</pre>
+<pre>        reg = &lt;0x1b110000 0x00000280&gt</span>;</pre>
+<pre>        #reset-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        linux,phandle = &lt;0x00000021&gt</span>;</pre>
+<pre>        phandle = &lt;0x00000021&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    pinctrl&commat;1d022000 {</pre>
+<pre>        compatible = "socionext,mlb01-pinctrl";</pre>
+<pre>        reg = &lt;0x1d022000 0x00001000&gt</span>;</pre>
+<pre>        reg-names = "pinctrl";</pre>
+<pre>        gpio-controller;</pre>
+<pre>        #gpio-cells = &lt;0x00000002&gt</span>;</pre>
+<pre>        interrupt-controller;</pre>
+<pre>        #interrupt-cells = &lt;0x00000002&gt</span>;</pre>
+<pre>        clocks = &lt;0x0000001a&gt</span>;</pre>
+<pre>        interrupts;</pre>
+<pre>        interrupt-names;</pre>
+<pre>        blacklist = &lt;0x0000ffff 0x0000ffff 0x0000ffff 0x0000ffff 0x0000ffdf 0x0000ffff 0x0000ffff 0x0000fdcf 0x0000ffff 0x0000ffff 0x0000ffff 0x0000ffff 0x0000ffff&gt</span>;</pre>
+<pre>        linux,phandle = &lt;0x0000001e&gt</span>;</pre>
+<pre>        phandle = &lt;0x0000001e&gt</span>;</pre>
+<pre>        usio1_pins {</pre>
+<pre>            pins = "PE4", "PE5", "P87";</pre>
+<pre>            function = "usio1";</pre>
+<pre>        };</pre>
+<pre>    };</pre>
+<pre>    usio_uart&commat;1e700000 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,m8m-usio-uart";</pre>
+<pre>        reg = &lt;0x1e700000 0x00000010&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000008c 0x00000004 0x00000000 0x00000094 0x00000004&gt</span>;</pre>
+<pre>        interrupt-names = "rx", "tx";</pre>
+<pre>        clocks = &lt;0x0000001b&gt</span>;</pre>
+<pre>        flwen = &lt;0x00000000&gt</span>;</pre>
+<pre>        index = &lt;0x00000000&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    usio_uart&commat;1e700010 {</pre>
+<pre>        index = &lt;0x00000001&gt</span>;</pre>
+<pre>        compatible = "socionext,m8m-usio-uart";</pre>
+<pre>        reg = &lt;0x1e700010 0x00000010&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000008d 0x00000004 0x00000000 0x00000095 0x00000004&gt</span>;</pre>
+<pre>        interrupt-names = "rx", "tx";</pre>
+<pre>        clocks = &lt;0x0000001b&gt</span>;</pre>
+<pre>        flwen = &lt;0x00000001&gt</span>;</pre>
+<pre>        status = "okay";</pre>
+<pre>    };</pre>
+<pre>    usio_uart&commat;1e700020 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,m8m-usio-uart";</pre>
+<pre>        reg = &lt;0x1e700020 0x00000010&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000008e 0x00000004 0x00000000 0x00000096 0x00000004&gt</span>;</pre>
+<pre>        interrupt-names = "rx", "tx";</pre>
+<pre>        clocks = &lt;0x0000001b&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    usio_uart&commat;1e700030 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,m8m-usio-uart";</pre>
+<pre>        reg = &lt;0x1e700030 0x00000010&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000008f 0x00000004 0x00000000 0x00000097 0x00000004&gt</span>;</pre>
+<pre>        interrupt-names = "rx", "tx";</pre>
+<pre>        clocks = &lt;0x0000001b&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    usio_uart&commat;1e700040 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,m8m-usio-uart";</pre>
+<pre>        reg = &lt;0x1e700040 0x00000010&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000090 0x00000004 0x00000000 0x00000098 0x00000004&gt</span>;</pre>
+<pre>        interrupt-names = "rx", "tx";</pre>
+<pre>        clocks = &lt;0x0000001b&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    usio_uart&commat;1e700050 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,m8m-usio-uart";</pre>
+<pre>        reg = &lt;0x1e700050 0x00000010&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000091 0x00000004 0x00000000 0x00000099 0x00000004&gt</span>;</pre>
+<pre>        interrupt-names = "rx", "tx";</pre>
+<pre>        clocks = &lt;0x0000001b&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    usio_uart&commat;1e700060 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,m8m-usio-uart";</pre>
+<pre>        reg = &lt;0x1e700060 0x00000010&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000092 0x00000004 0x00000000 0x0000009a 0x00000004&gt</span>;</pre>
+<pre>        interrupt-names = "rx", "tx";</pre>
+<pre>        clocks = &lt;0x0000001b&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    usio_uart&commat;1e700070 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,m8m-usio-uart";</pre>
+<pre>        reg = &lt;0x1e700070 0x00000010&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000093 0x00000004 0x00000000 0x0000009b 0x00000004&gt</span>;</pre>
+<pre>        interrupt-names = "rx", "tx";</pre>
+<pre>        clocks = &lt;0x0000001b&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    mmc&commat;1b000000 {</pre>
+<pre>        compatible = "socionext,mlb01-esdhci-3.0";</pre>
+<pre>        reg = &lt;0x1b000000 0x00010000&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000111 0x00000004&gt</span>;</pre>
+<pre>        bus-width = &lt;0x00000004&gt</span>;</pre>
+<pre>        max-frequency = &lt;0x0bebc200&gt</span>;</pre>
+<pre>        clocks = &lt;0x0000001c 0x0000001a&gt</span>;</pre>
+<pre>        clock-names = "core", "iface";</pre>
+<pre>        non-removable;</pre>
+<pre>        keep-power-in-suspend;</pre>
+<pre>    };</pre>
+<pre>    mmc&commat130000 {</pre>
+<pre>        compatible = "socionext,mlb01-esdhci-4.0";</pre>
+<pre>        reg = &lt;0x1b020000 0x00010000 0x19130200 0x00000200 0x19130000 0x00000200&gt</span>;</pre>
+<pre>        reg-names = "uhs1", "uhs2", "uhs2_sn";</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000010c 0x00000004 0x00000000 0x0000010f 0x00000004&gt</span>;</pre>
+<pre>        interrupt-names = "uhs1", "uhs2";</pre>
+<pre>        voltage-ranges = &lt;0x00000ce4 0x00000ce4&gt</span>;</pre>
+<pre>        bus-width = &lt;0x00000004&gt</span>;</pre>
+<pre>        clocks = &lt;0x0000001d 0x0000001a&gt</span>;</pre>
+<pre>        clock-names = "core", "iface";</pre>
+<pre>        cap-sdio-irq;</pre>
+<pre>        sd40_enable;</pre>
+<pre>        uhs2-power-limit = &lt;0x00000004&gt</span>;</pre>
+<pre>        sni,mmc-power-gpio = &lt;0x0000001e 0x00000034 0x00000000&gt</span>;</pre>
+<pre>        status = "disabled";</pre>
+<pre>    };</pre>
+<pre>    mmc&commat;1b010000 {</pre>
+<pre>        compatible = "socionext,mlb01-esdhci-3.0";</pre>
+<pre>        reg = &lt;0x1b010000 0x00010000&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000109 0x00000004&gt</span>;</pre>
+<pre>        voltage-ranges = &lt;0x00000ce4 0x00000ce4&gt</span>;</pre>
+<pre>        bus-width = &lt;0x00000004&gt</span>;</pre>
+<pre>        clocks = &lt;0x0000001f 0x0000001a&gt</span>;</pre>
+<pre>        clock-names = "core", "iface";</pre>
+<pre>        cap-sdio-irq;</pre>
+<pre>        sni,mmc-power-gpio = &lt;0x0000001e 0x00000035 0x00000000&gt</span>;</pre>
+<pre>        status = "disabled";</pre>
+<pre>    };</pre>
+<pre>    mmc&commat120000 {</pre>
+<pre>        compatible = "socionext,mlb01-emmc-5.0";</pre>
+<pre>        reg = &lt;0x19120200 0x00000200 0x19120000 0x00000200&gt</span>;</pre>
+<pre>        reg-names = "srs", "hrs";</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000114 0x00000004&gt</span>;</pre>
+<pre>        clocks = &lt;0x00000020 0x0000001a&gt</span>;</pre>
+<pre>        clock-names = "core", "iface";</pre>
+<pre>        max-frequency = &lt;0x0bebc200&gt</span>;</pre>
+<pre>        bus-width = &lt;0x00000008&gt</span>;</pre>
+<pre>        non-removable;</pre>
+<pre>        disable-wp;</pre>
+<pre>        cap-mmc-highspeed;</pre>
+<pre>        mmc-ddr-1_8v;</pre>
+<pre>        mmc-hs200-1_8v;</pre>
+<pre>        mmc-hs400-1_8v;</pre>
+<pre>        resets = &lt;0x00000021 0x00000003&gt</span>;</pre>
+<pre>        status = "disabled";</pre>
+<pre>    };</pre>
+<pre>    hdmac&commat;1e100000 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,mb86s7x_hdmac";</pre>
+<pre>        reg = &lt;0x1e100000 0x00010000&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000007c 0x00000004 0x00000000 0x0000007d 0x00000004 0x00000000 0x0000007e 0x00000004 0x00000000 0x0000007f 0x00000004 0x00000000 0x00000080 0x00000004 0x00000000 0x00000081 0x00000004 0x00000000 0x00000082 0x00000004 0x00000000 0x00000083 0x00000004&gt</span>;</pre>
+<pre>        #dma-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        priority-rotate;</pre>
+<pre>        clocks = &lt;0x0000001a&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    hdmac&commat;1e110000 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,mb86s7x_hdmac";</pre>
+<pre>        reg = &lt;0x1e110000 0x00010000&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000084 0x00000004 0x00000000 0x00000085 0x00000004 0x00000000 0x00000086 0x00000004 0x00000000 0x00000087 0x00000004 0x00000000 0x00000088 0x00000004 0x00000000 0x00000089 0x00000004 0x00000000 0x0000008a 0x00000004 0x00000000 0x0000008b 0x00000004&gt</span>;</pre>
+<pre>        #dma-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        priority-rotate;</pre>
+<pre>        clocks = &lt;0x0000001a&gt</span>;</pre>
+<pre>        linux,phandle = &lt;0x00000026&gt</span>;</pre>
+<pre>        phandle = &lt;0x00000026&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    snrtos0&commat;0 {</pre>
+<pre>        compatible = "socionext,ipcu-device";</pre>
+<pre>        reg = &lt;0x1c251000 0x00001000 0x4ff0000c 0x00000032&gt</span>;</pre>
+<pre>        dst-unit = &lt;0x00000000&gt</span>;</pre>
+<pre>        dst-channel = &lt;0x00000000&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000016 0x00000004&gt</span>;</pre>
+<pre>        direction = "recv";</pre>
+<pre>    };</pre>
+<pre>    snrtos1&commat;0 {</pre>
+<pre>        compatible = "socionext,ipcu-device";</pre>
+<pre>        reg = &lt;0x1c252000 0x00001000 0x4ff0000c 0x00000032&gt</span>;</pre>
+<pre>        dst-unit = &lt;0x00000001&gt</span>;</pre>
+<pre>        dst-channel = &lt;0x00000000&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000026 0x00000004&gt</span>;</pre>
+<pre>        direction = "recv";</pre>
+<pre>    };</pre>
+<pre>    sni_spi&commat;1e800000 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,sni-spi";</pre>
+<pre>        clocks = &lt;0x00000022&gt</span>;</pre>
+<pre>        #interrupt-cells = &lt;0x00000002&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000009c 0x00000004&gt</span>;</pre>
+<pre>        reg = &lt;0x1e800000 0x00000100&gt</span>;</pre>
+<pre>        #address-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        #size-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>        dma-names = "tx", "rx";</pre>
+<pre>    };</pre>
+<pre>    sni_spi&commat;1e800100 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,sni-spi";</pre>
+<pre>        clocks = &lt;0x00000022&gt</span>;</pre>
+<pre>        #interrupt-cells = &lt;0x00000002&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000009d 0x00000004&gt</span>;</pre>
+<pre>        reg = &lt;0x1e800100 0x00000100&gt</span>;</pre>
+<pre>        #address-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        #size-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>        dma-names = "tx", "rx";</pre>
+<pre>    };</pre>
+<pre>    sni_spi&commat;1e800200 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,sni-spi";</pre>
+<pre>        clocks = &lt;0x00000022&gt</span>;</pre>
+<pre>        #interrupt-cells = &lt;0x00000002&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000009e 0x00000004&gt</span>;</pre>
+<pre>        reg = &lt;0x1e800200 0x00000100&gt</span>;</pre>
+<pre>        #address-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        #size-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>        dma-names = "tx", "rx";</pre>
+<pre>    };</pre>
+<pre>    pwm&commat;1e120000 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,mlb01-pwm";</pre>
+<pre>        reg = &lt;0x1e001000 0x00000400 0x1e120000 0x00010000&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000006e 0x00000004 0x00000000 0x00000072 0x00000004&gt</span>;</pre>
+<pre>        clocks = &lt;0x00000019&gt</span>;</pre>
+<pre>        base-rate = &lt;0x00cdfe60&gt</span>;</pre>
+<pre>        #pwm-cells = &lt;0x00000003&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    pwm&commat;1e130000 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,mlb01-pwm";</pre>
+<pre>        reg = &lt;0x1e001400 0x00000400 0x1e130000 0x00010000&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000006f 0x00000004 0x00000000 0x00000073 0x00000004&gt</span>;</pre>
+<pre>        clocks = &lt;0x00000019&gt</span>;</pre>
+<pre>        #pwm-cells = &lt;0x00000003&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    pwm&commat;1e140000 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,mlb01-pwm";</pre>
+<pre>        reg = &lt;0x1e001800 0x00000400 0x1e140000 0x00010000&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000070 0x00000004 0x00000000 0x00000074 0x00000004&gt</span>;</pre>
+<pre>        clocks = &lt;0x00000019&gt</span>;</pre>
+<pre>        #pwm-cells = &lt;0x00000003&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    pwm&commat;1e150000 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,mlb01-pwm";</pre>
+<pre>        reg = &lt;0x1e001c00 0x00000400 0x1e150000 0x00010000&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000071 0x00000004 0x00000000 0x00000075 0x00000004&gt</span>;</pre>
+<pre>        clocks = &lt;0x00000019&gt</span>;</pre>
+<pre>        #pwm-cells = &lt;0x00000003&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    nand&commat100000 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        #address-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        #size-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        compatible = "cdns,hpnfc-dt";</pre>
+<pre>        reg = &lt;0x19100000 0x00010000 0x19110000 0x00002710 0x1b110328 0x00000004 0x18000000 0x00080000&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x000000f2 0x00000004&gt</span>;</pre>
+<pre>        dma-mask = &lt;0xffffffff&gt</span>;</pre>
+<pre>        ecc-sec-size = &lt;0x00000400&gt</span>;</pre>
+<pre>        ecc-corr-cap = &lt;0x00000010&gt</span>;</pre>
+<pre>        clocks = &lt;0x00000023&gt</span>;</pre>
+<pre>        resets = &lt;0x00000021 0x00000004&gt</span>;</pre>
+<pre>        nand-ecc-mode = "hw";</pre>
+<pre>        nand-on-flash-bbt;</pre>
+<pre>        partition&commat;0x19580000 {</pre>
+<pre>            label = "test0";</pre>
+<pre>            reg = &lt;0x19580000 0x01000000&gt</span>;</pre>
+<pre>        };</pre>
+<pre>    };</pre>
+<pre>    ethernet {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,ogma";</pre>
+<pre>        reg = &lt;0x1b100000 0x00010000&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000117 0x00000004 0x00000000 0x00000118 0x00000004&gt</span>;</pre>
+<pre>        phy-mode = "rgmii";</pre>
+<pre>        max-speed = &lt;0x000003e8&gt</span>;</pre>
+<pre>        max-frame-size = &lt;0x00002328&gt</span>;</pre>
+<pre>        local-mac-address = [a4 17 31 88 00 ed];</pre>
+<pre>        phy-handle = &lt;0x00000024&gt</span>;</pre>
+<pre>        resets = &lt;0x00000021 0x00000002&gt</span>;</pre>
+<pre>        clocks = &lt;0x00000025&gt</span>;</pre>
+<pre>        #address-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        #size-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>        ethernet-phy&commat;1 {</pre>
+<pre>            device_type = "ethernet-phy";</pre>
+<pre>            compatible = "ethernet-phy-ieee802.3-c22";</pre>
+<pre>            reg = &lt;0x00000001&gt</span>;</pre>
+<pre>            linux,phandle = &lt;0x00000024&gt</span>;</pre>
+<pre>            phandle = &lt;0x00000024&gt</span>;</pre>
+<pre>        };</pre>
+<pre>    };</pre>
+<pre>    usb30&commatc00000 {</pre>
+<pre>        compatible = "socionext,usb3mlb01,f_usb30dr_fp";</pre>
+<pre>        reg = &lt;0x1b110280 0x00000024&gt</span>;</pre>
+<pre>        reg-names = "reg-glue";</pre>
+<pre>        #address-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        #size-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        ranges;</pre>
+<pre>        dwc3&commatc00000 {</pre>
+<pre>            compatible = "snps,dwc3";</pre>
+<pre>            reg = &lt;0x19c00000 0x00100000&gt</span>;</pre>
+<pre>            interrupts = &lt;0x00000000 0x00000108 0x00000004&gt</span>;</pre>
+<pre>            snps,has-lpm-erratum = &lt;0x00000001&gt</span>;</pre>
+<pre>            dr_mode = "peripheral";</pre>
+<pre>        };</pre>
+<pre>    };</pre>
+<pre>    usb&commat;1b070000 {</pre>
+<pre>        compatible = "generic-ehci";</pre>
+<pre>        reg = &lt;0x1b070000 0x00000100&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000106 0x00000004&gt</span>;</pre>
+<pre>        resets = &lt;0x00000021 0x00000000&gt</span>;</pre>
+<pre>        status = "disabled";</pre>
+<pre>    };</pre>
+<pre>    usb&commat;1b080000 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "generic-ohci";</pre>
+<pre>        reg = &lt;0x1b080000 0x00000100&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000107 0x00000004&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    usb20dev&commat;0x1b050000 {</pre>
+<pre>        compatible = "socionext,usb2m9m,f_usb20dc_lfp";</pre>
+<pre>        reg = &lt;0x1b050000 0x00010000 0x1b040000 0x00001000 0x1b110200 0x00000048&gt</span>;</pre>
+<pre>        reg-names = "udc", "dma", "glue";</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000105 0x00000004&gt</span>;</pre>
+<pre>        dma_dreq = &lt;0x0e000000 0x0e000000&gt</span>;</pre>
+<pre>        hdmac_channel = &lt;0x00000000 0x00000001&gt</span>;</pre>
+<pre>        clocks = &lt;0x0000001a 0x0000001a 0x0000001a 0x0000001a&gt</span>;</pre>
+<pre>        clock-names = "dummy_clk", "dummy_clk", "dummy_clk";</pre>
+<pre>        resets = &lt;0x00000021 0x00000001&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    pcie&commat150000 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,mlb01-pcie";</pre>
+<pre>        reg = &lt;0x19150000 0x00010000 0x197f0000 0x00010000 0x1b111000 0x00001000&gt</span>;</pre>
+<pre>        reg-names = "ctrlreg", "config", "exsreg";</pre>
+<pre>        #address-cells = &lt;0x00000003&gt</span>;</pre>
+<pre>        #size-cells = &lt;0x00000002&gt</span>;</pre>
+<pre>        device_type = "pci";</pre>
+<pre>        ranges = &lt;0x81000000 0x00000000 0x00000000 0x197e0000 0x00000000 0x00010000 0x82000000 0x00000000 0x19400000 0x19400000 0x00000000 0x003e0000&gt</span>;</pre>
+<pre>        num-lanes = &lt;0x00000002&gt</span>;</pre>
+<pre>        #interrupt-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x000000f3 0x00000004 0x00000000 0x000000f5 0x00000004&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    usio_spi&commat;1e700000 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,m8m-usio-spi";</pre>
+<pre>        clocks = &lt;0x0000001b&gt</span>;</pre>
+<pre>        clock-names = "spiclk";</pre>
+<pre>        reg = &lt;0x1e700000 0x00000010&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000008c 0x00000004 0x00000000 0x00000094 0x00000004&gt</span>;</pre>
+<pre>        #address-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        #size-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>        dmas = &lt;0x00000026 0x00000001 0x00000026 0x00000000&gt</span>;</pre>
+<pre>        dma-names = "tx", "rx";</pre>
+<pre>    };</pre>
+<pre>    usio_spi&commat;0x1e700010 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,m8m-usio-spi";</pre>
+<pre>        clocks = &lt;0x0000001b&gt</span>;</pre>
+<pre>        clock-names = "spiclk";</pre>
+<pre>        reg = &lt;0x1e700010 0x00000010&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000008d 0x00000004 0x00000000 0x00000095 0x00000004&gt</span>;</pre>
+<pre>        #address-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        #size-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>        dmas = &lt;0x00000026 0x00000003 0x00000026 0x00000002&gt</span>;</pre>
+<pre>        dma-names = "tx", "rx";</pre>
+<pre>    };</pre>
+<pre>    usio_spi&commat;0x1e700020 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,m8m-usio-spi";</pre>
+<pre>        clocks = &lt;0x0000001b&gt</span>;</pre>
+<pre>        clock-names = "spiclk";</pre>
+<pre>        reg = &lt;0x1e700020 0x00000010&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000008e 0x00000004 0x00000000 0x00000096 0x00000004&gt</span>;</pre>
+<pre>        #address-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        #size-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>        dmas = &lt;0x00000026 0x00000005 0x00000026 0x00000004&gt</span>;</pre>
+<pre>        dma-names = "tx", "rx";</pre>
+<pre>    };</pre>
+<pre>    usio_spi&commat;0x1e700030 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,m8m-usio-spi";</pre>
+<pre>        clocks = &lt;0x0000001b&gt</span>;</pre>
+<pre>        clock-names = "spiclk";</pre>
+<pre>        reg = &lt;0x1e700030 0x00000010&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000008f 0x00000004 0x00000000 0x00000097 0x00000004&gt</span>;</pre>
+<pre>        #address-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        #size-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>        dmas = &lt;0x00000026 0x00000007 0x00000026 0x00000006&gt</span>;</pre>
+<pre>        dma-names = "tx", "rx";</pre>
+<pre>    };</pre>
+<pre>    usio_spi&commat;0x1e700040 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,m8m-usio-spi";</pre>
+<pre>        clocks = &lt;0x0000001b&gt</span>;</pre>
+<pre>        clock-names = "spiclk";</pre>
+<pre>        reg = &lt;0x1e700040 0x00000010&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000090 0x00000004 0x00000000 0x00000098 0x00000004&gt</span>;</pre>
+<pre>        #address-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        #size-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>        dmas = &lt;0x00000026 0x00000009 0x00000026 0x00000008&gt</span>;</pre>
+<pre>        dma-names = "tx", "rx";</pre>
+<pre>    };</pre>
+<pre>    usio_spi&commat;0x1e700050 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,m8m-usio-spi";</pre>
+<pre>        clocks = &lt;0x0000001b&gt</span>;</pre>
+<pre>        clock-names = "spiclk";</pre>
+<pre>        reg = &lt;0x1e700050 0x00000010&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000091 0x00000004 0x00000000 0x00000099 0x00000004&gt</span>;</pre>
+<pre>        #address-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        #size-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>        dmas = &lt;0x00000026 0x0000000b 0x00000026 0x0000000a&gt</span>;</pre>
+<pre>        dma-names = "tx", "rx";</pre>
+<pre>    };</pre>
+<pre>    usio_spi&commat;0x1e700060 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,m8m-usio-spi";</pre>
+<pre>        clocks = &lt;0x0000001b&gt</span>;</pre>
+<pre>        clock-names = "spiclk";</pre>
+<pre>        reg = &lt;0x1e700060 0x00000010&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000092 0x00000004 0x00000000 0x0000009a 0x00000004&gt</span>;</pre>
+<pre>        #address-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        #size-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>        dmas = &lt;0x00000026 0x0000000c 0x00000026 0x0000000b&gt</span>;</pre>
+<pre>        dma-names = "tx", "rx";</pre>
+<pre>    };</pre>
+<pre>    usio_spi&commat;0x1e700070 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,m8m-usio-spi";</pre>
+<pre>        clocks = &lt;0x0000001b&gt</span>;</pre>
+<pre>        clock-names = "spiclk";</pre>
+<pre>        reg = &lt;0x1e700070 0x00000010&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000093 0x00000004 0x00000000 0x0000009b 0x00000004&gt</span>;</pre>
+<pre>        #address-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        #size-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>        dmas = &lt;0x00000026 0x0000000e 0x00000026 0x0000000d&gt</span>;</pre>
+<pre>        dma-names = "tx", "rx";</pre>
+<pre>    };</pre>
+<pre>    i2c&commat;1e003000 {</pre>
+<pre>        compatible = "socionext,sni-sc2000a-i2c";</pre>
+<pre>        reg = &lt;0x1e003000 0x00000400&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000065 0x00000004&gt</span>;</pre>
+<pre>        #address-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        #size-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>        clocks = &lt;0x00000027&gt</span>;</pre>
+<pre>        status = "disabled";</pre>
+<pre>        clock-frequency = &lt;0x000186a0&gt</span>;</pre>
+<pre>        gpios = &lt;0x0000001e 0x00000060 0x00000000&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    i2c&commat;1e003400 {</pre>
+<pre>        compatible = "socionext,sni-sc2000a-i2c";</pre>
+<pre>        reg = &lt;0x1e003400 0x00000400&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000066 0x00000004&gt</span>;</pre>
+<pre>        #address-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        #size-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>        clocks = &lt;0x00000027&gt</span>;</pre>
+<pre>        status = "disabled";</pre>
+<pre>        clock-frequency = &lt;0x000186a0&gt</span>;</pre>
+<pre>        gpios = &lt;0x0000001e 0x00000061 0x00000000&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    i2c&commat;1e003800 {</pre>
+<pre>        compatible = "socionext,sni-sc2000a-i2c";</pre>
+<pre>        reg = &lt;0x1e003800 0x00000400&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000067 0x00000004&gt</span>;</pre>
+<pre>        #address-cells = &lt;0x00000001&gt</span>;</pre>
+<pre>        #size-cells = &lt;0x00000000&gt</span>;</pre>
+<pre>        clocks = &lt;0x00000027&gt</span>;</pre>
+<pre>        status = "disabled";</pre>
+<pre>        clock-frequency = &lt;0x000186a0&gt</span>;</pre>
+<pre>        gpios = &lt;0x0000001e 0x00000063 0x00000000&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    fb&commat906000 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,sni-gr";</pre>
+<pre>        index = &lt;0x00000000&gt</span>;</pre>
+<pre>        reg = &lt;0x28906000 0x00001000 0x28905000 0x00001000&gt</span>;</pre>
+<pre>        reg-names = "gr", "dcore";</pre>
+<pre>        num-set-pattern = &lt;0x00000001&gt</span>;</pre>
+<pre>        pattern-name = "qqvga";</pre>
+<pre>        block_no = &lt;0x00000001&gt</span>;</pre>
+<pre>        device-name = "lcd-gr0";</pre>
+<pre>        qqvga {</pre>
+<pre>            dis_size = &lt;0x00000140 0x000000f0&gt</span>;</pre>
+<pre>            dis_virtual_size = &lt;0x00000140 0x000000f0&gt</span>;</pre>
+<pre>            dis_expand_horizonal = &lt;0x00000003 0x00000002&gt</span>;</pre>
+<pre>            dis_expand_vertical = &lt;0x00000004 0x00000003&gt</span>;</pre>
+<pre>            dis_format = &lt;0x00000000&gt</span>;</pre>
+<pre>            dis_position = &lt;0x00000000 0x00000000&gt</span>;</pre>
+<pre>            byte_num_line = &lt;0x00000500&gt</span>;</pre>
+<pre>            a_data_byte_num_line = &lt;0x00000000&gt</span>;</pre>
+<pre>            draw_addrss = &lt;0xa93d4000 0x00384000&gt</span>;</pre>
+<pre>            draw_buffer_num = &lt;0x00000003&gt</span>;</pre>
+<pre>            dis_pan_step = &lt;0x00000001 0x00000001&gt</span>;</pre>
+<pre>            dis_triger = &lt;0x00000001&gt</span>;</pre>
+<pre>            area00 {</pre>
+<pre>                positon = &lt;0x00000000 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000140 0x000000f0&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area01 {</pre>
+<pre>                positon = &lt;0x00000000 0x00000078&gt</span>;</pre>
+<pre>                size = &lt;0x00000040 0x00000078&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000000&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area02 {</pre>
+<pre>                positon = &lt;0x00000040 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000040 0x00000078&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000000&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area03 {</pre>
+<pre>                positon = &lt;0x00000040 0x00000078&gt</span>;</pre>
+<pre>                size = &lt;0x00000040 0x00000078&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000000&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area04 {</pre>
+<pre>                positon = &lt;0x00000080 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000040 0x00000078&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000000&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area05 {</pre>
+<pre>                positon = &lt;0x00000080 0x00000078&gt</span>;</pre>
+<pre>                size = &lt;0x00000040 0x00000078&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000000&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area06 {</pre>
+<pre>                positon = &lt;0x000000c0 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000040 0x00000078&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000000&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area07 {</pre>
+<pre>                positon = &lt;0x000000c0 0x00000078&gt</span>;</pre>
+<pre>                size = &lt;0x00000040 0x00000078&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000000&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area08 {</pre>
+<pre>                positon = &lt;0x00000100 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000040 0x00000078&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000000&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area09 {</pre>
+<pre>                positon = &lt;0x00000100 0x00000078&gt</span>;</pre>
+<pre>                size = &lt;0x00000040 0x00000078&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000000&gt</span>;</pre>
+<pre>            };</pre>
+<pre>        };</pre>
+<pre>    };</pre>
+<pre>    fb&commat907000 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,sni-gr";</pre>
+<pre>        index = &lt;0x00000001&gt</span>;</pre>
+<pre>        reg = &lt;0x28907000 0x00001000 0x28905000 0x00001000&gt</span>;</pre>
+<pre>        reg-names = "gr", "dcore";</pre>
+<pre>        block_no = &lt;0x00000001&gt</span>;</pre>
+<pre>        device-name = "lcd-gr1";</pre>
+<pre>    };</pre>
+<pre>    fb&commat902000 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,sni-gr";</pre>
+<pre>        reg = &lt;0x28902000 0x00001000 0x28901000 0x00001000&gt</span>;</pre>
+<pre>        index = &lt;0x00000002&gt</span>;</pre>
+<pre>        reg-names = "gr", "dcore";</pre>
+<pre>        block_no = &lt;0x00000000&gt</span>;</pre>
+<pre>        device-name = "hdmi-gr0";</pre>
+<pre>        num-set-pattern = &lt;0x00000006&gt</span>;</pre>
+<pre>        pattern-name = "fhd-vga", "fhd", "fhd4444", "hd", "4k", "4k4444";</pre>
+<pre>        fhd-vga {</pre>
+<pre>            dis_size = &lt;0x00000280 0x000001e0&gt</span>;</pre>
+<pre>            dis_virtual_size = &lt;0x00000400 0x00000300&gt</span>;</pre>
+<pre>            dis_expand_horizonal = &lt;0x00000009 0x00000004&gt</span>;</pre>
+<pre>            dis_expand_vertical = &lt;0x00000009 0x00000004&gt</span>;</pre>
+<pre>            dis_format = &lt;0x00000000&gt</span>;</pre>
+<pre>            dis_position = &lt;0x000000f0 0x00000000&gt</span>;</pre>
+<pre>            byte_num_line = &lt;0x00001000&gt</span>;</pre>
+<pre>            a_data_byte_num_line = &lt;0x00000000&gt</span>;</pre>
+<pre>            draw_addrss = &lt;0xa962c000 0x00546000&gt</span>;</pre>
+<pre>            draw_buffer_num = &lt;0x00000001&gt</span>;</pre>
+<pre>            dis_pan_step = &lt;0x00000002 0x00000002&gt</span>;</pre>
+<pre>            dis_triger = &lt;0x00000000&gt</span>;</pre>
+<pre>            area00 {</pre>
+<pre>                positon = &lt;0x00000000 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000f0&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area01 {</pre>
+<pre>                positon = &lt;0x00000000 0x000000f0&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000f0&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area02 {</pre>
+<pre>                positon = &lt;0x00000080 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000f0&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area03 {</pre>
+<pre>                positon = &lt;0x00000080 0x000000f0&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000f0&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area04 {</pre>
+<pre>                positon = &lt;0x00000100 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000f0&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area05 {</pre>
+<pre>                positon = &lt;0x00000100 0x000000f0&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000f0&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area06 {</pre>
+<pre>                positon = &lt;0x00000180 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000f0&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area07 {</pre>
+<pre>                positon = &lt;0x00000180 0x000000f0&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000f0&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area08 {</pre>
+<pre>                positon = &lt;0x00000200 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000f0&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area09 {</pre>
+<pre>                positon = &lt;0x00000200 0x000000f0&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000f0&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>        };</pre>
+<pre>        fhd {</pre>
+<pre>            dis_size = &lt;0x00000280 0x00000168&gt</span>;</pre>
+<pre>            dis_virtual_size = &lt;0x00000400 0x00000300&gt</span>;</pre>
+<pre>            dis_expand_horizonal = &lt;0x00000003 0x00000001&gt</span>;</pre>
+<pre>            dis_expand_vertical = &lt;0x00000003 0x00000001&gt</span>;</pre>
+<pre>            dis_format = &lt;0x00000000&gt</span>;</pre>
+<pre>            dis_position = &lt;0x00000000 0x00000000&gt</span>;</pre>
+<pre>            byte_num_line = &lt;0x00001000&gt</span>;</pre>
+<pre>            a_data_byte_num_line = &lt;0x00000000&gt</span>;</pre>
+<pre>            draw_addrss = &lt;0xa962c000 0x00546000&gt</span>;</pre>
+<pre>            draw_buffer_num = &lt;0x00000001&gt</span>;</pre>
+<pre>            dis_pan_step = &lt;0x00000002 0x00000002&gt</span>;</pre>
+<pre>            dis_triger = &lt;0x00000000&gt</span>;</pre>
+<pre>            area00 {</pre>
+<pre>                positon = &lt;0x00000000 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area01 {</pre>
+<pre>                positon = &lt;0x00000000 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area02 {</pre>
+<pre>                positon = &lt;0x00000080 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area03 {</pre>
+<pre>                positon = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area04 {</pre>
+<pre>                positon = &lt;0x00000100 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area05 {</pre>
+<pre>                positon = &lt;0x00000100 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area06 {</pre>
+<pre>                positon = &lt;0x00000180 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area07 {</pre>
+<pre>                positon = &lt;0x00000180 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area08 {</pre>
+<pre>                positon = &lt;0x00000200 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area09 {</pre>
+<pre>                positon = &lt;0x00000200 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>        };</pre>
+<pre>        fhd4444 {</pre>
+<pre>            dis_size = &lt;0x00000280 0x00000168&gt</span>;</pre>
+<pre>            dis_virtual_size = &lt;0x00000400 0x00000300&gt</span>;</pre>
+<pre>            dis_expand_horizonal = &lt;0x00000002 0x00000001&gt</span>;</pre>
+<pre>            dis_expand_vertical = &lt;0x00000002 0x00000001&gt</span>;</pre>
+<pre>            dis_format = &lt;0x00000002&gt</span>;</pre>
+<pre>            dis_position = &lt;0x00000000 0x00000000&gt</span>;</pre>
+<pre>            byte_num_line = &lt;0x00000800&gt</span>;</pre>
+<pre>            a_data_byte_num_line = &lt;0x00000000&gt</span>;</pre>
+<pre>            draw_addrss = &lt;0xa962c000 0x00546000&gt</span>;</pre>
+<pre>            draw_buffer_num = &lt;0x00000002&gt</span>;</pre>
+<pre>            dis_pan_step = &lt;0x00000004 0x00000004&gt</span>;</pre>
+<pre>            dis_triger = &lt;0x00000000&gt</span>;</pre>
+<pre>            area00 {</pre>
+<pre>                positon = &lt;0x00000000 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area01 {</pre>
+<pre>                positon = &lt;0x00000000 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area02 {</pre>
+<pre>                positon = &lt;0x00000080 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area03 {</pre>
+<pre>                positon = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area04 {</pre>
+<pre>                positon = &lt;0x00000100 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area05 {</pre>
+<pre>                positon = &lt;0x00000100 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area06 {</pre>
+<pre>                positon = &lt;0x00000180 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area07 {</pre>
+<pre>                positon = &lt;0x00000180 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area08 {</pre>
+<pre>                positon = &lt;0x00000200 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area09 {</pre>
+<pre>                positon = &lt;0x00000200 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>        };</pre>
+<pre>        hd {</pre>
+<pre>            dis_size = &lt;0x00000280 0x00000168&gt</span>;</pre>
+<pre>            dis_virtual_size = &lt;0x00000400 0x00000300&gt</span>;</pre>
+<pre>            dis_expand_horizonal = &lt;0x00000002 0x00000001&gt</span>;</pre>
+<pre>            dis_expand_vertical = &lt;0x00000002 0x00000001&gt</span>;</pre>
+<pre>            dis_format = &lt;0x00000000&gt</span>;</pre>
+<pre>            dis_position = &lt;0x00000000 0x00000000&gt</span>;</pre>
+<pre>            byte_num_line = &lt;0x00001000&gt</span>;</pre>
+<pre>            a_data_byte_num_line = &lt;0x00000000&gt</span>;</pre>
+<pre>            draw_addrss = &lt;0xa962c000 0x00546000&gt</span>;</pre>
+<pre>            draw_buffer_num = &lt;0x00000001&gt</span>;</pre>
+<pre>            dis_pan_step = &lt;0x00000002 0x00000002&gt</span>;</pre>
+<pre>            dis_triger = &lt;0x00000000&gt</span>;</pre>
+<pre>            area00 {</pre>
+<pre>                positon = &lt;0x00000000 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area01 {</pre>
+<pre>                positon = &lt;0x00000000 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area02 {</pre>
+<pre>                positon = &lt;0x00000080 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area03 {</pre>
+<pre>                positon = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area04 {</pre>
+<pre>                positon = &lt;0x00000100 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area05 {</pre>
+<pre>                positon = &lt;0x00000100 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area06 {</pre>
+<pre>                positon = &lt;0x00000180 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area07 {</pre>
+<pre>                positon = &lt;0x00000180 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area08 {</pre>
+<pre>                positon = &lt;0x00000200 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area09 {</pre>
+<pre>                positon = &lt;0x00000200 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>        };</pre>
+<pre>        4k {</pre>
+<pre>            dis_size = &lt;0x00000280 0x00000168&gt</span>;</pre>
+<pre>            dis_virtual_size = &lt;0x00000400 0x00000300&gt</span>;</pre>
+<pre>            dis_expand_horizonal = &lt;0x00000006 0x00000001&gt</span>;</pre>
+<pre>            dis_expand_vertical = &lt;0x00000006 0x00000001&gt</span>;</pre>
+<pre>            dis_format = &lt;0x00000000&gt</span>;</pre>
+<pre>            dis_position = &lt;0x00000000 0x00000000&gt</span>;</pre>
+<pre>            byte_num_line = &lt;0x00001000&gt</span>;</pre>
+<pre>            a_data_byte_num_line = &lt;0x00000000&gt</span>;</pre>
+<pre>            draw_addrss = &lt;0xa962c000 0x00546000&gt</span>;</pre>
+<pre>            draw_buffer_num = &lt;0x00000001&gt</span>;</pre>
+<pre>            dis_pan_step = &lt;0x00000002 0x00000002&gt</span>;</pre>
+<pre>            dis_triger = &lt;0x00000000&gt</span>;</pre>
+<pre>            area00 {</pre>
+<pre>                positon = &lt;0x00000000 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area01 {</pre>
+<pre>                positon = &lt;0x00000000 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area02 {</pre>
+<pre>                positon = &lt;0x00000080 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area03 {</pre>
+<pre>                positon = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area04 {</pre>
+<pre>                positon = &lt;0x00000100 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area05 {</pre>
+<pre>                positon = &lt;0x00000100 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area06 {</pre>
+<pre>                positon = &lt;0x00000180 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area07 {</pre>
+<pre>                positon = &lt;0x00000180 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area08 {</pre>
+<pre>                positon = &lt;0x00000200 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area09 {</pre>
+<pre>                positon = &lt;0x00000200 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>        };</pre>
+<pre>        4k4444 {</pre>
+<pre>            dis_size = &lt;0x00000280 0x00000168&gt</span>;</pre>
+<pre>            dis_virtual_size = &lt;0x00000400 0x00000300&gt</span>;</pre>
+<pre>            dis_expand_horizonal = &lt;0x00000006 0x00000001&gt</span>;</pre>
+<pre>            dis_expand_vertical = &lt;0x00000006 0x00000001&gt</span>;</pre>
+<pre>            dis_format = &lt;0x00000002&gt</span>;</pre>
+<pre>            dis_position = &lt;0x00000000 0x00000000&gt</span>;</pre>
+<pre>            byte_num_line = &lt;0x00000800&gt</span>;</pre>
+<pre>            a_data_byte_num_line = &lt;0x00000000&gt</span>;</pre>
+<pre>            draw_addrss = &lt;0xa962c000 0x00546000&gt</span>;</pre>
+<pre>            draw_buffer_num = &lt;0x00000002&gt</span>;</pre>
+<pre>            dis_pan_step = &lt;0x00000004 0x00000004&gt</span>;</pre>
+<pre>            dis_triger = &lt;0x00000000&gt</span>;</pre>
+<pre>            area00 {</pre>
+<pre>                positon = &lt;0x00000000 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area01 {</pre>
+<pre>                positon = &lt;0x00000000 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area02 {</pre>
+<pre>                positon = &lt;0x00000080 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area03 {</pre>
+<pre>                positon = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area04 {</pre>
+<pre>                positon = &lt;0x00000100 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area05 {</pre>
+<pre>                positon = &lt;0x00000100 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area06 {</pre>
+<pre>                positon = &lt;0x00000180 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area07 {</pre>
+<pre>                positon = &lt;0x00000180 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area08 {</pre>
+<pre>                positon = &lt;0x00000200 0x00000000&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>            area09 {</pre>
+<pre>                positon = &lt;0x00000200 0x000000b4&gt</span>;</pre>
+<pre>                size = &lt;0x00000080 0x000000b4&gt</span>;</pre>
+<pre>                show_enable = &lt;0x00000001&gt</span>;</pre>
+<pre>            };</pre>
+<pre>        };</pre>
+<pre>    };</pre>
+<pre>    fb&commat903000 {</pre>
+<pre>        status = "disabled";</pre>
+<pre>        compatible = "socionext,sni-gr";</pre>
+<pre>        reg = &lt;0x28903000 0x00001000 0x28901000 0x00001000&gt</span>;</pre>
+<pre>        index = &lt;0x00000003&gt</span>;</pre>
+<pre>        reg-names = "gr", "dcore";</pre>
+<pre>        block_no = &lt;0x00000000&gt</span>;</pre>
+<pre>        device-name = "hdmi-gr1";</pre>
+<pre>    };</pre>
+<pre>    shared_commem {</pre>
+<pre>        compatible = "socionext, shared-commem";</pre>
+<pre>        buf-addr = &lt;0x4ff00004&gt</span>;</pre>
+<pre>        buf-size = &lt;0x4ff00008&gt</span>;</pre>
+<pre>        sync-addr = &lt;0x4ff0000c&gt</span>;</pre>
+<pre>        sync-size = &lt;0x4ff00010&gt</span>;</pre>
+<pre>        rd-pointer-addr = &lt;0x4ff00014&gt</span>;</pre>
+<pre>        rd-pointer-size = &lt;0x4ff00018&gt</span>;</pre>
+<pre>        wt-pointer-addr = &lt;0x4ff0001c&gt</span>;</pre>
+<pre>        wt-pointer-size = &lt;0x4ff00020&gt</span>;</pre>
+<pre>        movie-rec-addr = &lt;0x4ff00024&gt</span>;</pre>
+<pre>        movie-rec-size = &lt;0x4ff00028&gt</span>;</pre>
+<pre>        term-io-addr = &lt;0x4ff0002c&gt</span>;</pre>
+<pre>        term-io-size = &lt;0x4ff00030&gt</span>;</pre>
+<pre>        string-addr = &lt;0x4ff00034&gt</span>;</pre>
+<pre>        string-size = &lt;0x4ff00038&gt</span>;</pre>
+<pre>        ribery-addr = &lt;0x4ff0003c&gt</span>;</pre>
+<pre>        ribery-size = &lt;0x4ff00040&gt</span>;</pre>
+<pre>        audio-addr = &lt;0x4ff00044&gt</span>;</pre>
+<pre>        audio-size = &lt;0x4ff00048&gt</span>;</pre>
+<pre>        raw-addr = &lt;0x4ff0004c&gt</span>;</pre>
+<pre>        raw-size = &lt;0x4ff00050&gt</span>;</pre>
+<pre>        yuv-addr = &lt;0x4ff00054&gt</span>;</pre>
+<pre>        yuv-size = &lt;0x4ff00058&gt</span>;</pre>
+<pre>        hevc-addr = &lt;0x4ff0005c&gt</span>;</pre>
+<pre>        hevc-size = &lt;0x4ff00060&gt</span>;</pre>
+<pre>        mjpeg-addr = &lt;0x4ff00064&gt</span>;</pre>
+<pre>        mjpeg-size = &lt;0x4ff00068&gt</span>;</pre>
+<pre>        disp-addr = &lt;0x4ffffc00&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    snipcufs_rtos&commat;0 {</pre>
+<pre>        compatible = "socionext,ipcufs-rtos";</pre>
+<pre>        ipcu_unit = &lt;0x00000000&gt</span>;</pre>
+<pre>        ipcu_ch = &lt;0x00000002 0x00000003&gt</span>;</pre>
+<pre>        reg = &lt;0x4ff00004 0x00001000&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    snvblk_rtos&commat;0 {</pre>
+<pre>        status = "disable";</pre>
+<pre>        compatible = "socionext,vblk-rtos";</pre>
+<pre>        ipcu_unit = &lt;0x00000001&gt</span>;</pre>
+<pre>        ipcu_ch = &lt;0x00000001 0x00000000&gt</span>;</pre>
+<pre>        reg = &lt;0x4ff00004 0x00001000&gt</span>;</pre>
+<pre>    };</pre>
+<pre>    snrtos0&commat;1 {</pre>
+<pre>        compatible = "socionext,ipcu-device";</pre>
+<pre>        dst-unit = &lt;0x00000000&gt</span>;</pre>
+<pre>        dst-channel = &lt;0x00000001&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000001f 0x00000004&gt</span>;</pre>
+<pre>        direction = "send";</pre>
+<pre>    };</pre>
+<pre>    snrtos0&commat;2 {</pre>
+<pre>        compatible = "socionext,ipcu-device";</pre>
+<pre>        dst-unit = &lt;0x00000000&gt</span>;</pre>
+<pre>        dst-channel = &lt;0x00000002&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000020 0x00000004&gt</span>;</pre>
+<pre>        direction = "send";</pre>
+<pre>    };</pre>
+<pre>    snrtos0&commat;3 {</pre>
+<pre>        compatible = "socionext,ipcu-device";</pre>
+<pre>        dst-unit = &lt;0x00000000&gt</span>;</pre>
+<pre>        dst-channel = &lt;0x00000003&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000019 0x00000004&gt</span>;</pre>
+<pre>        direction = "recv";</pre>
+<pre>    };</pre>
+<pre>    snrtos0&commat;4 {</pre>
+<pre>        compatible = "socionext,ipcu-device";</pre>
+<pre>        dst-unit = &lt;0x00000000&gt</span>;</pre>
+<pre>        dst-channel = &lt;0x00000004&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000001a 0x00000004&gt</span>;</pre>
+<pre>        direction = "recv";</pre>
+<pre>    };</pre>
+<pre>    snrtos0&commat;5 {</pre>
+<pre>        compatible = "socionext,ipcu-device";</pre>
+<pre>        dst-unit = &lt;0x00000000&gt</span>;</pre>
+<pre>        dst-channel = &lt;0x00000005&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000023 0x00000004&gt</span>;</pre>
+<pre>        direction = "send";</pre>
+<pre>    };</pre>
+<pre>    snrtos0&commat;6 {</pre>
+<pre>        compatible = "socionext,ipcu-device";</pre>
+<pre>        dst-unit = &lt;0x00000000&gt</span>;</pre>
+<pre>        dst-channel = &lt;0x00000006&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000001c 0x00000004&gt</span>;</pre>
+<pre>        direction = "recv";</pre>
+<pre>    };</pre>
+<pre>    snrtos0&commat;7 {</pre>
+<pre>        compatible = "socionext,ipcu-device";</pre>
+<pre>        dst-unit = &lt;0x00000000&gt</span>;</pre>
+<pre>        dst-channel = &lt;0x00000007&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000025 0x00000004&gt</span>;</pre>
+<pre>        direction = "send";</pre>
+<pre>    };</pre>
+<pre>    snrtos1&commat;1 {</pre>
+<pre>        compatible = "socionext,ipcu-device";</pre>
+<pre>        dst-unit = &lt;0x00000001&gt</span>;</pre>
+<pre>        dst-channel = &lt;0x00000001&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000002d 0x00000004&gt</span>;</pre>
+<pre>        direction = "send";</pre>
+<pre>    };</pre>
+<pre>    snrtos1&commat;2 {</pre>
+<pre>        compatible = "socionext,ipcu-device";</pre>
+<pre>        dst-unit = &lt;0x00000001&gt</span>;</pre>
+<pre>        dst-channel = &lt;0x00000002&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000028 0x00000004&gt</span>;</pre>
+<pre>        direction = "recv";</pre>
+<pre>    };</pre>
+<pre>    snrtos1&commat;3 {</pre>
+<pre>        compatible = "socionext,ipcu-device";</pre>
+<pre>        dst-unit = &lt;0x00000001&gt</span>;</pre>
+<pre>        dst-channel = &lt;0x00000003&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000002f 0x00000004&gt</span>;</pre>
+<pre>        direction = "send";</pre>
+<pre>    };</pre>
+<pre>    snrtos1&commat;4 {</pre>
+<pre>        compatible = "socionext,ipcu-device";</pre>
+<pre>        dst-unit = &lt;0x00000001&gt</span>;</pre>
+<pre>        dst-channel = &lt;0x00000004&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x0000002a 0x00000004&gt</span>;</pre>
+<pre>        direction = "recv";</pre>
+<pre>    };</pre>
+<pre>    snrtos1&commat;5 {</pre>
+<pre>        compatible = "socionext,ipcu-device";</pre>
+<pre>        dst-unit = &lt;0x00000001&gt</span>;</pre>
+<pre>        dst-channel = &lt;0x00000005&gt</span>;</pre>
+<pre>        interrupts = &lt;0x00000000 0x00000031 0x00000004&gt</span>;</pre>
+<pre>        direction = "send";</pre>
+<pre>    };</pre>
+<pre>    gpio-leds {</pre>
+<pre>        compatible = "gpio-leds";</pre>
+<pre>        led_dumy1 {</pre>
+<pre>            label = "led_dumy1";</pre>
+<pre>            gpios = &lt;0x0000001e 0x0000007c 0x00000000&gt</span>;</pre>
+<pre>            linux,default-trigger = "off";</pre>
+<pre>            status = "disabled";</pre>
+<pre>        };</pre>
+<pre>        led_dumy2 {</pre>
+<pre>            label = "led_dumy2";</pre>
+<pre>            gpios = &lt;0x0000001e 0x0000007b 0x00000000&gt</span>;</pre>
+<pre>            linux,default-trigger = "off";</pre>
+<pre>            status = "disabled";</pre>
+<pre>        };</pre>
+<pre>    };</pre>
+<pre>    gpio_keys {</pre>
+<pre>        compatible = "gpio-keys";</pre>
+<pre>        status = "disable";</pre>
+<pre>        key_dummy {</pre>
+<pre>            label = "keydummy";</pre>
+<pre>            gpios = &lt;0x0000001e 0x0000003d 0x00000000&gt</span>;</pre>
+<pre>            linux,code = &lt;0x0000001e&gt</span>;</pre>
+<pre>        };</pre>
+<pre>    };</pre>
+<pre>    fb_common {</pre>
+<pre>        ipcu_unit = &lt;0x00000001&gt</span>;</pre>
+<pre>        ipcu_ch = &lt;0x00000005 0x00000004&gt</span>;</pre>
+<pre>        reg = &lt;0x4ffffc00 0x00000300&gt</span>;</pre>
+<pre>    };</pre>
+<pre>};</pre>
+  <!-- content end -->
+</div>
+
+<a href="https://github.com/e-m-b-a/emba" title="github.com/e-m-b-a/emba" target="_blank">
+  <div id="buttonInfo" class="rectButtonVisible">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(2 2)"><g stroke="white" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="8"/><path d="M8.5 12.5v-4h-1"/><path d="M7.5 12.5h2"/></g><circle cx="8.5" cy="5.5" fill="white" r="1"/></g></svg>
+  </div>
+</a>
+<div id="buttonBack" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M9.5 14.5l4-4l-4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="buttonForward" class="nonClickable rectButtonVisible"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><path d="M11.5 14.5l-4-4l4-4" fill="none" stroke="#444" stroke-linecap="round" stroke-linejoin="round"/></svg></div> 
+<div id="buttonDown" class="rectButton" onclick="scrollDown()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5l-4 4l-4-4"/><path d="M14.5 10.5l-4 4l-4-4"/></g></svg></div>
+<div id="buttonUp" class="rectButton" onclick="scrollUp()"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 14.5l4-4l4 4"/><path d="M6.5 10.5l4-4l4 4"/></g></svg></div> 
+
+<script>
+window.onload = function () {
+  var buttons = document.getElementsByClassName("rectButton");
+  for (let i=0; i<buttons.length; i++) {
+    buttons[i].style.visibility = "visible";
+  }
+  var buttonDown = document.getElementById("buttonDown");
+  buttonDown.classList.add('rectButtonVisible');
+  buttonDown.classList.remove('rectButton');
+
+  var buttonUp = document.getElementById("buttonUp");
+  buttonUp.classList.add('rectButtonVisible');
+  buttonUp.classList.remove('rectButton');
+    
+  var buttonSizer = document.getElementById("buttonSizer");
+  buttonSizer.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+  if (document.getElementById("buttonTime") !== null) {
+    var buttonTime = document.getElementById("buttonTime");
+    buttonTime.style.bottom = "50px";
+  }
+  document.getElementById("expand").value = "+ Show more results";
+  document.getElementById("expand").className += " expand";
+  var embarkButton = document.getElementById("embark");
+  if ( !(embarkButton.href.includes("embarkBackUrl")) ) {
+    embarkButton.classList.remove('hidden');
+    document.getElementById("logoImage").src = "./../style/embark.svg";
+    document.getElementById("logo").style.background = "#2d2d2d";
+  }
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.getElementById("nav").style.visibility = "visible";
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.width = "50px";
+  document.getElementById("sidenav").scrollTop = 0;
+  document.getElementById("main").style.marginLeft = "50px";
+  document.getElementById("nav").style.visibility = "hidden";
+}
+
+function scrollDown() {
+  window.scrollTo(0,document.body.scrollHeight);
+}
+
+function scrollUp() {
+  window.scrollTo(0,0);
+}
+
+function buttonNav() {
+  var button = document.getElementById("buttonSizer");
+  if ( button.classList.contains('buttonOpen') ) {
+    button.classList.remove('buttonOpen');
+    button.classList.add('buttonClose');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 16.5v-4.978l-5-.022"/><path d="M18.5 2.5l-7 7"/><path d="M16.5 9.5l-5 .023V4.5"/><path d="M9.5 11.5l-7 7"/></g></svg>';
+    openNav();
+  } else if( button.classList.contains('buttonClose') ) {
+    button.classList.remove('buttonClose');
+    button.classList.add('buttonOpen');
+    button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="40" height="40" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="white" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 7.5v-5h-5"/><path d="M18.5 2.5l-6 5.929"/><path d="M7.5 18.5l-5 .023V13.5"/><path d="M8.5 12.5l-6 6"/></g></svg>';
+    closeNav();
+  };
+}
+
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 37:
+        document.getElementById("buttonForward").parentNode.click(); 
+        break;
+      case 39:
+        document.getElementById("buttonBack").parentNode.click();       
+        break;
+    }
+};
+</script>
+
+</body>
+</html>
