@@ -1,4 +1,4 @@
-# Ricoh GRIII(x) Firmware Exploration and Custom Application Development
+# Ricoh GRIII(x) Firmware Exploration
 
 ## Ricoh GR3(x)
 
