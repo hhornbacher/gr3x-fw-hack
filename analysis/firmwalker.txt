@@ -1,0 +1,491 @@
+***Firmware Directory***
+../../../assets/fwdc243b-v121/rootfs
+***Search for password files***
+##################################### passwd
+s/etc/passwd
+
+##################################### shadow
+s/license/shadow
+s/etc/shadow
+
+##################################### *.psk
+
+***Search for Unix-MD5 hashes***
+
+***List etc/ssl directory***
+insgesamt 20
+-rw-r--r-- 1 harry harry 10835 Jun 26 17:03 openssl.cnf
+
+***Search for SSL related files***
+##################################### *.crt
+
+##################################### *.pem
+
+##################################### *.cer
+
+##################################### *.p7b
+
+##################################### *.p12
+
+##################################### *.key
+
+
+***Search for SSH related files***
+##################################### authorized_keys
+
+##################################### *authorized_keys*
+
+##################################### host_key
+
+##################################### *host_key*
+
+##################################### id_rsa
+
+##################################### *id_rsa*
+
+##################################### id_dsa
+
+##################################### *id_dsa*
+
+##################################### *.pub
+
+
+***Search for files***
+##################################### *.conf
+s/usr/share/factory/etc/nsswitch.conf
+s/usr/share/dbus-1/session.conf
+s/usr/share/dbus-1/system.conf
+s/etc/hostapd-wpa2psk.conf
+s/etc/host.conf
+s/etc/bootchartd.conf
+s/etc/udhcpd.conf
+s/etc/wpa_supplicant.conf
+s/etc/syslog.conf
+s/etc/resolv.conf
+s/etc/dbus-1/session.conf
+s/etc/dbus-1/system.d/org.freedesktop.login1.conf
+s/etc/dbus-1/system.d/org.freedesktop.hostname1.conf
+s/etc/dbus-1/system.d/org.freedesktop.locale1.conf
+s/etc/dbus-1/system.d/org.freedesktop.machine1.conf
+s/etc/dbus-1/system.d/org.freedesktop.systemd1.conf
+s/etc/dbus-1/system.d/org.freedesktop.timedate1.conf
+s/etc/dbus-1/system.conf
+s/etc/systemd/timesyncd.conf
+s/etc/systemd/logind.conf
+s/etc/systemd/system.conf
+s/etc/systemd/user.conf
+s/etc/systemd/journald.conf
+s/etc/udev/udev.conf
+s/etc/tmpfiles.d/00-create-volatile.conf
+s/etc/ld.so.conf
+s/etc/hostapd-open.conf
+s/etc/nsswitch.conf
+
+##################################### *.cfg
+
+##################################### *.ini
+
+
+***Search for database related files***
+##################################### *.db
+
+##################################### *.sqlite
+
+##################################### *.sqlite3
+
+
+***Search for shell scripts***
+##################################### shell scripts
+s/lib/udev/storage.sh
+s/home/root/murata-driver/insmod.sh
+s/usr/bin/shutdown.sh
+s/usr/bin/ble_init.sh
+s/usr/bin/usb30dev_mtp_func_n.sh
+s/usr/bin/usb30dev_mtp_func.sh
+s/usr/bin/start_wlan.sh
+s/usr/bin/stop_wlan.sh
+
+***Search for other .bin files***
+##################################### bin files
+s/lib/modules/4.4.15/modules.alias.bin
+s/lib/modules/4.4.15/modules.dep.bin
+s/lib/modules/4.4.15/modules.builtin.bin
+s/lib/modules/4.4.15/modules.symbols.bin
+s/home/root/murata-driver/cyw43455_sta.bin
+s/home/root/murata-driver/cyw43455_softap.bin
+s/home/root/murata-driver/cyw43455_mfg.bin
+
+***Search for patterns in files***
+-------------------- upgrade --------------------
+s/lib/libext2fs.so.2.4
+s/home/root/murata-driver/bcmdhd.ko
+s/usr/sbin/wl
+s/usr/sbin/hostapd
+s/usr/bin/webapid
+
+-------------------- admin --------------------
+s/etc/passwd-
+s/etc/services
+s/etc/passwd
+
+-------------------- root --------------------
+s/license/libnl/COPYING.txt
+s/license/libnl/generic_LGPLv2.1.txt
+s/license/glibc/COPYING.LIB.txt
+s/license/glibc/generic_LGPLv2.1.txt
+s/license/xz/COPYING.LGPLv2.1.txt
+s/license/kmod/COPYING.txt
+s/license/kmod/generic_LGPL-2.1.txt
+s/license/acl/COPYING.LGPL.txt
+s/license/shadow/passwd.c.txt
+s/license/attr/COPYING.LGPL.txt
+s/license/libgcc/COPYING.LIB.txt
+s/license/update-rc.d/update-rc.d.txt
+s/license/systemd/LICENSE.LGPL2.1.txt
+s/license/systemd/generic_LGPLv2.1.txt
+s/license/e2fsprogs/NOTICE.txt
+s/lib/libmount.so.1.1.0
+s/lib/modules/4.4.15/kernel/fs/configfs/configfs.ko
+s/lib/libblkid.so.1.1.0
+s/lib/libsystemd.so.0.15.0
+s/lib/systemd/systemd-udevd
+s/lib/systemd/systemd
+s/lib/udev/storage.sh
+s/lib/udev/rules.d/60-persistent-storage.rules
+s/lib/udev/rules.d/60-persistent-storage-tape.rules
+s/sbin/e2fsck
+s/sbin/ldconfig
+s/sbin/fsck.ext2
+s/sbin/fsck.ext4dev
+s/sbin/fsck.ext3
+s/sbin/agetty
+s/sbin/vipw.shadow
+s/sbin/sulogin.util-linux
+s/sbin/fsck.util-linux
+s/sbin/fsck.ext4
+s/usr/lib/libcrypto.so.1.0.0
+s/usr/lib/libnss_mymachines.so.2
+s/usr/lib/libprotobuf.so.15.0.1
+s/usr/lib/libnl-3.so.200.23.0
+s/usr/lib/libgrpc_unsecure.so.4.0.0
+s/usr/sbin/wl
+s/usr/sbin/hostapd
+s/usr/share/dbus-1/system-services/org.freedesktop.login1.service
+s/usr/share/dbus-1/system-services/org.freedesktop.timedate1.service
+s/usr/share/dbus-1/system-services/org.freedesktop.machine1.service
+s/usr/share/dbus-1/system-services/org.freedesktop.locale1.service
+s/usr/share/dbus-1/system-services/org.freedesktop.systemd1.service
+s/usr/share/dbus-1/system-services/org.freedesktop.hostname1.service
+s/usr/share/dbus-1/system.conf
+s/usr/bin/mtpd
+s/usr/bin/dbus-launch
+s/usr/bin/ble_init.sh
+s/usr/bin/dbus-daemon
+s/usr/bin/start_wlan.sh
+s/bin/su.shadow
+s/bin/systemd-firstboot
+s/bin/udevadm
+s/bin/busybox.suid
+s/bin/kmod
+s/bin/journalctl
+s/bin/systemctl
+s/bin/systemd-sysusers
+s/bin/systemd-tmpfiles
+s/bin/systemd-machine-id-setup
+s/bin/systemd-tty-ask-password-agent
+s/bin/systemd-inhibit
+s/bin/login.shadow
+s/bin/machinectl
+s/bin/loginctl
+s/bin/busybox.nosuid
+s/bin/systemd-hwdb
+s/bin/mount.util-linux
+s/etc/libnl/classid
+s/etc/passwd-
+s/etc/udhcpc.d/50default
+s/etc/gshadow-
+s/etc/fstab
+s/etc/rc.local
+s/etc/limits
+s/etc/shadow
+s/etc/group-
+s/etc/group
+s/etc/login.defs
+s/etc/gshadow
+s/etc/dbus-1/system.d/org.freedesktop.login1.conf
+s/etc/dbus-1/system.d/org.freedesktop.hostname1.conf
+s/etc/dbus-1/system.d/org.freedesktop.locale1.conf
+s/etc/dbus-1/system.d/org.freedesktop.machine1.conf
+s/etc/dbus-1/system.d/org.freedesktop.systemd1.conf
+s/etc/dbus-1/system.d/org.freedesktop.timedate1.conf
+s/etc/ssl/openssl.cnf
+s/etc/passwd
+s/etc/shadow-
+s/etc/systemd/logind.conf
+s/etc/securetty
+s/etc/profile
+
+-------------------- password --------------------
+s/license/xz/COPYING.GPLv3.txt
+s/license/shadow/COPYING.txt
+s/license/shadow/passwd.c.txt
+s/license/libgcc/COPYING3.txt
+s/license/libgcc/generic_GPLv3.txt
+s/lib/libc-2.24.so
+s/lib/systemd/systemd
+s/sbin/sulogin.util-linux
+s/usr/lib/libcrypto.so.1.0.0
+s/usr/lib/libdbus-1.so.3.14.7
+s/usr/sbin/hostapd
+s/bin/su.shadow
+s/bin/systemd-firstboot
+s/bin/busybox.suid
+s/bin/systemctl
+s/bin/systemd-tty-ask-password-agent
+s/bin/login.shadow
+s/bin/systemd-ask-password
+s/bin/machinectl
+s/bin/loginctl
+s/bin/busybox.nosuid
+s/etc/login.defs
+s/etc/ssl/openssl.cnf
+
+-------------------- passwd --------------------
+s/license/shadow/passwd.c.txt
+s/lib/libc-2.24.so
+s/lib/libnss_compat-2.24.so
+s/lib/libnss_files-2.24.so
+s/sbin/ldconfig
+s/sbin/vipw.shadow
+s/sbin/sulogin.util-linux
+s/usr/sbin/wl
+s/usr/share/factory/etc/nsswitch.conf
+s/bin/su.shadow
+s/bin/busybox.suid
+s/bin/systemd-sysusers
+s/bin/login.shadow
+s/bin/busybox.nosuid
+s/etc/busybox.links.suid
+s/etc/services
+s/etc/login.defs
+s/etc/nsswitch.conf
+
+-------------------- pwd --------------------
+s/license/shadow/passwd.c.txt
+s/lib/libc-2.24.so
+s/usr/lib/libnss_mymachines.so.2
+s/bin/systemd-firstboot
+s/bin/systemd-sysusers
+s/bin/login.shadow
+s/bin/busybox.nosuid
+s/etc/busybox.links.nosuid
+
+-------------------- dropbear --------------------
+s/sbin/finit
+
+-------------------- ssl --------------------
+s/license/mbedtls/copyright.txt
+s/license/openssl/LICENSE.txt
+s/usr/lib/libcrypto.so.1.0.0
+s/usr/lib/libssl.so.1.0.0
+s/usr/sbin/hostapd
+s/etc/services
+s/etc/ssl/openssl.cnf
+
+-------------------- private key --------------------
+s/usr/lib/libcrypto.so.1.0.0
+s/usr/lib/libssl.so.1.0.0
+s/usr/sbin/hostapd
+s/etc/ssl/openssl.cnf
+
+-------------------- telnet --------------------
+s/usr/lib/libcrypto.so.1.0.0
+s/bin/busybox.nosuid
+s/etc/services
+s/etc/busybox.links.nosuid
+
+-------------------- secret --------------------
+s/license/hostapd/README.txt
+s/usr/lib/libssl.so.1.0.0
+s/usr/lib/libdbus-1.so.3.14.7
+s/usr/sbin/hostapd
+s/etc/ssl/openssl.cnf
+
+-------------------- pgp --------------------
+s/lib/modules/4.4.15/kernel/drivers/usb/gadget/libcomposite.ko
+s/lib/libresolv-2.24.so
+s/home/root/murata-driver/cyw43455_sta.bin
+s/home/root/murata-driver/bcmdhd.ko
+s/home/root/murata-driver/cyw43455_softap.bin
+s/home/root/murata-driver/cyw43455_mfg.bin
+s/home/root/ble-driver/BCM4345C0_003.001.025.0144.0268.hcd
+s/usr/lib/libkmod.so.2.3.1
+s/bin/kmod
+
+-------------------- gpg --------------------
+s/home/root/murata-driver/cyw43455_sta.bin
+s/home/root/murata-driver/cyw43455_softap.bin
+s/home/root/murata-driver/cyw43455_mfg.bin
+s/usr/sbin/wl
+s/usr/bin/brcm_patchram_plus-custom_v06
+
+-------------------- token --------------------
+s/lib/libmount.so.1.1.0
+s/lib/ld-2.24.so
+s/lib/libc-2.24.so
+s/lib/libblkid.so.1.1.0
+s/lib/systemd/systemd-udevd
+s/lib/systemd/systemd
+s/sbin/ldconfig
+s/usr/lib/libexpat.so.1.6.2
+s/usr/lib/libcrypto.so.1.0.0
+s/usr/lib/libprotobuf.so.15.0.1
+s/usr/lib/libgrpc_unsecure.so.4.0.0
+s/usr/sbin/wl
+s/usr/sbin/hostapd
+s/usr/bin/brcm_patchram_plus-custom_v06
+s/bin/su.shadow
+s/bin/udevadm
+s/bin/busybox.nosuid
+
+-------------------- api key --------------------
+
+-------------------- oauth --------------------
+
+
+***Search for web servers***
+##################################### search for web servers
+##################################### apache
+
+##################################### lighttpd
+
+##################################### alphapd
+
+##################################### httpd
+
+
+***Search for important binaries***
+##################################### important binaries
+##################################### ssh
+
+##################################### sshd
+
+##################################### scp
+
+##################################### sftp
+
+##################################### tftp
+
+##################################### dropbear
+
+##################################### busybox
+s/license/busybox
+s/bin/busybox
+
+##################################### telnet
+
+##################################### telnetd
+
+##################################### openssl
+s/license/openssl
+
+
+***Search for ip addresses***
+##################################### ip addresses
+0.0.0.0
+1.2.3.4
+127.0.0.1
+129.219.13.81
+192.168.0.1
+192.168.0.10
+192.168.0.2
+192.168.0.20
+192.168.0.22
+192.168.0.254
+192.168.10.10
+192.168.10.2
+192.168.1.1
+192.168.11.5
+255.255.0.0
+255.255.255.0
+8.8.8.8
+
+***Search for urls***
+##################################### urls
+http://0pointer.de
+http://casper.beckman.uiuc.edu
+http://cgit.freedesktop.org
+http://chasen.aist-nara.ac.jp
+http://code.google.com
+http://e2fsprogs.sourceforge.net.  If you need to make a distribution,
+http://freedesktop.org
+http://fsf.org
+http://git.qemu.org
+http://hdl.handle.net
+http://hostap.epitest.fi
+http://i.imgur.com
+http://lao-dictionary.googlecode.com
+http://lists.freedesktop.org
+http://mustache.github.io
+http://opensource.org
+https://coveralls.io
+https://docs.google.com
+https://github.com
+https://kinvolk.io) offers professional engineering
+https://sourceforge.net
+https://tls.mbed.org)
+https://travis-ci.org
+http://superuser.com
+http://tools.ietf.org
+http://tukaani.org
+http://www.apache.org
+http://www.denobula.com
+http://www.domain.dom
+http://www.freebsd.org
+http://www.freedesktop.org
+http://www.freeradius.org
+http://www.gnu.org
+http://www.iana.org
+http://www.ieee802.org
+http://www.missl.cs.umd.edu
+http://www.open1x.org) and Windows
+http://www.openssl.org
+http://www.pythonlabs.com
+http://www.unicode.org
+http://www.wi-fi.org
+
+***Search for emails***
+##################################### emails
+aeb@cwi.nl
+ajt@debian.org
+chris@kinvolk.io
+cmartin@bigfoot.com
+c-tsai4@uiuc.edu
+eay@cryptsoft.com
+git@github.com
+gladkov.alexey@gmail.com
+hare@suse.de
+jloup@gzip.org
+johnsonm@redhat.com
+jon@gtex02.us.es
+josh@cooper.edu
+jseward@bzip.org
+j@w1.fi
+kirkland@canonical.com
+ldv@altlinux.org
+madler@alumni.caltech.edu
+md@linux.it
+mohaps@gmail.com
+morgan@kernel.org
+moshier@na-net.ornl.gov
+openssl-core@openssl.org.
+pb@handhelds.org
+rpurdie@openedhand.com
+serial-getty@.servic
+seth.forshee@canonical.com
+Software.Distribution@CS.CMU.EDU
+Tim@Rikers.org
+tjh@cryptsoft.com
+tobias@et-inf.fho-emden.de
+tytso@mit.edu
+zefram@dcs.warwick.ac.uk

@@ -1,0 +1,488 @@
+ERROR: instr_000608ec_1: Call target at 00054560 does not exist
+ERROR: instr_00060900_1: Call target at 00054560 does not exist
+ERROR: instr_00060958_1: Call target at 00054560 does not exist
+ERROR: instr_00060978_1: Call target at 00054560 does not exist
+ERROR: instr_00060998_1: Call target at 00054560 does not exist
+ERROR: instr_000609b8_1: Call target at 00054560 does not exist
+ERROR: instr_000609d8_1: Call target at 00054560 does not exist
+ERROR: instr_00060a9c_1: Call target at 00054560 does not exist
+ERROR: instr_00060ab0_1: Call target at 00054560 does not exist
+ERROR: instr_00060b08_1: Call target at 00054560 does not exist
+ERROR: instr_00060b28_1: Call target at 00054560 does not exist
+ERROR: instr_00060b48_1: Call target at 00054560 does not exist
+ERROR: instr_00060b68_1: Call target at 00054560 does not exist
+ERROR: instr_00060b88_1: Call target at 00054560 does not exist
+ERROR: instr_00060ba8_1: Call target at 00054560 does not exist
+ERROR: instr_00060bc8_1: Call target at 00054560 does not exist
+ERROR: instr_00060be8_1: Call target at 00054560 does not exist
+ERROR: instr_00060c08_1: Call target at 00054560 does not exist
+ERROR: instr_00060c28_1: Call target at 00054560 does not exist
+ERROR: instr_000610dc_1: Call target at 000544b8 does not exist
+ERROR: instr_00061774_1: Call target at 00054560 does not exist
+ERROR: instr_00061790_1: Call target at 00054560 does not exist
+ERROR: instr_000617ac_1: Call target at 00054560 does not exist
+ERROR: instr_000617c8_1: Call target at 00054560 does not exist
+ERROR: instr_000617e4_1: Call target at 00054560 does not exist
+ERROR: instr_00061800_1: Call target at 00054560 does not exist
+ERROR: instr_0006181c_1: Call target at 00054560 does not exist
+ERROR: instr_000619f0_1: Call target at 00053e4c does not exist
+ERROR: instr_000621b0_1: Call target at 000543ec does not exist
+ERROR: instr_000621d8_1: Call target at 000543ec does not exist
+ERROR: instr_00062200_1: Call target at 000543ec does not exist
+ERROR: instr_00062228_1: Call target at 000543ec does not exist
+ERROR: instr_00062250_1: Call target at 000543ec does not exist
+ERROR: instr_00062278_1: Call target at 000543ec does not exist
+ERROR: instr_00063814_1: Call target at 00054560 does not exist
+ERROR: instr_00063828_1: Call target at 00054560 does not exist
+ERROR: instr_00063880_1: Call target at 00054560 does not exist
+ERROR: instr_000638a0_1: Call target at 00054560 does not exist
+ERROR: instr_000638c0_1: Call target at 00054560 does not exist
+ERROR: instr_000638e0_1: Call target at 00054560 does not exist
+ERROR: instr_00063900_1: Call target at 00054560 does not exist
+ERROR: instr_00063a20_1: Call target at 00054560 does not exist
+ERROR: instr_00063a34_1: Call target at 00054560 does not exist
+ERROR: instr_00063a8c_1: Call target at 00054560 does not exist
+ERROR: instr_00063aac_1: Call target at 00054560 does not exist
+ERROR: instr_00063acc_1: Call target at 00054560 does not exist
+ERROR: instr_00063aec_1: Call target at 00054560 does not exist
+ERROR: instr_00063b0c_1: Call target at 00054560 does not exist
+ERROR: instr_00063b2c_1: Call target at 00054560 does not exist
+ERROR: instr_00063b4c_1: Call target at 00054560 does not exist
+ERROR: instr_00063b6c_1: Call target at 00054560 does not exist
+ERROR: instr_00063b8c_1: Call target at 00054560 does not exist
+ERROR: instr_00063bac_1: Call target at 00054560 does not exist
+ERROR: instr_000692f8_1: Call target at 00053e4c does not exist
+ERROR: instr_00069384_1: Call target at 00053e4c does not exist
+ERROR: instr_000693ec_1: Call target at 00053e4c does not exist
+ERROR: instr_00069e84_1: Call target at 00054560 does not exist
+ERROR: instr_0006b3b4_1: Call target at 00054560 does not exist
+ERROR: instr_0006bcb8_1: Call target at 00054560 does not exist
+ERROR: instr_0006c088_1: Call target at 00054560 does not exist
+ERROR: instr_0006c0c4_1: Call target at 00054560 does not exist
+ERROR: instr_0006c334_1: Call target at 00054560 does not exist
+ERROR: instr_0006c3cc_1: Call target at 00054560 does not exist
+ERROR: instr_0006c3e4_1: Call target at 00054560 does not exist
+ERROR: instr_0006c3fc_1: Call target at 00054560 does not exist
+ERROR: instr_0006c408_1: Call target at 000544b8 does not exist
+ERROR: instr_0006c4fc_1: Call target at 00054560 does not exist
+ERROR: instr_00070768_1: Jump target at 0007076c does not exist
+ERROR: instr_00070768_19: Jump target at 0007076c does not exist
+ERROR: instr_0007e9b4_1: Call target at 000543ec does not exist
+ERROR: instr_0007e9dc_1: Call target at 000543ec does not exist
+ERROR: instr_0007ea04_1: Call target at 000543ec does not exist
+ERROR: instr_0007eba4_1: Call target at 00054758 does not exist
+ERROR: instr_0008937c_1: Call target at 00054560 does not exist
+ERROR: instr_000897e0_1: Call target at 00054560 does not exist
+ERROR: instr_00089c44_1: Call target at 00054560 does not exist
+ERROR: instr_0008a0a8_1: Call target at 00054560 does not exist
+ERROR: instr_0008a50c_1: Call target at 00054560 does not exist
+ERROR: instr_0008a970_1: Call target at 00054560 does not exist
+ERROR: instr_0008b24c_1: Call target at 000543ec does not exist
+ERROR: instr_0008fc70_1: Call target at 00054560 does not exist
+ERROR: instr_00090468_1: Call target at 00054560 does not exist
+ERROR: instr_000906f4_1: Call target at 000543ec does not exist
+ERROR: instr_000932a8_1: Call target at 0005447c does not exist
+ERROR: instr_00095b5c_1: Call target at 0005447c does not exist
+ERROR: instr_000965f8_1: Call target at 0005447c does not exist
+ERROR: instr_000995dc_1: Call target at 0005447c does not exist
+ERROR: instr_000999e8_1: Call target at 0005447c does not exist
+ERROR: instr_0009c000_1: Call target at 0005447c does not exist
+ERROR: instr_0009cf18_1: Call target at 0005447c does not exist
+ERROR: instr_0009d90c_1: Call target at 0005447c does not exist
+ERROR: instr_000a08f0_1: Call target at 0005447c does not exist
+ERROR: instr_000a0cfc_1: Call target at 0005447c does not exist
+ERROR: instr_000a512c_1: Call target at 0005447c does not exist
+ERROR: instr_000a6418_1: Call target at 0005447c does not exist
+ERROR: instr_000a93ec_1: Call target at 00054560 does not exist
+ERROR: instr_000a95ac_1: Call target at 000544b8 does not exist
+ERROR: instr_000a95b8_1: Call target at 000544b8 does not exist
+ERROR: instr_000a9628_1: Call target at 000544b8 does not exist
+ERROR: instr_000a9634_1: Call target at 000544b8 does not exist
+ERROR: instr_000a9894_1: Call target at 00054560 does not exist
+ERROR: instr_000a9a54_1: Call target at 000544b8 does not exist
+ERROR: instr_000a9a60_1: Call target at 000544b8 does not exist
+ERROR: instr_000a9ad0_1: Call target at 000544b8 does not exist
+ERROR: instr_000a9adc_1: Call target at 000544b8 does not exist
+ERROR: instr_000a9f08_1: Call target at 000544b8 does not exist
+ERROR: instr_000a9f14_1: Call target at 000544b8 does not exist
+ERROR: instr_000a9f84_1: Call target at 000544b8 does not exist
+ERROR: instr_000a9f90_1: Call target at 000544b8 does not exist
+ERROR: instr_000aa36c_1: Call target at 000544b8 does not exist
+ERROR: instr_000aa378_1: Call target at 000544b8 does not exist
+ERROR: instr_000aa3e8_1: Call target at 000544b8 does not exist
+ERROR: instr_000aa3f4_1: Call target at 000544b8 does not exist
+ERROR: instr_000aa718_1: Call target at 000544b8 does not exist
+ERROR: instr_000aa724_1: Call target at 000544b8 does not exist
+ERROR: instr_000aad30_1: Call target at 000544b8 does not exist
+ERROR: instr_000aad3c_1: Call target at 000544b8 does not exist
+ERROR: instr_000ab348_1: Call target at 000544b8 does not exist
+ERROR: instr_000ab354_1: Call target at 000544b8 does not exist
+ERROR: instr_000ab960_1: Call target at 000544b8 does not exist
+ERROR: instr_000ab96c_1: Call target at 000544b8 does not exist
+ERROR: instr_000af184_1: Call target at 0005447c does not exist
+ERROR: instr_000b009c_1: Call target at 0005447c does not exist
+ERROR: instr_000b0a90_1: Call target at 0005447c does not exist
+ERROR: instr_000b3a74_1: Call target at 0005447c does not exist
+ERROR: instr_000b3e80_1: Call target at 0005447c does not exist
+ERROR: instr_000b51a4_1: Call target at 0005447c does not exist
+ERROR: instr_000b5928_1: Call target at 0005447c does not exist
+ERROR: instr_000b6280_1: Call target at 0005447c does not exist
+ERROR: instr_000b67c0_1: Call target at 0005447c does not exist
+ERROR: instr_000b7118_1: Call target at 0005447c does not exist
+ERROR: instr_000b8240_1: Call target at 0005447c does not exist
+ERROR: instr_000b92a4_1: Call target at 0005447c does not exist
+ERROR: instr_000ba308_1: Call target at 0005447c does not exist
+ERROR: instr_000badf8_1: Call target at 000544b8 does not exist
+ERROR: instr_000bae04_1: Call target at 000544b8 does not exist
+ERROR: instr_000bb4c0_1: Call target at 000544b8 does not exist
+ERROR: instr_000bb4cc_1: Call target at 000544b8 does not exist
+ERROR: instr_000bbb88_1: Call target at 000544b8 does not exist
+ERROR: instr_000bbb94_1: Call target at 000544b8 does not exist
+ERROR: instr_000bc290_1: Call target at 0005447c does not exist
+ERROR: instr_000bc658_1: Call target at 0005447c does not exist
+ERROR: instr_000bccc8_1: Call target at 0005447c does not exist
+ERROR: instr_000bd090_1: Call target at 0005447c does not exist
+ERROR: instr_000bd700_1: Call target at 0005447c does not exist
+ERROR: instr_000bdac8_1: Call target at 0005447c does not exist
+ERROR: instr_000be658_1: Call target at 0005447c does not exist
+ERROR: instr_000bf6b4_1: Call target at 0005447c does not exist
+ERROR: instr_000c0c58_1: Call target at 0005447c does not exist
+ERROR: instr_000c1064_1: Call target at 0005447c does not exist
+ERROR: instr_000c1ee4_1: Call target at 0005447c does not exist
+ERROR: instr_000c2630_1: Call target at 0005447c does not exist
+ERROR: instr_000c4058_1: Call target at 0005447c does not exist
+ERROR: instr_000c433c_1: Call target at 0005447c does not exist
+ERROR: instr_000c4d30_1: Call target at 0005447c does not exist
+ERROR: instr_000c5de4_1: Call target at 0005447c does not exist
+ERROR: instr_000cb27c_1: Call target at 0005447c does not exist
+ERROR: instr_000cb688_1: Call target at 0005447c does not exist
+ERROR: instr_000cbe04_1: Call target at 0005447c does not exist
+ERROR: instr_000cc210_1: Call target at 0005447c does not exist
+INFO: Function Signature Analysis @ sub_00059be8: Unexpected stack parameter size
+INFO: Function Signature Analysis @ sub_0005a158: Unexpected stack parameter size
+INFO: Function Signature Analysis @ sub_0005a69c: Unexpected stack parameter size
+INFO: Function Signature Analysis @ sub_0005a69c: Unexpected stack parameter size
+INFO: Function Signature Analysis @ sub_0005acdc: Unexpected stack parameter size
+INFO: Function Signature Analysis @ sub_0005acdc: Unexpected stack parameter size
+INFO: Function Signature Analysis @ sub_0005b2e8: Unexpected stack parameter size
+INFO: Function Signature Analysis @ sub_00060cd0: Unexpected stack parameter size
+INFO: Function Signature Analysis @ sub_00070b44: Unexpected stack parameter size
+INFO: Function Signature Analysis @ sub_00092938: Unexpected stack parameter size
+[CWE134] (0.1) (Externally Controlled Format String) Potential externally controlled format string for call to snprintf at 0005b80c
+[CWE134] (0.1) (Externally Controlled Format String) Potential externally controlled format string for call to snprintf at 0005b838
+[CWE134] (0.1) (Externally Controlled Format String) Potential externally controlled format string for call to snprintf at 0005b8a8
+[CWE134] (0.1) (Externally Controlled Format String) Potential externally controlled format string for call to snprintf at 0005b8c8
+[CWE134] (0.1) (Externally Controlled Format String) Potential externally controlled format string for call to snprintf at 0005bd54
+[CWE134] (0.1) (Externally Controlled Format String) Potential externally controlled format string for call to snprintf at 0005bd80
+[CWE134] (0.1) (Externally Controlled Format String) Potential externally controlled format string for call to snprintf at 0005bdf0
+[CWE134] (0.1) (Externally Controlled Format String) Potential externally controlled format string for call to snprintf at 0005be10
+[CWE415] (0.3) (Double Free) Object may have been freed before at 00069554
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 00066e60
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 0006743c
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000675a0
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 0006776c
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 00067aec
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 00092f44
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 00097290
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 00097d04
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 0009bc9c
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 0009e5a4
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 0009f018
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000a1c38
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000a1cdc
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000a1d80
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000a1e24
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000a1ec8
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000a1f6c
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000a2010
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000aa018
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000aa47c
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000aee20
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000b1728
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000b219c
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000b4bb0
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000b4c54
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000b4cf8
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000b4d9c
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000b4e40
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000bb078
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000bb740
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000bbe08
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000be2f4
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000c034c
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000c1adc
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000c1b80
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000c6a7c
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000c74f0
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000c7f64
+[CWE416] (0.3) (Use After Free) Access through a dangling pointer at 000c95a0
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00055aec may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00056734 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 0005674c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00056824 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 0005683c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000569dc may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 0005734c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00057354 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00057404 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000591bc may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00062c9c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 0006597c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00066848 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00066850 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00066854 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00066880 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 0006688c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00066894 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00066ae4 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00066aec may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00066af0 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00066b1c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00066b28 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00066b30 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00066d94 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 0006715c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00067860 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00067868 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000679d8 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000679e0 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000679e4 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00067a10 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00067a1c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00067a24 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000694fc may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00069514 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 0006bfc4 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 0006c04c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000705e8 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 0007670c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00076720 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00076724 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00076728 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000767bc may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000767c4 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00076a44 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00076a4c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00076a98 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00076a9c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00076aa0 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00080084 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00080094 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00080098 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 0008034c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 0008035c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00080360 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00082fb8 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00083298 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000832a0 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000832a4 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00085474 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 0008547c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00093970 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00093b1c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00093b2c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00093b34 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00093b38 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00093b40 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00093b50 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00093b60 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00093b70 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000958f4 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 00095cec may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 0009b760 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000d06b8 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000d081c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000d08f0 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000d09c4 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000d10a8 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000d1904 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000d1964 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000d491c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000d4a80 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000d4b54 may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000d507c may result in a NULL dereference
+[CWE476] (0.2) (NULL Pointer Dereference) Memory access at 000d56f4 may result in a NULL dereference
+[CWE676] (0.1) (Use of Potentially Dangerous Function) grow (00056014) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) append<char> (00056114) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) fill_padding (000563a0) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) fill_padding (000563b0) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::AlignSpec> (00056470) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::AlignSpec> (00056520) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::AlignSpec> (00056534) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::AlignSpec> (00056570) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::AlignSpec> (00056590) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::AlignSpec> (000565b0) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::AlignSpec> (000565c0) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::FormatSpec> (00056f00) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::FormatSpec> (00056f8c) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::FormatSpec> (0005703c) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::FormatSpec> (00057050) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::FormatSpec> (00057088) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::FormatSpec> (000570a4) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::FormatSpec> (000570c0) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::FormatSpec> (000570d0) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::FormatSpec> (0005712c) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_str<char> (000571a8) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_str<char> (000571ec) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_str<char> (0005726c) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) format (00057b5c) -> memcmp
+[CWE676] (0.1) (Use of Potentially Dangerous Function) format (00058174) -> memcmp
+[CWE676] (0.1) (Use of Potentially Dangerous Function) format (00058868) -> strlen
+[CWE676] (0.1) (Use of Potentially Dangerous Function) format (000589e4) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) format (00058a10) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) format (00058ab8) -> strlen
+[CWE676] (0.1) (Use of Potentially Dangerous Function) format (00058e08) -> memcmp
+[CWE676] (0.1) (Use of Potentially Dangerous Function) FUN_0005969c (0005983c) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_int<int,fmt::FormatSpec> (00059f3c) -> strlen
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_int<int,fmt::FormatSpec> (00059fd4) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_int<int,fmt::FormatSpec> (0005a010) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_int<int,fmt::FormatSpec> (0005a12c) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_int<unsigned_int,fmt::FormatSpec> (0005a480) -> strlen
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_int<unsigned_int,fmt::FormatSpec> (0005a518) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_int<unsigned_int,fmt::FormatSpec> (0005a554) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_int<unsigned_int,fmt::FormatSpec> (0005a670) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_int<long_long,fmt::FormatSpec> (0005aac8) -> strlen
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_int<long_long,fmt::FormatSpec> (0005ab5c) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_int<long_long,fmt::FormatSpec> (0005ab94) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_int<long_long,fmt::FormatSpec> (0005acd4) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_int<unsigned_long_long,fmt::FormatSpec> (0005b0d4) -> strlen
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_int<unsigned_long_long,fmt::FormatSpec> (0005b168) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_int<unsigned_long_long,fmt::FormatSpec> (0005b1a0) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_int<unsigned_long_long,fmt::FormatSpec> (0005b2e0) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_int<bool,fmt::FormatSpec> (0005b500) -> strlen
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_double<double> (0005b80c) -> snprintf
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_double<double> (0005b838) -> snprintf
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_double<double> (0005b8a8) -> snprintf
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_double<double> (0005b8c8) -> snprintf
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_double<double> (0005b9ec) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_double<long_double> (0005bd54) -> snprintf
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_double<long_double> (0005bd80) -> snprintf
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_double<long_double> (0005bdf0) -> snprintf
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_double<long_double> (0005be10) -> snprintf
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_double<long_double> (0005bf34) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) CameraEventMessage (0005c628) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) GetBufferedCommand (0005c650) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) CameraRequest (0005cdc4) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) GetParameter (0005ce80) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) GetBufferedCommand (0005cff0) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) CameraResponse (0005d418) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) GetParameter (0005d4d4) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) InterfaceEventMessage (0005edb0) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) GetBufferedCommand (0005edd8) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) InterfaceRequest (0005f200) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) GetBufferedCommand (0005f228) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) InterfaceResponse (0005f650) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) GetBufferedCommand (0005f678) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) SetData (0005fbf0) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) GetData (00060034) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) InitLogger (00061094) -> strlen
+[CWE676] (0.1) (Use of Potentially Dangerous Function) SetLoglevel (000619cc) -> memcmp
+[CWE676] (0.1) (Use of Potentially Dangerous Function) operator+ (00063640) -> strlen
+[CWE676] (0.1) (Use of Potentially Dangerous Function) FUN_000636d0 (000636f0) -> strlen
+[CWE676] (0.1) (Use of Potentially Dangerous Function) FUN_00063708 (00063728) -> strlen
+[CWE676] (0.1) (Use of Potentially Dangerous Function) FUN_00064edc (00064f98) -> strlen
+[CWE676] (0.1) (Use of Potentially Dangerous Function) find (00065220) -> memcmp
+[CWE676] (0.1) (Use of Potentially Dangerous Function) find (00065258) -> memcmp
+[CWE676] (0.1) (Use of Potentially Dangerous Function) FUN_000655cc (0006562c) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) FUN_000655cc (00065664) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) FUN_000655cc (00065784) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_construct<char_const*> (00066df4) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_construct<char*> (000671bc) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) FUN_00067210 (000672f8) -> strlen
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>> (00067cec) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>> (00067d9c) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>> (00067db0) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>> (00067dec) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>> (00067e0c) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>> (00067e2c) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>> (00067e3c) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_int<unsigned_int,fmt::IntFormatSpec<unsigned_int,fmt::AlignTypeSpec<(char)0>,char>> (00068cf0) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) write_int<unsigned_int,fmt::IntFormatSpec<unsigned_int,fmt::AlignTypeSpec<(char)0>,char>> (00068d14) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) FUN_00068d1c (00068f98) -> strlen
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_insert_<std::pair<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>const,spdlog::level::level_enum>const&,std::_Rb_tree<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>const,spdlog::level::level_enum>,std::_Select1st<std::pair<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>const,spdlog::level::level_enum>>,std::less<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>,std::allocator<std::pair<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>const,spdlog::level::level_enum>>>::_Alloc_node> (000690dc) -> memcmp
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_get_insert_unique_pos (000691b8) -> memcmp
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_get_insert_unique_pos (000691f8) -> memcmp
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_get_insert_hint_unique_pos (000692b0) -> memcmp
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_get_insert_hint_unique_pos (000692d0) -> memcmp
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_emplace_hint_unique<std::piecewise_construct_t_const&,std::tuple<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>const&>,std::tuple<>> (0006951c) -> memcmp
+[CWE676] (0.1) (Use of Potentially Dangerous Function) FUN_00069598 (0006963c) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_find_before_node (000696e8) -> memcmp
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_rehash (000697c8) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) FUN_0006a42c (0006a548) -> memcmp
+[CWE676] (0.1) (Use of Potentially Dangerous Function) FUN_0006ad48 (0006ae9c) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) FUN_0006ad48 (0006aec8) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) main (0006c1d4) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) vector (0006c9e0) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) operator= (0006cad0) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) operator= (0006cae8) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) operator= (0006caf4) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) operator= (0006cafc) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) Run (0006f198) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_invoke (00070624) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_emplace_back_aux<unsigned_int&> (00070858) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) AddPropertyEventListener (00072ce8) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) RemovePropertyEventListener (0007338c) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) IssuePropertyEvent (00074934) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) FUN_000755d8 (000756b0) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_emplace_back_aux<unsigned_int_const&> (0007625c) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) ~_Hashtable (000764fc) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) ~_Hashtable (0007664c) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) __insertion_sort<__gnu_cxx::__normal_iterator<unsigned_int*,std::vector<unsigned_int,std::allocator<unsigned_int>>>,__gnu_cxx::__ops::_Iter_less_iter> (00076934) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_allocate_node<std::shared_ptr<camera_controller::remote_cameraif::CameraEventClient>const&,std::vector<unsigned_int,std::allocator<unsigned_int>>&> (00076b4c) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_rehash (00076c78) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_rehash (00076f20) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_insert_aux<unsigned_int> (00077120) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_insert_aux<unsigned_int> (000771f8) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_insert_aux<unsigned_int> (0007720c) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_insert_aux<unsigned_int_const&> (00077280) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_insert_aux<unsigned_int_const&> (00077358) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_insert_aux<unsigned_int_const&> (0007736c) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) CameraIFImpl (00079b1c) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) CameraCommandSync (0007c20c) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) ~_Hashtable (0007f650) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) ~_Hashtable (0007f6e8) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_rehash (0007feb0) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_rehash (00080178) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) FUN_000810a0 (000810bc) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) FUN_00082b20 (00082bf8) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) ~_Hashtable (00082e00) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_rehash (0008308c) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) CameraCommandSync (00086ff0) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) Reserve (0008785c) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_emplace_back_aux<unsigned_long_long> (00087a28) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) IssueEvent (00088778) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_emplace_back_aux<unsigned_int> (0008b524) -> memmove
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_find_before_node (0008b5e4) -> memcmp
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_rehash (0008b6d0) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) ~_Hashtable (0008c32c) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) ~_Hashtable (0008d02c) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_find_before_node (00090788) -> memcmp
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_rehash (00090874) -> memset
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_insert_equal<std::pair<grpc::string_ref,grpc::string_ref>> (000955e4) -> memcmp
+[CWE676] (0.1) (Use of Potentially Dangerous Function) _M_insert_equal<std::pair<grpc::string_ref,grpc::string_ref>> (000956b8) -> memcmp
+[CWE676] (0.1) (Use of Potentially Dangerous Function) find (00095804) -> memcmp
+[CWE676] (0.1) (Use of Potentially Dangerous Function) find (00095858) -> memcmp
+[CWE676] (0.1) (Use of Potentially Dangerous Function) CameraEventMessageRpc (0009ad9c) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) MergeFrom (0009af34) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) InterfaceCommandReply (000ad9ec) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) MergeFrom (000adb84) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) InterfaceCommandRequest (000ae040) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) MergeFrom (000ae1d8) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) CameraCommandReply (000ce1c0) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) MergeFrom (000ce358) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) CameraCommandRequest (000ce814) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) MergeFrom (000ce9ac) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) CameraPropertyEventListener (000d1d24) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) MergeFrom (000d1ef0) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) CameraExpStatusEventListener (000d2394) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) CameraStatusEventListener (000d24b0) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) MergeFrom (000d267c) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) MergeFrom (000d295c) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) FUN_000d3070 (000d317c) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) Reserve (000d33f0) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) DeviceCommandReceiver (000d5ab4) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) MergeFrom (000d5c80) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) PropertyCommandReceiver (000d6124) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) MergeFrom (000d62f0) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) InterfaceEventMessageRpc (000d77a0) -> memcpy
+[CWE676] (0.1) (Use of Potentially Dangerous Function) MergeFrom (000d7938) -> memcpy

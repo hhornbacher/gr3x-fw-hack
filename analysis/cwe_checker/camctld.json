@@ -1,0 +1,5640 @@
+[
+  {
+    "name": "CWE134",
+    "version": "0.1",
+    "addresses": [
+      "0005b80c"
+    ],
+    "tids": [
+      "instr_0005b80c_1"
+    ],
+    "symbols": [
+      "snprintf"
+    ],
+    "other": [],
+    "description": "(Externally Controlled Format String) Potential externally controlled format string for call to snprintf at 0005b80c"
+  },
+  {
+    "name": "CWE134",
+    "version": "0.1",
+    "addresses": [
+      "0005b838"
+    ],
+    "tids": [
+      "instr_0005b838_1"
+    ],
+    "symbols": [
+      "snprintf"
+    ],
+    "other": [],
+    "description": "(Externally Controlled Format String) Potential externally controlled format string for call to snprintf at 0005b838"
+  },
+  {
+    "name": "CWE134",
+    "version": "0.1",
+    "addresses": [
+      "0005b8a8"
+    ],
+    "tids": [
+      "instr_0005b8a8_1"
+    ],
+    "symbols": [
+      "snprintf"
+    ],
+    "other": [],
+    "description": "(Externally Controlled Format String) Potential externally controlled format string for call to snprintf at 0005b8a8"
+  },
+  {
+    "name": "CWE134",
+    "version": "0.1",
+    "addresses": [
+      "0005b8c8"
+    ],
+    "tids": [
+      "instr_0005b8c8_1"
+    ],
+    "symbols": [
+      "snprintf"
+    ],
+    "other": [],
+    "description": "(Externally Controlled Format String) Potential externally controlled format string for call to snprintf at 0005b8c8"
+  },
+  {
+    "name": "CWE134",
+    "version": "0.1",
+    "addresses": [
+      "0005bd54"
+    ],
+    "tids": [
+      "instr_0005bd54_1"
+    ],
+    "symbols": [
+      "snprintf"
+    ],
+    "other": [],
+    "description": "(Externally Controlled Format String) Potential externally controlled format string for call to snprintf at 0005bd54"
+  },
+  {
+    "name": "CWE134",
+    "version": "0.1",
+    "addresses": [
+      "0005bd80"
+    ],
+    "tids": [
+      "instr_0005bd80_1"
+    ],
+    "symbols": [
+      "snprintf"
+    ],
+    "other": [],
+    "description": "(Externally Controlled Format String) Potential externally controlled format string for call to snprintf at 0005bd80"
+  },
+  {
+    "name": "CWE134",
+    "version": "0.1",
+    "addresses": [
+      "0005bdf0"
+    ],
+    "tids": [
+      "instr_0005bdf0_1"
+    ],
+    "symbols": [
+      "snprintf"
+    ],
+    "other": [],
+    "description": "(Externally Controlled Format String) Potential externally controlled format string for call to snprintf at 0005bdf0"
+  },
+  {
+    "name": "CWE134",
+    "version": "0.1",
+    "addresses": [
+      "0005be10"
+    ],
+    "tids": [
+      "instr_0005be10_1"
+    ],
+    "symbols": [
+      "snprintf"
+    ],
+    "other": [],
+    "description": "(Externally Controlled Format String) Potential externally controlled format string for call to snprintf at 0005be10"
+  },
+  {
+    "name": "CWE415",
+    "version": "0.3",
+    "addresses": [
+      "00069554"
+    ],
+    "tids": [
+      "instr_00069554_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID instr_00069440_1 @ r0 may have been freed before at instr_0006954c_1.",
+        "Relevant callgraph TIDs: [sub_00069428]"
+      ]
+    ],
+    "description": "(Double Free) Object may have been freed before at 00069554"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "00066e60"
+    ],
+    "tids": [
+      "instr_00066e60_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_00066dfc @ sp may have been freed before at instr_00066e58_1.",
+        "Relevant callgraph TIDs: [sub_00066dfc]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 00066e60"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "0006743c"
+    ],
+    "tids": [
+      "instr_0006743c_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_00067210 @ sp may have been freed before at instr_00067438_1.",
+        "Relevant callgraph TIDs: [sub_00067210]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 0006743c"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000675a0"
+    ],
+    "tids": [
+      "instr_000675a0_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000674d8 @ sp may have been freed before at instr_0006756c_1.",
+        "Relevant callgraph TIDs: [sub_000674d8]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000675a0"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "0006776c"
+    ],
+    "tids": [
+      "instr_0006776c_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000674d8 @ sp may have been freed before at instr_0006756c_1.",
+        "Relevant callgraph TIDs: [sub_000674d8]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 0006776c"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "00067aec"
+    ],
+    "tids": [
+      "instr_00067aec_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_00067770 @ sp may have been freed before at instr_00067ae8_1.",
+        "Relevant callgraph TIDs: [sub_00067770]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 00067aec"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "00092f44"
+    ],
+    "tids": [
+      "instr_00092f44_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_00092ec0 @ sp may have been freed before at instr_00092f38_1.",
+        "Relevant callgraph TIDs: [sub_00092ec0]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 00092f44"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "00097290"
+    ],
+    "tids": [
+      "instr_00097290_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_00096df8 @ sp may have been freed before at instr_00096eec_1.",
+        "Relevant callgraph TIDs: [sub_00096df8]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 00097290"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "00097d04"
+    ],
+    "tids": [
+      "instr_00097d04_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_0009786c @ sp may have been freed before at instr_00097960_1.",
+        "Relevant callgraph TIDs: [sub_0009786c]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 00097d04"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "0009bc9c"
+    ],
+    "tids": [
+      "instr_0009bc9c_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_0009bc18 @ sp may have been freed before at instr_0009bc90_1.",
+        "Relevant callgraph TIDs: [sub_0009bc18]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 0009bc9c"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "0009e5a4"
+    ],
+    "tids": [
+      "instr_0009e5a4_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_0009e10c @ sp may have been freed before at instr_0009e200_1.",
+        "Relevant callgraph TIDs: [sub_0009e10c]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 0009e5a4"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "0009f018"
+    ],
+    "tids": [
+      "instr_0009f018_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_0009eb80 @ sp may have been freed before at instr_0009ec74_1.",
+        "Relevant callgraph TIDs: [sub_0009eb80]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 0009f018"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000a1c38"
+    ],
+    "tids": [
+      "instr_000a1c38_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000a1bb4 @ sp may have been freed before at instr_000a1c2c_1.",
+        "Relevant callgraph TIDs: [sub_000a1bb4]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000a1c38"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000a1cdc"
+    ],
+    "tids": [
+      "instr_000a1cdc_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000a1c58 @ sp may have been freed before at instr_000a1cd0_1.",
+        "Relevant callgraph TIDs: [sub_000a1c58]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000a1cdc"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000a1d80"
+    ],
+    "tids": [
+      "instr_000a1d80_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000a1cfc @ sp may have been freed before at instr_000a1d74_1.",
+        "Relevant callgraph TIDs: [sub_000a1cfc]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000a1d80"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000a1e24"
+    ],
+    "tids": [
+      "instr_000a1e24_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000a1da0 @ sp may have been freed before at instr_000a1e18_1.",
+        "Relevant callgraph TIDs: [sub_000a1da0]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000a1e24"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000a1ec8"
+    ],
+    "tids": [
+      "instr_000a1ec8_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000a1e44 @ sp may have been freed before at instr_000a1ebc_1.",
+        "Relevant callgraph TIDs: [sub_000a1e44]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000a1ec8"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000a1f6c"
+    ],
+    "tids": [
+      "instr_000a1f6c_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000a1ee8 @ sp may have been freed before at instr_000a1f60_1.",
+        "Relevant callgraph TIDs: [sub_000a1ee8]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000a1f6c"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000a2010"
+    ],
+    "tids": [
+      "instr_000a2010_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000a1f8c @ sp may have been freed before at instr_000a2004_1.",
+        "Relevant callgraph TIDs: [sub_000a1f8c]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000a2010"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000aa018"
+    ],
+    "tids": [
+      "instr_000aa018_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000a9cd8 @ sp may have been freed before at instr_000a9d98_1.",
+        "Relevant callgraph TIDs: [sub_000a9cd8]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000aa018"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000aa47c"
+    ],
+    "tids": [
+      "instr_000aa47c_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000aa13c @ sp may have been freed before at instr_000aa1fc_1.",
+        "Relevant callgraph TIDs: [sub_000aa13c]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000aa47c"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000aee20"
+    ],
+    "tids": [
+      "instr_000aee20_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000aed9c @ sp may have been freed before at instr_000aee14_1.",
+        "Relevant callgraph TIDs: [sub_000aed9c]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000aee20"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000b1728"
+    ],
+    "tids": [
+      "instr_000b1728_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000b1290 @ sp may have been freed before at instr_000b1384_1.",
+        "Relevant callgraph TIDs: [sub_000b1290]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000b1728"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000b219c"
+    ],
+    "tids": [
+      "instr_000b219c_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000b1d04 @ sp may have been freed before at instr_000b1df8_1.",
+        "Relevant callgraph TIDs: [sub_000b1d04]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000b219c"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000b4bb0"
+    ],
+    "tids": [
+      "instr_000b4bb0_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000b4b2c @ sp may have been freed before at instr_000b4ba4_1.",
+        "Relevant callgraph TIDs: [sub_000b4b2c]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000b4bb0"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000b4c54"
+    ],
+    "tids": [
+      "instr_000b4c54_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000b4bd0 @ sp may have been freed before at instr_000b4c48_1.",
+        "Relevant callgraph TIDs: [sub_000b4bd0]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000b4c54"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000b4cf8"
+    ],
+    "tids": [
+      "instr_000b4cf8_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000b4c74 @ sp may have been freed before at instr_000b4cec_1.",
+        "Relevant callgraph TIDs: [sub_000b4c74]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000b4cf8"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000b4d9c"
+    ],
+    "tids": [
+      "instr_000b4d9c_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000b4d18 @ sp may have been freed before at instr_000b4d90_1.",
+        "Relevant callgraph TIDs: [sub_000b4d18]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000b4d9c"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000b4e40"
+    ],
+    "tids": [
+      "instr_000b4e40_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000b4dbc @ sp may have been freed before at instr_000b4e34_1.",
+        "Relevant callgraph TIDs: [sub_000b4dbc]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000b4e40"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000bb078"
+    ],
+    "tids": [
+      "instr_000bb078_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000bab08 @ sp may have been freed before at instr_000babfc_1.",
+        "Relevant callgraph TIDs: [sub_000bab08]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000bb078"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000bb740"
+    ],
+    "tids": [
+      "instr_000bb740_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000bb1d0 @ sp may have been freed before at instr_000bb2c4_1.",
+        "Relevant callgraph TIDs: [sub_000bb1d0]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000bb740"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000bbe08"
+    ],
+    "tids": [
+      "instr_000bbe08_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000bb898 @ sp may have been freed before at instr_000bb98c_1.",
+        "Relevant callgraph TIDs: [sub_000bb898]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000bbe08"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000be2f4"
+    ],
+    "tids": [
+      "instr_000be2f4_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000be270 @ sp may have been freed before at instr_000be2e8_1.",
+        "Relevant callgraph TIDs: [sub_000be270]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000be2f4"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000c034c"
+    ],
+    "tids": [
+      "instr_000c034c_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000bfeb4 @ sp may have been freed before at instr_000bffa8_1.",
+        "Relevant callgraph TIDs: [sub_000bfeb4]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000c034c"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000c1adc"
+    ],
+    "tids": [
+      "instr_000c1adc_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000c1a58 @ sp may have been freed before at instr_000c1ad0_1.",
+        "Relevant callgraph TIDs: [sub_000c1a58]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000c1adc"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000c1b80"
+    ],
+    "tids": [
+      "instr_000c1b80_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000c1afc @ sp may have been freed before at instr_000c1b74_1.",
+        "Relevant callgraph TIDs: [sub_000c1afc]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000c1b80"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000c6a7c"
+    ],
+    "tids": [
+      "instr_000c6a7c_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000c65e4 @ sp may have been freed before at instr_000c66d8_1.",
+        "Relevant callgraph TIDs: [sub_000c65e4]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000c6a7c"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000c74f0"
+    ],
+    "tids": [
+      "instr_000c74f0_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000c7058 @ sp may have been freed before at instr_000c714c_1.",
+        "Relevant callgraph TIDs: [sub_000c7058]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000c74f0"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000c7f64"
+    ],
+    "tids": [
+      "instr_000c7f64_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000c7acc @ sp may have been freed before at instr_000c7bc0_1.",
+        "Relevant callgraph TIDs: [sub_000c7acc]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000c7f64"
+  },
+  {
+    "name": "CWE416",
+    "version": "0.3",
+    "addresses": [
+      "000c95a0"
+    ],
+    "tids": [
+      "instr_000c95a0_1"
+    ],
+    "symbols": [],
+    "other": [
+      [
+        "Accessed ID sub_000c9108 @ sp may have been freed before at instr_000c91fc_1.",
+        "Relevant callgraph TIDs: [sub_000c9108]"
+      ]
+    ],
+    "description": "(Use After Free) Access through a dangling pointer at 000c95a0"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00055aec"
+    ],
+    "tids": [
+      "instr_00055aec_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00055aec may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00056734"
+    ],
+    "tids": [
+      "instr_00056734_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00056734 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "0005674c"
+    ],
+    "tids": [
+      "instr_0005674c_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 0005674c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00056824"
+    ],
+    "tids": [
+      "instr_00056824_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00056824 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "0005683c"
+    ],
+    "tids": [
+      "instr_0005683c_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 0005683c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000569dc"
+    ],
+    "tids": [
+      "instr_000569dc_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000569dc may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "0005734c"
+    ],
+    "tids": [
+      "instr_0005734c_7"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 0005734c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00057354"
+    ],
+    "tids": [
+      "instr_00057354_3"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00057354 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00057404"
+    ],
+    "tids": [
+      "instr_00057404_5"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00057404 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000591bc"
+    ],
+    "tids": [
+      "instr_000591bc_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000591bc may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00062c9c"
+    ],
+    "tids": [
+      "instr_00062c9c_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00062c9c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "0006597c"
+    ],
+    "tids": [
+      "instr_0006597c_5"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 0006597c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00066848"
+    ],
+    "tids": [
+      "instr_00066848_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00066848 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00066850"
+    ],
+    "tids": [
+      "instr_00066850_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00066850 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00066854"
+    ],
+    "tids": [
+      "instr_00066854_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00066854 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00066880"
+    ],
+    "tids": [
+      "instr_00066880_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00066880 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "0006688c"
+    ],
+    "tids": [
+      "instr_0006688c_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 0006688c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00066894"
+    ],
+    "tids": [
+      "instr_00066894_5"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00066894 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00066ae4"
+    ],
+    "tids": [
+      "instr_00066ae4_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00066ae4 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00066aec"
+    ],
+    "tids": [
+      "instr_00066aec_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00066aec may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00066af0"
+    ],
+    "tids": [
+      "instr_00066af0_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00066af0 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00066b1c"
+    ],
+    "tids": [
+      "instr_00066b1c_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00066b1c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00066b28"
+    ],
+    "tids": [
+      "instr_00066b28_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00066b28 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00066b30"
+    ],
+    "tids": [
+      "instr_00066b30_5"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00066b30 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00066d94"
+    ],
+    "tids": [
+      "instr_00066d94_4"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00066d94 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "0006715c"
+    ],
+    "tids": [
+      "instr_0006715c_4"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 0006715c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00067860"
+    ],
+    "tids": [
+      "instr_00067860_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00067860 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00067868"
+    ],
+    "tids": [
+      "instr_00067868_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00067868 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000679d8"
+    ],
+    "tids": [
+      "instr_000679d8_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000679d8 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000679e0"
+    ],
+    "tids": [
+      "instr_000679e0_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000679e0 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000679e4"
+    ],
+    "tids": [
+      "instr_000679e4_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000679e4 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00067a10"
+    ],
+    "tids": [
+      "instr_00067a10_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00067a10 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00067a1c"
+    ],
+    "tids": [
+      "instr_00067a1c_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00067a1c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00067a24"
+    ],
+    "tids": [
+      "instr_00067a24_5"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00067a24 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000694fc"
+    ],
+    "tids": [
+      "instr_000694fc_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000694fc may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00069514"
+    ],
+    "tids": [
+      "instr_00069514_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00069514 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "0006bfc4"
+    ],
+    "tids": [
+      "instr_0006bfc4_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 0006bfc4 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "0006c04c"
+    ],
+    "tids": [
+      "instr_0006c04c_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 0006c04c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000705e8"
+    ],
+    "tids": [
+      "instr_000705e8_2"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000705e8 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "0007670c"
+    ],
+    "tids": [
+      "instr_0007670c_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 0007670c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00076720"
+    ],
+    "tids": [
+      "instr_00076720_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00076720 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00076724"
+    ],
+    "tids": [
+      "instr_00076724_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00076724 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00076728"
+    ],
+    "tids": [
+      "instr_00076728_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00076728 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000767bc"
+    ],
+    "tids": [
+      "instr_000767bc_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000767bc may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000767c4"
+    ],
+    "tids": [
+      "instr_000767c4_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000767c4 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00076a44"
+    ],
+    "tids": [
+      "instr_00076a44_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00076a44 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00076a4c"
+    ],
+    "tids": [
+      "instr_00076a4c_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00076a4c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00076a98"
+    ],
+    "tids": [
+      "instr_00076a98_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00076a98 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00076a9c"
+    ],
+    "tids": [
+      "instr_00076a9c_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00076a9c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00076aa0"
+    ],
+    "tids": [
+      "instr_00076aa0_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00076aa0 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00080084"
+    ],
+    "tids": [
+      "instr_00080084_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00080084 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00080094"
+    ],
+    "tids": [
+      "instr_00080094_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00080094 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00080098"
+    ],
+    "tids": [
+      "instr_00080098_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00080098 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "0008034c"
+    ],
+    "tids": [
+      "instr_0008034c_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 0008034c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "0008035c"
+    ],
+    "tids": [
+      "instr_0008035c_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 0008035c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00080360"
+    ],
+    "tids": [
+      "instr_00080360_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00080360 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00082fb8"
+    ],
+    "tids": [
+      "instr_00082fb8_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00082fb8 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00083298"
+    ],
+    "tids": [
+      "instr_00083298_5"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00083298 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000832a0"
+    ],
+    "tids": [
+      "instr_000832a0_5"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000832a0 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000832a4"
+    ],
+    "tids": [
+      "instr_000832a4_5"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000832a4 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00085474"
+    ],
+    "tids": [
+      "instr_00085474_5"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00085474 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "0008547c"
+    ],
+    "tids": [
+      "instr_0008547c_5"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 0008547c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00093970"
+    ],
+    "tids": [
+      "instr_00093970_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00093970 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00093b1c"
+    ],
+    "tids": [
+      "instr_00093b1c_3"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00093b1c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00093b2c"
+    ],
+    "tids": [
+      "instr_00093b2c_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00093b2c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00093b34"
+    ],
+    "tids": [
+      "instr_00093b34_5"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00093b34 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00093b38"
+    ],
+    "tids": [
+      "instr_00093b38_5"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00093b38 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00093b40"
+    ],
+    "tids": [
+      "instr_00093b40_4"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00093b40 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00093b50"
+    ],
+    "tids": [
+      "instr_00093b50_3"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00093b50 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00093b60"
+    ],
+    "tids": [
+      "instr_00093b60_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00093b60 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00093b70"
+    ],
+    "tids": [
+      "instr_00093b70_4"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00093b70 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000958f4"
+    ],
+    "tids": [
+      "instr_000958f4_5"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000958f4 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "00095cec"
+    ],
+    "tids": [
+      "instr_00095cec_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 00095cec may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "0009b760"
+    ],
+    "tids": [
+      "instr_0009b760_1"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 0009b760 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000d06b8"
+    ],
+    "tids": [
+      "instr_000d06b8_2"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000d06b8 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000d081c"
+    ],
+    "tids": [
+      "instr_000d081c_2"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000d081c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000d08f0"
+    ],
+    "tids": [
+      "instr_000d08f0_2"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000d08f0 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000d09c4"
+    ],
+    "tids": [
+      "instr_000d09c4_2"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000d09c4 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000d10a8"
+    ],
+    "tids": [
+      "instr_000d10a8_5"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000d10a8 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000d1904"
+    ],
+    "tids": [
+      "instr_000d1904_5"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000d1904 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000d1964"
+    ],
+    "tids": [
+      "instr_000d1964_5"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000d1964 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000d491c"
+    ],
+    "tids": [
+      "instr_000d491c_2"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000d491c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000d4a80"
+    ],
+    "tids": [
+      "instr_000d4a80_2"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000d4a80 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000d4b54"
+    ],
+    "tids": [
+      "instr_000d4b54_2"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000d4b54 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000d507c"
+    ],
+    "tids": [
+      "instr_000d507c_5"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000d507c may result in a NULL dereference"
+  },
+  {
+    "name": "CWE476",
+    "version": "0.2",
+    "addresses": [
+      "000d56f4"
+    ],
+    "tids": [
+      "instr_000d56f4_5"
+    ],
+    "symbols": [],
+    "other": [],
+    "description": "(NULL Pointer Dereference) Memory access at 000d56f4 may result in a NULL dereference"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00056014"
+    ],
+    "tids": [
+      "instr_00056014_1"
+    ],
+    "symbols": [
+      "grow"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) grow (00056014) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00056114"
+    ],
+    "tids": [
+      "instr_00056114_1"
+    ],
+    "symbols": [
+      "append<char>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) append<char> (00056114) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000563a0"
+    ],
+    "tids": [
+      "instr_000563a0_1"
+    ],
+    "symbols": [
+      "fill_padding"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) fill_padding (000563a0) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000563b0"
+    ],
+    "tids": [
+      "instr_000563b0_1"
+    ],
+    "symbols": [
+      "fill_padding"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) fill_padding (000563b0) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00056470"
+    ],
+    "tids": [
+      "instr_00056470_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::AlignSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::AlignSpec> (00056470) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00056520"
+    ],
+    "tids": [
+      "instr_00056520_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::AlignSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::AlignSpec> (00056520) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00056534"
+    ],
+    "tids": [
+      "instr_00056534_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::AlignSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::AlignSpec> (00056534) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00056570"
+    ],
+    "tids": [
+      "instr_00056570_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::AlignSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::AlignSpec> (00056570) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00056590"
+    ],
+    "tids": [
+      "instr_00056590_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::AlignSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::AlignSpec> (00056590) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000565b0"
+    ],
+    "tids": [
+      "instr_000565b0_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::AlignSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::AlignSpec> (000565b0) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000565c0"
+    ],
+    "tids": [
+      "instr_000565c0_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::AlignSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::AlignSpec> (000565c0) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00056f00"
+    ],
+    "tids": [
+      "instr_00056f00_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::FormatSpec> (00056f00) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00056f8c"
+    ],
+    "tids": [
+      "instr_00056f8c_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::FormatSpec> (00056f8c) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005703c"
+    ],
+    "tids": [
+      "instr_0005703c_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::FormatSpec> (0005703c) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00057050"
+    ],
+    "tids": [
+      "instr_00057050_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::FormatSpec> (00057050) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00057088"
+    ],
+    "tids": [
+      "instr_00057088_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::FormatSpec> (00057088) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000570a4"
+    ],
+    "tids": [
+      "instr_000570a4_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::FormatSpec> (000570a4) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000570c0"
+    ],
+    "tids": [
+      "instr_000570c0_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::FormatSpec> (000570c0) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000570d0"
+    ],
+    "tids": [
+      "instr_000570d0_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::FormatSpec> (000570d0) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005712c"
+    ],
+    "tids": [
+      "instr_0005712c_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::FormatSpec> (0005712c) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000571a8"
+    ],
+    "tids": [
+      "instr_000571a8_1"
+    ],
+    "symbols": [
+      "write_str<char>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_str<char> (000571a8) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000571ec"
+    ],
+    "tids": [
+      "instr_000571ec_1"
+    ],
+    "symbols": [
+      "write_str<char>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_str<char> (000571ec) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005726c"
+    ],
+    "tids": [
+      "instr_0005726c_1"
+    ],
+    "symbols": [
+      "write_str<char>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_str<char> (0005726c) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00057b5c"
+    ],
+    "tids": [
+      "instr_00057b5c_1"
+    ],
+    "symbols": [
+      "format"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcmp"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) format (00057b5c) -> memcmp"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00058174"
+    ],
+    "tids": [
+      "instr_00058174_1"
+    ],
+    "symbols": [
+      "format"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcmp"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) format (00058174) -> memcmp"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00058868"
+    ],
+    "tids": [
+      "instr_00058868_1"
+    ],
+    "symbols": [
+      "format"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "strlen"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) format (00058868) -> strlen"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000589e4"
+    ],
+    "tids": [
+      "instr_000589e4_1"
+    ],
+    "symbols": [
+      "format"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) format (000589e4) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00058a10"
+    ],
+    "tids": [
+      "instr_00058a10_1"
+    ],
+    "symbols": [
+      "format"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) format (00058a10) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00058ab8"
+    ],
+    "tids": [
+      "instr_00058ab8_1"
+    ],
+    "symbols": [
+      "format"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "strlen"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) format (00058ab8) -> strlen"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00058e08"
+    ],
+    "tids": [
+      "instr_00058e08_1"
+    ],
+    "symbols": [
+      "format"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcmp"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) format (00058e08) -> memcmp"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005983c"
+    ],
+    "tids": [
+      "instr_0005983c_1"
+    ],
+    "symbols": [
+      "FUN_0005969c"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) FUN_0005969c (0005983c) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00059f3c"
+    ],
+    "tids": [
+      "instr_00059f3c_1"
+    ],
+    "symbols": [
+      "write_int<int,fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "strlen"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_int<int,fmt::FormatSpec> (00059f3c) -> strlen"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00059fd4"
+    ],
+    "tids": [
+      "instr_00059fd4_1"
+    ],
+    "symbols": [
+      "write_int<int,fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_int<int,fmt::FormatSpec> (00059fd4) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005a010"
+    ],
+    "tids": [
+      "instr_0005a010_1"
+    ],
+    "symbols": [
+      "write_int<int,fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_int<int,fmt::FormatSpec> (0005a010) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005a12c"
+    ],
+    "tids": [
+      "instr_0005a12c_1"
+    ],
+    "symbols": [
+      "write_int<int,fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_int<int,fmt::FormatSpec> (0005a12c) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005a480"
+    ],
+    "tids": [
+      "instr_0005a480_1"
+    ],
+    "symbols": [
+      "write_int<unsigned_int,fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "strlen"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_int<unsigned_int,fmt::FormatSpec> (0005a480) -> strlen"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005a518"
+    ],
+    "tids": [
+      "instr_0005a518_1"
+    ],
+    "symbols": [
+      "write_int<unsigned_int,fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_int<unsigned_int,fmt::FormatSpec> (0005a518) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005a554"
+    ],
+    "tids": [
+      "instr_0005a554_1"
+    ],
+    "symbols": [
+      "write_int<unsigned_int,fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_int<unsigned_int,fmt::FormatSpec> (0005a554) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005a670"
+    ],
+    "tids": [
+      "instr_0005a670_1"
+    ],
+    "symbols": [
+      "write_int<unsigned_int,fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_int<unsigned_int,fmt::FormatSpec> (0005a670) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005aac8"
+    ],
+    "tids": [
+      "instr_0005aac8_1"
+    ],
+    "symbols": [
+      "write_int<long_long,fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "strlen"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_int<long_long,fmt::FormatSpec> (0005aac8) -> strlen"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005ab5c"
+    ],
+    "tids": [
+      "instr_0005ab5c_1"
+    ],
+    "symbols": [
+      "write_int<long_long,fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_int<long_long,fmt::FormatSpec> (0005ab5c) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005ab94"
+    ],
+    "tids": [
+      "instr_0005ab94_1"
+    ],
+    "symbols": [
+      "write_int<long_long,fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_int<long_long,fmt::FormatSpec> (0005ab94) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005acd4"
+    ],
+    "tids": [
+      "instr_0005acd4_1"
+    ],
+    "symbols": [
+      "write_int<long_long,fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_int<long_long,fmt::FormatSpec> (0005acd4) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005b0d4"
+    ],
+    "tids": [
+      "instr_0005b0d4_1"
+    ],
+    "symbols": [
+      "write_int<unsigned_long_long,fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "strlen"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_int<unsigned_long_long,fmt::FormatSpec> (0005b0d4) -> strlen"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005b168"
+    ],
+    "tids": [
+      "instr_0005b168_1"
+    ],
+    "symbols": [
+      "write_int<unsigned_long_long,fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_int<unsigned_long_long,fmt::FormatSpec> (0005b168) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005b1a0"
+    ],
+    "tids": [
+      "instr_0005b1a0_1"
+    ],
+    "symbols": [
+      "write_int<unsigned_long_long,fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_int<unsigned_long_long,fmt::FormatSpec> (0005b1a0) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005b2e0"
+    ],
+    "tids": [
+      "instr_0005b2e0_1"
+    ],
+    "symbols": [
+      "write_int<unsigned_long_long,fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_int<unsigned_long_long,fmt::FormatSpec> (0005b2e0) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005b500"
+    ],
+    "tids": [
+      "instr_0005b500_1"
+    ],
+    "symbols": [
+      "write_int<bool,fmt::FormatSpec>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "strlen"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_int<bool,fmt::FormatSpec> (0005b500) -> strlen"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005b80c"
+    ],
+    "tids": [
+      "instr_0005b80c_1"
+    ],
+    "symbols": [
+      "write_double<double>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "snprintf"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_double<double> (0005b80c) -> snprintf"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005b838"
+    ],
+    "tids": [
+      "instr_0005b838_1"
+    ],
+    "symbols": [
+      "write_double<double>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "snprintf"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_double<double> (0005b838) -> snprintf"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005b8a8"
+    ],
+    "tids": [
+      "instr_0005b8a8_1"
+    ],
+    "symbols": [
+      "write_double<double>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "snprintf"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_double<double> (0005b8a8) -> snprintf"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005b8c8"
+    ],
+    "tids": [
+      "instr_0005b8c8_1"
+    ],
+    "symbols": [
+      "write_double<double>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "snprintf"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_double<double> (0005b8c8) -> snprintf"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005b9ec"
+    ],
+    "tids": [
+      "instr_0005b9ec_1"
+    ],
+    "symbols": [
+      "write_double<double>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_double<double> (0005b9ec) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005bd54"
+    ],
+    "tids": [
+      "instr_0005bd54_1"
+    ],
+    "symbols": [
+      "write_double<long_double>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "snprintf"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_double<long_double> (0005bd54) -> snprintf"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005bd80"
+    ],
+    "tids": [
+      "instr_0005bd80_1"
+    ],
+    "symbols": [
+      "write_double<long_double>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "snprintf"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_double<long_double> (0005bd80) -> snprintf"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005bdf0"
+    ],
+    "tids": [
+      "instr_0005bdf0_1"
+    ],
+    "symbols": [
+      "write_double<long_double>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "snprintf"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_double<long_double> (0005bdf0) -> snprintf"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005be10"
+    ],
+    "tids": [
+      "instr_0005be10_1"
+    ],
+    "symbols": [
+      "write_double<long_double>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "snprintf"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_double<long_double> (0005be10) -> snprintf"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005bf34"
+    ],
+    "tids": [
+      "instr_0005bf34_1"
+    ],
+    "symbols": [
+      "write_double<long_double>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_double<long_double> (0005bf34) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005c628"
+    ],
+    "tids": [
+      "instr_0005c628_1"
+    ],
+    "symbols": [
+      "CameraEventMessage"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) CameraEventMessage (0005c628) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005c650"
+    ],
+    "tids": [
+      "instr_0005c650_1"
+    ],
+    "symbols": [
+      "GetBufferedCommand"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) GetBufferedCommand (0005c650) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005cdc4"
+    ],
+    "tids": [
+      "instr_0005cdc4_1"
+    ],
+    "symbols": [
+      "CameraRequest"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) CameraRequest (0005cdc4) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005ce80"
+    ],
+    "tids": [
+      "instr_0005ce80_1"
+    ],
+    "symbols": [
+      "GetParameter"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) GetParameter (0005ce80) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005cff0"
+    ],
+    "tids": [
+      "instr_0005cff0_1"
+    ],
+    "symbols": [
+      "GetBufferedCommand"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) GetBufferedCommand (0005cff0) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005d418"
+    ],
+    "tids": [
+      "instr_0005d418_1"
+    ],
+    "symbols": [
+      "CameraResponse"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) CameraResponse (0005d418) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005d4d4"
+    ],
+    "tids": [
+      "instr_0005d4d4_1"
+    ],
+    "symbols": [
+      "GetParameter"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) GetParameter (0005d4d4) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005edb0"
+    ],
+    "tids": [
+      "instr_0005edb0_1"
+    ],
+    "symbols": [
+      "InterfaceEventMessage"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) InterfaceEventMessage (0005edb0) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005edd8"
+    ],
+    "tids": [
+      "instr_0005edd8_1"
+    ],
+    "symbols": [
+      "GetBufferedCommand"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) GetBufferedCommand (0005edd8) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005f200"
+    ],
+    "tids": [
+      "instr_0005f200_1"
+    ],
+    "symbols": [
+      "InterfaceRequest"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) InterfaceRequest (0005f200) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005f228"
+    ],
+    "tids": [
+      "instr_0005f228_1"
+    ],
+    "symbols": [
+      "GetBufferedCommand"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) GetBufferedCommand (0005f228) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005f650"
+    ],
+    "tids": [
+      "instr_0005f650_1"
+    ],
+    "symbols": [
+      "InterfaceResponse"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) InterfaceResponse (0005f650) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005f678"
+    ],
+    "tids": [
+      "instr_0005f678_1"
+    ],
+    "symbols": [
+      "GetBufferedCommand"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) GetBufferedCommand (0005f678) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0005fbf0"
+    ],
+    "tids": [
+      "instr_0005fbf0_1"
+    ],
+    "symbols": [
+      "SetData"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) SetData (0005fbf0) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00060034"
+    ],
+    "tids": [
+      "instr_00060034_1"
+    ],
+    "symbols": [
+      "GetData"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) GetData (00060034) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00061094"
+    ],
+    "tids": [
+      "instr_00061094_1"
+    ],
+    "symbols": [
+      "InitLogger"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "strlen"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) InitLogger (00061094) -> strlen"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000619cc"
+    ],
+    "tids": [
+      "instr_000619cc_1"
+    ],
+    "symbols": [
+      "SetLoglevel"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcmp"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) SetLoglevel (000619cc) -> memcmp"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00063640"
+    ],
+    "tids": [
+      "instr_00063640_1"
+    ],
+    "symbols": [
+      "operator+"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "strlen"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) operator+ (00063640) -> strlen"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000636f0"
+    ],
+    "tids": [
+      "instr_000636f0_1"
+    ],
+    "symbols": [
+      "FUN_000636d0"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "strlen"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) FUN_000636d0 (000636f0) -> strlen"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00063728"
+    ],
+    "tids": [
+      "instr_00063728_1"
+    ],
+    "symbols": [
+      "FUN_00063708"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "strlen"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) FUN_00063708 (00063728) -> strlen"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00064f98"
+    ],
+    "tids": [
+      "instr_00064f98_1"
+    ],
+    "symbols": [
+      "FUN_00064edc"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "strlen"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) FUN_00064edc (00064f98) -> strlen"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00065220"
+    ],
+    "tids": [
+      "instr_00065220_1"
+    ],
+    "symbols": [
+      "find"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcmp"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) find (00065220) -> memcmp"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00065258"
+    ],
+    "tids": [
+      "instr_00065258_1"
+    ],
+    "symbols": [
+      "find"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcmp"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) find (00065258) -> memcmp"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0006562c"
+    ],
+    "tids": [
+      "instr_0006562c_1"
+    ],
+    "symbols": [
+      "FUN_000655cc"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) FUN_000655cc (0006562c) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00065664"
+    ],
+    "tids": [
+      "instr_00065664_1"
+    ],
+    "symbols": [
+      "FUN_000655cc"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) FUN_000655cc (00065664) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00065784"
+    ],
+    "tids": [
+      "instr_00065784_1"
+    ],
+    "symbols": [
+      "FUN_000655cc"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) FUN_000655cc (00065784) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00066df4"
+    ],
+    "tids": [
+      "instr_00066df4_1"
+    ],
+    "symbols": [
+      "_M_construct<char_const*>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_construct<char_const*> (00066df4) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000671bc"
+    ],
+    "tids": [
+      "instr_000671bc_1"
+    ],
+    "symbols": [
+      "_M_construct<char*>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_construct<char*> (000671bc) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000672f8"
+    ],
+    "tids": [
+      "instr_000672f8_1"
+    ],
+    "symbols": [
+      "FUN_00067210"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "strlen"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) FUN_00067210 (000672f8) -> strlen"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00067cec"
+    ],
+    "tids": [
+      "instr_00067cec_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>> (00067cec) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00067d9c"
+    ],
+    "tids": [
+      "instr_00067d9c_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>> (00067d9c) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00067db0"
+    ],
+    "tids": [
+      "instr_00067db0_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>> (00067db0) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00067dec"
+    ],
+    "tids": [
+      "instr_00067dec_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>> (00067dec) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00067e0c"
+    ],
+    "tids": [
+      "instr_00067e0c_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>> (00067e0c) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00067e2c"
+    ],
+    "tids": [
+      "instr_00067e2c_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>> (00067e2c) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00067e3c"
+    ],
+    "tids": [
+      "instr_00067e3c_1"
+    ],
+    "symbols": [
+      "prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) prepare_int_buffer<fmt::IntFormatSpec<int,fmt::AlignTypeSpec<(char)0>,char>> (00067e3c) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00068cf0"
+    ],
+    "tids": [
+      "instr_00068cf0_1"
+    ],
+    "symbols": [
+      "write_int<unsigned_int,fmt::IntFormatSpec<unsigned_int,fmt::AlignTypeSpec<(char)0>,char>>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_int<unsigned_int,fmt::IntFormatSpec<unsigned_int,fmt::AlignTypeSpec<(char)0>,char>> (00068cf0) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00068d14"
+    ],
+    "tids": [
+      "instr_00068d14_1"
+    ],
+    "symbols": [
+      "write_int<unsigned_int,fmt::IntFormatSpec<unsigned_int,fmt::AlignTypeSpec<(char)0>,char>>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) write_int<unsigned_int,fmt::IntFormatSpec<unsigned_int,fmt::AlignTypeSpec<(char)0>,char>> (00068d14) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00068f98"
+    ],
+    "tids": [
+      "instr_00068f98_1"
+    ],
+    "symbols": [
+      "FUN_00068d1c"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "strlen"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) FUN_00068d1c (00068f98) -> strlen"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000690dc"
+    ],
+    "tids": [
+      "instr_000690dc_1"
+    ],
+    "symbols": [
+      "_M_insert_<std::pair<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>const,spdlog::level::level_enum>const&,std::_Rb_tree<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>const,spdlog::level::level_enum>,std::_Select1st<std::pair<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>const,spdlog::level::level_enum>>,std::less<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>,std::allocator<std::pair<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>const,spdlog::level::level_enum>>>::_Alloc_node>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcmp"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_insert_<std::pair<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>const,spdlog::level::level_enum>const&,std::_Rb_tree<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>const,spdlog::level::level_enum>,std::_Select1st<std::pair<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>const,spdlog::level::level_enum>>,std::less<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>,std::allocator<std::pair<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>const,spdlog::level::level_enum>>>::_Alloc_node> (000690dc) -> memcmp"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000691b8"
+    ],
+    "tids": [
+      "instr_000691b8_1"
+    ],
+    "symbols": [
+      "_M_get_insert_unique_pos"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcmp"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_get_insert_unique_pos (000691b8) -> memcmp"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000691f8"
+    ],
+    "tids": [
+      "instr_000691f8_1"
+    ],
+    "symbols": [
+      "_M_get_insert_unique_pos"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcmp"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_get_insert_unique_pos (000691f8) -> memcmp"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000692b0"
+    ],
+    "tids": [
+      "instr_000692b0_1"
+    ],
+    "symbols": [
+      "_M_get_insert_hint_unique_pos"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcmp"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_get_insert_hint_unique_pos (000692b0) -> memcmp"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000692d0"
+    ],
+    "tids": [
+      "instr_000692d0_1"
+    ],
+    "symbols": [
+      "_M_get_insert_hint_unique_pos"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcmp"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_get_insert_hint_unique_pos (000692d0) -> memcmp"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0006951c"
+    ],
+    "tids": [
+      "instr_0006951c_1"
+    ],
+    "symbols": [
+      "_M_emplace_hint_unique<std::piecewise_construct_t_const&,std::tuple<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>const&>,std::tuple<>>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcmp"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_emplace_hint_unique<std::piecewise_construct_t_const&,std::tuple<std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>const&>,std::tuple<>> (0006951c) -> memcmp"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0006963c"
+    ],
+    "tids": [
+      "instr_0006963c_1"
+    ],
+    "symbols": [
+      "FUN_00069598"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) FUN_00069598 (0006963c) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000696e8"
+    ],
+    "tids": [
+      "instr_000696e8_1"
+    ],
+    "symbols": [
+      "_M_find_before_node"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcmp"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_find_before_node (000696e8) -> memcmp"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000697c8"
+    ],
+    "tids": [
+      "instr_000697c8_1"
+    ],
+    "symbols": [
+      "_M_rehash"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_rehash (000697c8) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0006a548"
+    ],
+    "tids": [
+      "instr_0006a548_1"
+    ],
+    "symbols": [
+      "FUN_0006a42c"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcmp"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) FUN_0006a42c (0006a548) -> memcmp"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0006ae9c"
+    ],
+    "tids": [
+      "instr_0006ae9c_1"
+    ],
+    "symbols": [
+      "FUN_0006ad48"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) FUN_0006ad48 (0006ae9c) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0006aec8"
+    ],
+    "tids": [
+      "instr_0006aec8_1"
+    ],
+    "symbols": [
+      "FUN_0006ad48"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) FUN_0006ad48 (0006aec8) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0006c1d4"
+    ],
+    "tids": [
+      "instr_0006c1d4_1"
+    ],
+    "symbols": [
+      "main"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) main (0006c1d4) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0006c9e0"
+    ],
+    "tids": [
+      "instr_0006c9e0_1"
+    ],
+    "symbols": [
+      "vector"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) vector (0006c9e0) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0006cad0"
+    ],
+    "tids": [
+      "instr_0006cad0_1"
+    ],
+    "symbols": [
+      "operator="
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) operator= (0006cad0) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0006cae8"
+    ],
+    "tids": [
+      "instr_0006cae8_1"
+    ],
+    "symbols": [
+      "operator="
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) operator= (0006cae8) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0006caf4"
+    ],
+    "tids": [
+      "instr_0006caf4_1"
+    ],
+    "symbols": [
+      "operator="
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) operator= (0006caf4) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0006cafc"
+    ],
+    "tids": [
+      "instr_0006cafc_1"
+    ],
+    "symbols": [
+      "operator="
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) operator= (0006cafc) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0006f198"
+    ],
+    "tids": [
+      "instr_0006f198_1"
+    ],
+    "symbols": [
+      "Run"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) Run (0006f198) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00070624"
+    ],
+    "tids": [
+      "instr_00070624_1"
+    ],
+    "symbols": [
+      "_M_invoke"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_invoke (00070624) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00070858"
+    ],
+    "tids": [
+      "instr_00070858_1"
+    ],
+    "symbols": [
+      "_M_emplace_back_aux<unsigned_int&>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_emplace_back_aux<unsigned_int&> (00070858) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00072ce8"
+    ],
+    "tids": [
+      "instr_00072ce8_1"
+    ],
+    "symbols": [
+      "AddPropertyEventListener"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) AddPropertyEventListener (00072ce8) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0007338c"
+    ],
+    "tids": [
+      "instr_0007338c_1"
+    ],
+    "symbols": [
+      "RemovePropertyEventListener"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) RemovePropertyEventListener (0007338c) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00074934"
+    ],
+    "tids": [
+      "instr_00074934_1"
+    ],
+    "symbols": [
+      "IssuePropertyEvent"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) IssuePropertyEvent (00074934) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000756b0"
+    ],
+    "tids": [
+      "instr_000756b0_1"
+    ],
+    "symbols": [
+      "FUN_000755d8"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) FUN_000755d8 (000756b0) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0007625c"
+    ],
+    "tids": [
+      "instr_0007625c_1"
+    ],
+    "symbols": [
+      "_M_emplace_back_aux<unsigned_int_const&>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_emplace_back_aux<unsigned_int_const&> (0007625c) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000764fc"
+    ],
+    "tids": [
+      "instr_000764fc_1"
+    ],
+    "symbols": [
+      "~_Hashtable"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) ~_Hashtable (000764fc) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0007664c"
+    ],
+    "tids": [
+      "instr_0007664c_1"
+    ],
+    "symbols": [
+      "~_Hashtable"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) ~_Hashtable (0007664c) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00076934"
+    ],
+    "tids": [
+      "instr_00076934_1"
+    ],
+    "symbols": [
+      "__insertion_sort<__gnu_cxx::__normal_iterator<unsigned_int*,std::vector<unsigned_int,std::allocator<unsigned_int>>>,__gnu_cxx::__ops::_Iter_less_iter>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) __insertion_sort<__gnu_cxx::__normal_iterator<unsigned_int*,std::vector<unsigned_int,std::allocator<unsigned_int>>>,__gnu_cxx::__ops::_Iter_less_iter> (00076934) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00076b4c"
+    ],
+    "tids": [
+      "instr_00076b4c_1"
+    ],
+    "symbols": [
+      "_M_allocate_node<std::shared_ptr<camera_controller::remote_cameraif::CameraEventClient>const&,std::vector<unsigned_int,std::allocator<unsigned_int>>&>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_allocate_node<std::shared_ptr<camera_controller::remote_cameraif::CameraEventClient>const&,std::vector<unsigned_int,std::allocator<unsigned_int>>&> (00076b4c) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00076c78"
+    ],
+    "tids": [
+      "instr_00076c78_1"
+    ],
+    "symbols": [
+      "_M_rehash"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_rehash (00076c78) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00076f20"
+    ],
+    "tids": [
+      "instr_00076f20_1"
+    ],
+    "symbols": [
+      "_M_rehash"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_rehash (00076f20) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00077120"
+    ],
+    "tids": [
+      "instr_00077120_1"
+    ],
+    "symbols": [
+      "_M_insert_aux<unsigned_int>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_insert_aux<unsigned_int> (00077120) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000771f8"
+    ],
+    "tids": [
+      "instr_000771f8_1"
+    ],
+    "symbols": [
+      "_M_insert_aux<unsigned_int>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_insert_aux<unsigned_int> (000771f8) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0007720c"
+    ],
+    "tids": [
+      "instr_0007720c_1"
+    ],
+    "symbols": [
+      "_M_insert_aux<unsigned_int>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_insert_aux<unsigned_int> (0007720c) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00077280"
+    ],
+    "tids": [
+      "instr_00077280_1"
+    ],
+    "symbols": [
+      "_M_insert_aux<unsigned_int_const&>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_insert_aux<unsigned_int_const&> (00077280) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00077358"
+    ],
+    "tids": [
+      "instr_00077358_1"
+    ],
+    "symbols": [
+      "_M_insert_aux<unsigned_int_const&>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_insert_aux<unsigned_int_const&> (00077358) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0007736c"
+    ],
+    "tids": [
+      "instr_0007736c_1"
+    ],
+    "symbols": [
+      "_M_insert_aux<unsigned_int_const&>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_insert_aux<unsigned_int_const&> (0007736c) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00079b1c"
+    ],
+    "tids": [
+      "instr_00079b1c_1"
+    ],
+    "symbols": [
+      "CameraIFImpl"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) CameraIFImpl (00079b1c) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0007c20c"
+    ],
+    "tids": [
+      "instr_0007c20c_1"
+    ],
+    "symbols": [
+      "CameraCommandSync"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) CameraCommandSync (0007c20c) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0007f650"
+    ],
+    "tids": [
+      "instr_0007f650_1"
+    ],
+    "symbols": [
+      "~_Hashtable"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) ~_Hashtable (0007f650) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0007f6e8"
+    ],
+    "tids": [
+      "instr_0007f6e8_1"
+    ],
+    "symbols": [
+      "~_Hashtable"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) ~_Hashtable (0007f6e8) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0007feb0"
+    ],
+    "tids": [
+      "instr_0007feb0_1"
+    ],
+    "symbols": [
+      "_M_rehash"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_rehash (0007feb0) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00080178"
+    ],
+    "tids": [
+      "instr_00080178_1"
+    ],
+    "symbols": [
+      "_M_rehash"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_rehash (00080178) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000810bc"
+    ],
+    "tids": [
+      "instr_000810bc_1"
+    ],
+    "symbols": [
+      "FUN_000810a0"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) FUN_000810a0 (000810bc) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00082bf8"
+    ],
+    "tids": [
+      "instr_00082bf8_1"
+    ],
+    "symbols": [
+      "FUN_00082b20"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) FUN_00082b20 (00082bf8) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00082e00"
+    ],
+    "tids": [
+      "instr_00082e00_1"
+    ],
+    "symbols": [
+      "~_Hashtable"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) ~_Hashtable (00082e00) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0008308c"
+    ],
+    "tids": [
+      "instr_0008308c_1"
+    ],
+    "symbols": [
+      "_M_rehash"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_rehash (0008308c) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00086ff0"
+    ],
+    "tids": [
+      "instr_00086ff0_1"
+    ],
+    "symbols": [
+      "CameraCommandSync"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) CameraCommandSync (00086ff0) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0008785c"
+    ],
+    "tids": [
+      "instr_0008785c_1"
+    ],
+    "symbols": [
+      "Reserve"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) Reserve (0008785c) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00087a28"
+    ],
+    "tids": [
+      "instr_00087a28_1"
+    ],
+    "symbols": [
+      "_M_emplace_back_aux<unsigned_long_long>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_emplace_back_aux<unsigned_long_long> (00087a28) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00088778"
+    ],
+    "tids": [
+      "instr_00088778_1"
+    ],
+    "symbols": [
+      "IssueEvent"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) IssueEvent (00088778) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0008b524"
+    ],
+    "tids": [
+      "instr_0008b524_1"
+    ],
+    "symbols": [
+      "_M_emplace_back_aux<unsigned_int>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memmove"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_emplace_back_aux<unsigned_int> (0008b524) -> memmove"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0008b5e4"
+    ],
+    "tids": [
+      "instr_0008b5e4_1"
+    ],
+    "symbols": [
+      "_M_find_before_node"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcmp"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_find_before_node (0008b5e4) -> memcmp"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0008b6d0"
+    ],
+    "tids": [
+      "instr_0008b6d0_1"
+    ],
+    "symbols": [
+      "_M_rehash"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_rehash (0008b6d0) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0008c32c"
+    ],
+    "tids": [
+      "instr_0008c32c_1"
+    ],
+    "symbols": [
+      "~_Hashtable"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) ~_Hashtable (0008c32c) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0008d02c"
+    ],
+    "tids": [
+      "instr_0008d02c_1"
+    ],
+    "symbols": [
+      "~_Hashtable"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) ~_Hashtable (0008d02c) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00090788"
+    ],
+    "tids": [
+      "instr_00090788_1"
+    ],
+    "symbols": [
+      "_M_find_before_node"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcmp"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_find_before_node (00090788) -> memcmp"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00090874"
+    ],
+    "tids": [
+      "instr_00090874_1"
+    ],
+    "symbols": [
+      "_M_rehash"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memset"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_rehash (00090874) -> memset"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000955e4"
+    ],
+    "tids": [
+      "instr_000955e4_1"
+    ],
+    "symbols": [
+      "_M_insert_equal<std::pair<grpc::string_ref,grpc::string_ref>>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcmp"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_insert_equal<std::pair<grpc::string_ref,grpc::string_ref>> (000955e4) -> memcmp"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000956b8"
+    ],
+    "tids": [
+      "instr_000956b8_1"
+    ],
+    "symbols": [
+      "_M_insert_equal<std::pair<grpc::string_ref,grpc::string_ref>>"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcmp"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) _M_insert_equal<std::pair<grpc::string_ref,grpc::string_ref>> (000956b8) -> memcmp"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00095804"
+    ],
+    "tids": [
+      "instr_00095804_1"
+    ],
+    "symbols": [
+      "find"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcmp"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) find (00095804) -> memcmp"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "00095858"
+    ],
+    "tids": [
+      "instr_00095858_1"
+    ],
+    "symbols": [
+      "find"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcmp"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) find (00095858) -> memcmp"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0009ad9c"
+    ],
+    "tids": [
+      "instr_0009ad9c_1"
+    ],
+    "symbols": [
+      "CameraEventMessageRpc"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) CameraEventMessageRpc (0009ad9c) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "0009af34"
+    ],
+    "tids": [
+      "instr_0009af34_1"
+    ],
+    "symbols": [
+      "MergeFrom"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) MergeFrom (0009af34) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000ad9ec"
+    ],
+    "tids": [
+      "instr_000ad9ec_1"
+    ],
+    "symbols": [
+      "InterfaceCommandReply"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) InterfaceCommandReply (000ad9ec) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000adb84"
+    ],
+    "tids": [
+      "instr_000adb84_1"
+    ],
+    "symbols": [
+      "MergeFrom"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) MergeFrom (000adb84) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000ae040"
+    ],
+    "tids": [
+      "instr_000ae040_1"
+    ],
+    "symbols": [
+      "InterfaceCommandRequest"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) InterfaceCommandRequest (000ae040) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000ae1d8"
+    ],
+    "tids": [
+      "instr_000ae1d8_1"
+    ],
+    "symbols": [
+      "MergeFrom"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) MergeFrom (000ae1d8) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000ce1c0"
+    ],
+    "tids": [
+      "instr_000ce1c0_1"
+    ],
+    "symbols": [
+      "CameraCommandReply"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) CameraCommandReply (000ce1c0) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000ce358"
+    ],
+    "tids": [
+      "instr_000ce358_1"
+    ],
+    "symbols": [
+      "MergeFrom"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) MergeFrom (000ce358) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000ce814"
+    ],
+    "tids": [
+      "instr_000ce814_1"
+    ],
+    "symbols": [
+      "CameraCommandRequest"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) CameraCommandRequest (000ce814) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000ce9ac"
+    ],
+    "tids": [
+      "instr_000ce9ac_1"
+    ],
+    "symbols": [
+      "MergeFrom"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) MergeFrom (000ce9ac) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000d1d24"
+    ],
+    "tids": [
+      "instr_000d1d24_1"
+    ],
+    "symbols": [
+      "CameraPropertyEventListener"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) CameraPropertyEventListener (000d1d24) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000d1ef0"
+    ],
+    "tids": [
+      "instr_000d1ef0_1"
+    ],
+    "symbols": [
+      "MergeFrom"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) MergeFrom (000d1ef0) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000d2394"
+    ],
+    "tids": [
+      "instr_000d2394_1"
+    ],
+    "symbols": [
+      "CameraExpStatusEventListener"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) CameraExpStatusEventListener (000d2394) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000d24b0"
+    ],
+    "tids": [
+      "instr_000d24b0_1"
+    ],
+    "symbols": [
+      "CameraStatusEventListener"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) CameraStatusEventListener (000d24b0) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000d267c"
+    ],
+    "tids": [
+      "instr_000d267c_1"
+    ],
+    "symbols": [
+      "MergeFrom"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) MergeFrom (000d267c) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000d295c"
+    ],
+    "tids": [
+      "instr_000d295c_1"
+    ],
+    "symbols": [
+      "MergeFrom"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) MergeFrom (000d295c) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000d317c"
+    ],
+    "tids": [
+      "instr_000d317c_1"
+    ],
+    "symbols": [
+      "FUN_000d3070"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) FUN_000d3070 (000d317c) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000d33f0"
+    ],
+    "tids": [
+      "instr_000d33f0_1"
+    ],
+    "symbols": [
+      "Reserve"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) Reserve (000d33f0) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000d5ab4"
+    ],
+    "tids": [
+      "instr_000d5ab4_1"
+    ],
+    "symbols": [
+      "DeviceCommandReceiver"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) DeviceCommandReceiver (000d5ab4) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000d5c80"
+    ],
+    "tids": [
+      "instr_000d5c80_1"
+    ],
+    "symbols": [
+      "MergeFrom"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) MergeFrom (000d5c80) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000d6124"
+    ],
+    "tids": [
+      "instr_000d6124_1"
+    ],
+    "symbols": [
+      "PropertyCommandReceiver"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) PropertyCommandReceiver (000d6124) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000d62f0"
+    ],
+    "tids": [
+      "instr_000d62f0_1"
+    ],
+    "symbols": [
+      "MergeFrom"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) MergeFrom (000d62f0) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000d77a0"
+    ],
+    "tids": [
+      "instr_000d77a0_1"
+    ],
+    "symbols": [
+      "InterfaceEventMessageRpc"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) InterfaceEventMessageRpc (000d77a0) -> memcpy"
+  },
+  {
+    "name": "CWE676",
+    "version": "0.1",
+    "addresses": [
+      "000d7938"
+    ],
+    "tids": [
+      "instr_000d7938_1"
+    ],
+    "symbols": [
+      "MergeFrom"
+    ],
+    "other": [
+      [
+        "dangerous_function",
+        "memcpy"
+      ]
+    ],
+    "description": "(Use of Potentially Dangerous Function) MergeFrom (000d7938) -> memcpy"
+  }
+]
