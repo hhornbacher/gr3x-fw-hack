@@ -14,11 +14,18 @@ fi
 
 ASSET_PATH="${PROJECT_PATH}/assets/$(basename ${FIRMWARE_PATH%.bin})"
 
+for mock in mocks/*; do
+    echo "Compiling $(basename $mock)"
+    pushd $mock >/dev/null
+    cross build --target armv7-unknown-linux-gnueabi
+    popd >/dev/null
+done
 
 echo "Installing mocks"
-for mock in mocks/*/*.so; do
+for mock in mocks/*/target/armv7-unknown-linux-gnueabi/debug/*.so; do
 
-echo "Installing $(basename $mock)"
-cp "$mock" "${ASSET_PATH}/rootfs/usr/lib/"
+    mock_basename="$(basename $mock)"
+    echo "Installing $mock_basename"
+    cp "$mock" "${ASSET_PATH}/rootfs/usr/lib/"
 
 done

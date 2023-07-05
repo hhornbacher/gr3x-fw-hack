@@ -7,3 +7,6 @@
 *.bin
 /analysis/emba/default-scan-unpacked-fw/*
 !/analysis/emba/default-scan-unpacked-fw/html-report
+.venv
+*.gdb
+target

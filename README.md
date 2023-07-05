@@ -106,6 +106,10 @@ Moving forward, my focus will be on the following tasks:
   - bled
   - usbd / mtpd
 
+## Progress
+
+- [Improving mocks](progress/00-improving-mocks.md)
+
 ## Contributing
 
 I encourage contributions from the community to enhance the repository's content and improve the tools and utilities provided. If you have valuable insights, additional tools, or improvements to share, please submit a pull request or open an issue.
