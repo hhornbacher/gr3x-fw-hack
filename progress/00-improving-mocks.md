@@ -12,16 +12,16 @@ user.info camctld[75]: [camctl] logger has been initialized.
 user.info camctld[75]: [camctl] loglevel has been changed to (trace).
 user.info camctld[75]: ########## camera-controller-daemon ##########
 user.info camctld[75]: signal handler has been initialized.
-Rust: shmem_init_config(0x4fed0000, 0x30000, 0x50000000, 0x800000, 0xfffef944, 0xa )
+shmem_init_config(0x4fed0000, 0x30000, 0x50000000, 0x800000, 0xfffef944, 0xa )
 shmem_init_config -> Offset: 0x4fed0000
 shmem_init_config -> Length: 0x30000
-Rust: shmem_init(0x4fed0000, 0x30000, 0x50000000, 0x800000 )
+shmem_init(0x4fed0000, 0x30000, 0x50000000, 0x800000 )
 shmem_init -> Offset1: 0x4fed0000
 shmem_init -> Length1: 0x30000
 shmem_init -> Offset2: 0x50000000
 shmem_init -> Length2: 0x800000
 user.info camctld[75]: shmem init has done.
-Rust: FJ_IPCU_Open(0x1, 0xfffef7bb)
+FJ_IPCU_Open(0x1, 0xfffef7bb)
 Current state: InnerState {
     channels: [
         (
@@ -32,7 +32,7 @@ Current state: InnerState {
     receiver_cbs: [],
 }
 user.debug camctld[75]: [/usr/src/debug/camera-controller/1.0-r0/git/src/ipcu_wrapper/ipcu_channel.cpp line #19] [camctl] [IpcuChannel] leave constructor for ipcu(255).
-Rust: FJ_IPCU_Open(0x0, 0xfffef7bb)
+FJ_IPCU_Open(0x0, 0xfffef7bb)
 Current state: InnerState {
     channels: [
         (
@@ -47,7 +47,7 @@ Current state: InnerState {
     receiver_cbs: [],
 }
 user.debug camctld[75]: [/usr/src/debug/camera-controller/1.0-r0/git/src/ipcu_wrapper/ipcu_channel.cpp line #19] [camctl] [IpcuChannel] leave constructor for ipcu(255).
-Rust: FJ_IPCU_Open(0x4, 0xfffef7bb)
+FJ_IPCU_Open(0x4, 0xfffef7bb)
 Current state: InnerState {
     channels: [
         (
@@ -66,7 +66,7 @@ Current state: InnerState {
     receiver_cbs: [],
 }
 user.debug camctld[75]: [/usr/src/debug/camera-controller/1.0-r0/git/src/ipcu_wrapper/ipcu_channel.cpp line #19] [camctl] [IpcuChannel] leave constructor for ipcu(255).
-Rust: FJ_IPCU_Open(0xd, 0xfffef7bb)
+FJ_IPCU_Open(0xd, 0xfffef7bb)
 Current state: InnerState {
     channels: [
         (
@@ -89,7 +89,7 @@ Current state: InnerState {
     receiver_cbs: [],
 }
 user.debug camctld[75]: [/usr/src/debug/camera-controller/1.0-r0/git/src/ipcu_wrapper/ipcu_channel.cpp line #19] [camctl] [IpcuChannel] leave constructor for ipcu(255).
-Rust: FJ_IPCU_Open(0xc, 0xfffef7bb)
+FJ_IPCU_Open(0xc, 0xfffef7bb)
 Current state: InnerState {
     channels: [
         (
@@ -116,7 +116,7 @@ Current state: InnerState {
     receiver_cbs: [],
 }
 user.debug camctld[75]: [/usr/src/debug/camera-controller/1.0-r0/git/src/ipcu_wrapper/ipcu_channel.cpp line #19] [camctl] [IpcuChannel] leave constructor for ipcu(255).
-Rust: FJ_IPCU_Open(0x5, 0xfffef7bb)
+FJ_IPCU_Open(0x5, 0xfffef7bb)
 Current state: InnerState {
     channels: [
         (
@@ -147,7 +147,7 @@ Current state: InnerState {
     receiver_cbs: [],
 }
 user.debug camctld[75]: [/usr/src/debug/camera-controller/1.0-r0/git/src/ipcu_wrapper/ipcu_channel.cpp line #19] [camctl] [IpcuChannel] leave constructor for ipcu(255).
-Rust: FJ_IPCU_SetReceiverCB(0xff, 0x927e8)
+FJ_IPCU_SetReceiverCB(0xff, 0x927e8)
 Current state: InnerState {
     channels: [
         (
@@ -182,13 +182,13 @@ Current state: InnerState {
         ),
     ],
 }
-Rust: FJ_IPCU_SetReceiverCB(0xff, 0x927e8)
-Rust: FJ_IPCU_SetReceiverCB(0xff, 0x927e8)
+FJ_IPCU_SetReceiverCB(0xff, 0x927e8)
+FJ_IPCU_SetReceiverCB(0xff, 0x927e8)
 user.info camctld[75]: FinishBoot
 user.debug camctld[75]: [/usr/src/debug/camera-controller/1.0-r0/git/src/camera_core/cameraif_impl.cpp line #89] [ENTER] CameraCommandSync
 user.debug camctld[75]: [/usr/src/debug/camera-controller/1.0-r0/git/src/camera_core/camera_command_task.cpp line #44] [CamCmd] send: cmd(0x00000100), subcmd(0x00000100)
 user.debug camctld[75]: send: magic(0x5555aaaa), cmd(0x100), subcmd(0x100), reqid(1) param1(0x0), param2(0x0), param3(0x0), param4(0x0)
-Rust: FJ_IPCU_Send(0xff, 0xff73bae0, 0x24, 0x1)
+FJ_IPCU_Send(0xff, 0xff73bae0, 0x24, 0x1)
 Data: IpcuCommandBuffer {
     magic: 0x6666bbbb,
     unknown: 0x1,
@@ -249,7 +249,7 @@ These functions are called by `camctld` during its initialization process.
 
    The packet_ptr points to a structure I named `IpcuCommandBuffer`:
 
-   ```
+   ```rust
    IpcuCommandBuffer {
        magic: 0x6666bbbb,
        unknown: 0x1,
@@ -262,3 +262,114 @@ These functions are called by `camctld` during its initialization process.
        param4: 0x0,
    }
    ```
+
+## IPCU commands
+
+Based on the current system log (see below) I think I was able to identify several commands:
+
+- Get datetime property:
+
+```rust
+IpcuCommandBuffer {
+    magic: 0x6666bbbb,
+    unknown: 0x1,
+    cmd: 0xf0000000,
+    subcmd: 0x3,
+    reqid: 0x4,
+    param1: 0x8,
+    param2: 0x0,
+    param3: 0x0,
+    param4: 0x0,
+}
+```
+
+- Get manufacturer property:
+
+```rust
+IpcuCommandBuffer {
+    magic: 0x6666bbbb,
+    unknown: 0x1,
+    cmd: 0xf0000000,
+    subcmd: 0x3,
+    reqid: 0x5,
+    param1: 0x1,
+    param2: 0x0,
+    param3: 0x0,
+    param4: 0x0,
+}
+```
+
+- Get model property:
+
+```rust
+IpcuCommandBuffer {
+    magic: 0x6666bbbb,
+    unknown: 0x1,
+    cmd: 0xf0000000,
+    subcmd: 0x3,
+    reqid: 0x6,
+    param1: 0x2,
+    param2: 0x0,
+    param3: 0x0,
+    param4: 0x0,
+}
+```
+
+- Get serial property:
+
+```rust
+IpcuCommandBuffer {
+    magic: 0x6666bbbb,
+    unknown: 0x1,
+    cmd: 0xf0000000,
+    subcmd: 0x3,
+    reqid: 0x7,
+    param1: 0x3,
+    param2: 0x0,
+    param3: 0x0,
+    param4: 0x0,
+}
+```
+
+- Get version property:
+
+```rust
+IpcuCommandBuffer {
+    magic: 0x6666bbbb,
+    unknown: 0x1,
+    cmd: 0xf0000000,
+    subcmd: 0x3,
+    reqid: 0x8,
+    param1: 0x5,
+    param2: 0x0,
+    param3: 0x0,
+    param4: 0x0,
+}
+```
+
+- Still unknown:
+```rust
+IpcuCommandBuffer {
+    magic: 0x6666bbbb,
+    unknown: 0x1,
+    cmd: 0x100,
+    subcmd: 0x100,
+    reqid: 0x1,
+    param1: 0x0,
+    param2: 0x0,
+    param3: 0x0,
+    param4: 0x0,
+}
+
+IpcuCommandBuffer {
+    magic: 0x6666bbbb,
+    unknown: 0x1,
+    cmd: 0xf0000000,
+    subcmd: 0x3,
+    reqid: 0x2,
+    param1: 0x63,
+    param2: 0x0,
+    param3: 0x0,
+    param4: 0x0,
+}
+```
