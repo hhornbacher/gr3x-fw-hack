@@ -2,11 +2,11 @@
 
 I have decided to use Rust for mocking `libcmfwk` and `libshmem_manager`, as it is the language I am most comfortable with.
 By creating accurate mocks for these libraries, I aim to resolve the issue where `camctld` hangs while trying to send an IPCU message in the `CameraCommandSync` section and waiting for a response.
-The goal is to ensure the smooth execution of the boot process (`/etc/rc.local` / `docker/start.sh`). 
+The goal is to ensure the smooth execution of the boot process (`/etc/rc.local` / `docker/start.sh`).
 My current progress shows that `camctld` makes several calls to `FJ_IPCU_Open` and `FJ_IPCU_SetReceiverCB` with different parameters. It then tries to send an IPCU message using `FJ_IPCU_Send`.
 
-
 Current log:
+
 ```
 user.info camctld[75]: [camctl] logger has been initialized.
 user.info camctld[75]: [camctl] loglevel has been changed to (trace).
@@ -207,6 +207,7 @@ Data: IpcuCommandBuffer {
 The `libshmem_manager` library contains among others the following functions:
 
 1. `int shmem_init_config(addr1, len1, addr2, len2, cfg_ptr, cfg_len)`
+
    - Parameters:
      - addr1: 0x4fed0000
      - len1: 0x30000
@@ -222,8 +223,42 @@ The `libshmem_manager` library contains among others the following functions:
      - addr2: 0x50000000
      - len2: 0x800000
 
-
 These functions are called by `camctld` during its initialization process.
- 
+
 ## `libcmfwk` Functions
 
+1. `FJ_IPCU_SetReceiverCB(channel, callback)`
+
+   - Parameters:
+     - channel: 0xff
+     - callback: 0x927e8
+
+2. `FJ_IPCU_Open(channel, unknown_address)`
+
+   - Parameters:
+     - channel: 0x00 / 0x01 / 0x04 / 0x05 / 0x0c / 0x0d
+     - unknown_address: 0xfffef7bb
+
+3. `FJ_IPCU_Send(channel, packet_ptr, packet_length, ipcu_type)`
+
+   - Parameters:
+     - channel: 0xff
+     - packet_ptr: 0xff73bae0
+     - packet_length: 0x24 = 36 bytes
+     - ipcu_type: 0x01
+
+   The packet_ptr points to a structure I named `IpcuCommandBuffer`:
+
+   ```
+   IpcuCommandBuffer {
+       magic: 0x6666bbbb,
+       unknown: 0x1,
+       cmd: 0x100,
+       subcmd: 0x100,
+       reqid: 0x1,
+       param1: 0x0,
+       param2: 0x0,
+       param3: 0x0,
+       param4: 0x0,
+   }
+   ```
