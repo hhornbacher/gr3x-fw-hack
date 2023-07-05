@@ -1,6 +1,10 @@
-# 02.07.2023: Improving mocks
+# Improving mocks
 
-I decided to continue with mocking libcmfwk and libshmem_manager using Rust (since this is the language I'm most comfortable with) to get the boot process (`/etc/rc.local` / `docker/start.sh`) further running. At the moment of starting this effort `camctld` was hanging at the point where it enters the `CameraCommandSync` section (refer to current log) and tries to send a IPCU message, waiting for a response.
+I have decided to use Rust for mocking `libcmfwk` and `libshmem_manager`, as it is the language I am most comfortable with.
+By creating accurate mocks for these libraries, I aim to resolve the issue where `camctld` hangs while trying to send an IPCU message in the `CameraCommandSync` section and waiting for a response.
+The goal is to ensure the smooth execution of the boot process (`/etc/rc.local` / `docker/start.sh`). 
+My current progress shows that `camctld` makes several calls to `FJ_IPCU_Open` and `FJ_IPCU_SetReceiverCB` with different parameters. It then tries to send an IPCU message using `FJ_IPCU_Send`.
+
 
 Current log:
 ```
@@ -198,18 +202,28 @@ Data: IpcuCommandBuffer {
 }
 ```
 
-## libshmem_manager
-Has following functions
-- `int shmem_init_config(addr1, len1, addr2, len2, cfg_ptr, cfg_len)`
-- `int shmem_init(addr1, len1, addr2, len2)`
+## `libshmem_manager` Functions
 
-Both functions get called by `camctld` while initialization with following parameters:
-- addr1: 0x4fed0000
-- len1: 0x30000
-- addr2: 0x50000000
-- len2: 0x800000
-- cfg_ptr: 0xfffef944
-- cfg_len: 0x0a
+The `libshmem_manager` library contains among others the following functions:
 
-## libcmfwk
+1. `int shmem_init_config(addr1, len1, addr2, len2, cfg_ptr, cfg_len)`
+   - Parameters:
+     - addr1: 0x4fed0000
+     - len1: 0x30000
+     - addr2: 0x50000000
+     - len2: 0x800000
+     - cfg_ptr: 0xfffef944
+     - cfg_len: 0x0a
+
+2. `int shmem_init(addr1, len1, addr2, len2)`
+   - Parameters:
+     - addr1: 0x4fed0000
+     - len1: 0x30000
+     - addr2: 0x50000000
+     - len2: 0x800000
+
+
+These functions are called by `camctld` during its initialization process.
+ 
+## `libcmfwk` Functions
 
