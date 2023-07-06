@@ -3,5 +3,14 @@
 version = 3
 
 [[package]]
+name = "pretty-hex"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c6fa0831dd7cc608c38a5e323422a0077678fa5744aa2be4ad91c4ece8eec8d5"
+
+[[package]]
 name = "shmem_manager"
 version = "0.1.0"
+dependencies = [
+ "pretty-hex",
+]
