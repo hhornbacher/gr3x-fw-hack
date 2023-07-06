@@ -52,8 +52,6 @@ impl State {
 
         locked_state.channels.push((channel, ptr));
 
-        locked_state.log();
-
         Ok(())
     }
 
@@ -71,8 +69,6 @@ impl State {
 
         locked_state.receiver_cbs.push((channel, callback));
 
-        locked_state.log();
-
         Ok(())
     }
 
@@ -84,17 +80,11 @@ impl State {
         send_type: u32,
         p5: u32,
     ) {
-        let mut locked_state = self.state.lock().unwrap();
+        let locked_state = self.state.lock().unwrap();
 
         if let Some((_, cb)) = locked_state.receiver_cbs.iter().find(|x| x.0 == channel) {
             unsafe {
-                cb(
-                    channel,
-                    cmd_buffer,
-                    std::mem::size_of::<IpcuCommandBuffer>() as u32,
-                    send_type,
-                    p5,
-                );
+                cb(channel, cmd_buffer, length, send_type, p5);
             }
         }
     }
@@ -104,19 +94,19 @@ static mut STATE: Option<State> = None;
 
 #[no_mangle]
 extern "C" fn fj_mm_open() {
-    println!("Rust: fj_mm_open()");
+    println!("MOCK: fj_mm_open()");
 }
 
 #[no_mangle]
 extern "C" fn FJ_IPCU_Close(param_1: u32) -> u32 {
-    println!("Rust: FJ_IPCU_Close(0x{:x} [{}])", param_1, param_1);
+    println!("MOCK: FJ_IPCU_Close(0x{:x} [{}])", param_1, param_1);
 
     0
 }
 
 #[no_mangle]
 extern "C" fn FJ_IPCU_Open(channel: u8, ptr: usize) -> u32 {
-    println!("Rust: FJ_IPCU_Open(0x{:x}, 0x{:x})", channel, ptr);
+    println!("MOCK: FJ_IPCU_Open(0x{:x}, 0x{:x})", channel, ptr);
 
     match State::instance().open_channel(channel, ptr) {
         Ok(_) => 0,
@@ -132,15 +122,76 @@ extern "C" fn FJ_IPCU_Send(
     send_type: u32,
 ) -> u32 {
     println!(
-        "Rust: FJ_IPCU_Send(0x{:x}, 0x{:x}, 0x{:x}, 0x{:x})",
+        "MOCK: FJ_IPCU_Send(0x{:x}, 0x{:x}, 0x{:x}, 0x{:x})",
         channel, cmd_buffer as usize, length, send_type
     );
 
     let mut cmd_buffer = unsafe { (*cmd_buffer).clone() };
 
+    println!("MOCK: Data: {:#x?}", cmd_buffer);
+
     cmd_buffer.magic = 0x6666bbbb;
 
-    println!("Data: {:#x?}", cmd_buffer);
+    match (cmd_buffer.cmd, cmd_buffer.subcmd) {
+        (0xf0000000, 0x3) => match cmd_buffer.param1 {
+            0x63 => {
+                // START_CODE property
+                cmd_buffer.param1 = 0; // Unknown
+                cmd_buffer.param2 = 0; // Result
+                cmd_buffer.param3 = 0x4; // Length
+                cmd_buffer.param4 = 0x00000000; // physical memory address
+            }
+            0x01 => {
+                // Manufacturer property
+                cmd_buffer.param1 = 0; // Unknown
+                cmd_buffer.param2 = 0; // Result
+                cmd_buffer.param3 = 0x10;
+                cmd_buffer.param4 = 0x0000001c; // physical memory address
+            }
+            0x02 => {
+                // Model property
+                cmd_buffer.param1 = 0; // Unknown
+                cmd_buffer.param2 = 0; // Result
+                cmd_buffer.param3 = 0x10;
+                cmd_buffer.param4 = 0x00000020; // physical memory address
+            }
+            0x03 => {
+                // Serial property
+                cmd_buffer.param1 = 0; // Unknown
+                cmd_buffer.param2 = 0; // Result
+                cmd_buffer.param3 = 0x10;
+                cmd_buffer.param4 = 0x00000030; // physical memory address
+            }
+            0x05 => {
+                // Version property
+                cmd_buffer.param1 = 0; // Unknown
+                cmd_buffer.param2 = 0; // Result
+                cmd_buffer.param3 = 0x10;
+                cmd_buffer.param4 = 0x00000040; // physical memory address
+            }
+            0x08 => {
+                // Datetime property
+                cmd_buffer.param1 = 0; // Unknown
+                cmd_buffer.param2 = 0; // Result
+                cmd_buffer.param3 = 0x10;
+                cmd_buffer.param4 = 0x00000050; // physical memory address
+            }
+            _ => {
+                cmd_buffer.param1 = 0; // Unknown
+                cmd_buffer.param2 = 0; // Result
+                cmd_buffer.param3 = 0xaabbccdd; // property length
+                cmd_buffer.param4 = 0x20; // shmem address?
+            }
+        },
+        (0xf0000003, 0x00) => {
+            // Storage ID List
+            cmd_buffer.param1 = 0xcdcdcdcd; // Unknown
+            cmd_buffer.param2 = 0x0; // Result
+            cmd_buffer.param3 = 0xaabbccdd; // Unknown
+            cmd_buffer.param4 = 0xf2f3f4f5; // Unknown
+        }
+        _ => {}
+    }
 
     State::instance().call_receiver_cb(channel, &cmd_buffer, length, send_type, 0xdeadbeef);
 
@@ -150,7 +201,7 @@ extern "C" fn FJ_IPCU_Send(
 #[no_mangle]
 extern "C" fn FJ_IPCU_SetReceiverCB(channel: u8, callback: ReceiverCallback) -> u32 {
     println!(
-        "Rust: FJ_IPCU_SetReceiverCB(0x{:x}, 0x{:x})",
+        "MOCK: FJ_IPCU_SetReceiverCB(0x{:x}, 0x{:x})",
         channel, callback as usize
     );
 
@@ -162,10 +213,10 @@ extern "C" fn FJ_IPCU_SetReceiverCB(channel: u8, callback: ReceiverCallback) -> 
 
 #[no_mangle]
 extern "C" fn FJ_MM_phys_to_virt() {
-    println!("Rust: FJ_MM_phys_to_virt()");
+    println!("MOCK: FJ_MM_phys_to_virt()");
 }
 
 #[no_mangle]
 extern "C" fn FJ_MM_virt_to_phys() {
-    println!("Rust: FJ_MM_virt_to_phys()");
+    println!("MOCK: FJ_MM_virt_to_phys()");
 }

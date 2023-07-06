@@ -2,7 +2,7 @@
 #[derive(Debug, Clone)]
 pub struct IpcuCommandBuffer {
     pub magic: u32,
-    pub unknown: u32,
+    pub fmt_version: u32,
     pub cmd: u32,
     pub subcmd: u32,
     pub reqid: u32,
