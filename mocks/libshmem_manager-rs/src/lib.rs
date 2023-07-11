@@ -5,6 +5,7 @@ use pretty_hex::PrettyHex;
 
 use memory_map::MemoryMap;
 lazy_static! {
+    // Not using a HashMap here since this requires glibc, but I didn't get a Rust build environment running with GLIBC 2.4 (which is required by the camera system)
     static ref MEMORY_MAP2: [(usize, &'static [u8]); 7] = {
         [
             (
