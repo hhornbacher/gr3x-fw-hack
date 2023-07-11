@@ -22,7 +22,7 @@ I have made significant progress in my exploration of the Ricoh GR3(x) firmware.
   - `libshmem_manager.so`
 - Explored running the system in QEMU.
 - Analyze firmware with: [cwe_checker](../../analysis/cwe_checker), [EMBA](../../analysis/emba/default-scan-unpacked-fw/html-report) and [firmwalker](../../analysis/firmwalker.txt)
-- [Improving mocks](progress/improving-mocks.md)
+- [Improving mocks](improving-mocks.md)
 
 ## Next Tasks
 
