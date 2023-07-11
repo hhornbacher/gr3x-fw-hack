@@ -217,11 +217,24 @@ The `libshmem_manager` library contains among others the following functions:
      - cfg_len: 0x0a
 
 2. `int shmem_init(addr1, len1, addr2, len2)`
+
    - Parameters:
      - addr1: 0x4fed0000
      - len1: 0x30000
      - addr2: 0x50000000
      - len2: 0x800000
+
+3. `void *shmem_phys_to_virt(physical_ptr)`
+   Map physical address to virtual address
+
+   - Parameters:
+     - physical_address: ???
+
+4. `void *shmem_virt_to_phys(physical_ptr)`
+   Map virtual address to physical address
+
+   - Parameters:
+     - physical_address: ???
 
 These functions are called by `camctld` during its initialization process.
 
@@ -269,14 +282,16 @@ I discovered that while experimenting with various actions, I can keep the boot 
 
 It's worth noting that as of now, due to the nonsensical IPCU replies, `camctld` will only boot the device in restricted mode.
 
+The commands get generated in `sysmgr::GetSinglePropertyCurrentValue`, which seems to call `camera_controller::CameraController::GetPropertyCommand` to instantiate a object of `camera_controller::PropertyCommandImpl`.
+
 Based on the current system log (see below) I think I was able to identify several commands:
 
-- Get datetime property:
+- Get datetime property (0x08):
 
 ```rust
 IpcuCommandBuffer {
-    magic: 0x6666bbbb,
-    unknown: 0x1,
+    magic: 0x5555aaaa,
+    fmt_version: 0x1,
     cmd: 0xf0000000,
     subcmd: 0x3,
     reqid: 0x4,
@@ -287,12 +302,12 @@ IpcuCommandBuffer {
 }
 ```
 
-- Get manufacturer property:
+- Get manufacturer property (0x01):
 
 ```rust
 IpcuCommandBuffer {
-    magic: 0x6666bbbb,
-    unknown: 0x1,
+    magic: 0x5555aaaa,
+    fmt_version: 0x1,
     cmd: 0xf0000000,
     subcmd: 0x3,
     reqid: 0x5,
@@ -303,12 +318,12 @@ IpcuCommandBuffer {
 }
 ```
 
-- Get model property:
+- Get model property (0x02):
 
 ```rust
 IpcuCommandBuffer {
-    magic: 0x6666bbbb,
-    unknown: 0x1,
+    magic: 0x5555aaaa,
+    fmt_version: 0x1,
     cmd: 0xf0000000,
     subcmd: 0x3,
     reqid: 0x6,
@@ -319,12 +334,12 @@ IpcuCommandBuffer {
 }
 ```
 
-- Get serial property:
+- Get serial property (0x03):
 
 ```rust
 IpcuCommandBuffer {
-    magic: 0x6666bbbb,
-    unknown: 0x1,
+    magic: 0x5555aaaa,
+    fmt_version: 0x1,
     cmd: 0xf0000000,
     subcmd: 0x3,
     reqid: 0x7,
@@ -335,12 +350,12 @@ IpcuCommandBuffer {
 }
 ```
 
-- Get version property:
+- Get version property (0x05):
 
 ```rust
 IpcuCommandBuffer {
-    magic: 0x6666bbbb,
-    unknown: 0x1,
+    magic: 0x5555aaaa,
+    fmt_version: 0x1,
     cmd: 0xf0000000,
     subcmd: 0x3,
     reqid: 0x8,
@@ -351,28 +366,48 @@ IpcuCommandBuffer {
 }
 ```
 
-- Still unknown:
+- Get STARTUP_CODE property (0x63):
 
 ```rust
 IpcuCommandBuffer {
-    magic: 0x6666bbbb,
-    unknown: 0x1,
-    cmd: 0x100,
-    subcmd: 0x100,
-    reqid: 0x1,
+    magic: 0x5555aaaa,
+    fmt_version: 0x1,
+    cmd: 0xf0000000,
+    subcmd: 0x3,
+    reqid: 0x2,
+    param1: 0x63,
+    param2: 0x0,
+    param3: 0x0,
+    param4: 0x0,
+}
+```
+
+- Get storage ID list:
+
+```rust
+IpcuCommandBuffer {
+    magic: 0x5555aaaa,
+    fmt_version: 0x1,
+    cmd: 0xf0000003,
+    subcmd: 0x0,
+    reqid: 0x5,
     param1: 0x0,
     param2: 0x0,
     param3: 0x0,
     param4: 0x0,
 }
+```
 
+- Still unknown:
+
+```rust
 IpcuCommandBuffer {
-    magic: 0x6666bbbb,
-    unknown: 0x1,
-    cmd: 0xf0000000,
-    subcmd: 0x3,
-    reqid: 0x2,
-    param1: 0x63,
+    magic: 0x5555aaaa,
+    fmt_version: 0x1,
+    cmd: 0x100,
+    subcmd: 0x100,
+    reqid: 0x1,
+    param1: 0x0,
     param2: 0x0,
     param3: 0x0,
     param4: 0x0,
