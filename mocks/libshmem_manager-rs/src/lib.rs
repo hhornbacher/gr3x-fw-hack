@@ -1,6 +1,31 @@
+use std::alloc::{alloc, Layout};
+
+use lazy_static::lazy_static;
 use pretty_hex::PrettyHex;
 
-static mut MEMORY: &[u8; 1024] = include_bytes!("../init-memory.bin");
+use memory_map::MemoryMap;
+lazy_static! {
+    static ref MEMORY_MAP2: [(usize, &'static [u8]); 7] = {
+        [
+            (
+                MemoryMap::PropertyStartCode.into(),
+                &[0x01, 0x00, 0x00, 0x00],
+            ),
+            (MemoryMap::PropertyManufacturer.into(), b"Test Manufactur"),
+            (MemoryMap::PropertyModel.into(), b"Test Model"),
+            (MemoryMap::PropertySerial.into(), b"Test Serial"),
+            (MemoryMap::PropertyVersion.into(), b"1.99"),
+            (MemoryMap::PropertyDatetime.into(), b"2023"),
+            ( // This address is accessed when calling http://localhost:8888/v1/props
+                0x20,
+                &[
+                    0xde, 0xad, 0xbe, 0xef, 0xaa, 0xbb, 0xcc, 0xdd, 0xee, 0xff, 0xaf, 0xbe, 0xcd,
+                    0xdc, 0xeb, 0xfa,
+                ],
+            ),
+        ]
+    };
+}
 
 pub fn dump_memory(mem_addr: *const u8, length: usize) {
     let memory_addr = mem_addr as usize;
@@ -44,9 +69,10 @@ extern "C" fn shmem_init_config(
 }
 
 #[no_mangle]
-extern "C" fn shmem_alloc(param_1: u32, param_2: u32) -> u32 {
-    println!("Rust: shmem_init(0x{:x}, 0x{:x} )", param_1, param_2,);
-    0
+extern "C" fn shmem_alloc(param_1: u32, param_2: u32) -> *mut u8 {
+    println!("Rust: shmem_alloc(0x{:x}, 0x{:x} )", param_1, param_2);
+
+    unsafe { alloc(Layout::array::<u8>(param_1 as usize).unwrap()) }
 }
 
 #[no_mangle]
@@ -79,8 +105,12 @@ extern "C" fn shmem_get_mng_size(param_1: u32, param_2: u32) -> u32 {
 extern "C" fn shmem_phys_to_virt(physical_addr: u32) -> *const u8 {
     println!("Rust: shmem_phys_to_virt(0x{:x})", physical_addr);
 
-    let mem_addr =
-        unsafe { ((MEMORY as *const u8 as usize) + physical_addr as usize) as *const u8 };
+    let (_, mem_addr) = MEMORY_MAP2
+        .iter()
+        .find(|(addr, _)| *addr == physical_addr as usize)
+        .unwrap();
+
+    let mem_addr = mem_addr.as_ptr();
 
     dump_memory(mem_addr, 16);
 
@@ -96,5 +126,5 @@ extern "C" fn shmem_use_count() -> u32 {
 #[no_mangle]
 extern "C" fn shmem_virt_to_phys(param_1: u32) -> *const u8 {
     println!("Rust: shmem_virt_to_phys(0x{:x})", param_1);
-    0 as *const u8
+    0x80 as *const u8
 }

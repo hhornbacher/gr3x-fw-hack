@@ -7,3 +7,4 @@ version = "0.1.0"
 crate-type = ["cdylib"]
 
 [dependencies]
+memory-map = { version = "0.1.0", path = "../memory-map" }

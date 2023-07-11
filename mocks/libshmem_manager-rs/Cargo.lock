@@ -3,6 +3,16 @@
 version = 3
 
 [[package]]
+name = "lazy_static"
+version = "1.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
+
+[[package]]
+name = "memory-map"
+version = "0.1.0"
+
+[[package]]
 name = "pretty-hex"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -12,5 +22,7 @@ checksum = "c6fa0831dd7cc608c38a5e323422a0077678fa5744aa2be4ad91c4ece8eec8d5"
 name = "shmem_manager"
 version = "0.1.0"
 dependencies = [
+ "lazy_static",
+ "memory-map",
  "pretty-hex",
 ]

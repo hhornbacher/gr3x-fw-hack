@@ -3,12 +3,5 @@
 version = 3
 
 [[package]]
-name = "cmfwk"
-version = "0.1.0"
-dependencies = [
- "memory-map",
-]
-
-[[package]]
 name = "memory-map"
 version = "0.1.0"

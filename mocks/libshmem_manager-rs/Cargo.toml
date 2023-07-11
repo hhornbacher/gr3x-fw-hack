@@ -7,4 +7,6 @@ version = "0.1.0"
 crate-type = ["cdylib"]
 
 [dependencies]
+lazy_static = "1.4.0"
+memory-map = { version = "0.1.0", path = "../memory-map" }
 pretty-hex = "0.3.0"

@@ -2,6 +2,8 @@ use std::sync::{Arc, Mutex};
 
 use data::IpcuCommandBuffer;
 
+use memory_map::MemoryMap;
+
 use crate::error::{Error, Result};
 
 mod data;
@@ -139,42 +141,42 @@ extern "C" fn FJ_IPCU_Send(
                 cmd_buffer.param1 = 0; // Unknown
                 cmd_buffer.param2 = 0; // Result
                 cmd_buffer.param3 = 0x4; // Length
-                cmd_buffer.param4 = 0x00000000; // physical memory address
+                cmd_buffer.param4 = MemoryMap::PropertyStartCode.into(); // physical memory address
             }
             0x01 => {
                 // Manufacturer property
                 cmd_buffer.param1 = 0; // Unknown
                 cmd_buffer.param2 = 0; // Result
-                cmd_buffer.param3 = 0x10;
-                cmd_buffer.param4 = 0x0000001c; // physical memory address
+                cmd_buffer.param3 = 0x0a;
+                cmd_buffer.param4 = MemoryMap::PropertyManufacturer.into(); // physical memory address
             }
             0x02 => {
                 // Model property
                 cmd_buffer.param1 = 0; // Unknown
                 cmd_buffer.param2 = 0; // Result
                 cmd_buffer.param3 = 0x10;
-                cmd_buffer.param4 = 0x00000020; // physical memory address
+                cmd_buffer.param4 = MemoryMap::PropertyModel.into(); // physical memory address
             }
             0x03 => {
                 // Serial property
                 cmd_buffer.param1 = 0; // Unknown
                 cmd_buffer.param2 = 0; // Result
                 cmd_buffer.param3 = 0x10;
-                cmd_buffer.param4 = 0x00000030; // physical memory address
+                cmd_buffer.param4 = MemoryMap::PropertySerial.into(); // physical memory address
             }
             0x05 => {
                 // Version property
                 cmd_buffer.param1 = 0; // Unknown
                 cmd_buffer.param2 = 0; // Result
                 cmd_buffer.param3 = 0x10;
-                cmd_buffer.param4 = 0x00000040; // physical memory address
+                cmd_buffer.param4 = MemoryMap::PropertyVersion.into(); // physical memory address
             }
             0x08 => {
                 // Datetime property
                 cmd_buffer.param1 = 0; // Unknown
                 cmd_buffer.param2 = 0; // Result
-                cmd_buffer.param3 = 0x10;
-                cmd_buffer.param4 = 0x00000050; // physical memory address
+                cmd_buffer.param3 = 0x4;
+                cmd_buffer.param4 = MemoryMap::PropertyDatetime.into(); // physical memory address
             }
             _ => {
                 cmd_buffer.param1 = 0; // Unknown
