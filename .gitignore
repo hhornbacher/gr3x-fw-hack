@@ -10,3 +10,5 @@
 .venv
 *.gdb
 target
+
+.DS_Store
